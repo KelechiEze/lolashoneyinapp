@@ -1,0 +1,6 @@
+{
+  "name": "Photolio",
+  "description": "An ultra-premium photographic portfolio with sticky-card overlay scroll animations, viewfinder framing, and elegant editorial layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
