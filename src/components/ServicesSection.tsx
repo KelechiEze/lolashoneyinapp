@@ -99,7 +99,7 @@ export default function ServicesSection() {
                 >
                   {/* Clickable Row Header */}
                   <button
-                    onClick={() => setActiveId(pillar.id)}
+                    onClick={() => setActiveId(isActive ? "" : pillar.id)}
                     className={`w-full flex items-center justify-between py-6 px-4 md:px-6 text-left cursor-pointer transition-all duration-300 rounded-[8px] ${
                       isActive 
                         ? "bg-black text-white" 

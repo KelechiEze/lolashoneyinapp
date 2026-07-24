@@ -11,13 +11,18 @@ import ServicesSection from "./components/ServicesSection";
 import PhilosophySection from "./components/PhilosophySection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import HomeHero from "./components/HomeHero";
+import HorizontalScrollSection from "./components/HorizontalScrollSection";
+import PoetrySection from "./components/PoetrySection";
 import { AwardsMarquee } from "./components/AwardsMarquee";
 import { BentoSection } from "./components/BentoSection";
 import { BentoSectionTwo } from "./components/BentoSectionTwo";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 
 // Sub-pages
+import BooksPage from "./components/BooksPage";
 import WritingPage from "./components/WritingPage";
+import OuidaBooksPage from "./components/OuidaBooksPage";
+import OuidaLagosPage from "./components/OuidaLagosPage";
 import FestivalsPage from "./components/FestivalsPage";
 import PublishingPage from "./components/PublishingPage";
 import FilmPage from "./components/FilmPage";
@@ -61,6 +66,12 @@ function HomePage() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         />
+
+        {/* Horizontal Scroll Section (Children's Books) */}
+        <HorizontalScrollSection />
+
+        {/* Poetry Anthologies Section */}
+        <PoetrySection />
 
         {/* About the Author */}
         <AboutSection />
@@ -116,10 +127,12 @@ export default function App() {
           <Routes location={location}>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/books" element={<WritingPage />} />
+            <Route path="/books" element={<BooksPage />} />
             <Route path="/writing" element={<WritingPage />} />
+            <Route path="/ouida-books" element={<OuidaBooksPage />} />
+            <Route path="/ouida-lagos" element={<OuidaLagosPage />} />
             <Route path="/festivals" element={<FestivalsPage />} />
-            <Route path="/publishing" element={<PublishingPage />} />
+            <Route path="/publishing" element={<OuidaBooksPage />} />
             <Route path="/film" element={<FilmPage />} />
             <Route path="/press" element={<PressPage />} />
             <Route path="/speaking" element={<SpeakingPage />} />
@@ -157,17 +170,16 @@ export default function App() {
             <div className="lg:col-span-8 space-y-10">
               
               {/* Horizontal Nav Links */}
-              <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-extrabold tracking-wider text-neutral-500 uppercase">
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-extrabold tracking-wider text-neutral-500 uppercase">
                 {[
                   { path: "/", label: "HOME" },
                   { path: "/books", label: "BOOKS" },
+                  { path: "/ouida-books", label: "OUIDA BOOKS" },
+                  { path: "/ouida-lagos", label: "OUIDA LAGOS" },
                   { path: "/writing", label: "WRITING" },
-                  { path: "/festivals", label: "FESTIVALS" },
-                  { path: "/publishing", label: "PUBLISHING" },
-                  { path: "/film", label: "FILM" },
-                  { path: "/press", label: "PRESS" },
                   { path: "/speaking", label: "SPEAKING" },
-                  { path: "/contact", label: "CONTACT" },
+                  { path: "/festivals", label: "PROJECTS" },
+                  { path: "/contact", label: "CONTACT & PRESS" },
                 ].map((item) => (
                   <button
                     key={item.path}
@@ -208,7 +220,7 @@ export default function App() {
             <div className="lg:col-span-4 flex flex-col justify-between space-y-10 lg:space-y-0 lg:items-end">
               
               <div className="flex items-center space-x-4 text-neutral-600 lg:justify-end">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-1 hover:text-neutral-950 transition-colors" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/1DKaUnM4nn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="p-1 hover:text-neutral-950 transition-colors" aria-label="Facebook">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3.6l.4-3H12V6c0-.9.2-1 1-1h2V2h-3c-3 0-4 1.4-4 3.5V8z"/></svg>
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-1 hover:text-neutral-950 transition-colors" aria-label="Instagram">

@@ -43,26 +43,13 @@ export const BentoSection: React.FC = () => {
               </p>
             </div>
             
-            <div className="mt-auto relative w-full h-[220px] md:h-[250px] overflow-hidden">
+            <div className="mt-auto relative w-full h-[280px] md:h-[340px] overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800" 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg" 
                 alt="Literary Showcase"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"
               />
-              {/* Overlay Mockup Card within image */}
-              <div className="absolute inset-x-0 bottom-8 flex justify-center pointer-events-none px-4">
-                 <div className="w-64 h-32 bg-neutral-950/95 backdrop-blur-md rounded-xl shadow-2xl p-5 flex flex-col justify-between border border-white/10 transform -rotate-2">
-                    <div className="flex justify-between items-start">
-                       <div className="w-5 h-5 rounded-full border-2 border-rose-500" />
-                       <div className="text-[9px] font-mono font-bold uppercase tracking-widest text-rose-400">Curated Edition</div>
-                    </div>
-                    <div>
-                      <div className="text-xs font-mono font-bold text-white/50 uppercase tracking-widest">Book Buzz Foundation</div>
-                      <div className="text-lg font-black text-white font-sans uppercase">Aké Festival 2024</div>
-                    </div>
-                 </div>
-              </div>
             </div>
           </motion.div>
 
@@ -141,7 +128,7 @@ export const BentoSection: React.FC = () => {
           >
             <div className="relative w-full h-[220px] md:h-[250px] overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800" 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg" 
                 alt="Independent Publishing"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"

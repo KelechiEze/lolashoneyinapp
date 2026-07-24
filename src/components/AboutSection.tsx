@@ -130,7 +130,7 @@ export default function AboutSection() {
           {/* RIGHT SIDE: Childhood Photos Stack & Current Portrait */}
           <div className="lg:col-span-6 w-full space-y-6">
             <div className="grid grid-cols-2 gap-4">
-              {/* Childhood Photo 1 */}
+              {/* Childhood / Youth Photo 1 */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -139,14 +139,14 @@ export default function AboutSection() {
                 className="relative aspect-[4/5] bg-neutral-100 rounded-[8px] overflow-hidden shadow-md border border-neutral-200/50 transform-gpu"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600&auto=format&fit=crop"
-                  alt="Lola Shoneyin childhood school portrait placeholder"
-                  className="w-full h-full object-cover select-none filter sepia contrast-125 hover:scale-105 transition-transform duration-500"
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
+                  alt="Lola Shoneyin portrait"
+                  className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
 
-              {/* Childhood Photo 2 */}
+              {/* Childhood / Youth Photo 2 */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -155,17 +155,13 @@ export default function AboutSection() {
                 className="relative aspect-[4/5] bg-neutral-100 rounded-[8px] overflow-hidden shadow-md border border-neutral-200/50 transform-gpu"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
-                  alt="Lola Shoneyin school classroom memories"
-                  className="w-full h-full object-cover select-none filter sepia contrast-110 hover:scale-105 transition-transform duration-500"
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4516.jpg"
+                  alt="Lola Shoneyin archival portrait"
+                  className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
             </div>
-
-            <p className="text-[11px] font-mono tracking-wider text-neutral-400 text-center uppercase">
-              ARCHIVAL ARCHIVES: EARLY CHILDHOOD AND SCHOOLING MEMORIES
-            </p>
           </div>
 
         </div>

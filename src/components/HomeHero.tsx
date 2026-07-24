@@ -4,13 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const IMAGES = [
   "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-9-2026-08_20_20-pm.png",
   "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png",
-  "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_42_09-pm.png"
+  "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_42_09-pm.png",
+  "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-04_21_48-pm.png",
+  "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-04_23_20-pm.png"
 ];
 
 const SOCIAL_LINKS = [
   {
     name: "Facebook",
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/share/1DKaUnM4nn/?mibextid=wwXIfr",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
         <path d="M9 8H7v3h2v9h3v-9h3.6l.4-3H12V6c0-.9.2-1 1-1h2V2h-3c-3 0-4 1.4-4 3.5V8z" />
@@ -19,7 +21,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "Instagram",
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/lolashoneyin?utm_source=qr",
     icon: (
       <svg className="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -30,7 +32,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/in/lola-shoneyin-37007b198?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -39,7 +41,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "X (Twitter)",
-    url: "https://twitter.com",
+    url: "https://x.com/lolashoneyin?s=11&t=k5OJv4m_RpRtTxvzSNv50Q",
     icon: (
       <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -54,18 +56,21 @@ export default function HomeHero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % IMAGES.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
   const slideVariants = {
     initial: {
       x: "-100%",
+      scale: 1,
     },
     animate: {
       x: 0,
+      scale: 1.15,
       transition: {
         x: { type: "tween", ease: [0.25, 1, 0.5, 1], duration: 1.8 },
+        scale: { type: "tween", ease: "linear", duration: 7 },
       }
     },
     exit: {

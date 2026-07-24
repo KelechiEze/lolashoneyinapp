@@ -12,13 +12,28 @@ export default function Header() {
   const links = [
     { path: "/", label: "Home" },
     { path: "/books", label: "Books" },
+    { path: "/ouida-books", label: "Ouida Books" },
+    { path: "/ouida-lagos", label: "Ouida Lagos" },
     { path: "/writing", label: "Writing" },
-    { path: "/festivals", label: "Festivals" },
-    { path: "/publishing", label: "Publishing" },
-    { path: "/film", label: "Film" },
-    { path: "/press", label: "Press" },
     { path: "/speaking", label: "Speaking" },
-    { path: "/contact", label: "Contact" },
+    { 
+      path: "/festivals", 
+      label: "Projects",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/festivals", label: "Ake Festival", desc: "International Arts & Book Festival" },
+        { path: "/film", label: "Film & Screen", desc: "Baba Segi & Screen Adaptations" },
+      ]
+    },
+    { 
+      path: "/contact", 
+      label: "Contact",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/contact", label: "Contact Us", desc: "Work Inquiries & Booking" },
+        { path: "/press", label: "Press & Accolades", desc: "Media Coverage & Honors" },
+      ]
+    },
   ];
 
   // Detect scroll to toggle dark overlay background
@@ -76,12 +91,56 @@ export default function Header() {
           </button>
 
           {/* Desktop Navigation Links (for screens >= 800px) */}
-          <nav className="hidden min-[800px]:flex items-center gap-x-6 lg:gap-x-8">
+          <nav className="hidden min-[800px]:flex items-center gap-x-8 lg:gap-x-10">
             {links.map((link) => {
               const isActive =
                 link.path === "/"
                   ? location.pathname === "/"
                   : location.pathname.startsWith(link.path);
+              
+              if (link.hasDropdown && link.subLinks) {
+                return (
+                  <div key={link.label} className="relative group py-1">
+                    <button
+                      onClick={() => handleNavigate(link.path)}
+                      className="relative text-white/80 group-hover:text-white font-sans text-xs lg:text-sm tracking-widest uppercase font-semibold transition-colors duration-300 cursor-pointer outline-none flex items-center gap-1.5"
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-[10px] text-rose-400 font-mono transition-transform duration-300 group-hover:rotate-180">▼</span>
+                      <span
+                        className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-rose-500 transform transition-transform duration-300 origin-left ${
+                          isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                        }`}
+                      />
+                    </button>
+
+                    {/* Sleek Hover Dropdown Card */}
+                    <div className="absolute top-full -left-4 pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                      <div className="bg-neutral-950/95 border border-white/15 p-3 rounded-xl shadow-2xl backdrop-blur-xl w-64 space-y-1">
+                        {link.subLinks.map((sub) => (
+                          <button
+                            key={sub.path}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleNavigate(sub.path);
+                            }}
+                            className="w-full text-left p-2.5 rounded-lg hover:bg-white/10 transition-colors group/sub cursor-pointer flex flex-col"
+                          >
+                            <span className="text-xs font-bold uppercase tracking-wider text-white group-hover/sub:text-rose-400 transition-colors flex items-center justify-between">
+                              {sub.label}
+                              <ArrowUpRight size={12} className="text-neutral-500 group-hover/sub:text-rose-400" />
+                            </span>
+                            <span className="text-[10px] text-neutral-400 font-sans mt-0.5">
+                              {sub.desc}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <button
                   key={link.path}
@@ -145,33 +204,50 @@ export default function Header() {
                         ? location.pathname === "/"
                         : location.pathname.startsWith(link.path);
                     return (
-                      <motion.button
-                        key={link.path}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.04 + 0.1 }}
-                        onClick={() => handleNavigate(link.path)}
-                        className={`group text-left py-2 px-3 rounded-lg flex items-center justify-between transition-all duration-300 ${
-                          isActive
-                            ? "bg-white/10 text-white font-black"
-                            : "text-neutral-300 hover:text-white hover:bg-white/5"
-                        }`}
-                      >
-                        <span className="font-sans text-2xl sm:text-4xl uppercase tracking-wider font-extrabold flex items-center gap-3">
-                          <span className="font-mono text-xs text-rose-500/80 font-normal">
-                            0{idx + 1}
-                          </span>
-                          {link.label}
-                        </span>
-                        <ArrowUpRight
-                          size={24}
-                          className={`transition-transform duration-300 ${
+                      <div key={link.path || link.label} className="space-y-2">
+                        <motion.button
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.04 + 0.1 }}
+                          onClick={() => handleNavigate(link.path)}
+                          className={`w-full group text-left py-2 px-3 rounded-lg flex items-center justify-between transition-all duration-300 ${
                             isActive
-                              ? "text-rose-500 translate-x-1 -translate-y-1"
-                              : "text-neutral-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"
+                              ? "bg-white/10 text-white font-black"
+                              : "text-neutral-300 hover:text-white hover:bg-white/5"
                           }`}
-                        />
-                      </motion.button>
+                        >
+                          <span className="font-sans text-2xl sm:text-4xl uppercase tracking-wider font-extrabold flex items-center gap-3">
+                            <span className="font-mono text-xs text-rose-500/80 font-normal">
+                              0{idx + 1}
+                            </span>
+                            {link.label}
+                          </span>
+                          <ArrowUpRight
+                            size={24}
+                            className={`transition-transform duration-300 ${
+                              isActive
+                                ? "text-rose-500 translate-x-1 -translate-y-1"
+                                : "text-neutral-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"
+                            }`}
+                          />
+                        </motion.button>
+
+                        {/* Render sub-links inside mobile drawer if present */}
+                        {link.subLinks && (
+                          <div className="pl-12 flex flex-wrap gap-2 pt-1 pb-2">
+                            {link.subLinks.map((sub) => (
+                              <button
+                                key={sub.path}
+                                onClick={() => handleNavigate(sub.path)}
+                                className="text-xs font-mono font-bold tracking-wider uppercase px-3 py-1.5 rounded-md bg-white/5 hover:bg-rose-600 hover:text-white text-neutral-300 transition-colors border border-white/10 flex items-center gap-1 cursor-pointer"
+                              >
+                                <span>{sub.label}</span>
+                                <ArrowUpRight size={10} />
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
                 </nav>
