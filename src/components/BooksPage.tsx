@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, Award, ArrowUpRight, Plus, Minus, Film, Radio, Play, X, Sparkles } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import HorizontalScrollSection, { CHILDREN_BOOKS_DATA, ChildrenBookItem } from "./HorizontalScrollSection";
-import { POETRY_COLLECTIONS } from "./PoetrySection";
+import PoetrySection, { POETRY_COLLECTIONS } from "./PoetrySection";
+import BibliographyGridSection from "./BibliographyGridSection";
 
 interface TranslationItem {
   lang: string;
@@ -168,63 +169,51 @@ export default function BooksPage() {
                     }}
                     onMouseEnter={() => setHoveredIdx(idx)}
                     onMouseLeave={() => setHoveredIdx(null)}
-                    className="relative group cursor-pointer"
+                    className="relative group cursor-pointer flex flex-col space-y-3"
                   >
-                    {/* 3D Standing Book Pages */}
-                    <div className="absolute top-1 bottom-1 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300/80 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-1.5 px-[1px] z-0">
-                      <div className="w-full h-full border-r border-dashed border-neutral-400/40 flex flex-col justify-around">
-                        <div className="w-full h-[1px] bg-neutral-300/80" />
-                        <div className="w-full h-[1px] bg-neutral-300/80" />
-                        <div className="w-full h-[1px] bg-neutral-300/80" />
-                        <div className="w-full h-[1px] bg-neutral-300/80" />
-                      </div>
-                    </div>
-
-                    <div className="relative aspect-[3/4.3] w-full rounded-none overflow-hidden bg-neutral-900 border-l-[6px] border-l-neutral-950 border-t border-b border-r border-neutral-800 shadow-[12px_16px_28px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-[20px_24px_40px_rgba(0,0,0,0.45)] z-10">
-                      <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-30 pointer-events-none border-r border-white/10" />
-
-                      <div className="absolute inset-0 w-full h-full">
-                        <img
-                          src={item.url}
-                          alt={`${item.lang} Translation`}
-                          className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                          referrerPolicy="no-referrer"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/20 group-hover:bg-black/55 transition-colors duration-500" />
-                      </div>
-
-                      <div className="absolute inset-0 p-5 pl-7 flex flex-col justify-between z-20">
-                        <div className="flex items-center justify-between">
-                          <span className="font-mono text-[9px] font-black tracking-[0.2em] text-rose-400 bg-neutral-950/80 border border-rose-500/30 px-2.5 py-1 rounded-none uppercase inline-block shadow-sm">
-                            {item.lang}
-                          </span>
-                          <BookOpen size={13} className="text-white/60" />
-                        </div>
-
-                        <div className="space-y-1.5">
-                          <span className="font-mono text-[8px] text-rose-300 uppercase tracking-widest block font-bold">
-                            LOLA SHONEYIN
-                          </span>
-                          <h4 className="font-sans font-black text-sm sm:text-base text-white tracking-tight leading-snug drop-shadow-md select-none group-hover:text-rose-200 transition-colors duration-300">
-                            {item.title}
-                          </h4>
+                    {/* 3D Standing Book - Vivid Cover with Pages Page Edge, No Overlays, No Text on Cover */}
+                    <div className="relative aspect-[3/4.3] w-full rounded-none overflow-hidden bg-neutral-100 border-l-[6px] border-l-neutral-900 border-t border-b border-r border-neutral-200 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_20px_36px_rgba(225,29,72,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
+                      {/* 3D Standing Book Pages Edge */}
+                      <div className="absolute top-1 bottom-1 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-1.5 px-[1px] z-0">
+                        <div className="w-full h-full border-r border-dashed border-neutral-400/40 flex flex-col justify-around">
+                          <div className="w-full h-[1px] bg-neutral-300/80" />
+                          <div className="w-full h-[1px] bg-neutral-300/80" />
+                          <div className="w-full h-[1px] bg-neutral-300/80" />
                         </div>
                       </div>
 
-                      <AnimatePresence>
-                        {hoveredIdx === idx && (
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0, rotate: -45 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                            exit={{ opacity: 0, scale: 0, rotate: -45 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="absolute inset-0 m-auto w-11 h-11 bg-rose-600 rounded-none flex items-center justify-center text-white shadow-xl pointer-events-none z-30 border border-white/20"
-                          >
-                            <ArrowUpRight size={20} className="stroke-[2.5]" />
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      {/* Spine shading */}
+                      <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none" />
+
+                      {/* Vivid Image without overlay - object-contain so bottom is not cropped */}
+                      <img
+                        src={item.url}
+                        alt={`${item.lang} Translation`}
+                        className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
+
+                    {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
+                    <div className="space-y-1.5 text-left pt-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-mono text-[10px] font-black tracking-wider text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-sm font-bold">
+                          {item.lang}
+                        </span>
+                        <span className="font-mono text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
+                          TRANSLATION
+                        </span>
+                      </div>
+
+                      <h4 className="font-serif font-bold text-base text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                        {item.title}
+                      </h4>
+
+                      <p className="font-sans text-xs font-semibold text-neutral-500">
+                        By Lola Shoneyin
+                      </p>
+                    </div>
+
                   </motion.div>
                 ))}
               </AnimatePresence>
@@ -249,80 +238,15 @@ export default function BooksPage() {
 
         </div>
 
+        {/* BIBLIOGRAPHY & FEATURED WORKS SECTION */}
+        <div className="border-t border-neutral-200 pt-12">
+          <BibliographyGridSection />
+        </div>
+
         {/* POETRY SECTION */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu"
-        >
-          <div className="space-y-2">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">VERSE COLLECTION</span>
-            <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
-              Poetry Anthologies
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {POETRY_COLLECTIONS.map((p, idx) => (
-              <motion.div 
-                key={p.id} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                className="relative group cursor-pointer"
-              >
-                <div className="absolute top-1.5 bottom-1.5 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-2 px-[1px] z-0 rounded-r-sm">
-                  <div className="w-full h-full border-r border-dashed border-neutral-400/50 flex flex-col justify-around">
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                  </div>
-                </div>
-
-                <div className="relative aspect-[3/4.2] w-full rounded-none overflow-hidden bg-neutral-900 border-l-[6px] border-l-rose-700 border-t border-b border-r border-neutral-800 shadow-[12px_16px_28px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-[20px_24px_40px_rgba(0,0,0,0.45)] z-10 flex flex-col justify-between p-5">
-                  <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/90 via-black/40 to-transparent z-20 pointer-events-none" />
-
-                  <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-neutral-950">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/60 z-10" />
-                  </div>
-
-                  <div className="flex items-center justify-between z-20 relative">
-                    <span className="font-mono text-[9px] font-black tracking-widest text-white bg-black/80 px-2.5 py-0.5 border border-white/20 uppercase rounded-none">
-                      {p.year}
-                    </span>
-                    <span className="font-mono text-[8px] font-bold tracking-wider text-rose-300 bg-rose-950/80 border border-rose-700/50 px-2 py-0.5 uppercase">
-                      {p.tag}
-                    </span>
-                  </div>
-
-                  <div className="space-y-1.5 z-20 relative mt-auto pt-2 text-left">
-                    <span className="text-[9px] font-mono text-amber-300 uppercase tracking-widest font-bold block">
-                      POETRY COLLECTION • LOLA SHONEYIN
-                    </span>
-                    <h3 className="font-sans font-black text-lg text-white tracking-tight leading-snug group-hover:text-rose-200 transition-colors uppercase">
-                      {p.title}
-                    </h3>
-                    <p className="font-sans text-[11px] text-neutral-300 leading-relaxed line-clamp-2">
-                      {p.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 border-t border-white/10 text-[9px] font-mono tracking-widest text-rose-400 uppercase font-black z-20 relative">
-                    LOLA SHONEYIN VERSE
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="border-t border-neutral-200 pt-8">
+          <PoetrySection theme="light" />
+        </div>
 
         {/* CHILDREN'S BOOKS SECTION */}
         <motion.div 
@@ -352,52 +276,42 @@ export default function BooksPage() {
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.4, delay: idx * 0.05, ease: "easeOut" }}
                 onClick={() => setActiveModalBook(b)}
-                className="relative group cursor-pointer"
+                className="relative group cursor-pointer flex flex-col space-y-3"
               >
-                <div className="absolute top-1.5 bottom-1.5 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-2 flex flex-col justify-between py-2 px-[1px] z-0 rounded-r-sm">
-                  <div className="w-full h-full border-r border-dashed border-neutral-400/50 flex flex-col justify-around">
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                    <div className="w-full h-[1px] bg-neutral-300" />
-                  </div>
+                {/* Square Children's Book Vivid Cover Card - No Overlays, No Text, No Cropping */}
+                <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_22px_36px_rgba(244,63,94,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10 flex items-center justify-center">
+                  <img
+                    src={b.image}
+                    alt={b.title}
+                    className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
-                <div className="relative aspect-[3/4.2] w-full rounded-none overflow-hidden bg-neutral-900 border-l-[6px] border-l-rose-700 border-t border-b border-r border-neutral-800 shadow-[10px_14px_24px_rgba(0,0,0,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-[16px_22px_36px_rgba(0,0,0,0.35)] z-10 flex flex-col justify-between p-4">
-                  <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/90 via-black/40 to-transparent z-20 pointer-events-none" />
-
-                  <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-neutral-950">
-                    <img
-                      src={b.image}
-                      alt={b.title}
-                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 z-10" />
-                  </div>
-
-                  <div className="flex items-center justify-between z-20 relative">
-                    <span className="font-mono text-[9px] font-black tracking-widest text-white bg-black/80 px-2 py-0.5 border border-white/20 uppercase rounded-none">
+                {/* CONTENT STRICTLY UNDERNEATH */}
+                <div className="space-y-1.5 text-left pt-1">
+                  <div className="flex items-center space-x-2">
+                    <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
                       {b.year}
                     </span>
-                    <span className="font-mono text-[8px] font-bold tracking-wider text-rose-300 bg-rose-950/80 border border-rose-700/50 px-2 py-0.5 uppercase">
+                    <span className="font-mono text-[10px] font-bold tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80 px-2 py-0.5 uppercase rounded-md">
                       {b.tag}
                     </span>
                   </div>
 
-                  <div className="z-20 relative mt-auto pt-2 space-y-1 text-left">
-                    <span className="font-mono text-[9px] text-amber-300 uppercase tracking-widest font-bold block">
-                      Lola Shoneyin
-                    </span>
-                    <h4 className="font-sans font-black text-sm md:text-base text-white uppercase tracking-tight leading-snug drop-shadow-md group-hover:text-rose-200 transition-colors">
-                      {b.title}
-                    </h4>
-                    <p className="text-[10px] text-neutral-300 line-clamp-2 leading-relaxed pt-1 font-sans">
-                      {b.description}
-                    </p>
-                  </div>
+                  <h4 className="font-serif font-extrabold text-base md:text-lg text-neutral-950 tracking-tight leading-snug group-hover:text-rose-600 transition-colors">
+                    {b.title}
+                  </h4>
 
+                  <p className="font-sans text-xs font-semibold text-neutral-500">
+                    By Lola Shoneyin
+                  </p>
+
+                  <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
+                    {b.description}
+                  </p>
                 </div>
+
               </motion.div>
             ))}
           </div>

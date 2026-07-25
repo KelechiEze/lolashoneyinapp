@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Coffee, BookOpen, Calendar, Clock, Sparkles, ArrowUpRight, Users, Music } from "lucide-react";
+import { MapPin, Coffee, BookOpen, Calendar, Clock, Sparkles, ArrowUpRight, Users, Music, Palette, Home, Briefcase, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function OuidaLagosPage() {
@@ -18,13 +18,37 @@ export default function OuidaLagosPage() {
       desc: "Artisanal espresso, fresh pastries, traditional Nigerian treats, and light gourmet fare in a tranquil, climate-controlled literary sanctuary."
     },
     {
+      icon: ExternalLink,
+      title: "Publishing House HQ",
+      desc: "Home base for Ouida Books editing team, manuscript reviews, imprint curation (Cognix, Teyani, Tanja, Phoenix) and global distribution coordination.",
+      linkUrl: "/ouida-books",
+      linkText: "Explore Ouida Books"
+    },
+    {
       icon: Calendar,
-      title: "Cultural Events & Stage",
+      title: "Events & Performance Hall",
       desc: "A vibrant multi-purpose venue hosting weekly book readings, poetry open mics, art exhibitions, panel debates, and intimate film screenings."
     },
     {
-      icon: Users,
-      title: "Creative Workspace",
+      icon: Sparkles,
+      title: "Festivals Hub (LIFI & AFLI)",
+      desc: "Host venue for the Lagos International Festival of Illustration (LIFI) and Abuja Festival of Literature & Ideas (AFLI) workshops and guest panels.",
+      linkUrl: "/festivals",
+      linkText: "View Festivals"
+    },
+    {
+      icon: Home,
+      title: "Orange Tree Writer's Residency",
+      desc: "A dedicated writer's residency providing mid-career African authors with quiet room, board, and editorial mentorship in Ikeja, Lagos."
+    },
+    {
+      icon: Palette,
+      title: "CFIN (Centre for Illustrations, Nigeria)",
+      desc: "Nigeria's premier hub for graphic illustration, visual art archives, digital drawing masterclasses, and international curator exchanges."
+    },
+    {
+      icon: Briefcase,
+      title: "Co-working & Creative Space",
       desc: "Quiet, air-conditioned co-working areas and private meeting rooms equipped with high-speed Wi-Fi, tailored for authors, remote workers, and artists."
     }
   ];
@@ -48,11 +72,11 @@ export default function OuidaLagosPage() {
             </h1>
             
             <p className="text-neutral-700 font-serif italic text-xl md:text-2xl leading-relaxed">
-              "A three-story cultural sanctuary in Ikeja uniting books, coffee, art, and vibrant community."
+              "A multi-story cultural sanctuary in Ikeja uniting books, coffee, art, festivals, residencies, and vibrant community."
             </p>
             
             <p className="text-neutral-600 font-sans text-sm md:text-base leading-relaxed max-w-2xl">
-              Located at 34 Ajanaku Street in the heart of Ikeja, Ouida Lagos is a landmark multi-purpose creative space founded by Lola Shoneyin. Designed as a haven for readers, thinkers, and artists, it houses a premier independent bookstore, café, gallery space, and performance hall.
+              Located at 34 Ajanaku Street in the heart of Ikeja, Ouida Lagos is a landmark multi-purpose creative space founded by Lola Shoneyin. Designed as a haven for readers, thinkers, and artists, it houses a premier independent bookstore, café, publishing house headquarters, event stage, the Orange Tree Writer's Residency, CFIN, and co-working spaces.
             </p>
 
             {/* Address & Hours Pill Card */}
@@ -99,34 +123,48 @@ export default function OuidaLagosPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 flex flex-col justify-end text-white">
                 <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-rose-400">34 AJANAKU STREET • LAGOS</span>
                 <h3 className="font-sans font-black text-2xl uppercase tracking-tight mt-1">Ouida Lagos Hub</h3>
-                <p className="font-sans text-xs text-neutral-300 mt-2">Where literature, art, and Lagos creative energy intersect daily.</p>
+                <p className="font-sans text-xs text-neutral-300 mt-2">Where literature, art, residencies, and Lagos creative energy intersect daily.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* SPATIAL PILLARS */}
+        {/* SPATIAL PILLARS - ALL 8 FEATURES */}
         <div className="border-t border-neutral-200 pt-16 space-y-12">
           <div className="space-y-3">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">THE EXPERIENCE</span>
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">THE COMPLETE SPATIAL ECOSYSTEM</span>
             <h2 className="font-sans font-black text-3xl md:text-5xl uppercase tracking-tight text-neutral-950">
               Inside Ouida Lagos
             </h2>
             <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl leading-relaxed">
-              Every floor of Ouida Lagos is meticulously curated to encourage curiosity, comfort, and artistic connection.
+              Every floor and wing of Ouida Lagos is meticulously curated to encourage curiosity, author support, illustration arts, and artistic connection.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, idx) => {
               const IconComp = f.icon;
               return (
-                <div key={idx} className="bg-neutral-50 border border-neutral-200 rounded-xl p-7 space-y-4 hover:border-neutral-300 transition-colors shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center text-rose-600 font-bold">
-                    <IconComp size={20} />
+                <div key={idx} className="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 space-y-4 hover:border-neutral-300 transition-colors shadow-sm flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 font-bold">
+                      <IconComp size={20} />
+                    </div>
+                    <h3 className="font-sans font-black text-lg text-neutral-950 uppercase tracking-tight leading-snug">{f.title}</h3>
+                    <p className="font-sans text-xs text-neutral-600 leading-relaxed">{f.desc}</p>
                   </div>
-                  <h3 className="font-sans font-black text-lg text-neutral-950 uppercase">{f.title}</h3>
-                  <p className="font-sans text-xs text-neutral-700 leading-relaxed">{f.desc}</p>
+
+                  {f.linkUrl && (
+                    <div className="pt-2">
+                      <button
+                        onClick={() => navigate(f.linkUrl)}
+                        className="inline-flex items-center space-x-1 font-mono text-[11px] font-bold text-rose-600 hover:text-rose-700 uppercase cursor-pointer"
+                      >
+                        <span>{f.linkText}</span>
+                        <ArrowUpRight size={12} />
+                      </button>
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -134,7 +172,7 @@ export default function OuidaLagosPage() {
         </div>
 
         {/* HOST YOUR EVENT STRIP */}
-        <div className="bg-neutral-950 text-white rounded-2xl p-8 sm:p-12 border border-neutral-800 space-y-6">
+        <div className="bg-neutral-950 text-white rounded-2xl p-8 sm:p-12 border border-neutral-800 space-y-6 shadow-2xl">
           <div className="max-w-2xl space-y-3">
             <span className="font-mono text-xs text-rose-400 uppercase tracking-widest font-bold block">VENUE RENTALS & GATHERINGS</span>
             <h3 className="font-sans font-black text-2xl sm:text-4xl uppercase tracking-tight">Host Your Event at Ouida Lagos</h3>

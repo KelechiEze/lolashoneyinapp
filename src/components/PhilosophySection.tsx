@@ -69,8 +69,8 @@ export default function PhilosophySection() {
           >
             <div className="relative w-full h-full rounded-[8px] overflow-hidden shadow-[0_12px_40px_-15px_rgba(0,0,0,0.05)] border border-neutral-200/50">
               <img
-                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop"
-                alt="Beautiful historic books pile on a rustic library table"
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_58_01-pm.png"
+                alt="Lola Shoneyin Guiding Philosophy"
                 className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />

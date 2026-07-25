@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowUpRight, Calendar } from "lucide-react";
 
-export default function Header() {
+interface HeaderProps {
+  onOpenCalendar?: () => void;
+}
+
+export default function Header({ onOpenCalendar }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
@@ -11,27 +15,28 @@ export default function Header() {
 
   const links = [
     { path: "/", label: "Home" },
-    { path: "/books", label: "Books" },
-    { path: "/ouida-books", label: "Ouida Books" },
-    { path: "/ouida-lagos", label: "Ouida Lagos" },
-    { path: "/writing", label: "Writing" },
-    { path: "/speaking", label: "Speaking" },
     { 
-      path: "/festivals", 
-      label: "Projects",
+      path: "/writing", 
+      label: "Writing",
       hasDropdown: true,
       subLinks: [
-        { path: "/festivals", label: "Ake Festival", desc: "International Arts & Book Festival" },
-        { path: "/film", label: "Film & Screen", desc: "Baba Segi & Screen Adaptations" },
+        { path: "/writing", label: "Writing & Essays", desc: "Longform essays, commentaries & selected articles" },
+        { path: "/books", label: "Books & Fiction", desc: "Novels, poetry collections & children's books" },
       ]
     },
+    { path: "/ouida-books", label: "Publishing" },
+    { path: "/ouida-lagos", label: "Spaces" },
+    { path: "/festivals", label: "Festivals" },
+    { path: "/film", label: "Film" },
     { 
       path: "/contact", 
       label: "Contact",
       hasDropdown: true,
       subLinks: [
-        { path: "/contact", label: "Contact Us", desc: "Work Inquiries & Booking" },
-        { path: "/press", label: "Press & Accolades", desc: "Media Coverage & Honors" },
+        { path: "/contact", label: "Contact Us", desc: "Get in touch & direct messages" },
+        { path: "/speaking", label: "Work Inquiries & Bookings", desc: "Keynotes, panels & speaking bookings" },
+        { path: "/press#accolades", label: "Accolades", desc: "Honors, awards & global recognition" },
+        { path: "/press", label: "Press", desc: "Media coverage & press kit" },
       ]
     },
   ];
@@ -156,10 +161,30 @@ export default function Header() {
                 </button>
               );
             })}
+
+            {/* Calendar Trigger Button */}
+            {onOpenCalendar && (
+              <button
+                onClick={onOpenCalendar}
+                className="flex items-center space-x-1.5 bg-rose-600/90 hover:bg-rose-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full shadow-md transition-all cursor-pointer border border-rose-500/50"
+              >
+                <Calendar size={13} />
+                <span>Calendar</span>
+              </button>
+            )}
           </nav>
 
           {/* Hamburger Menu Button on Top Right (prominent on mobile / screens < 800px) */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
+            {onOpenCalendar && (
+              <button
+                onClick={onOpenCalendar}
+                className="min-[800px]:hidden flex items-center space-x-1 bg-rose-600 text-white text-xs font-mono font-bold uppercase tracking-wider py-2 px-3 rounded-full shadow-md"
+              >
+                <Calendar size={13} />
+              </button>
+            )}
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs font-bold tracking-widest uppercase py-2 px-3.5 sm:py-2.5 sm:px-4 rounded-full border border-white/15 backdrop-blur-md transition-all duration-300 cursor-pointer outline-none"
@@ -197,6 +222,7 @@ export default function Header() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-rose-500 font-bold block mb-4">
                   NAVIGATION MENU
                 </span>
+
                 <nav className="flex flex-col space-y-3 sm:space-y-4">
                   {links.map((link, idx) => {
                     const isActive =
@@ -269,10 +295,10 @@ export default function Header() {
                       Contact Email
                     </span>
                     <a
-                      href="mailto:info@bookbuzzfoundation.org"
+                      href="mailto:info@lolashoneyin.com"
                       className="text-white hover:text-rose-400 transition-colors font-medium"
                     >
-                      info@bookbuzzfoundation.org
+                      info@lolashoneyin.com
                     </a>
                   </div>
                   <button

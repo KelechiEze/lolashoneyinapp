@@ -187,65 +187,50 @@ export default function HorizontalScrollSection() {
                 <div
                   key={book.id}
                   onClick={() => handleBookClick(book.id)}
-                  className="relative group cursor-pointer shrink-0 w-[240px] sm:w-[280px] md:w-[300px] transform-gpu"
+                  className="relative group cursor-pointer shrink-0 w-[240px] sm:w-[280px] md:w-[300px] flex flex-col space-y-3 transform-gpu"
                 >
-                  {/* 3D Fanned Open Pages Layer on the Right Edge */}
-                  <div className="absolute top-1.5 bottom-1.5 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-2 flex flex-col justify-between py-2 px-[1px] z-0 rounded-r-sm">
-                    <div className="w-full h-full border-r border-dashed border-neutral-400/50 flex flex-col justify-around">
-                      <div className="w-full h-[1px] bg-neutral-300" />
-                      <div className="w-full h-[1px] bg-neutral-300" />
-                      <div className="w-full h-[1px] bg-neutral-300" />
-                      <div className="w-full h-[1px] bg-neutral-300" />
-                      <div className="w-full h-[1px] bg-neutral-300" />
+                  {/* Square Book Cover Card with Page Edge */}
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_22px_36px_rgba(244,63,94,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
+                    {/* 3D Fanned Open Pages Layer on the Right Edge */}
+                    <div className="absolute top-1.5 bottom-1.5 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-2 px-[1px] z-0 rounded-r-sm">
+                      <div className="w-full h-full border-r border-dashed border-neutral-400/50 flex flex-col justify-around">
+                        <div className="w-full h-[1px] bg-neutral-300" />
+                        <div className="w-full h-[1px] bg-neutral-300" />
+                        <div className="w-full h-[1px] bg-neutral-300" />
+                      </div>
                     </div>
+
+                    {/* Book Cover Image - 100% Vivid, No Overlay, No Cropping */}
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
 
-                  {/* Main Standing Hardcover Book */}
-                  <div className="relative aspect-[3/4.2] w-full rounded-none overflow-hidden bg-neutral-900 border-l-[6px] border-l-rose-700 border-t border-b border-r border-neutral-800 shadow-[12px_18px_30px_rgba(0,0,0,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:shadow-[20px_26px_45px_rgba(0,0,0,0.35)] z-10 flex flex-col justify-between p-4 transform-gpu">
-                    
-                    {/* Spine crease shadow line */}
-                    <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/90 via-black/40 to-transparent z-20 pointer-events-none" />
-
-                    {/* Book Cover Image */}
-                    <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-neutral-950">
-                      <img
-                        src={book.image}
-                        alt={book.title}
-                        className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
-                        referrerPolicy="no-referrer"
-                      />
-                      {/* Subtle subtle gradient vignette at top and bottom for readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 z-10" />
-                    </div>
-
-                    {/* Header Badge */}
-                    <div className="flex items-center justify-between z-20 relative">
-                      <span className="font-mono text-[9px] font-black tracking-widest text-white bg-neutral-950/80 border border-white/20 px-2.5 py-0.5 uppercase shadow-sm">
+                  {/* Information Block Strictly Underneath */}
+                  <div className="space-y-1.5 text-left pt-1">
+                    <div className="flex items-center space-x-2">
+                      <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
                         {book.year}
                       </span>
-                      <span className="font-mono text-[8px] font-bold tracking-wider text-rose-300 bg-rose-950/80 border border-rose-700/50 px-2 py-0.5 uppercase">
+                      <span className="font-mono text-[10px] font-bold tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80 px-2 py-0.5 rounded-md uppercase">
                         {book.tag}
                       </span>
                     </div>
 
-                    {/* Bottom Title & Author Plaque */}
-                    <div className="z-20 relative mt-auto pt-3 space-y-1 text-left">
-                      <span className="font-mono text-[9px] text-amber-300 uppercase tracking-widest font-bold block">
-                        Lola Shoneyin
-                      </span>
-                      <h3 className="font-sans font-black text-base md:text-lg text-white tracking-tight leading-snug drop-shadow-md group-hover:text-rose-200 transition-colors">
-                        {book.title}
-                      </h3>
-                      <p className="text-[10px] text-neutral-300 line-clamp-2 leading-normal pt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans">
-                        {book.description}
-                      </p>
-                      
-                      <div className="pt-2 flex items-center text-[10px] font-mono text-rose-400 uppercase tracking-wider font-bold">
-                        <span>Click to view book</span>
-                        <ArrowUpRight size={12} className="ml-1" />
-                      </div>
-                    </div>
+                    <h3 className="font-serif font-extrabold text-base sm:text-lg text-neutral-950 tracking-tight leading-snug group-hover:text-rose-600 transition-colors">
+                      {book.title}
+                    </h3>
 
+                    <p className="font-sans text-xs font-semibold text-neutral-500">
+                      By Lola Shoneyin
+                    </p>
+
+                    <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
+                      {book.description}
+                    </p>
                   </div>
                 </div>
               ))}

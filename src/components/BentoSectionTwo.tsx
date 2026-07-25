@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, Rocket, Zap, Settings, Star, Layers } from "lucide-react";
+import { Users, Rocket, Zap, Settings, Star, Sparkles } from "lucide-react";
 
 export const BentoSectionTwo: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ export const BentoSectionTwo: React.FC = () => {
         {/* ROW 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
           
-          {/* Row 1, Item 1: Real-time Festival Tracking */}
+          {/* Row 1, Item 1: African Voices & Global Curation */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -18,25 +18,19 @@ export const BentoSectionTwo: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-4 bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[280px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-sm relative overflow-hidden transform-gpu"
           >
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <div className="mb-6 relative flex justify-center w-full">
-                <div className="w-52 sm:w-60 h-32 bg-neutral-950 text-white shadow-2xl p-4 flex flex-col justify-between rounded-xl border border-white/10 transform -rotate-2">
-                  <div className="flex justify-between items-center">
-                    <div className="h-2 w-1/3 bg-white/20 rounded" />
-                    <span className="text-[9px] font-mono text-rose-400 font-bold uppercase tracking-widest">AKÉ FEST</span>
-                  </div>
-                  <div className="h-10 w-full bg-white/5 rounded flex items-center px-3 justify-between border border-white/10">
-                     <div className="w-3 h-3 bg-rose-600 rounded-full" />
-                     <div className="text-[10px] font-mono text-white/80 font-bold uppercase">10,000+ Guests</div>
-                  </div>
-                  <div className="h-6 w-full bg-rose-600/20 rounded flex items-center justify-center text-[9px] font-mono text-rose-300 font-bold uppercase tracking-wider">
-                     Live Programming Schedule
-                  </div>
-                </div>
+            <div className="relative z-10 w-full flex flex-col items-center max-w-sm space-y-3">
+              <div className="p-3 bg-rose-50 border border-rose-100 rounded-full text-rose-600 mb-1">
+                <Sparkles size={28} />
               </div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-rose-600">
+                CULTURAL INITIATIVES
+              </span>
               <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase leading-tight font-sans">
-                Real-Time Festival<br />& Event Tracking
+                African Voices &<br />Global Curation
               </h3>
+              <p className="text-xs sm:text-sm font-medium text-neutral-500 leading-relaxed">
+                Pioneering cultural festivals, publishing initiatives, and creative spaces that connect African storytellers with audiences worldwide.
+              </p>
             </div>
           </motion.div>
 
@@ -113,9 +107,9 @@ export const BentoSectionTwo: React.FC = () => {
             </div>
             <div className="absolute right-0 bottom-0 w-3/5 h-3/5 opacity-90">
                <img 
-                 src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600" 
-                 alt="Library or Studio" 
-                 className="w-full h-full object-cover object-bottom rounded-tl-2xl border-t border-l border-neutral-200"
+                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png" 
+                 alt="Lola Shoneyin Speaking Event" 
+                 className="w-full h-full object-cover object-center rounded-tl-2xl border-t border-l border-neutral-200"
                  referrerPolicy="no-referrer"
                />
             </div>
@@ -157,9 +151,9 @@ export const BentoSectionTwo: React.FC = () => {
             className="lg:col-span-4 bg-neutral-950 flex flex-col justify-between min-h-[360px] md:min-h-[400px] rounded-[16px] border border-neutral-800 shadow-md overflow-hidden relative group transform-gpu"
           >
             <img 
-              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" 
-              alt="Dedicated Assistance" 
-              className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700 ease-out"
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-04_21_48-pm.png" 
+              alt="Lola Shoneyin Cultural Event" 
+              className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 ease-out"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent" />

@@ -328,6 +328,65 @@ export default function OuidaBooksPage() {
 
       </section>
 
+      {/* 3.5 DEDICATED IMPRINTS SECTION */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 space-y-12">
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
+            OUR PUBLISHING IMPRINTS
+          </span>
+          <h2 className="font-serif italic font-extrabold text-4xl sm:text-5xl text-neutral-950 tracking-tight">
+            Four Specialized Imprints
+          </h2>
+          <p className="font-sans text-neutral-600 text-sm leading-relaxed">
+            Ouida Books operates four distinct imprints designed to foster diverse literary genres and voices across the African continent and diaspora.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              name: "Cognix",
+              focus: "Non-Fiction & Policy",
+              desc: "Dedicated to intellectual non-fiction, biographies, cultural essays, political science, and academic commentary.",
+              badge: "NON-FICTION"
+            },
+            {
+              name: "Teyani",
+              focus: "Children & Young Adult",
+              desc: "Whimsical children's picture books and vibrant young adult fiction celebrating African youth agency and imagination.",
+              badge: "YOUNG READERS"
+            },
+            {
+              name: "Tanja",
+              focus: "Commercial & Thrillers",
+              desc: "Fast-paced crime fiction, psychological thrillers, romance, and speculative fiction crafted for broad popular appeal.",
+              badge: "COMMERCIAL FICTION"
+            },
+            {
+              name: "Phoenix",
+              focus: "Literary Prose & Poetry",
+              desc: "Award-winning literary fiction, ground-breaking verse collections, and high-art storytelling exploring complex human truths.",
+              badge: "LITERARY FICTION"
+            }
+          ].map((imp) => (
+            <div key={imp.name} className="bg-white border border-neutral-200/90 rounded-2xl p-6 space-y-4 shadow-sm hover:shadow-md transition-all">
+              <span className="font-mono text-[9px] font-extrabold text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-md uppercase">
+                {imp.badge}
+              </span>
+              <h3 className="font-serif italic font-black text-2xl text-neutral-950">
+                {imp.name}
+              </h3>
+              <p className="font-mono text-[11px] font-bold text-rose-600 uppercase tracking-wider">
+                {imp.focus}
+              </p>
+              <p className="font-sans text-xs text-neutral-600 leading-relaxed">
+                {imp.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 4. FLOATING CLOUD / TAGS ORBIT SECTION ("What we bring to the table") */}
       <section className="relative py-28 px-6 overflow-hidden bg-[#f7f4ee]">
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">

@@ -164,15 +164,15 @@ export default function ProjectDetailPage() {
                 Gallery & Frames
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {project.gallery.map((imgUrl, idx) => (
-                  <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-100 border border-neutral-200/80 shadow-sm group">
+                  <div key={idx} className="relative aspect-[3/4.2] w-full overflow-hidden rounded-xl bg-neutral-100 border border-neutral-200/80 shadow-sm group flex items-center justify-center p-2">
                     <img
                       src={imgUrl}
                       alt={`Gallery plate ${idx + 1}`}
-                      className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-neutral-800 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-200 shadow-sm font-bold">
+                    <div className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-neutral-800 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-200 shadow-sm font-bold z-10">
                       FRAME 0{idx + 1}
                     </div>
                   </div>

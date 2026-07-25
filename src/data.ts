@@ -6,15 +6,15 @@ export const PROJECTS: ProjectData[] = [
     title: "The Secret Lives of Baba Segi's Wives",
     tagline: "Debut Novel & Cultural Phenomenon",
     description: "PUBLISHED IN 2010, THIS STUNNING DEBUT UNRAVELS THE INTIMATE STRUGGLES, SECRETS, AND RESILIENCE OF FOUR WIVES IN A POLYGAMOUS HOUSEHOLD. TRANSLATED INTO THIRTEEN LANGUAGES AND NOMINATED FOR THE ORANGE PRIZE FOR FICTION.",
-    coverImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1920&auto=format&fit=crop",
+    coverImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_31_03-pm.png",
     year: "2010",
     client: "HarperCollins / Ouida Books",
     role: "Author",
     location: "Lagos, Nigeria",
     gallery: [
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200",
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200",
-      "https://images.unsplash.com/photo-1476275466078-4007374efbbe?q=80&w=1200"
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/seghi1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/kigi.jpg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/segid.jpg"
     ],
     credits: [
       { role: "Author", name: "Lola Shoneyin" },
@@ -33,15 +33,15 @@ export const PROJECTS: ProjectData[] = [
     title: "Aké Arts and Book Festival",
     tagline: "Nigeria's Premier Literary Gathering",
     description: "FOUNDED IN 2013, AKÉ HAS GROWN INTO ONE OF THE MOST SIGNIFICANT LITERARY AND CULTURAL CONVENTIONS ON THE AFRICAN CONTINENT, GATHERING WRITERS, POETS, ARTISTS, AND FILMMAKERS TO DISCUSS IDEAS AND CELEBRATE THE ARTS.",
-    coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1920&auto=format&fit=crop",
+    coverImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_35_24-pm.png",
     year: "2013 - Present",
     client: "Book Buzz Foundation",
     role: "Founder & Director",
     location: "Lagos / Abuja, Nigeria",
     gallery: [
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200",
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200",
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200"
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/keke1.jpg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/keke2.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/keke3.jpeg"
     ],
     credits: [
       { role: "Founder & Director", name: "Lola Shoneyin" },
@@ -59,14 +59,15 @@ export const PROJECTS: ProjectData[] = [
     title: "Ouida Books & OuidaLagos",
     tagline: "Publishing House & Cultural Hub",
     description: "A VIBRANT LITERARY CORNERSTONE FEATURING A HIGH-END PUBLISHING HOUSE COMMITTED TO AFRICAN VOICES, AND A CULTURAL HUB IN LAGOS FEATURING A BOOKSHOP, CAFÉ, AND RESIDENCY AT 34 AJANAKU STREET.",
-    coverImage: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1920&auto=format&fit=crop",
+    coverImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_22_31-pm.png",
     year: "2016 - Present",
     client: "Ouida Group",
     role: "Founder & Publisher",
     location: "Opebi, Lagos",
     gallery: [
-      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200",
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200"
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/books1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/books3.webp",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/books4.jpg"
     ],
     credits: [
       { role: "Founder & Publisher", name: "Lola Shoneyin" },

@@ -28,7 +28,8 @@ export default function Card({ project, index, total, onViewProject }: CardProps
       />
 
       {/* Dark Vignette Gradient Overlay for Crisp Readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/50 to-neutral-950/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-neutral-950/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/70 to-neutral-950/50 pointer-events-none" />
 
       {/* Viewfinder Photographic Corner Borders */}
       <div className="absolute inset-0 p-4 sm:p-8 md:p-14 pointer-events-none z-20">
@@ -42,10 +43,6 @@ export default function Card({ project, index, total, onViewProject }: CardProps
 
       {/* Central Editorial Content Panel */}
       <div className="relative z-30 px-4 sm:px-8 md:px-12 max-w-4xl text-center flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8 transform-gpu">
-        <span className="font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase font-bold text-rose-400 bg-black/50 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 shadow-lg">
-          PROJECT 0{index + 1} OF 0{total}
-        </span>
-
         <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] text-white tracking-wide font-light leading-tight sm:leading-none select-text drop-shadow-md">
           {project.title}
         </h2>

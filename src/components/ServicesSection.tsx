@@ -19,8 +19,8 @@ const PILLARS_DATA: Pillar[] = [
     title: "Writing & Novels",
     description: "Author of three poetry collections, ten children's books, and the award-winning novel 'The Secret Lives of Baba Segi's Wives' which was nominated for the Orange Prize for Fiction.",
     buttonText: "EXPLORE WRITING",
-    imageUrl: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop",
-    altText: "A stack of beautiful novels and notebooks in a library",
+    imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_42_52-pm.png",
+    altText: "Lola Shoneyin Writing & Novels",
   },
   {
     id: "festivals",
@@ -28,8 +28,8 @@ const PILLARS_DATA: Pillar[] = [
     title: "Literary Festivals",
     description: "Founder and director of Aké Arts and Book Festival (celebrating 14 years), the Abuja Festival of Literature and Ideas, and the Lagos International Festival of Illustrations (LIFI).",
     buttonText: "VIEW FESTIVALS",
-    imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200&auto=format&fit=crop",
-    altText: "A bright stage with authors and creative speakers",
+    imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_35_24-pm.png",
+    altText: "Aké Arts and Book Festival stage and creative speakers",
   },
   {
     id: "publishing",
@@ -37,8 +37,8 @@ const PILLARS_DATA: Pillar[] = [
     title: "Publishing & Bookstore",
     description: "Publisher of Ouida Books, supporting bold African voices, and founder of OuidaLagos—a high-end bookstore, café, and cultural hub located at 34 Ajanaku Street in Lagos.",
     buttonText: "VISIT OUIDA",
-    imageUrl: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
-    altText: "Shelves in a curated cultural bookshop with lighting",
+    imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_45_42-pm.png",
+    altText: "Ouida Books and cultural hub in Lagos",
   },
   {
     id: "film",
@@ -46,8 +46,8 @@ const PILLARS_DATA: Pillar[] = [
     title: "Documentary Filmmaking",
     description: "Creating living archives that address undercelebrated culture and social struggles, including 'Flowers for Warriors' and the upcoming documentary 'Egbe: Searching for Belonging'.",
     buttonText: "WATCH FILMS",
-    imageUrl: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
-    altText: "Film lens camera setup shooting documentary outdoor",
+    imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/ake-article.jpg",
+    altText: "Documentary filmmaking and living archives",
   },
 ];
 

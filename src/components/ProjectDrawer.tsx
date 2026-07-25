@@ -157,59 +157,25 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
             </motion.div>
 
             {/* Photo Layouts - Premium Editorial Style */}
-            <div className="space-y-12">
+            <div className="space-y-8">
               <h2 className="font-serif italic text-3xl md:text-4xl text-zinc-200 font-light border-b border-white/10 pb-4">
                 The Frames
               </h2>
 
-              {/* Grid Layout 1: Wide cinematic block */}
-              <div className="relative aspect-[16/10] overflow-hidden rounded group bg-neutral-900">
-                <img
-                  src={project.gallery[1] || project.coverImage}
-                  alt="Gallery plate 1"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out transform hover:scale-102"
-                />
-                <div className="absolute bottom-3 left-4 text-[10px] font-mono tracking-widest text-white/50 bg-neutral-950/60 px-2 py-0.5 rounded">
-                  PLATE 01 / RESOLUTE FRAME
-                </div>
-              </div>
-
-              {/* Grid Layout 2: Two columns side-by-side */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="relative aspect-[3/4] overflow-hidden rounded bg-neutral-900">
-                  <img
-                    src={project.gallery[2] || project.coverImage}
-                    alt="Gallery plate 2"
-                    className="w-full h-full object-cover hover:scale-102 transition-all duration-700 ease-in-out"
-                  />
-                  <div className="absolute bottom-3 left-4 text-[10px] font-mono tracking-widest text-white/50 bg-neutral-950/60 px-2 py-0.5 rounded">
-                    PLATE 02 / GEOMETRIC INTENT
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {project.gallery.map((imgUrl, idx) => (
+                  <div key={idx} className="relative aspect-[3/4.2] w-full overflow-hidden rounded-xl bg-neutral-900 border border-white/10 shadow-lg group flex items-center justify-center p-2">
+                    <img
+                      src={imgUrl}
+                      alt={`Gallery plate ${idx + 1}`}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-white/90 bg-neutral-950/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 font-bold z-10">
+                      PLATE 0{idx + 1}
+                    </div>
                   </div>
-                </div>
-                <div className="relative aspect-[3/4] overflow-hidden rounded bg-neutral-900">
-                  <img
-                    src={project.gallery[3] || project.coverImage}
-                    alt="Gallery plate 3"
-                    className="w-full h-full object-cover hover:scale-102 transition-all duration-700 ease-in-out"
-                  />
-                  <div className="absolute bottom-3 left-4 text-[10px] font-mono tracking-widest text-white/50 bg-neutral-950/60 px-2 py-0.5 rounded">
-                    PLATE 03 / THE CAPTIVE EYE
-                  </div>
-                </div>
+                ))}
               </div>
-
-              {/* Grid Layout 3: Wide cinematic block 2 */}
-              <div className="relative aspect-[16/9] overflow-hidden rounded group bg-neutral-900">
-                <img
-                  src={project.gallery[4] || project.coverImage}
-                  alt="Gallery plate 4"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out transform hover:scale-102"
-                />
-                <div className="absolute bottom-3 left-4 text-[10px] font-mono tracking-widest text-white/50 bg-neutral-950/60 px-2 py-0.5 rounded">
-                  PLATE 04 / EXPOSURE CONTEXT
-                </div>
-              </div>
-
             </div>
 
             {/* End of Project Navigation / Back to portfolio */}

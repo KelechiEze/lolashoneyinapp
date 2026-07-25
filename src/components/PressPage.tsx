@@ -1,109 +1,185 @@
-import React from "react";
-import { Award, Newspaper, ArrowUpRight, Globe } from "lucide-react";
+import React, { useState } from "react";
+import { Award, Newspaper, ArrowUpRight, HelpCircle, ChevronDown, ChevronUp, Sparkles, CheckCircle2 } from "lucide-react";
+
+export interface AwardItem {
+  year: string;
+  title: string;
+  organization: string;
+  summary: string;
+  isFestivalAward?: boolean;
+}
+
+const AWARDS_LIST: AwardItem[] = [
+  {
+    year: "2026",
+    title: "Royal Society of Literature (RSL) Fellow",
+    organization: "Royal Society of Literature, UK",
+    summary: "Elected to the prestigious Royal Society of Literature Fellowship for outstanding lifelong contribution to literature and institution building."
+  },
+  {
+    year: "2023",
+    title: "FT 25 Most Influential Women",
+    organization: "Financial Times",
+    summary: "Recognized among the 25 most influential women globally for creating sovereign platforms for African authors, publishers, and illustrators."
+  },
+  {
+    year: "2023",
+    title: "Inaugural Aficionado Award",
+    organization: "Frankfurt Book Fair & Salone del Libro di Torino",
+    summary: "Awarded to Aké Arts and Book Festival for outstanding, highly original publishing and literary initiatives on the African continent.",
+    isFestivalAward: true
+  },
+  {
+    year: "2017",
+    title: "African Literary Person of the Year",
+    organization: "Brittle Paper & Continental Literary Press",
+    summary: "Honored as African Literary Person of the Year for pioneering work with Aké Festival, Book Buzz Foundation, and Ouida Books."
+  },
+  {
+    year: "2011",
+    title: "Orange Prize for Fiction (Longlist)",
+    organization: "Orange Prize Foundation",
+    summary: "Nominated for the prestigious Orange Prize for Fiction for her debut novel, The Secret Lives of Baba Segi's Wives."
+  },
+  {
+    year: "2011",
+    title: "PEN Oakland Josephine Miles Literary Award",
+    organization: "PEN Oakland",
+    summary: "Awarded for outstanding multicultural literary accomplishment for The Secret Lives of Baba Segi's Wives."
+  }
+];
+
+const FAQS = [
+  {
+    q: "How can I submit a manuscript to Ouida Books?",
+    a: "Ouida Books opens open reading submission windows twice a year across its imprints (Cognix, Teyani, Tanja, Phoenix). Please check our Publishing page or email publishing inquiries via info@lolashoneyin.com during active submission windows."
+  },
+  {
+    q: "How do I book Lola Shoneyin for a keynote speech or panel?",
+    a: "Booking requests for international conferences, university guest lectures, and literary festivals should be submitted via the Contact page or directly to info@lolashoneyin.com at least 6 weeks in advance."
+  },
+  {
+    q: "When and where does Aké Festival take place?",
+    a: "Aké Arts and Book Festival takes place annually in November in Nigeria and online. Specific dates, guest lineups, and ticketing details are published on the Festivals page."
+  },
+  {
+    q: "Are the film screen rights available for Baba Segi's Wives?",
+    a: "Film and theatrical adaptation inquiries regarding Lola Shoneyin's works (excluding EbonyLife production arrangements) should be directed through legal management via info@lolashoneyin.com."
+  },
+  {
+    q: "What is the relationship between Book Buzz Foundation, Ouida Books, and Ouida Lagos?",
+    a: "Book Buzz Foundation is a non-profit organization dedicated to literacy and festivals (Aké, LIFI, AFLI). Ouida Books is the independent publishing house, and Ouida Lagos is the physical bookstore and cultural hub in Ikeja."
+  }
+];
 
 export default function PressPage() {
-  const accolades = [
-    {
-      id: "ft-2023",
-      source: "Financial Times",
-      title: "The Most Influential Women of 2023",
-      tagline: "Honouring global leaders shaping literature and cultural institutions",
-      desc: "Lola Shoneyin was named among the Financial Times' highly respected compilation of the world's most powerful and influential women, celebrating her massive decade-long dedication to creating platforms for African arts.",
-      link: "https://www.ft.com",
-      badge: "FT WOMAN 2023"
-    },
-    {
-      id: "guardian-2024",
-      source: "The Guardian",
-      title: "The Most Inspiring People of 2024",
-      tagline: "Spotlighting cultural visionaries building creative networks",
-      desc: "Recognised for her pioneering efforts in introducing the Lagos International Festival of Illustrations (LIFI) and guiding the Book Buzz Foundation to empower independent artists across Africa.",
-      link: "https://www.theguardian.com",
-      badge: "MOST INSPIRING 2024"
-    },
-    {
-      id: "frankfurt-award",
-      source: "Frankfurt Book Fair",
-      title: "Winner of the Aficionado Award",
-      tagline: "Outstanding and highly original publishing initiatives",
-      desc: "Aké Arts and Book Festival became the inaugural winner of the Aficionado Award, recognizing outstanding efforts in building international networks and supporting African creatives.",
-      link: "https://www.buchmesse.de",
-      badge: "AFICIONADO AWARD"
-    }
-  ];
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  const pressLinks = [
-    { source: "PEN Oakland", text: "Josephine Miles Literary Award", year: "2011" },
-    { source: "Orange Prize", text: "Orange Prize for Fiction Nomination", year: "2011" },
-    { source: "Ken Saro-Wiwa Prize", text: "Ken Saro-Wiwa Prose Prize Winner", year: "2011" },
-    { source: "ANA Prize", text: "Association of Nigerian Authors Prose Prize Winner", year: "2011" }
-  ];
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIndex(openFaqIndex === idx ? null : idx);
+  };
 
   return (
-    <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12">
+    <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white">
       <div className="max-w-7xl mx-auto space-y-24">
         
         {/* PAGE HERO */}
         <div className="space-y-4 max-w-4xl">
           <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            PRESS RELEASES & RECOGNITION
+            PRESS, AWARDS & FAQ
           </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Press & Accolades
           </h1>
-          <p className="text-neutral-600 font-serif italic text-lg max-w-2xl">
-            Curated coverage and honorary acknowledgements from leading global press, festivals, and publishers.
+          <p className="text-neutral-600 font-serif italic text-lg max-w-2xl leading-relaxed">
+            Honors, global media recognition, literary fellowships, and frequently asked press questions.
           </p>
         </div>
 
-        {/* ACCLAIM FEATURE CARDS */}
-        <div className="space-y-10 border-t border-neutral-200 pt-16">
-          <h3 className="font-sans font-bold text-sm uppercase tracking-widest text-neutral-500">Featured Media Coverages</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {accolades.map((a) => (
-              <div key={a.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] p-8 flex flex-col justify-between space-y-8 hover:border-neutral-300 transition-colors shadow-md">
-                <div className="space-y-4">
+        {/* AWARDS AND PRIZES SECTION */}
+        <div className="border-t border-neutral-200 pt-16 space-y-12">
+          <div className="space-y-2">
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">HONORS & PRIZES</span>
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              Awards & Recognition
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {AWARDS_LIST.map((award, idx) => (
+              <div
+                key={idx}
+                className="bg-neutral-50 border border-neutral-200 rounded-2xl p-7 space-y-4 flex flex-col justify-between hover:border-neutral-300 transition-all shadow-sm"
+              >
+                <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[9px] font-black tracking-widest text-rose-700 bg-rose-600/10 px-2 py-0.5 rounded-[4px] uppercase">{a.badge}</span>
-                    <Newspaper size={18} className="text-neutral-400" />
+                    <span className="font-mono text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1 rounded-md">
+                      {award.year}
+                    </span>
+                    <Award size={20} className={award.isFestivalAward ? "text-amber-500" : "text-rose-600"} />
                   </div>
-                  <div>
-                    <h4 className="font-sans font-black text-[10px] tracking-widest uppercase text-neutral-500">{a.source}</h4>
-                    <h3 className="font-sans font-extrabold text-xl text-neutral-900 tracking-tight leading-tight mt-1">{a.title}</h3>
-                  </div>
-                  <p className="font-serif italic text-xs text-neutral-500">{a.tagline}</p>
-                  <p className="font-sans text-xs text-neutral-700 leading-relaxed select-text">{a.desc}</p>
+
+                  <h3 className="font-sans font-black text-xl text-neutral-950 uppercase tracking-tight leading-snug">
+                    {award.title}
+                  </h3>
+
+                  <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-neutral-500 block">
+                    {award.organization}
+                  </span>
+
+                  <p className="font-sans text-xs text-neutral-600 leading-relaxed">
+                    {award.summary}
+                  </p>
                 </div>
 
-                <div className="pt-4 border-t border-neutral-200">
-                  <a
-                    href={a.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 text-xs text-neutral-800 uppercase tracking-widest font-bold hover:text-rose-600 transition-colors group"
-                  >
-                    <span>Read Full Profile</span>
-                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-                </div>
+                {award.isFestivalAward && (
+                  <div className="pt-3 border-t border-neutral-200/80 flex items-center space-x-2 text-[10px] font-mono text-amber-700 font-bold uppercase">
+                    <Sparkles size={12} />
+                    <span>Awarded to Aké Arts & Book Festival</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* LITERARY HONORS */}
-        <div className="border-t border-neutral-200 pt-16 space-y-8">
-          <h3 className="font-sans font-bold text-sm uppercase tracking-widest text-neutral-500">Literary Honors & Nominations</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {pressLinks.map((p, idx) => (
-              <div key={idx} className="bg-neutral-50 hover:bg-neutral-100/80 border border-neutral-200 rounded-[8px] p-6 flex flex-col justify-between h-36 transition-all duration-300 shadow-sm">
-                <span className="font-mono text-xs text-rose-600 font-bold">{p.year}</span>
-                <div className="space-y-1">
-                  <h4 className="font-sans font-extrabold text-sm text-neutral-800 uppercase tracking-tight">{p.source}</h4>
-                  <p className="font-sans text-[10px] text-neutral-500 uppercase">{p.text}</p>
+        {/* FREQUENTLY ASKED QUESTIONS (FAQ) */}
+        <div className="border-t border-neutral-200 pt-16 space-y-10">
+          <div className="space-y-2">
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">HELP & PRESS INFORMATION</span>
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              Frequently Asked Questions (FAQ)
+            </h2>
+          </div>
+
+          <div className="max-w-4xl space-y-4">
+            {FAQS.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-neutral-50 border border-neutral-200 rounded-xl overflow-hidden transition-all"
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full p-6 text-left flex items-center justify-between space-x-4 cursor-pointer focus:outline-none"
+                  >
+                    <span className="font-sans font-extrabold text-base sm:text-lg text-neutral-950 uppercase tracking-tight">
+                      {faq.q}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-neutral-200/80 flex items-center justify-center shrink-0 text-neutral-700">
+                      {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-0 font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed border-t border-neutral-200/60 pt-4">
+                      {faq.a}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
