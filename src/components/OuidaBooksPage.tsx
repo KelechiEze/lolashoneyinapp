@@ -19,67 +19,125 @@ const CATALOG_BOOKS: PublishedBook[] = [
     title: "The Secret Lives of Baba Segi's Wives",
     author: "Lola Shoneyin",
     category: "Prose Fiction",
-    year: "2016",
+    year: "2010",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
     synopsis: "The definitive Nigerian edition of the award-winning bestseller capturing power dynamics, female agency, and familial secrets within a polygamous household."
   },
   {
-    id: "vagabonds",
-    title: "Vagabonds!",
-    author: "Eloghosa Osunde",
-    category: "Prose Fiction",
+    id: "sitting-on-an-egg",
+    title: "So All the Time I Was Sitting on an Egg",
+    author: "Lola Shoneyin",
+    category: "Poetry Collection",
+    year: "1997",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
+    synopsis: "A ground-breaking debut poetry collection exploring personal autonomy, motherhood, sexuality, and Nigerian womanhood."
+  },
+  {
+    id: "song-of-a-riverbird",
+    title: "Song of a Riverbird",
+    author: "Lola Shoneyin",
+    category: "Poetry Collection",
+    year: "2002",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg",
+    synopsis: "A poignant verse anthology capturing memories of Nigeria, riverine life, political observation, and deep emotional longing."
+  },
+  {
+    id: "for-the-love-of-flight",
+    title: "For the Love of Flight",
+    author: "Lola Shoneyin",
+    category: "Poetry Collection",
+    year: "2010",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
+    synopsis: "A celebrated third collection of mature poetry dealing with freedom, flight, domestic tension, and emotional courage."
+  },
+  {
+    id: "setto-saves-the-trees",
+    title: "Setto Saves the Trees",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2025",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg",
+    synopsis: "An eco-friendly journey teaching children the value of trees, environmental stewardship, and community action."
+  },
+  {
+    id: "anyibo-mother-hen",
+    title: "Anyibo and the Mother Hen",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png",
+    synopsis: "A heartwarming story celebrating curiosity, compassion, and the wonders of nature for young readers."
+  },
+  {
+    id: "hassan-hussaina",
+    title: "A Durbar for Hassan and Hussaina",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
+    synopsis: "A festive cultural adventure through the grand traditions, horsemanship, and vibrant colors of Northern Nigeria."
+  },
+  {
+    id: "mayowa-masquerades",
+    title: "Mayowa and the Masquerades",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2010",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg",
+    synopsis: "An adventurous story following young Mayowa as he uncovers the vibrant folklore and rhythm of festival masquerades."
+  },
+  {
+    id: "iyaji-house-girl",
+    title: "Iyaji the House Girl",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2021",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/iyaji.png",
+    synopsis: "An inspiring story of perseverance, education, dignity, and unyielding hope in West African youth."
+  },
+  {
+    id: "jamila-clever-plan",
+    title: "Jamila's Clever Plan",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
     year: "2022",
-    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop",
-    synopsis: "An audacious, shape-shifting portrait of subterranean Lagos, celebrating outcasts, spirits, and wild defiance in contemporary West Africa."
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png",
+    synopsis: "A tale of ingenuity and teamwork where young Jamila solves a community challenge through creative thinking."
   },
   {
-    id: "stay-with-me",
-    title: "Stay With Me",
-    author: "Ayọ̀bámi Adébáyọ̀",
-    category: "Prose Fiction",
-    year: "2017",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop",
-    synopsis: "A devastatingly human story of marriage, motherhood, grief, and societal pressure set against the political backdrop of 1980s Nigeria."
+    id: "pwada-can-do-anything",
+    title: "Pwada Can Do Anything",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/pwada.png",
+    synopsis: "Empowering young girls to break boundaries, believe in themselves, and reach high in every endeavor."
   },
   {
-    id: "fishermen",
-    title: "The Fishermen",
-    author: "Chigozie Obioma",
-    category: "Prose Fiction",
-    year: "2015",
-    image: "https://images.unsplash.com/photo-1495640388908-05fa85288e61?q=80&w=800&auto=format&fit=crop",
-    synopsis: "A mythic, tragic tale of four brothers in Akure whose lives are radically transformed by a dark prophecy encounter."
-  },
-  {
-    id: "udala-trees",
-    title: "Under the Udala Trees",
-    author: "Chinelo Okparanta",
-    category: "Literary Fiction",
-    year: "2015",
-    image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800&auto=format&fit=crop",
-    synopsis: "A deeply moving coming-of-age story set during the Nigerian Civil War exploring love, faith, and identity."
-  },
-  {
-    id: "black-ass",
-    title: "Blackass",
-    author: "A. Igoni Barrett",
-    category: "Satire & Fiction",
-    year: "2016",
-    image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800&auto=format&fit=crop",
-    synopsis: "A fierce, funny, and Kafkaesque satire about race, privilege, and survival in the booming metropolis of Lagos."
+    id: "do-as-youre-told-baji",
+    title: "Do As You're Told, Baji",
+    author: "Lola Shoneyin",
+    category: "Children's Literature",
+    year: "2022",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg",
+    synopsis: "A funny and engaging lesson on responsibility, listening, and growing up with a courageous spirit."
   }
 ];
 
-// Continuous Marquee Book Covers
+// Continuous Marquee Book Covers with Actual Shared Images
 const MARQUEE_COVERS = [
   { title: "Baba Segi's Wives", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
-  { title: "Vagabonds!", cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop" },
-  { title: "Stay With Me", cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop" },
-  { title: "The Fishermen", cover: "https://images.unsplash.com/photo-1495640388908-05fa85288e61?q=80&w=800&auto=format&fit=crop" },
-  { title: "Under Udala Trees", cover: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800&auto=format&fit=crop" },
-  { title: "Blackass", cover: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800&auto=format&fit=crop" },
-  { title: "Ouida Anthology", cover: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?q=80&w=800&auto=format&fit=crop" },
-  { title: "Anansesem Tales", cover: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop" },
+  { title: "Sitting on an Egg", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg" },
+  { title: "Song of a Riverbird", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg" },
+  { title: "For the Love of Flight", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg" },
+  { title: "Setto Saves the Trees", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg" },
+  { title: "Anyibo & Mother Hen", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png" },
+  { title: "Hassan & Hussaina", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png" },
+  { title: "Mayowa & Masquerades", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg" },
+  { title: "Iyaji the House Girl", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/iyaji.png" },
+  { title: "Jamila's Clever Plan", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png" },
+  { title: "Pwada Can Do Anything", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/pwada.png" },
+  { title: "Do As You're Told Baji", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg" }
 ];
 
 export default function OuidaBooksPage() {
@@ -113,7 +171,7 @@ export default function OuidaBooksPage() {
         >
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
-            alt="Baba Segi Cover"
+            alt="The Secret Lives of Baba Segi's Wives"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -132,8 +190,8 @@ export default function OuidaBooksPage() {
           className="hidden md:block absolute top-6 right-6 lg:right-16 w-36 h-48 lg:w-48 lg:h-64 rounded-2xl overflow-hidden shadow-2xl z-10 pointer-events-none transform rotate-12"
         >
           <img
-            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop"
-            alt="Vagabonds Cover"
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
+            alt="Setto Saves the Trees"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -152,8 +210,8 @@ export default function OuidaBooksPage() {
           className="hidden lg:block absolute bottom-10 left-12 lg:left-32 w-32 h-40 lg:w-40 lg:h-52 rounded-2xl overflow-hidden shadow-xl z-10 pointer-events-none transform -rotate-6"
         >
           <img
-            src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop"
-            alt="Stay With Me Cover"
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
+            alt="So All the Time I Was Sitting on an Egg"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -172,8 +230,8 @@ export default function OuidaBooksPage() {
           className="hidden lg:block absolute bottom-12 right-12 lg:right-32 w-32 h-40 lg:w-40 lg:h-52 rounded-2xl overflow-hidden shadow-xl z-10 pointer-events-none transform rotate-6"
         >
           <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg"
-            alt="Ouida House"
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
+            alt="A Durbar for Hassan and Hussaina"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Award, ArrowUpRight, Plus, Minus, Film, Radio, Play, X, Sparkles } from "lucide-react";
+import { BookOpen, Award, ArrowUpRight, Film, Radio, Play, X, Sparkles } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import HorizontalScrollSection, { CHILDREN_BOOKS_DATA, ChildrenBookItem } from "./HorizontalScrollSection";
 import PoetrySection, { POETRY_COLLECTIONS } from "./PoetrySection";
@@ -13,8 +13,8 @@ interface TranslationItem {
 }
 
 const TRANSLATIONS: TranslationItem[] = [
-  { lang: "English (Edition)", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
   { lang: "French", title: "Les vies secrètes des épouses de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38.jpeg" },
+  { lang: "English (Edition)", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
   { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
   { lang: "German", title: "Die geheimen Leben der Frauen des Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
   { lang: "Yoruba", title: "Ìgbésí Ayé Àṣírí Àwọn Iyawo Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_11_34-pm.png" },
@@ -23,14 +23,13 @@ const TRANSLATIONS: TranslationItem[] = [
   { lang: "Portuguese", title: "As Vidas Secretas das Mulheres de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38.jpeg" },
   { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
   { lang: "Polish", title: "Sekretne życia żon Baby Segiego", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
-  { lang: "Swedish", title: "Baba Segis hustrus hemliga liv", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_11_34-pm.png" },
+  { lang: "Swedish", title: "Baba Segis hustrus hemliga liv", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
   { lang: "Swahili", title: "Maisha ya Siri ya Wake wa Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_14_17-pm.png" }
 ];
 
 export default function BooksPage() {
   const location = useLocation();
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
   const [activeModalBook, setActiveModalBook] = useState<ChildrenBookItem | null>(null);
 
   useEffect(() => {
@@ -49,7 +48,7 @@ export default function BooksPage() {
     }
   }, [location.state]);
 
-  const visibleCovers = showAll ? TRANSLATIONS : TRANSLATIONS.slice(0, 6);
+  const visibleCovers = TRANSLATIONS;
 
   return (
     <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white">
@@ -219,21 +218,6 @@ export default function BooksPage() {
               </AnimatePresence>
             </div>
 
-            {/* Load More / Show Less Button */}
-            <div className="flex justify-center pt-4">
-              <button
-                onClick={() => setShowAll(!showAll)}
-                className="group relative inline-flex items-center space-x-2 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold tracking-widest uppercase py-3.5 px-6 rounded-full transition-all duration-300 shadow-md cursor-pointer outline-none"
-              >
-                <span>{showAll ? "Show Less" : "Load More"}</span>
-                {showAll ? (
-                  <Minus size={14} className="stroke-[2.5]" />
-                ) : (
-                  <Plus size={14} className="stroke-[2.5]" />
-                )}
-              </button>
-            </div>
-
           </div>
 
         </div>
@@ -258,9 +242,8 @@ export default function BooksPage() {
           className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu"
         >
           <div className="space-y-2">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">YOUNG READER INITIATIVES</span>
             <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
-              Children's Books
+              Children's Literature
             </h2>
             <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl leading-relaxed">
               Whimsical, instructive stories placing African children at the center of their own adventures — reinforcing agency, cultural appreciation, and creative pride. Click any book to inspect details.
@@ -278,8 +261,8 @@ export default function BooksPage() {
                 onClick={() => setActiveModalBook(b)}
                 className="relative group cursor-pointer flex flex-col space-y-3"
               >
-                {/* Square Children's Book Vivid Cover Card - No Overlays, No Text, No Cropping */}
-                <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_22px_36px_rgba(244,63,94,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10 flex items-center justify-center">
+                {/* Square Children's Book Vivid Cover Card - White background, no shadow */}
+                <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-white border border-neutral-200/80 shadow-none group-hover:shadow-none transition-all duration-500 ease-out group-hover:-translate-y-2 z-10 flex items-center justify-center">
                   <img
                     src={b.image}
                     alt={b.title}
@@ -293,9 +276,6 @@ export default function BooksPage() {
                   <div className="flex items-center space-x-2">
                     <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
                       {b.year}
-                    </span>
-                    <span className="font-mono text-[10px] font-bold tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80 px-2 py-0.5 uppercase rounded-md">
-                      {b.tag}
                     </span>
                   </div>
 

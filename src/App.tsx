@@ -10,6 +10,7 @@ import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
 import PhilosophySection from "./components/PhilosophySection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import SpacesSection from "./components/SpacesSection";
 import HomeHero from "./components/HomeHero";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import PoetrySection from "./components/PoetrySection";
@@ -24,6 +25,7 @@ import BooksPage from "./components/BooksPage";
 import WritingPage from "./components/WritingPage";
 import OuidaBooksPage from "./components/OuidaBooksPage";
 import OuidaLagosPage from "./components/OuidaLagosPage";
+import SpaceDetailPage from "./components/SpaceDetailPage";
 import FestivalsPage from "./components/FestivalsPage";
 import PublishingPage from "./components/PublishingPage";
 import FilmPage from "./components/FilmPage";
@@ -48,12 +50,17 @@ function HomePage() {
       </div>
 
       {/* 2. Covering Content Layer that slides up over the fixed Hero */}
-      <div className="relative z-10 bg-neutral-950 shadow-[0_-25px_60px_rgba(0,0,0,0.95)]">
-        {/* About the Author directly underneath Hero */}
+      <div className="relative z-10 bg-white shadow-[0_-25px_60px_rgba(0,0,0,0.15)]">
+        {/* Awards Marquee directly underneath Hero */}
+        <AwardsMarquee />
+
+        {/* About the Author */}
         <AboutSection />
 
-        {/* Commented out previous section under hero */}
-        {/* <AwardsMarquee /> */}
+        {/* Spaces at Ouida Section */}
+        <SpacesSection />
+
+        {/* Agency Section */}
         {/* <AgencySection /> */}
 
         {/* The Work: Core CardStack showcasing key achievements (3 cards) */}
@@ -144,6 +151,11 @@ export default function App() {
             <Route path="/ouida-books" element={<OuidaBooksPage />} />
             <Route path="/ouida-lagos" element={<OuidaLagosPage />} />
             <Route path="/spaces" element={<OuidaLagosPage />} />
+            <Route path="/spaces/:spaceId" element={<SpaceDetailPage />} />
+            <Route path="/workspace" element={<SpaceDetailPage />} />
+            <Route path="/sunroom" element={<SpaceDetailPage />} />
+            <Route path="/meeting-rooms" element={<SpaceDetailPage />} />
+            <Route path="/bookshop" element={<SpaceDetailPage />} />
             <Route path="/festivals" element={<FestivalsPage />} />
             <Route path="/publishing" element={<OuidaBooksPage />} />
             <Route path="/film" element={<FilmPage />} />

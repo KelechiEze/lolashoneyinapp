@@ -14,8 +14,18 @@ export default function FilmPage() {
       isLive: true
     },
     {
+      id: "fragile",
+      title: "A Fragile State",
+      role: "Director & Producer",
+      desc: "A compelling documentary investigation examining societal resilience, institutional fragile points, human endurance, and civil memory across West Africa.",
+      status: "In Development & Production",
+      image: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=1200",
+      actionText: "Production Archive",
+      isLive: false
+    },
+    {
       id: "egbe",
-      title: "Egbe: Searching for Belonging",
+      title: "Egbe: In Search of Belonging",
       role: "Director & Creator",
       desc: "Egbe began at my father's 90th birthday, where I watched him surrounded by his egbe, this group of people he'd known all his life. I couldn't look away. It got me thinking about undercelebrated parts of our culture, what we should carry forward, and what should be allowed to disappear. An exploration of the ancient Yoruba egbe tradition of peer-community associations.",
       status: "In Post-Production. Trailer coming soon.",
