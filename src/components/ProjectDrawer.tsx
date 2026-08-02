@@ -164,13 +164,13 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {project.gallery.map((imgUrl, idx) => (
-                  <div key={idx} className="relative aspect-[3/4.2] w-full overflow-hidden rounded-xl bg-neutral-900 border border-white/10 shadow-lg group flex items-center justify-center p-2">
+                  <div key={idx} className="relative aspect-[3/4.2] w-full overflow-hidden rounded-xl shadow-sm group">
                     <img
                       src={imgUrl}
                       alt={`Gallery plate ${idx + 1}`}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-white/90 bg-neutral-950/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 font-bold z-10">
+                    <div className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-neutral-900 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-200 font-bold z-10">
                       PLATE 0{idx + 1}
                     </div>
                   </div>

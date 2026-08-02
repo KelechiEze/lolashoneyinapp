@@ -143,13 +143,6 @@ export default function HorizontalScrollSection() {
           
           {/* Static Left Header Box */}
           <div className="lg:w-1/3 shrink-0 space-y-5">
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200/80 px-3.5 py-1.5 rounded-full">
-              <Sparkles size={13} className="text-rose-600 animate-pulse" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-rose-700 font-bold">
-                YOUNG READERS & CHILDREN'S BOOKS
-              </span>
-            </div>
-
             <h2 className="font-sans font-black text-3xl md:text-5xl text-neutral-950 tracking-tight uppercase leading-none">
               Children's Literature
             </h2>
@@ -177,7 +170,7 @@ export default function HorizontalScrollSection() {
             </div>
           </div>
 
-          {/* Horizontally sliding track with 3D Children's Books */}
+          {/* Horizontally sliding track with Children's Books */}
           <div ref={trackRef} className="lg:w-2/3 w-full overflow-hidden py-8">
             <motion.div 
               style={{ x, willChange: "transform" }} 
@@ -189,22 +182,12 @@ export default function HorizontalScrollSection() {
                   onClick={() => handleBookClick(book.id)}
                   className="relative group cursor-pointer shrink-0 w-[240px] sm:w-[280px] md:w-[300px] flex flex-col space-y-3 transform-gpu"
                 >
-                  {/* Square Book Cover Card with Page Edge */}
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_22px_36px_rgba(244,63,94,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
-                    {/* 3D Fanned Open Pages Layer on the Right Edge */}
-                    <div className="absolute top-1.5 bottom-1.5 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-2 px-[1px] z-0 rounded-r-sm">
-                      <div className="w-full h-full border-r border-dashed border-neutral-400/50 flex flex-col justify-around">
-                        <div className="w-full h-[1px] bg-neutral-300" />
-                        <div className="w-full h-[1px] bg-neutral-300" />
-                        <div className="w-full h-[1px] bg-neutral-300" />
-                      </div>
-                    </div>
-
-                    {/* Book Cover Image - 100% Vivid, No Overlay, No Cropping */}
+                  {/* Clean Book Cover Image */}
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 z-10">
                     <img
                       src={book.image}
                       alt={book.title}
-                      className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
                   </div>

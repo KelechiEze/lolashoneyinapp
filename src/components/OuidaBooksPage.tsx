@@ -154,20 +154,19 @@ export default function OuidaBooksPage() {
   return (
     <div className="bg-[#fbf9f5] text-neutral-900 min-h-screen pt-24 pb-20 overflow-x-hidden selection:bg-rose-600 selection:text-white">
       
-      {/* 1. HERO SECTION WITH TILTED FLOATING IMAGES */}
+      {/* 1. HERO SECTION WITH FLAT FLOATING IMAGES */}
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-12 pb-20">
         
-        {/* Floating Tilted Card 1 - Top Left */}
+        {/* Floating Flat Card 1 - Top Left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -8, 0], rotate: -12 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -8, 0], rotate: 0 }}
           transition={{
             opacity: { duration: 0.6 },
             scale: { type: "spring", stiffness: 220, damping: 20 },
-            rotate: { duration: 0.6 },
             y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
           }}
-          className="hidden md:block absolute top-8 left-6 lg:left-16 w-36 h-48 lg:w-48 lg:h-64 rounded-2xl overflow-hidden shadow-2xl z-10 pointer-events-none transform -rotate-12"
+          className="hidden md:block absolute top-8 left-6 lg:left-16 w-40 h-56 lg:w-52 lg:h-72 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
         >
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
@@ -177,17 +176,16 @@ export default function OuidaBooksPage() {
           />
         </motion.div>
 
-        {/* Floating Tilted Card 2 - Top Right */}
+        {/* Floating Flat Card 2 - Top Right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, 8, 0], rotate: 14 }}
+          animate={{ opacity: 1, scale: 1, y: [0, 8, 0], rotate: 0 }}
           transition={{
             opacity: { duration: 0.6, delay: 0.1 },
             scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.1 },
-            rotate: { duration: 0.6, delay: 0.1 },
             y: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
           }}
-          className="hidden md:block absolute top-6 right-6 lg:right-16 w-36 h-48 lg:w-48 lg:h-64 rounded-2xl overflow-hidden shadow-2xl z-10 pointer-events-none transform rotate-12"
+          className="hidden md:block absolute top-6 right-6 lg:right-16 w-40 h-56 lg:w-52 lg:h-72 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
         >
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
@@ -197,17 +195,16 @@ export default function OuidaBooksPage() {
           />
         </motion.div>
 
-        {/* Floating Tilted Card 3 - Bottom Left */}
+        {/* Floating Flat Card 3 - Bottom Left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, 6, 0], rotate: -8 }}
+          animate={{ opacity: 1, scale: 1, y: [0, 6, 0], rotate: 0 }}
           transition={{
             opacity: { duration: 0.6, delay: 0.2 },
             scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.2 },
-            rotate: { duration: 0.6, delay: 0.2 },
             y: { duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1 }
           }}
-          className="hidden lg:block absolute bottom-10 left-12 lg:left-32 w-32 h-40 lg:w-40 lg:h-52 rounded-2xl overflow-hidden shadow-xl z-10 pointer-events-none transform -rotate-6"
+          className="hidden lg:block absolute bottom-10 left-12 lg:left-32 w-36 h-48 lg:w-44 lg:h-60 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
         >
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
@@ -217,17 +214,16 @@ export default function OuidaBooksPage() {
           />
         </motion.div>
 
-        {/* Floating Tilted Card 4 - Bottom Right */}
+        {/* Floating Flat Card 4 - Bottom Right */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -7, 0], rotate: 10 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -7, 0], rotate: 0 }}
           transition={{
             opacity: { duration: 0.6, delay: 0.3 },
             scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.3 },
-            rotate: { duration: 0.6, delay: 0.3 },
             y: { duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
           }}
-          className="hidden lg:block absolute bottom-12 right-12 lg:right-32 w-32 h-40 lg:w-40 lg:h-52 rounded-2xl overflow-hidden shadow-xl z-10 pointer-events-none transform rotate-6"
+          className="hidden lg:block absolute bottom-12 right-12 lg:right-32 w-36 h-48 lg:w-44 lg:h-60 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
         >
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
@@ -526,9 +522,9 @@ export default function OuidaBooksPage() {
             </div>
           </div>
 
-          {/* TILTED AUTHOR/STORE PHOTOS AT BOTTOM RIGHT */}
+          {/* FLAT AUTHOR/STORE PHOTOS AT BOTTOM RIGHT */}
           <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 border-t border-neutral-800">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg"
                 alt="Ouida House"
@@ -536,7 +532,7 @@ export default function OuidaBooksPage() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png"
                 alt="Lola Shoneyin"
@@ -544,7 +540,7 @@ export default function OuidaBooksPage() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg"
                 alt="Ouida Lagos Store"

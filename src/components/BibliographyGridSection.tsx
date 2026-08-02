@@ -233,17 +233,17 @@ export default function BibliographyGridSection() {
           </div>
         </div>
 
-        {/* Right Side: 3 Stacked Books with Smooth Horizontal Spread Animation on Hover */}
-        <div className="hidden lg:flex items-center justify-center relative h-40 w-80 shrink-0 cursor-pointer overflow-visible">
+        {/* Right Side: 3 Stacked Flat Books */}
+        <div className="hidden lg:flex items-center justify-center relative h-48 w-88 shrink-0 cursor-pointer overflow-visible">
           {/* Book 1 */}
           <motion.div
             animate={
               isBannerHovered
-                ? { x: -85, rotate: 0, scale: 1.05 }
-                : { x: -20, rotate: -12, scale: 1 }
+                ? { x: -95, rotate: 0, scale: 1.05 }
+                : { x: -32, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-26 h-36 rounded-[4px] shadow-lg overflow-hidden border border-white/90 bg-rose-950 z-10"
+            className="absolute w-28 h-44 rounded-[4px] shadow-sm overflow-hidden border border-white/90 bg-rose-950 z-10"
           >
             <img src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" className="w-full h-full object-cover" alt="Book 1" />
           </motion.div>
@@ -253,10 +253,10 @@ export default function BibliographyGridSection() {
             animate={
               isBannerHovered
                 ? { x: 0, rotate: 0, scale: 1.05 }
-                : { x: 10, rotate: -4, scale: 1 }
+                : { x: 0, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-26 h-36 rounded-[4px] shadow-xl overflow-hidden border border-white/90 bg-amber-900 z-20"
+            className="absolute w-28 h-44 rounded-[4px] shadow-md overflow-hidden border border-white/90 bg-amber-900 z-20"
           >
             <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800" className="w-full h-full object-cover" alt="Book 2" />
           </motion.div>
@@ -265,11 +265,11 @@ export default function BibliographyGridSection() {
           <motion.div
             animate={
               isBannerHovered
-                ? { x: 85, rotate: 0, scale: 1.05 }
-                : { x: 40, rotate: 6, scale: 1 }
+                ? { x: 95, rotate: 0, scale: 1.05 }
+                : { x: 32, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-26 h-36 rounded-[4px] shadow-2xl overflow-hidden border border-white bg-emerald-950 z-30"
+            className="absolute w-28 h-44 rounded-[4px] shadow-md overflow-hidden border border-white bg-emerald-950 z-30"
           >
             <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800" className="w-full h-full object-cover" alt="Book 3" />
           </motion.div>
@@ -342,12 +342,12 @@ export default function BibliographyGridSection() {
               onClick={() => navigate("/books")}
               className="flex flex-col justify-between group cursor-pointer space-y-3"
             >
-              {/* BOOK COVER IMAGE CONTAINER */}
-              <div className="relative aspect-[3/4.2] w-full rounded-[4px] overflow-hidden bg-neutral-100 border border-neutral-200/90 shadow-sm group-hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              {/* BOOK COVER IMAGE */}
+              <div className="relative aspect-[3/4.2] w-full rounded-[4px] overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 p-1"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
 

@@ -14,7 +14,7 @@ export interface PoetryItem {
 
 export const POETRY_COLLECTIONS: PoetryItem[] = [
   {
-    id: "egg",
+    id: "egg",  
     title: "So All the Time I Was Sitting on an Egg",
     year: "1997",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
@@ -99,16 +99,12 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
               }}
               className="relative group cursor-pointer flex flex-col space-y-4"
             >
-              {/* 100% VIVID BOOK COVER (WHITE BACKGROUND, NO SHADOWS) */}
-              <div className="relative w-full aspect-[3/4.2] rounded-[6px] overflow-hidden border border-neutral-200/80 shadow-none group-hover:shadow-none transition-all duration-500 ease-out group-hover:-translate-y-2 flex items-center justify-center bg-white">
-                {/* Book Spine Edge Accent */}
-                <div className="absolute left-0 top-0 bottom-0 w-2.5 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-10 pointer-events-none" />
-                
-                {/* Vivid Bright Image - Fully contained without cropping out the bottom */}
+              {/* CLEAN BOOK COVER IMAGE */}
+              <div className="relative w-full aspect-[3/4.2] rounded-[6px] overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-500 ease-out group-hover:-translate-y-2">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>

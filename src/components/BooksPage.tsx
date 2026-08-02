@@ -142,12 +142,12 @@ export default function BooksPage() {
 
           </div>
 
-          {/* Right column: 12 translation covers styled as vertical standing books with open fanned pages */}
+          {/* Right column: 12 translation covers styled as clean, flat book covers */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-2">
               <h3 className="font-sans font-black text-xs uppercase tracking-widest text-neutral-400">Translation Covers</h3>
               <p className="text-xs text-neutral-500 font-sans">
-                A visual showcase of the book's global footprint across international vertical editions with open-page spreads.
+                A visual showcase of the book's global footprint across international translation editions.
               </p>
             </div>
 
@@ -170,25 +170,13 @@ export default function BooksPage() {
                     onMouseLeave={() => setHoveredIdx(null)}
                     className="relative group cursor-pointer flex flex-col space-y-3"
                   >
-                    {/* 3D Standing Book - Vivid Cover with Pages Page Edge, No Overlays, No Text on Cover */}
-                    <div className="relative aspect-[3/4.3] w-full rounded-none overflow-hidden bg-neutral-100 border-l-[6px] border-l-neutral-900 border-t border-b border-r border-neutral-200 shadow-[8px_12px_24px_rgba(0,0,0,0.12)] group-hover:shadow-[16px_20px_36px_rgba(225,29,72,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
-                      {/* 3D Standing Book Pages Edge */}
-                      <div className="absolute top-1 bottom-1 -right-3 w-3 bg-gradient-to-r from-amber-50 via-neutral-100 to-amber-100 border-r border-y border-neutral-300 shadow-md transition-transform duration-300 group-hover:translate-x-1.5 flex flex-col justify-between py-1.5 px-[1px] z-0">
-                        <div className="w-full h-full border-r border-dashed border-neutral-400/40 flex flex-col justify-around">
-                          <div className="w-full h-[1px] bg-neutral-300/80" />
-                          <div className="w-full h-[1px] bg-neutral-300/80" />
-                          <div className="w-full h-[1px] bg-neutral-300/80" />
-                        </div>
-                      </div>
-
-                      {/* Spine shading */}
-                      <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/25 via-black/10 to-transparent z-20 pointer-events-none" />
-
-                      {/* Vivid Image without overlay - object-contain so bottom is not cropped */}
+                    {/* Clean Flat Book Cover */}
+                    <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1">
+                      {/* Vivid Image without container frames */}
                       <img
                         src={item.url}
                         alt={`${item.lang} Translation`}
-                        className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -261,12 +249,12 @@ export default function BooksPage() {
                 onClick={() => setActiveModalBook(b)}
                 className="relative group cursor-pointer flex flex-col space-y-3"
               >
-                {/* Square Children's Book Vivid Cover Card - White background, no shadow */}
-                <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-white border border-neutral-200/80 shadow-none group-hover:shadow-none transition-all duration-500 ease-out group-hover:-translate-y-2 z-10 flex items-center justify-center">
+                {/* Square Children's Book Cover Picture */}
+                <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
                   <img
                     src={b.image}
                     alt={b.title}
-                    className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 brightness-105 saturate-110 p-1"
+                    className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
                 </div>
