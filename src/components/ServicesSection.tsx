@@ -35,7 +35,7 @@ const PILLARS_DATA: Pillar[] = [
     id: "publishing",
     num: "03",
     title: "Publishing & Bookstore",
-    description: "Publisher of Ouida Books, supporting bold African voices, and founder of OuidaLagos—a high-end bookstore, café, and cultural hub located at 34 Ajanaku Street in Lagos.",
+    description: "Publisher of Ouida Books, supporting bold African voices, and founder of OuidaLagos: a high-end bookstore, café, and cultural hub located at 34 Ajanaku Street in Lagos.",
     buttonText: "VISIT OUIDA",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_45_42-pm.png",
     altText: "Ouida Books and cultural hub in Lagos",
@@ -172,7 +172,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
             className="lg:col-span-7 w-full h-full flex flex-col justify-center transform-gpu"
           >
-            <div className="relative w-full aspect-[4/3] md:aspect-[1.25/1] bg-neutral-100 rounded-[8px] overflow-hidden shadow-[0_24px_60px_-15px_rgba(0,0,0,0.06)] border border-neutral-200/50">
+            <div className="relative w-full aspect-[4/3] md:aspect-[1.25/1] bg-white rounded-[8px] overflow-hidden shadow-none border border-neutral-200/80">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}

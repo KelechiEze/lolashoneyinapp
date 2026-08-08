@@ -14,7 +14,6 @@ import SpacesSection from "./components/SpacesSection";
 import HomeHero from "./components/HomeHero";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import PoetrySection from "./components/PoetrySection";
-import { AwardsMarquee } from "./components/AwardsMarquee";
 import { BentoSection } from "./components/BentoSection";
 import { BentoSectionTwo } from "./components/BentoSectionTwo";
 import ProjectDetailPage from "./components/ProjectDetailPage";
@@ -32,6 +31,7 @@ import FilmPage from "./components/FilmPage";
 import PressPage from "./components/PressPage";
 import SpeakingPage from "./components/SpeakingPage";
 import ContactPage from "./components/ContactPage";
+import BookBuzzPage from "./components/BookBuzzPage";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -51,9 +51,6 @@ function HomePage() {
 
       {/* 2. Covering Content Layer that slides up over the fixed Hero */}
       <div className="relative z-10 bg-white shadow-[0_-25px_60px_rgba(0,0,0,0.15)]">
-        {/* Awards Marquee directly underneath Hero */}
-        <AwardsMarquee />
-
         {/* About the Author */}
         <AboutSection />
 
@@ -126,6 +123,20 @@ export default function App() {
     }
   }, [location.search]);
 
+  // Scroll to target section whenever URL hash changes or page loads with a hash
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace("#", "");
+      const timer = setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 120);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, location.hash]);
+
   const handleFooterNav = (path: string) => {
     navigate(path);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -148,6 +159,7 @@ export default function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/writing" element={<WritingPage />} />
+            <Route path="/book-buzz" element={<BookBuzzPage />} />
             <Route path="/ouida-books" element={<OuidaBooksPage />} />
             <Route path="/ouida-lagos" element={<OuidaLagosPage />} />
             <Route path="/spaces" element={<OuidaLagosPage />} />

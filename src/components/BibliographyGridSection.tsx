@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Filter, ArrowRight, Mail, Heart, Star, Search } from "lucide-react";
+import { Filter, ArrowRight, Mail, Search, X, Sparkles, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface BibliographyItem {
   id: string;
@@ -12,12 +12,6 @@ export interface BibliographyItem {
   summary: string;
   image: string;
   tag?: string;
-  badge?: string;
-  discount?: string;
-  rating: number;
-  ratingCount: number;
-  originalPrice?: string;
-  price: string;
   author: string;
 }
 
@@ -32,12 +26,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "Award-winning debut novel exploring polygamy, female friendship, power dynamics, and secrets in contemporary Ibadan. Translated into 13 languages.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
     tag: "Orange Prize Nominee",
-    badge: "Hot",
-    discount: "-20%",
-    rating: 5,
-    ratingCount: 128,
-    originalPrice: "$25.00",
-    price: "$19.99"
   },
   {
     id: "poetry-egg",
@@ -49,12 +37,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "Lola Shoneyin's debut collection of poems offering lyrical reflections on womanhood, sexuality, memory, and personal sovereignty.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
     tag: "Debut Poetry",
-    badge: "Poetry",
-    discount: "-15%",
-    rating: 5,
-    ratingCount: 42,
-    originalPrice: "$18.00",
-    price: "$14.99"
   },
   {
     id: "poetry-riverbird",
@@ -66,11 +48,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "Her second collection of verse capturing African landscapes, political observation, intimacy, and social critique.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg",
     tag: "Poetry Collection",
-    badge: "Hot",
-    rating: 5,
-    ratingCount: 38,
-    originalPrice: "$20.00",
-    price: "$16.50"
   },
   {
     id: "poetry-flight",
@@ -82,12 +59,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "A celebrated third collection of mature poetry dealing with freedom, flight, domestic tension, and emotional courage.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
     tag: "Poetry Collection",
-    badge: "Bestseller",
-    discount: "-10%",
-    rating: 5,
-    ratingCount: 56,
-    originalPrice: "$22.00",
-    price: "$18.00"
   },
   {
     id: "northern-lights",
@@ -99,28 +70,17 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "A pioneering literary series crafted to inspire young readers across Northern Nigeria, fostering literacy and cultural pride.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
     tag: "Literary Series",
-    badge: "Featured",
-    rating: 5,
-    ratingCount: 89,
-    originalPrice: "$35.00",
-    price: "$28.00"
   },
   {
     id: "children-series",
     type: "Children's Book",
-    title: "Children's Literature Series (10 Vols)",
+    title: "Children's Literature Series",
     year: "2014–Present",
     author: "Lola Shoneyin",
     publisherOrOutlet: "Book Buzz Foundation / IBBY",
-    summary: "Whimsical, instructive books placing African children at the center of their own adventures — reinforcing agency and creative pride.",
+    summary: "Whimsical, instructive books placing African children at the center of their own adventures, reinforcing agency and creative pride.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg",
     tag: "Young Readers",
-    badge: "Popular",
-    discount: "-25%",
-    rating: 5,
-    ratingCount: 114,
-    originalPrice: "$40.00",
-    price: "$29.99"
   },
   {
     id: "essay-polygamy",
@@ -132,10 +92,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "A provocative essay examining how traditional marriage structures impact female economic independence in West Africa.",
     image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800",
     tag: "Cultural Essay",
-    badge: "Essay",
-    rating: 5,
-    ratingCount: 67,
-    price: "$5.00"
   },
   {
     id: "article-publishing",
@@ -147,10 +103,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "An authoritative commentary on why African storytellers need local, durable publishing ecosystems rather than total reliance on Western presses.",
     image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800",
     tag: "Publishing & Policy",
-    badge: "Article",
-    rating: 5,
-    ratingCount: 31,
-    price: "$5.00"
   },
   {
     id: "essay-education",
@@ -162,10 +114,6 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     summary: "Exploring early childhood literacy and why seeing brown faces in children's books builds self-worth and intellectual confidence.",
     image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
     tag: "Education & Literacy",
-    badge: "Essay",
-    rating: 5,
-    ratingCount: 45,
-    price: "$5.00"
   }
 ];
 
@@ -173,15 +121,10 @@ export default function BibliographyGridSection() {
   const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [favorites, setFavorites] = useState<Record<string, boolean>>({});
   const [isBannerHovered, setIsBannerHovered] = useState<boolean>(false);
+  const [activeModalItem, setActiveModalItem] = useState<BibliographyItem | null>(null);
 
   const filters = ["All", "Novel", "Poetry", "Children's Book", "Series", "Essay", "Article"];
-
-  const toggleFavorite = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
 
   const filteredItems = BIBLIOGRAPHY_ITEMS.filter((item) => {
     const matchesFilter = selectedFilter === "All" || item.type === selectedFilter;
@@ -194,15 +137,15 @@ export default function BibliographyGridSection() {
   return (
     <div id="bibliography-works-section" className="space-y-10 py-4 font-sans">
       
-      {/* AUTHOR BANNER SECTION WITH SMOOTH HORIZONTAL BOOK SPREAD ANIMATION ON HOVER */}
+      {/* AUTHOR BANNER SECTION */}
       <div 
         onMouseEnter={() => setIsBannerHovered(true)}
         onMouseLeave={() => setIsBannerHovered(false)}
-        className="bg-[#EAE8E1] rounded-[8px] overflow-hidden p-6 sm:p-10 relative flex flex-col md:flex-row items-center justify-between gap-8 border border-neutral-200/80 shadow-sm transition-all duration-300"
+        className="bg-[#EAE8E1] rounded-[12px] overflow-hidden p-6 sm:p-10 relative flex flex-col md:flex-row items-center justify-between gap-8 border border-neutral-200/80 shadow-sm transition-all duration-300"
       >
-        {/* Left Side: Person Photo (Lola Shoneyin Hero Photo) */}
+        {/* Left Side: Person Photo */}
         <div className="flex items-center space-x-6 z-10 max-w-2xl">
-          <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-[4px] overflow-hidden bg-neutral-300 shrink-0 shadow-md border border-white">
+          <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-[6px] overflow-hidden bg-neutral-300 shrink-0 shadow-md border border-white">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-9-2026-08_20_20-pm.png"
               alt="Lola Shoneyin"
@@ -212,13 +155,13 @@ export default function BibliographyGridSection() {
           </div>
           {/* Center Content: About the Author */}
           <div className="space-y-2 text-center md:text-left">
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500 block">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-600 block">
               ACCLAIMED AUTHOR & PUBLISHER
             </span>
             <h2 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-neutral-950 tracking-tight">
               Lola Shoneyin: Storyteller & Cultural Catalyst
             </h2>
-            <p className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed max-w-lg">
+            <p className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed max-w-lg font-medium">
               Author of the celebrated bestseller <em className="font-serif font-medium">The Secret Lives of Baba Segi's Wives</em>, three poetry volumes, and founder of Aké Arts & Book Festival and Ouida Books.
             </p>
             <div className="pt-2">
@@ -279,21 +222,11 @@ export default function BibliographyGridSection() {
       {/* SECTION HEADER + FILTER BAR */}
       <div className="space-y-6 pt-2">
         
-        {/* TITLE & VIEW ALL ROW */}
+        {/* TITLE ROW */}
         <div className="flex items-center justify-between border-b border-neutral-200 pb-4">
           <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#1B3627] tracking-tight">
             Bibliography & Featured Works
           </h2>
-          <button
-            onClick={() => {
-              setSelectedFilter("All");
-              setSearchQuery("");
-            }}
-            className="font-sans text-xs sm:text-sm font-semibold text-[#1B3627] hover:text-red-600 transition-colors flex items-center space-x-1 cursor-pointer underline underline-offset-4"
-          >
-            <span>View all</span>
-            <ArrowRight size={14} />
-          </button>
         </div>
 
         {/* CONTROLS BAR: SEARCH + CATEGORY FILTERS */}
@@ -331,94 +264,129 @@ export default function BibliographyGridSection() {
 
       </div>
 
-      {/* 6-COLUMN BOOK GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 sm:gap-6 pt-2">
-        {filteredItems.map((item) => {
-          const isFav = !!favorites[item.id];
+      {/* 4-COLUMN RESPONSIVE BOOK GRID - NO PRICES, NO RATINGS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 pt-2">
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            onClick={() => setActiveModalItem(item)}
+            className="flex flex-col group cursor-pointer space-y-3"
+          >
+            {/* BOOK COVER IMAGE */}
+            <div className="relative aspect-[3/4.2] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1.5 bg-neutral-100">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              
+              {item.tag && (
+                <div className="absolute top-2.5 left-2.5 z-10">
+                  <span className="bg-neutral-950/90 backdrop-blur-md text-white font-mono text-[10px] font-bold uppercase px-2.5 py-1 rounded-sm shadow-sm">
+                    {item.tag}
+                  </span>
+                </div>
+              )}
+            </div>
 
-          return (
-            <div
-              key={item.id}
-              onClick={() => navigate("/books")}
-              className="flex flex-col justify-between group cursor-pointer space-y-3"
+            {/* DETAILS STRICTLY BELOW COVER */}
+            <div className="space-y-1.5 text-left pt-0.5">
+              
+              <div className="flex items-center space-x-2">
+                <span className="font-mono text-[11px] font-bold text-rose-800 bg-rose-100 px-2 py-0.5 rounded-sm uppercase">
+                  {item.type} • {item.year}
+                </span>
+              </div>
+
+              {/* TITLE (CLEAR, LEGIBLE FONT) */}
+              <h3 className="font-serif font-extrabold text-base sm:text-lg md:text-xl text-[#1B3627] group-hover:text-rose-600 transition-colors leading-snug">
+                {item.title}
+              </h3>
+
+              {/* AUTHOR */}
+              <p className="font-sans text-xs sm:text-sm font-semibold text-neutral-600">
+                By {item.author}
+              </p>
+
+              {/* SUMMARY */}
+              <p className="font-sans text-xs text-neutral-500 leading-relaxed line-clamp-2">
+                {item.summary}
+              </p>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* FULL COVER MODAL IN THE MIDDLE OF THE SCREEN */}
+      <AnimatePresence>
+        {activeModalItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveModalItem(null)}
+            className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center"
             >
-              {/* BOOK COVER IMAGE */}
-              <div className="relative aspect-[3/4.2] w-full rounded-[4px] overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
+              <button
+                onClick={() => setActiveModalItem(null)}
+                className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+
+              {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
+              <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
                 <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={activeModalItem.image}
+                  alt={activeModalItem.title}
+                  className="w-full h-full object-contain max-h-[48vh] rounded"
                   referrerPolicy="no-referrer"
                 />
-
-                {/* TOP-LEFT BADGES */}
-                <div className="absolute top-2 left-2 flex flex-col gap-1 items-start z-10">
-                  {item.badge && (
-                    <span className="bg-amber-500 text-white font-mono text-[9px] font-bold uppercase px-2 py-0.5 rounded-[2px] shadow-sm">
-                      {item.badge}
-                    </span>
-                  )}
-                  {item.discount && (
-                    <span className="bg-red-500 text-white font-mono text-[9px] font-bold uppercase px-1.5 py-0.5 rounded-[2px] shadow-sm">
-                      {item.discount}
-                    </span>
-                  )}
-                </div>
-
-                {/* TOP-RIGHT HEART WISHLIST BUTTON */}
-                <button
-                  onClick={(e) => toggleFavorite(item.id, e)}
-                  className="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 hover:bg-white text-neutral-600 flex items-center justify-center shadow-md transition-all cursor-pointer z-10 hover:scale-110"
-                  aria-label="Save to wishlist"
-                >
-                  <Heart
-                    size={13}
-                    className={isFav ? "fill-red-500 text-red-500" : "text-neutral-500"}
-                  />
-                </button>
               </div>
 
-              {/* DETAILS BELOW COVER */}
-              <div className="space-y-1.5 text-center sm:text-left">
-                
-                {/* STAR RATINGS ROW */}
-                <div className="flex items-center justify-center sm:justify-start space-x-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={11} className="fill-amber-400 text-amber-400 shrink-0" />
-                  ))}
-                  <span className="text-[10px] font-mono text-neutral-400 pl-1 font-semibold">
-                    ({item.ratingCount})
-                  </span>
+              {/* BOOK DETAILS */}
+              <div className="w-full md:w-1/2 space-y-4 text-left">
+                <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
+                  <Sparkles size={12} />
+                  <span>{activeModalItem.type} • {activeModalItem.year}</span>
                 </div>
 
-                {/* AUTHOR */}
-                <p className="font-sans text-[11px] text-neutral-500 font-medium">
-                  By : <span className="text-neutral-700">{item.author}</span>
+                <div>
+                  <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                    {activeModalItem.title}
+                  </h3>
+                  <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
+                    By {activeModalItem.author}
+                  </p>
+                </div>
+
+                <p className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed">
+                  {activeModalItem.summary}
                 </p>
 
-                {/* PRICE ROW */}
-                <div className="flex items-center justify-center sm:justify-start space-x-2 pt-0.5 font-mono text-xs font-bold">
-                  {item.originalPrice && (
-                    <span className="line-through text-neutral-400 text-[11px]">
-                      {item.originalPrice}
-                    </span>
-                  )}
-                  <span className="text-red-600 font-extrabold text-xs">
-                    {item.price}
-                  </span>
-                </div>
-
-                {/* TITLE (BIGGER & BOLD) */}
-                <h3 className="font-serif font-extrabold text-sm sm:text-[15px] text-[#1B3627] group-hover:text-red-600 transition-colors line-clamp-2 leading-snug pt-0.5">
-                  {item.title}
-                </h3>
-
+                {activeModalItem.publisherOrOutlet && (
+                  <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
+                    <span>Publisher / Outlet: </span>
+                    <span className="text-neutral-200 font-bold">{activeModalItem.publisherOrOutlet}</span>
+                  </div>
+                )}
               </div>
-            </div>
-          );
-        })}
-      </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
 }
+

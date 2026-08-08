@@ -20,17 +20,30 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Writing",
       hasDropdown: true,
       subLinks: [
-        { path: "/books", label: "Bibliography", desc: "Baba Segi's Wives, poetry collections, children's books & Northern Lights" },
-        { path: "/writing", label: "Articles & Essays", desc: "Selected commentary, essays and published articles" },
+        { path: "/books#prose", label: "Prose", desc: "The Secret Lives of Baba Segi's Wives & adaptations" },
+        { path: "/books#poetry", label: "Poetry Collections", desc: "Sitting on an Egg, Song of a Riverbird, For the Love of Flight" },
+        { path: "/books#children", label: "Children's Books", desc: "Ten picture books placing African children at the center" },
+        { path: "/writing#essays", label: "Essays & Articles", desc: "Building a Nigerian Picturebook Ecosystem, Red Tape & Nostalgia" },
+      ]
+    },
+    {
+      path: "/book-buzz",
+      label: "Book Buzz",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/book-buzz#about", label: "Book Buzz Foundation", desc: "School libraries, reading spaces & festivals" },
+        { path: "/book-buzz#bookstorm", label: "Bookstorm", desc: "Publishing 100 children's picture books" },
+        { path: "/book-buzz#picturebook", label: "Nigerian Picture Book Project", desc: "EU/ECOWAS fellowship training 48 creators" },
+        { path: "/book-buzz#partnerships", label: "Partnerships", desc: "Read My World, Sharjah & Bristol Ideas" },
       ]
     },
     { 
-      path: "/ouida-books", 
+      path: "/publishing", 
       label: "Publishing",
       hasDropdown: true,
       subLinks: [
-        { path: "/ouida-books", label: "Ouida Books", desc: "Founding, mission & independent African publishing" },
-        { path: "/ouida-books#imprints", label: "Imprints", desc: "Cognix, Teyani, Tanja, and Phoenix" },
+        { path: "/ouida-books#about", label: "Ouida Books", desc: "Flagship independent publishing house founded 2016" },
+        { path: "/ouida-books#imprints", label: "Eight Imprints", desc: "Ouida Books, Poetry, Cognix, Tanja, Adole, Phoenix, Tevani, Lufu" },
       ]
     },
     { 
@@ -38,10 +51,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "OuidaLagos",
       hasDropdown: true,
       subLinks: [
-        { path: "/ouida-lagos", label: "Bookstore & Café", desc: "Cultural sanctuary & community hub in Ikeja" },
-        { path: "/ouida-books", label: "Publishing House", desc: "Headquarters of Ouida Books imprints" },
-        { path: "/ouida-lagos#residency", label: "Residency & CFIN", desc: "Orange Tree Writer's Residency & Centre for Illustrations" },
-        { path: "/spaces", label: "Co-working Space", desc: "Private studios, halls & creative workspaces" },
+        { path: "/ouida-lagos#spaces", label: "Spaces & Café", desc: "Bookshop, street food café & Orange Tree Residency" },
+        { path: "/ouida-lagos#community", label: "Community", desc: "Ouida Open Mic, Ìsèdá & Silent Reading" },
       ]
     },
     { 
@@ -49,8 +60,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Festivals",
       hasDropdown: true,
       subLinks: [
-        { path: "/festivals#ake", label: "Aké Arts & Book Festival", desc: "Annual premier African literary gathering" },
-        { path: "/festivals#lifi", label: "LIFI", desc: "Lagos International Festival of Illustration" },
+        { path: "/festivals#ake", label: "Aké Arts and Book Festival", desc: "Africa's premier literary gathering" },
+        { path: "/festivals#lifi", label: "LIFI", desc: "Lagos International Festival of Illustrations" },
+        { path: "/festivals#kabafest", label: "KABAFEST", desc: "Kaduna Book & Arts Festival" },
         { path: "/festivals#afli", label: "AFLI", desc: "Abuja Festival of Literature and Ideas" },
       ]
     },
@@ -59,18 +71,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Films",
       hasDropdown: true,
       subLinks: [
-        { path: "/film#flowers", label: "Flowers for Warriors", desc: "Documentary on neurodiversity & parent courage" },
-        { path: "/film#fragile", label: "A Fragile State", desc: "Investigation into institutional resilience" },
-        { path: "/film#egbe", label: "Egbe: In Search of Belonging", desc: "Exploration of Yoruba peer associations" },
-      ]
-    },
-    { 
-      path: "/press", 
-      label: "Press",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/press#awards", label: "Awards & Prizes", desc: "RSL Fellowship, FT 25, Aficionado & Literary Person of the Year" },
-        { path: "/press#faq", label: "FAQ", desc: "Frequently asked questions & media kit" },
+        { path: "/film#flowers", label: "Flowers for Warriors (2020)", desc: "Documentary on families living with disabilities" },
+        { path: "/film#fragile", label: "A Fragile State (2024)", desc: "Financial Times Democracy 2024 spoken-word film" },
+        { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)", desc: "Documentary on Yoruba egbé age-group tradition" },
       ]
     },
     { 
@@ -78,9 +81,18 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Speaking",
       hasDropdown: true,
       subLinks: [
-        { path: "/speaking#gallery", label: "Photo Gallery", desc: "FLAM Marrakech, Bologna, Princeton & global appearances" },
-        { path: "/speaking#interviews", label: "Podcasts & Interviews", desc: "Keynotes, conversations & media features" },
-        { path: "/contact", label: "Bookings", desc: "Funnels directly into contact for speaking engagements" },
+        { path: "/speaking#engagements", label: "Engagements", desc: "FLAM Marrakech, Princeton, Bologna & global keynotes" },
+        { path: "/speaking#podcasts", label: "Podcasts & Interviews", desc: "Annotated & Art, Tech and Polygamy" },
+        { path: "/speaking#gallery", label: "Photo Gallery", desc: "Photos from 20+ global events" },
+      ]
+    },
+    { 
+      path: "/press", 
+      label: "Press",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/press#interviews", label: "Interviews", desc: "Ten selected media & podcast conversations" },
+        { path: "/press#features", label: "Features & Reviews", desc: "RSL Fellowship, FT 25, Cambridge Press & BellaNaija" },
       ]
     },
     { 
@@ -88,8 +100,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Contact",
       hasDropdown: true,
       subLinks: [
-        { path: "/contact", label: "Contact Us", desc: "info@lolashoneyin.com" },
-        { path: "/contact#bookings", label: "Work Inquiries & Bookings", desc: "Keynotes, panels & publishing inquiries" },
+        { path: "/contact#form", label: "Inquiries & Bookings", desc: "info@lolashoneyin.com" },
+        { path: "/contact#faq", label: "FAQ", desc: "Submissions, events, venue & novel status" },
       ]
     },
   ];
@@ -123,7 +135,17 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
   const handleNavigate = (path: string) => {
     setIsOpen(false);
     navigate(path);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (path.includes("#")) {
+      const hash = path.split("#")[1];
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const isHomePage = location.pathname === "/";
@@ -133,7 +155,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 px-4 py-3.5 sm:px-6 sm:py-4 md:px-12 md:py-5 transition-all duration-500 ${
-          showOverlay
+          isOpen
+            ? "bg-[#EFEFEA] border-b border-neutral-300 shadow-sm"
+            : showOverlay
             ? "bg-neutral-950/90 backdrop-blur-md border-b border-white/10 shadow-xl"
             : "bg-transparent border-b border-transparent"
         }`}
@@ -143,7 +167,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
           {/* Logo on Top Left */}
           <button
             onClick={() => handleNavigate("/")}
-            className="text-white font-sans text-base sm:text-lg md:text-xl tracking-[0.2em] uppercase font-black cursor-pointer select-none outline-none hover:text-neutral-200 transition-colors flex items-center gap-2 shrink-0"
+            className={`font-sans text-base sm:text-lg md:text-xl tracking-[0.2em] uppercase font-black cursor-pointer select-none outline-none transition-colors flex items-center gap-2 shrink-0 ${
+              isOpen ? "text-neutral-950 hover:text-neutral-700" : "text-white hover:text-neutral-200"
+            }`}
           >
             <span>LOLA SHONEYIN</span>
           </button>
@@ -164,24 +190,26 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                   <div key={link.label} className="relative group py-1 shrink-0">
                     <button
                       onClick={() => handleNavigate(link.path)}
-                      className="relative text-white/85 group-hover:text-white font-sans text-[11px] xl:text-xs 2xl:text-[13px] tracking-wider uppercase font-bold transition-colors duration-300 cursor-pointer outline-none flex items-center gap-1 whitespace-nowrap"
+                      className={`relative font-sans text-[11px] xl:text-xs 2xl:text-[13px] tracking-wider uppercase font-bold transition-colors duration-300 cursor-pointer outline-none flex items-center gap-1 whitespace-nowrap ${
+                        isOpen ? "text-neutral-800 hover:text-neutral-950" : "text-white/85 group-hover:text-white"
+                      }`}
                     >
                       <span>{link.label}</span>
-                      <span className="text-[9px] text-rose-400 font-mono transition-transform duration-300 group-hover:rotate-180">▼</span>
+                      <span className="text-[9px] text-neutral-400 font-mono transition-transform duration-300 group-hover:rotate-180">▼</span>
                       <span
-                        className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-rose-500 transform transition-transform duration-300 origin-left ${
+                        className={`absolute bottom-0 left-0 w-full h-[1.5px] ${isOpen ? "bg-neutral-950" : "bg-white"} transform transition-transform duration-300 origin-left ${
                           isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                         }`}
                       />
                     </button>
 
-                    {/* Sleek Hover Dropdown Card */}
+                    {/* Sleek Hover Dropdown Card with Light Background matching the Menu Drawer */}
                     <div
                       className={`absolute top-full pt-3 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50 ${
                         isRightAligned ? "right-0 left-auto" : "-left-4"
                       }`}
                     >
-                      <div className="bg-neutral-950/95 border border-white/15 p-3 rounded-xl shadow-2xl backdrop-blur-xl w-72 sm:w-80 whitespace-normal space-y-1">
+                      <div className="bg-[#EFEFEA] border border-neutral-300/90 p-3.5 rounded-xl shadow-2xl backdrop-blur-xl w-72 sm:w-80 whitespace-normal space-y-1 text-neutral-900">
                         {link.subLinks.map((sub) => (
                           <button
                             key={sub.path}
@@ -189,13 +217,13 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                               e.stopPropagation();
                               handleNavigate(sub.path);
                             }}
-                            className="w-full text-left p-2.5 rounded-lg hover:bg-white/10 transition-colors group/sub cursor-pointer flex flex-col whitespace-normal"
+                            className="w-full text-left p-2.5 rounded-lg hover:bg-neutral-200/70 transition-colors group/sub cursor-pointer flex flex-col whitespace-normal"
                           >
-                            <span className="text-xs font-bold uppercase tracking-wider text-white group-hover/sub:text-rose-400 transition-colors flex items-center justify-between gap-2 whitespace-normal">
+                            <span className="text-xs font-extrabold uppercase tracking-wider text-neutral-950 group-hover/sub:text-neutral-800 transition-colors flex items-center justify-between gap-2 whitespace-normal">
                               <span>{sub.label}</span>
-                              <ArrowUpRight size={12} className="text-neutral-500 group-hover/sub:text-rose-400 shrink-0" />
+                              <ArrowUpRight size={13} className="text-neutral-500 group-hover/sub:text-neutral-950 group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5 transition-all shrink-0" />
                             </span>
-                            <span className="text-[10px] text-neutral-400 font-sans mt-0.5 leading-relaxed whitespace-normal break-words block pr-2">
+                            <span className="text-[11px] text-neutral-600 font-medium font-sans mt-0.5 leading-relaxed whitespace-normal break-words block pr-2">
                               {sub.desc}
                             </span>
                           </button>
@@ -210,11 +238,13 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                 <button
                   key={link.path}
                   onClick={() => handleNavigate(link.path)}
-                  className="relative text-white/85 hover:text-white font-sans text-[11px] xl:text-xs 2xl:text-[13px] tracking-wider uppercase font-bold transition-colors duration-300 cursor-pointer outline-none group py-1 whitespace-nowrap shrink-0"
+                  className={`relative font-sans text-[11px] xl:text-xs 2xl:text-[13px] tracking-wider uppercase font-bold transition-colors duration-300 cursor-pointer outline-none group py-1 whitespace-nowrap shrink-0 ${
+                    isOpen ? "text-neutral-800 hover:text-neutral-950" : "text-white/85 hover:text-white"
+                  }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-rose-500 transform transition-transform duration-300 origin-left ${
+                    className={`absolute bottom-0 left-0 w-full h-[1.5px] ${isOpen ? "bg-neutral-950" : "bg-white"} transform transition-transform duration-300 origin-left ${
                       isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
@@ -226,7 +256,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
             {onOpenCalendar && (
               <button
                 onClick={onOpenCalendar}
-                className="flex items-center space-x-1.5 bg-rose-600/90 hover:bg-rose-600 text-white font-mono text-[11px] xl:text-xs font-bold uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md transition-all cursor-pointer border border-rose-500/50 shrink-0 ml-1.5 whitespace-nowrap"
+                className="flex items-center space-x-1.5 bg-neutral-900 hover:bg-neutral-800 text-white font-mono text-[11px] xl:text-xs font-bold uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md transition-all cursor-pointer border border-neutral-700 shrink-0 ml-1.5 whitespace-nowrap"
               >
                 <Calendar size={13} />
                 <span>Calendar</span>
@@ -239,7 +269,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
             {onOpenCalendar && (
               <button
                 onClick={onOpenCalendar}
-                className="lg:hidden flex items-center space-x-1 bg-rose-600 text-white text-xs font-mono font-bold uppercase tracking-wider py-2 px-3 rounded-full shadow-md"
+                className="lg:hidden flex items-center space-x-1 bg-neutral-900 text-white text-xs font-mono font-bold uppercase tracking-wider py-2 px-3 rounded-full shadow-md"
               >
                 <Calendar size={13} />
               </button>
@@ -247,16 +277,17 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 active:scale-95 text-white text-xs font-bold tracking-widest uppercase py-2 px-3.5 sm:py-2.5 sm:px-4 rounded-full border border-white/15 backdrop-blur-md transition-all duration-300 cursor-pointer outline-none"
-              aria-label="Toggle navigation menu"
+              className={`flex items-center justify-center p-2.5 sm:p-3 rounded-full border transition-all duration-300 cursor-pointer outline-none ${
+                isOpen
+                  ? "bg-neutral-900 text-white border-neutral-900 hover:bg-neutral-800 shadow-md"
+                  : "bg-white/10 hover:bg-white/20 text-white border-white/15 backdrop-blur-md"
+              }`}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
-              <span className="font-mono text-[11px] uppercase tracking-wider">
-                {isOpen ? "CLOSE" : "MENU"}
-              </span>
               {isOpen ? (
-                <X size={16} className="text-white" />
+                <X size={18} className="text-white" />
               ) : (
-                <Menu size={16} className="text-white" />
+                <Menu size={18} className="text-white" />
               )}
             </button>
           </div>
@@ -272,14 +303,14 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ type: "spring", stiffness: 220, damping: 25 }}
-            className="fixed inset-0 z-40 bg-neutral-950 text-white flex flex-col justify-between p-6 sm:p-10 pt-24 sm:pt-28 overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#EFEFEA] text-neutral-900 flex flex-col justify-between p-6 sm:p-10 pt-24 sm:pt-28 overflow-y-auto"
           >
             {/* Header branding inside drawer */}
             <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-between py-6 space-y-12">
               
               {/* Navigation Links list inside drawer */}
               <div className="space-y-4">
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-rose-500 font-bold block mb-4">
+                <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-neutral-500 font-bold block mb-4">
                   NAVIGATION MENU
                 </span>
 
@@ -290,7 +321,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                         ? location.pathname === "/"
                         : location.pathname.startsWith(link.path);
                     return (
-                      <div key={link.path || link.label} className="space-y-2">
+                      <div key={link.path || link.label} className="space-y-1">
                         <motion.button
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
@@ -298,12 +329,12 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                           onClick={() => handleNavigate(link.path)}
                           className={`w-full group text-left py-2 px-3 rounded-lg flex items-center justify-between transition-all duration-300 ${
                             isActive
-                              ? "bg-white/10 text-white font-black"
-                              : "text-neutral-300 hover:text-white hover:bg-white/5"
+                              ? "bg-neutral-200/90 text-neutral-950 font-black"
+                              : "text-neutral-800 hover:text-neutral-950 hover:bg-neutral-200/50"
                           }`}
                         >
                           <span className="font-sans text-2xl sm:text-4xl uppercase tracking-wider font-extrabold flex items-center gap-3">
-                            <span className="font-mono text-xs text-rose-500/80 font-normal">
+                            <span className="font-mono text-xs text-neutral-500 font-normal">
                               0{idx + 1}
                             </span>
                             {link.label}
@@ -312,23 +343,23 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                             size={24}
                             className={`transition-transform duration-300 ${
                               isActive
-                                ? "text-rose-500 translate-x-1 -translate-y-1"
-                                : "text-neutral-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"
+                                ? "text-neutral-950 translate-x-1 -translate-y-1"
+                                : "text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-1 group-hover:-translate-y-1"
                             }`}
                           />
                         </motion.button>
 
-                        {/* Render sub-links inside mobile drawer if present */}
+                        {/* Render sub-links as clean text with arrow icons (NO BUTTON CONTAINERS) */}
                         {link.subLinks && (
-                          <div className="pl-12 flex flex-wrap gap-2 pt-1 pb-2">
+                          <div className="pl-10 sm:pl-16 flex flex-col space-y-1.5 pt-1 pb-3">
                             {link.subLinks.map((sub) => (
                               <button
                                 key={sub.path}
                                 onClick={() => handleNavigate(sub.path)}
-                                className="text-xs font-mono font-bold tracking-wider uppercase px-3 py-1.5 rounded-md bg-white/5 hover:bg-rose-600 hover:text-white text-neutral-300 transition-colors border border-white/10 flex items-center gap-1 cursor-pointer"
+                                className="group/sub font-sans text-sm sm:text-base font-semibold text-neutral-600 hover:text-neutral-950 transition-colors flex items-center gap-2 cursor-pointer text-left w-fit py-0.5"
                               >
                                 <span>{sub.label}</span>
-                                <ArrowUpRight size={10} />
+                                <ArrowUpRight size={14} className="text-neutral-400 group-hover/sub:text-neutral-950 group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5 transition-all" />
                               </button>
                             ))}
                           </div>
@@ -340,30 +371,30 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
               </div>
 
               {/* Drawer footer info */}
-              <div className="border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-neutral-400">
+              <div className="border-t border-neutral-300/80 pt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-neutral-600">
                 <div>
-                  <h4 className="font-sans font-bold uppercase tracking-wider text-white mb-2">
+                  <h4 className="font-sans font-extrabold uppercase tracking-wider text-neutral-950 mb-2 text-sm">
                     Lola Shoneyin
                   </h4>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed font-medium">
                     Author, Cultural Entrepreneur & Founder of Book Buzz Foundation
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <span className="block text-neutral-500 font-mono text-[10px] uppercase">
+                    <span className="block text-neutral-500 font-mono text-[10px] uppercase font-bold">
                       Contact Email
                     </span>
                     <a
                       href="mailto:info@lolashoneyin.com"
-                      className="text-white hover:text-rose-400 transition-colors font-medium"
+                      className="text-neutral-950 hover:text-neutral-600 transition-colors font-bold text-sm"
                     >
                       info@lolashoneyin.com
                     </a>
                   </div>
                   <button
                     onClick={() => handleNavigate("/contact")}
-                    className="bg-rose-600 hover:bg-rose-500 text-white px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[11px] transition-all self-start sm:self-auto cursor-pointer"
+                    className="bg-neutral-950 hover:bg-neutral-800 text-white px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[11px] transition-all self-start sm:self-auto cursor-pointer shadow-md"
                   >
                     Get in Touch
                   </button>

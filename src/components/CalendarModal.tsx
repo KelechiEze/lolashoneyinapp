@@ -112,7 +112,7 @@ export const UPCOMING_EVENTS: EventItem[] = [
   },
   {
     id: "egbe-screening",
-    title: "Special Premiere Preview: Egbe — Searching for Belonging",
+    title: "Special Premiere Preview: Egbe: In Search of Belonging",
     category: "Film Screening",
     badgeColor: "bg-sky-500",
     date: "2026-10-24",

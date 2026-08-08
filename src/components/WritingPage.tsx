@@ -21,7 +21,9 @@ export default function WritingPage() {
         </div>
 
         {/* RECREATED HERO SECTION FROM REFERENCE UI */}
-        <WritingHeroSection />
+        <div id="essays" className="scroll-mt-28">
+          <WritingHeroSection />
+        </div>
 
         {/* BIBLIOGRAPHY & FEATURED WORKS SECTION */}
         <BibliographyGridSection />

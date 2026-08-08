@@ -5,32 +5,32 @@ export default function FilmPage() {
   const documentaries = [
     {
       id: "flowers",
-      title: "Flowers for Warriors",
-      role: "Producer & Director",
-      desc: "This intimate and courageous documentary follows three parents of children living with disabilities through their discoveries, triumphs, and the intense stigma they consistently face from society. It highlights how the world fails to support neurodiverse children and the profound bravery of the families caring for them.",
-      link: "https://www.youtube.com", // YouTube Link
+      title: "Flowers for Warriors (2020)",
+      role: "Producer",
+      desc: "Directed by Joshua Ogunjobi and produced by Shoneyin, Flowers for Warriors follows three Nigerian families raising children living with visible disabilities, in a society that stigmatises them. There is heartbreak in it, and fear, but also the quiet victory of parents who refuse to let the world's discomfort become their children's shame. The film screened at Studio Kino in Germany on 20 June 2022.",
+      link: "https://www.youtube.com/watch?v=GRIKclGchfM",
       image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200",
       actionText: "Watch on YouTube",
       isLive: true
     },
     {
       id: "fragile",
-      title: "A Fragile State",
-      role: "Director & Producer",
-      desc: "A compelling documentary investigation examining societal resilience, institutional fragile points, human endurance, and civil memory across West Africa.",
-      status: "In Development & Production",
+      title: "A Fragile State (2024)",
+      role: "Writer & Performer",
+      desc: "A spoken-word poem written and performed by Shoneyin, commissioned by the Financial Times as part of Democracy 2024, a four-part film series marking the year's global elections. Shoneyin appeared alongside Margaret Atwood, Elif Shafak, and Aditi Mittal, each performing a piece on the fragility of democratic freedom. Directed by Juliet Riddell.",
+      link: "https://www.youtube.com/watch?v=qfjvorIJhUA",
       image: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=1200",
-      actionText: "Production Archive",
-      isLive: false
+      actionText: "Watch on YouTube",
+      isLive: true
     },
     {
       id: "egbe",
-      title: "Egbe: In Search of Belonging",
-      role: "Director & Creator",
-      desc: "Egbe began at my father's 90th birthday, where I watched him surrounded by his egbe, this group of people he'd known all his life. I couldn't look away. It got me thinking about undercelebrated parts of our culture, what we should carry forward, and what should be allowed to disappear. An exploration of the ancient Yoruba egbe tradition of peer-community associations.",
-      status: "In Post-Production. Trailer coming soon.",
+      title: "Egbe: In Search of Belonging (2027)",
+      role: "Producer & Director",
+      desc: "A documentary on the egbe age-group social structure of Remoland, told through the voices of the people who live it, an archive of pre-colonial societal cohesion, held together by those who still cherish it. The film is in late production.",
+      status: "In Late Production",
       image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200",
-      actionText: "Post-Production Archive",
+      actionText: "In Late Production",
       isLive: false
     }
   ];
@@ -58,18 +58,18 @@ export default function FilmPage() {
             <Camera size={22} />
             <h3 className="font-sans font-bold text-xs uppercase tracking-widest">A Director's Note</h3>
           </div>
-          <blockquote className="font-serif italic text-xl md:text-2xl text-neutral-800 leading-relaxed select-text">
-            "I came to documentary-making sideways. I am drawn to documentaries because they are living archives. The older I get, the more exasperated I am about our recklessness with documentation. The documentaries I make are just me doing my bit."
+          <blockquote className="font-serif italic text-lg md:text-xl text-neutral-800 leading-relaxed select-text">
+            "I came to documentary-making sideways. Visually, it's always been my preferred genre of film. Documentaries feel like archives and maybe that's the part I am attracted to. In this part of the world, we're often lackadaisical about documentation. That needs to change. With Flowers for Warriors, we explored the journeys of three parents of children living with disabilities. Egbe is from seeing the most moving expression of togetherness at my father's 90th birthday, which led to the question: what should we carry forward and what should be allowed to disappear."
           </blockquote>
           <p className="font-sans font-semibold text-xs tracking-wider text-neutral-500 uppercase">
-            — Lola Shoneyin
+            Lola Shoneyin
           </p>
         </div>
 
         {/* DOCUMENTARY PROJECTS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 border-t border-neutral-200">
           {documentaries.map((doc) => (
-            <div key={doc.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] overflow-hidden flex flex-col justify-between hover:border-neutral-300 transition-colors shadow-md">
+            <div key={doc.id} id={doc.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] overflow-hidden flex flex-col justify-between hover:border-neutral-300 transition-colors shadow-md scroll-mt-28">
               {/* Cover Image */}
               <div className="relative aspect-[16/9] w-full bg-neutral-100">
                 <img

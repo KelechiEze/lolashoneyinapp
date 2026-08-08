@@ -148,7 +148,7 @@ export default function HorizontalScrollSection() {
             </h2>
 
             <p className="text-neutral-600 font-sans text-xs md:text-sm leading-relaxed max-w-md">
-              Whimsical, instructive stories placing African children at the center of their own adventures — reinforcing agency, cultural pride, and creative imagination.
+              Whimsical, instructive stories placing African children at the center of their own adventures, reinforcing agency, cultural pride, and creative imagination.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">

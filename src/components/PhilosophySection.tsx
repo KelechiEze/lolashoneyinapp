@@ -29,7 +29,7 @@ export default function PhilosophySection() {
   return (
     <section 
       id="philosophy" 
-      className="relative min-h-screen bg-[#f8f9fa] text-neutral-950 py-20 px-6 md:py-32 md:px-12 flex items-center overflow-hidden border-t border-neutral-200 z-30"
+      className="relative min-h-screen bg-white text-neutral-950 py-20 px-6 md:py-32 md:px-12 flex items-center overflow-hidden border-t border-neutral-200 z-30"
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col space-y-16">
         
@@ -67,7 +67,7 @@ export default function PhilosophySection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-4 h-full min-h-[400px] lg:min-h-0 flex transform-gpu"
           >
-            <div className="relative w-full h-full rounded-[8px] overflow-hidden shadow-[0_12px_40px_-15px_rgba(0,0,0,0.05)] border border-neutral-200/50">
+            <div className="relative w-full h-full rounded-[8px] overflow-hidden bg-white shadow-none border border-neutral-200/80">
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_58_01-pm.png"
                 alt="Lola Shoneyin Guiding Philosophy"
@@ -87,7 +87,7 @@ export default function PhilosophySection() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="bg-white rounded-[8px] p-8 md:p-10 flex flex-col justify-between space-y-16 shadow-[0_12px_40px_-15px_rgba(0,0,0,0.03)] border border-neutral-200/40 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer transform-gpu"
+                className="bg-white rounded-[8px] p-8 md:p-10 flex flex-col justify-between space-y-16 shadow-none border border-neutral-200/80 hover:shadow-none transition-all duration-300 cursor-pointer transform-gpu"
               >
                 {/* Top Icon */}
                 <motion.div 

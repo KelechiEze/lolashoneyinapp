@@ -29,7 +29,7 @@ export default function OuidaLagosPage() {
             </p>
             
             <p className="text-neutral-600 font-sans text-sm md:text-base leading-relaxed max-w-2xl">
-              Located at 34 Ajanaku Street in the heart of Ikeja, Ouida Lagos is a landmark multi-purpose creative space founded by Lola Shoneyin. Designed as a haven for readers, thinkers, and artists, it houses a premier independent bookstore, café, publishing house headquarters, event stage, the Orange Tree Writer's Residency, CFIN, and co-working spaces.
+              At 34 Ajanaku Street, off Salvation Road, Opebi, Ouida Lagos is a cultural hub built for people who read, make, and gather. It houses a bookshop stocked with fiction, non-fiction, children's books, poetry, and titles from Ouida Books itself; a café serving street food such as dundun, dodo, ewa agoyin, pepe sauce, zobo. The Orange Tree Residency is a two-week residency offering writers space to write and a chance to experience the full book ecosystem so that they better understand how the Nigerian publishing industry works.
             </p>
 
             {/* Address & Hours Pill Card */}
@@ -82,8 +82,41 @@ export default function OuidaLagosPage() {
           </div>
         </div>
 
-        {/* SECOND SECTION: "Spaces at Ouida" (RECREATING SCREENSHOT LAYOUT) */}
-        <SpacesSection className="pt-8 border-t border-neutral-200" />
+        {/* SECOND SECTION: "Spaces at Ouida" */}
+        <div id="spaces" className="scroll-mt-28">
+          <SpacesSection className="pt-8 border-t border-neutral-200" />
+        </div>
+
+        {/* COMMUNITY SECTION */}
+        <div id="community" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
+          <div className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">CULTURAL GATHERINGS</span>
+            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">
+              Ouida Community
+            </h2>
+          </div>
+
+          <div className="bg-neutral-50 border border-neutral-200 p-8 md:p-12 rounded-2xl space-y-6">
+            <p className="font-sans text-base md:text-lg text-neutral-800 leading-relaxed max-w-4xl">
+              Ouida Community brings together artists, storytellers, food lovers, and culture enthusiasts through open-stage nights and hands-on workshops. Regular fixtures include <strong>Ouida Open Mic</strong>, <strong>Ìsèdá</strong> (a monthly celebration of creativity supported by the US Embassy), and <strong>Silent Reading at Ouida</strong>.
+            </p>
+
+            <div className="pt-4 border-t border-neutral-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <span className="font-sans text-sm font-semibold text-neutral-700">
+                For rates, bookings, and the full offering, visit <a href="https://ouidalagos.com" target="_blank" rel="noopener noreferrer" className="text-rose-600 underline hover:text-rose-700">ouidalagos.com</a>.
+              </span>
+              <a
+                href="https://ouidalagos.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-mono text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-colors"
+              >
+                <span>Visit ouidalagos.com</span>
+                <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>

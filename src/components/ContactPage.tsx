@@ -1,5 +1,37 @@
 import React, { useState } from "react";
-import { Send, Check, Mail, MapPin, Newspaper, ArrowUpRight, Award, Download, FileText, Calendar, Sparkles } from "lucide-react";
+import { Send, Check, Mail, MapPin, Newspaper, ArrowUpRight, Award, Download, FileText, Calendar, Sparkles, Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const CONTACT_FAQS = [
+  {
+    q: "Does Ouida Books accept manuscript submissions?",
+    a: "Ouida Books accepts submissions during specific windows each year. For current submission periods and guidelines, visit ouidabooks.com."
+  },
+  {
+    q: "How do I invite you to speak at my festival or event?",
+    a: "Speaking and appearance requests go through info@lolashoneyin.com. Please include the date, location, format, and the topic you'd like me to speak on."
+  },
+  {
+    q: "Can I visit OuidaLagos? What are the opening hours?",
+    a: "Yes. OuidaLagos is at 34 Ajanaku Street, Opebi, Lagos. For opening hours, events, and bookings, visit ouidalagos.com."
+  },
+  {
+    q: "Do you offer mentorship, workshops, or residencies for emerging writers?",
+    a: "Yes, through Book Buzz Foundation's training programmes and the Orange Tree Residency at OuidaLagos. Details are on the respective pages."
+  },
+  {
+    q: "How can my organisation partner with Book Buzz Foundation or one of the festivals?",
+    a: "Partnership enquiries go through info@lolashoneyin.com."
+  },
+  {
+    q: "When is your next novel coming out?",
+    a: "I'm working on it."
+  },
+  {
+    q: "How do you feel about the adaptations of The Secret Lives of Baba Segi's Wives?",
+    a: "I'm delighted every time The Secret Lives of Baba Segi's Wives finds new life in a different artform."
+  }
+];
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +42,11 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIndex(openFaqIndex === idx ? null : idx);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,7 +84,7 @@ export default function ContactPage() {
         </div>
 
         {/* Floating Contact Form Container */}
-        <div className="relative z-10 w-full max-w-xl bg-white p-8 sm:p-12 md:p-14 shadow-2xl rounded-none text-neutral-900 my-auto">
+        <div id="form" className="relative z-10 w-full max-w-xl bg-white p-8 sm:p-12 md:p-14 shadow-2xl rounded-none text-neutral-900 my-auto scroll-mt-28">
           
           <div className="space-y-2 mb-6">
             <span className="font-mono text-[10px] text-rose-600 font-extrabold uppercase tracking-widest block">
@@ -134,7 +171,7 @@ export default function ContactPage() {
                 onChange={(e) => setInquiryType(e.target.value)}
                 className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all cursor-pointer"
               >
-                <option value="General">Contact Us — General Inquiry</option>
+                <option value="General">Contact Us: General Inquiry</option>
                 <option value="Speaking">Work Inquiries & Keynote Bookings</option>
                 <option value="Press">Press & Media Requests</option>
                 <option value="Publishing">Ouida Books Editorial & Licensing</option>
@@ -166,7 +203,7 @@ export default function ContactPage() {
                   : "bg-black hover:bg-neutral-800 text-white"
               }`}
             >
-              {isSubmitting ? "Submitting..." : isSuccess ? "Thank You — Message Sent!" : "Submit"}
+              {isSubmitting ? "Submitting..." : isSuccess ? "Thank You: Message Sent!" : "Submit"}
             </button>
 
           </form>
@@ -239,6 +276,87 @@ export default function ContactPage() {
                 <span>Request Press Kit</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* FREQUENTLY ASKED QUESTIONS (FAQ) SECTION */}
+        <div id="faq" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
+          <div className="space-y-2">
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold block">
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              General & Press FAQ
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-xl leading-relaxed">
+              Find quick answers regarding manuscript submissions, speaking requests, visiting OuidaLagos, partnerships, and upcoming projects.
+            </p>
+          </div>
+
+          <div className="max-w-4xl space-y-3.5">
+            {CONTACT_FAQS.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+
+              return (
+                <motion.div
+                  key={idx}
+                  layout
+                  transition={{ layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-[#F7F6EF] border-neutral-300 shadow-sm"
+                      : "bg-[#F8F7F2] hover:bg-[#F4F3ED] border-neutral-200/80"
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full p-5 sm:p-6 text-left flex items-center space-x-4 cursor-pointer focus:outline-none select-none group"
+                  >
+                    <motion.div
+                      animate={{
+                        backgroundColor: isOpen ? "#D7FC70" : "#E2E0D8",
+                        rotate: isOpen ? 180 : 0
+                      }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform"
+                    >
+                      {isOpen ? (
+                        <Minus size={18} className="text-neutral-950 stroke-[2.5]" />
+                      ) : (
+                        <Plus size={18} className="text-neutral-700 stroke-[2.2]" />
+                      )}
+                    </motion.div>
+
+                    <span className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight leading-snug">
+                      {faq.q}
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <motion.div
+                          initial={{ y: -8, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={{ y: -6, opacity: 0 }}
+                          transition={{ duration: 0.25, delay: 0.05 }}
+                          className="pl-18 sm:pl-20 pr-6 pb-6 pt-1 font-sans text-xs sm:text-sm md:text-base text-neutral-700 leading-relaxed"
+                        >
+                          {faq.a}
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 

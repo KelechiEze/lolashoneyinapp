@@ -4,7 +4,7 @@ import { Users, Rocket, Zap, Settings, Star, Sparkles } from "lucide-react";
 
 export const BentoSectionTwo: React.FC = () => {
   return (
-    <section className="bg-neutral-100 py-12 md:py-20 border-t border-neutral-200">
+    <section className="bg-white py-12 md:py-20 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-6">
         
         {/* ROW 1 */}
@@ -16,7 +16,7 @@ export const BentoSectionTwo: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-4 bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[280px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-sm relative overflow-hidden transform-gpu"
+            className="lg:col-span-4 bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[280px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-none relative overflow-hidden transform-gpu"
           >
             <div className="relative z-10 w-full flex flex-col items-center max-w-sm space-y-3">
               <div className="p-3 bg-rose-50 border border-rose-100 rounded-full text-rose-600 mb-1">
@@ -40,7 +40,7 @@ export const BentoSectionTwo: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="lg:col-span-2 bg-white p-6 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-sm transform-gpu"
+            className="lg:col-span-2 bg-white p-6 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-none transform-gpu"
           >
             <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-neutral-400 mb-4">Cultural Network</span>
             <Users size={32} className="text-rose-600 mb-3" strokeWidth={1.5} />
@@ -56,7 +56,7 @@ export const BentoSectionTwo: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="lg:col-span-2 bg-white p-6 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-sm transform-gpu"
+            className="lg:col-span-2 bg-white p-6 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-none transform-gpu"
           >
             <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-neutral-400 mb-4">Festival Impact</span>
             <Rocket size={32} className="text-rose-600 mb-3" strokeWidth={1.5} />
@@ -72,7 +72,7 @@ export const BentoSectionTwo: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="lg:col-span-4 bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[280px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-sm transform-gpu"
+            className="lg:col-span-4 bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[280px] md:min-h-[320px] rounded-[16px] border border-neutral-200/80 shadow-none transform-gpu"
           >
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase mb-3 font-sans">
               Publishing & Distribution

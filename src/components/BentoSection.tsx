@@ -4,7 +4,7 @@ import { Heart, BookOpen, Layers } from "lucide-react";
 
 export const BentoSection: React.FC = () => {
   return (
-    <section className="bg-neutral-100 py-12 md:py-20 border-t border-neutral-200">
+    <section className="bg-white py-12 md:py-20 border-t border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
@@ -29,7 +29,7 @@ export const BentoSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white flex flex-col justify-between min-h-[440px] md:min-h-[500px] rounded-[16px] border border-neutral-200/80 shadow-sm hover:shadow-md transition-shadow duration-300 group overflow-hidden transform-gpu"
+            className="bg-white flex flex-col justify-between min-h-[440px] md:min-h-[500px] rounded-[16px] border border-neutral-200/80 shadow-none hover:shadow-none transition-shadow duration-300 group overflow-hidden transform-gpu"
           >
             <div className="p-6 sm:p-8 md:p-10">
               <div className="flex items-start gap-3 mb-4">
@@ -43,7 +43,7 @@ export const BentoSection: React.FC = () => {
               </p>
             </div>
             
-            <div className="mt-auto relative w-full h-[280px] md:h-[340px] overflow-hidden">
+            <div className="mt-auto relative w-full h-[280px] md:h-[340px] overflow-hidden bg-white">
               <img 
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg" 
                 alt="Literary Showcase"
@@ -62,10 +62,10 @@ export const BentoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[260px] rounded-[16px] border border-neutral-200/80 shadow-sm transform-gpu"
+              className="bg-white p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center min-h-[240px] md:min-h-[260px] rounded-[16px] border border-neutral-200/80 shadow-none transform-gpu"
             >
               <div className="mb-4 px-3.5 py-1 border border-neutral-200 rounded-full text-[9px] font-mono font-bold uppercase tracking-[0.2em] text-neutral-500">
-                Your Story — Our Canvas
+                Your Story, Our Canvas
               </div>
               
               <div className="flex items-center gap-3 mb-4">
@@ -85,7 +85,7 @@ export const BentoSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="bg-rose-600 p-6 sm:p-8 md:p-10 flex flex-col items-center text-center min-h-[280px] md:min-h-[300px] rounded-[16px] text-white relative overflow-hidden shadow-sm transform-gpu"
+              className="bg-rose-600 p-6 sm:p-8 md:p-10 flex flex-col items-center text-center min-h-[280px] md:min-h-[300px] rounded-[16px] text-white relative overflow-hidden shadow-none transform-gpu"
             >
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight mb-2">
                 Ouida Books Hub

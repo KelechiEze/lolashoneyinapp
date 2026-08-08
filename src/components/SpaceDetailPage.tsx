@@ -32,7 +32,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     editorialParagraphs: [
       "Finding a peaceful, well-serviced work environment in the fast-paced metropolis of Lagos can be a challenge. That was the primary motivation behind the Workspace at Ouida Lagos: to construct a quiet, light-filled haven where creative energy meets flawless infrastructure.",
       "Tucked inside 34 Ajanaku Street in Ikeja, the co-working space offers quiet desks, ergonomic seating, and individual power outlets at every seat. High-speed fiber-optic connectivity ensures uninterrupted remote work, manuscript writing, video calls, or deep academic research.",
-      "Unlike conventional corporate shared offices, working at Ouida puts you at the crossroads of West Africa's vibrant literary ecosystem. Downstairs, fresh artisanal coffee brews continuously at the café, and thousands of titles line the shelves of the bookstore—offering the perfect intellectual break whenever inspiration pauses."
+      "Unlike conventional corporate shared offices, working at Ouida puts you at the crossroads of West Africa's vibrant literary ecosystem. Downstairs, fresh artisanal coffee brews continuously at the café, and thousands of titles line the shelves of the bookstore: offering the perfect intellectual break whenever inspiration pauses."
     ],
     highlights: [
       { title: "Fiber-Optic High-Speed Internet", desc: "Dedicated high-bandwidth connection designed for seamless video conferencing and heavy file transfers." },
@@ -123,7 +123,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
     ],
     editorialParagraphs: [
-      "At the soul of Ouida Lagos lies our flagship bookstore—a vibrant physical space created to honor, preserve, and amplify African literary expression. Walking through its glass doors, visitors are greeted by floor-to-ceiling shelves carrying thousands of fiction titles, poetry anthologies, political essays, memoirs, and rare collector editions.",
+      "At the soul of Ouida Lagos lies our flagship bookstore: a vibrant physical space created to honor, preserve, and amplify African literary expression. Walking through its glass doors, visitors are greeted by floor-to-ceiling shelves carrying thousands of fiction titles, poetry anthologies, political essays, memoirs, and rare collector editions.",
       "Founded by author and publisher Lola Shoneyin, the Ouida Bookshop is intentionally designed as a welcoming sanctuary for seasoned bibliophiles and young readers alike. Our dedicated Children's Reading Corner encourages early literacy with colorful West African folklore, illustrated picture books, and young adult novels.",
       "In addition to daily retail, the bookshop frequently hosts surprise author signings, community book club meetings, and literary discussions. Our passionate booksellers possess deep knowledge of West African literature and are always delighted to offer personalized recommendations."
     ],

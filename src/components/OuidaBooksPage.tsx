@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, BookOpen, Feather, Sparkles, Compass, Heart, Bookmark, Share2 } from "lucide-react";
+import { ArrowUpRight, BookOpen, Feather, Sparkles, Compass, Heart, Bookmark, Share2, X, CircleDot, Hexagon, Layers, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { DisintegratingImage } from "./DisintegratingImage";
 
 export interface PublishedBook {
   id: string;
@@ -143,6 +144,7 @@ const MARQUEE_COVERS = [
 export default function OuidaBooksPage() {
   const navigate = useNavigate();
   const [visibleCount, setVisibleCount] = useState<number>(4);
+  const [activeModalBook, setActiveModalBook] = useState<PublishedBook | null>(null);
 
   // Duplicating marquee array for endless seamless scrolling
   const marqueeItems = [...MARQUEE_COVERS, ...MARQUEE_COVERS, ...MARQUEE_COVERS];
@@ -235,10 +237,11 @@ export default function OuidaBooksPage() {
 
         {/* HERO CENTER TEXT BLOCK */}
         <motion.div
+          id="about"
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mx-auto space-y-6 relative z-20"
+          className="max-w-3xl mx-auto space-y-6 relative z-20 scroll-mt-28"
         >
           <span className="font-serif italic text-rose-800 text-lg sm:text-2xl font-medium block">
             This is Ouida Books
@@ -331,6 +334,7 @@ export default function OuidaBooksPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              onClick={() => setActiveModalBook(book)}
               className="flex flex-col space-y-5 group cursor-pointer"
             >
               {/* IMAGE CONTAINER WITHOUT CONTAINER BORDERS */}
@@ -368,75 +372,182 @@ export default function OuidaBooksPage() {
           ))}
         </div>
 
-        {/* LOAD MORE BUTTON */}
-        {visibleCount < CATALOG_BOOKS.length && (
-          <div className="flex justify-center pt-8">
+        {/* LOAD MORE / VIEW LESS BUTTON */}
+        <div className="flex justify-center pt-8">
+          {visibleCount < CATALOG_BOOKS.length ? (
             <button
-              onClick={handleLoadMore}
-              className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer"
+              onClick={() => setVisibleCount(CATALOG_BOOKS.length)}
+              className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
             >
               Load More
             </button>
-          </div>
-        )}
+          ) : (
+            <button
+              onClick={() => {
+                setVisibleCount(4);
+                const catalogEl = document.getElementById("catalog-section");
+                if (catalogEl) catalogEl.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            >
+              View Less
+            </button>
+          )}
+        </div>
 
       </section>
 
       {/* 3.5 DEDICATED IMPRINTS SECTION */}
-      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 space-y-12">
-        <div className="text-center space-y-3 max-w-2xl mx-auto">
+      <section id="imprints" className="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 space-y-12 scroll-mt-28">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
             OUR PUBLISHING IMPRINTS
           </span>
           <h2 className="font-serif italic font-extrabold text-4xl sm:text-5xl text-neutral-950 tracking-tight">
-            Four Specialized Imprints
+            Eight Specialized Imprints
           </h2>
-          <p className="font-sans text-neutral-600 text-sm leading-relaxed">
-            Ouida Books operates four distinct imprints designed to foster diverse literary genres and voices across the African continent and diaspora.
+          <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
+            Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world. Eight imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {[
             {
-              name: "Cognix",
-              focus: "Non-Fiction & Policy",
-              desc: "Dedicated to intellectual non-fiction, biographies, cultural essays, political science, and academic commentary.",
-              badge: "NON-FICTION"
+              name: "Ouida Books",
+              focus: "Literary Fiction",
+              desc: "Ouida Books is the flagship imprint that publishes high-quality literary fiction.",
+              badge: "FLAGSHIP",
+              code: "_001",
+              image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
+              icon: <BookOpen className="w-5 h-5 text-black" />
             },
             {
-              name: "Teyani",
-              focus: "Children & Young Adult",
-              desc: "Whimsical children's picture books and vibrant young adult fiction celebrating African youth agency and imagination.",
-              badge: "YOUNG READERS"
+              name: "Ouida Poetry",
+              focus: "Verse & Poetry",
+              desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
+              badge: "POETRY",
+              code: "_002",
+              image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1000&auto=format&fit=crop",
+              icon: <Sparkles className="w-5 h-5 text-black" />
+            },
+            {
+              name: "Cognix",
+              focus: "Non-Fiction & Record",
+              desc: "Cognix is where Ouida Books turns to the real: ideas, arguments, the record of things as they happened.",
+              badge: "NON-FICTION",
+              code: "_003",
+              image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
+              icon: <Compass className="w-5 h-5 text-black" />
             },
             {
               name: "Tanja",
-              focus: "Commercial & Thrillers",
-              desc: "Fast-paced crime fiction, psychological thrillers, romance, and speculative fiction crafted for broad popular appeal.",
-              badge: "COMMERCIAL FICTION"
+              focus: "Youngest Readers",
+              desc: "Tanja exists for the youngest readers by publishing picturebooks built to be enjoyed together.",
+              badge: "PICTUREBOOKS",
+              code: "_004",
+              image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop",
+              icon: <CircleDot className="w-5 h-5 text-black" />
             },
             {
-              name: "Phoenix",
-              focus: "Literary Prose & Poetry",
-              desc: "Award-winning literary fiction, ground-breaking verse collections, and high-art storytelling exploring complex human truths.",
-              badge: "LITERARY FICTION"
+              name: "Adole",
+              focus: "Young Adult",
+              desc: "Adole speaks to the years between childhood and adulthood, asking the hardest questions.",
+              badge: "YOUNG ADULT",
+              code: "_005",
+              image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
+              icon: <Zap className="w-5 h-5 text-black" />
+            },
+            {
+              name: "Book of Phoenix",
+              focus: "Speculative Fiction",
+              desc: "Book of Phoenix publishes speculative fiction not bound by the constraints of the world as it is.",
+              badge: "SPECULATIVE",
+              code: "_006",
+              image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+              icon: <Layers className="w-5 h-5 text-black" />
+            },
+            {
+              name: "Tevani",
+              focus: "Bespoke Publishing",
+              desc: "Tevani is a bespoke imprint, working directly with authors for a hand-crafted path to publication.",
+              badge: "BESPOKE",
+              code: "_007",
+              image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+              icon: <Hexagon className="w-5 h-5 text-black" />
+            },
+            {
+              name: "Lufu",
+              focus: "Romance & Commercial",
+              desc: "Lufu publishes high-energy romance and commercial fiction for broad readership.",
+              badge: "ROMANCE",
+              code: "_008",
+              image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
+              icon: <Heart className="w-5 h-5 text-black" />
             }
-          ].map((imp) => (
-            <div key={imp.name} className="bg-white border border-neutral-200/90 rounded-2xl p-6 space-y-4 shadow-sm hover:shadow-md transition-all">
-              <span className="font-mono text-[9px] font-extrabold text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-md uppercase">
-                {imp.badge}
-              </span>
-              <h3 className="font-serif italic font-black text-2xl text-neutral-950">
-                {imp.name}
-              </h3>
-              <p className="font-mono text-[11px] font-bold text-rose-600 uppercase tracking-wider">
-                {imp.focus}
-              </p>
-              <p className="font-sans text-xs text-neutral-600 leading-relaxed">
-                {imp.desc}
-              </p>
-            </div>
+          ].map((imp, idx) => (
+            <motion.div
+              key={imp.name}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                type: "spring",
+                stiffness: 180,
+                damping: 22,
+                delay: idx * 0.08
+              }}
+              className="group cursor-pointer flex flex-col"
+            >
+              {/* Card Image Container - Taller portrait ratio with Disintegrating Particle / Hover */}
+              <div className="relative w-full aspect-[4/5] min-h-[380px] sm:min-h-[420px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
+                <DisintegratingImage
+                  src={imp.image}
+                  alt={imp.name}
+                  roundedClassName="rounded-[28px] sm:rounded-[32px]"
+                />
+
+                {/* Top Badge Floating Pill */}
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    {imp.badge}
+                  </span>
+                </div>
+
+                {/* Hover Overlay with Center Logo */}
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
+                    {imp.icon}
+                    <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
+                      {imp.name}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Overlay details at bottom of image */}
+                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 space-y-1">
+                  <h3 className="font-serif italic font-extrabold text-xl sm:text-2xl text-white">
+                    {imp.name}
+                  </h3>
+                  <p className="font-mono text-[11px] font-bold text-rose-300 uppercase tracking-wider">
+                    {imp.focus}
+                  </p>
+                  <p className="font-sans text-xs text-neutral-200 line-clamp-2 leading-relaxed opacity-90">
+                    {imp.desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Meta Bar */}
+              <div className="flex items-center justify-between mt-3 px-2 text-xs sm:text-sm tracking-tight font-sans">
+                <span className="font-extrabold text-neutral-900 uppercase tracking-wider">
+                  {imp.name}
+                </span>
+                <span className="font-mono text-neutral-400 font-medium">
+                  {imp.code}
+                </span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -502,7 +613,7 @@ export default function OuidaBooksPage() {
             </h2>
 
             <p className="font-serif italic text-neutral-300 text-lg sm:text-xl leading-relaxed">
-              "Finally, meet the author and publisher passionate about helping African voices succeed — a quick peek into our world."
+              "Finally, meet the author and publisher passionate about helping African voices succeed: a quick peek into our world."
             </p>
 
             <p className="font-sans text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
@@ -560,6 +671,71 @@ export default function OuidaBooksPage() {
           100% { transform: translate3d(-50%, 0, 0); }
         }
       `}</style>
+
+      {/* FULL COVER MODAL FOR OUIDA BOOKS CATALOG */}
+      <AnimatePresence>
+        {activeModalBook && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveModalBook(null)}
+            className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center text-left"
+            >
+              <button
+                onClick={() => setActiveModalBook(null)}
+                className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+
+              {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
+              <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
+                <img
+                  src={activeModalBook.image}
+                  alt={activeModalBook.title}
+                  className="w-full h-full object-contain max-h-[48vh] rounded"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              {/* BOOK DETAILS */}
+              <div className="w-full md:w-1/2 space-y-4">
+                <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
+                  <Sparkles size={12} />
+                  <span>{activeModalBook.category} • {activeModalBook.year}</span>
+                </div>
+
+                <div>
+                  <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                    {activeModalBook.title}
+                  </h3>
+                  <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
+                    By {activeModalBook.author}
+                  </p>
+                </div>
+
+                <p className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed">
+                  {activeModalBook.synopsis}
+                </p>
+
+                <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
+                  <span>Publisher / Imprint: </span>
+                  <span className="text-neutral-200 font-bold">Ouida Books</span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

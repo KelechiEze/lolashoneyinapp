@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section 
       id="about" 
-      className="relative min-h-screen bg-[#f8f9fa] text-neutral-950 py-20 px-6 md:py-32 md:px-12 flex items-center overflow-hidden border-t border-neutral-200 z-30"
+      className="relative min-h-screen bg-white text-neutral-950 py-20 px-6 md:py-32 md:px-12 flex items-center overflow-hidden border-t border-neutral-200 z-30"
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col space-y-16">
         
@@ -41,13 +41,22 @@ export default function AboutSection() {
               className="space-y-6 text-neutral-600 font-sans text-sm md:text-[15px] leading-relaxed transform-gpu"
             >
               <p>
-                Lola Shoneyin is a Nigerian poet, novelist, publisher, bookseller, and festival curator. She is the founder and director of Book Buzz Foundation, Aké Arts and Book Festival, and the Abuja Festival of Literature and Ideas. She is also the founder of the Lagos International Festival of Illustrations, Nigeria's first festival dedicated entirely to the art of illustration, bringing together illustrators from across Africa and Europe. She is the publisher of Ouida Books and the founder of OuidaLagos, a bookshop and cultural hub in Lagos.
+                Lola Shoneyin is a Nigerian poet, novelist, publisher, bookseller, and festival curator. In 2002, she founded the Ibadan Arts Renaissance. She trained as a teacher and taught in inner-city schools in the UK between 2004 to 2008 and then served as a deputy principal at an Abuja School from 2009 to 2012. She ran a monthly arts gathering called Infusion throughout that period at the popular JB's Grill.
               </p>
               <p>
-                Her novel <span className="italic font-semibold text-neutral-950">The Secret Lives of Baba Segi's Wives</span> has been translated into thirteen languages and was nominated for the Orange Prize for Fiction in 2011. She is the author of three poetry collections and ten children's books that place Nigerian children at the centre of their own adventures. She is President of the IBBY Nigeria Section.
+                She is the founder of Book Buzz Foundation and the director of Aké Arts and Book Festival, the Kaduna Book & Arts Festival and the new Abuja Festival of Literature and Ideas. She is also the founder of the Lagos International Festival of Illustrations, Nigeria's first festival dedicated entirely to the art of illustration which brings together illustrators from Europe in contact with budding Nigerian illustrators. She is the publisher of Ouida Books and the founder of Ouida Lagos, a bookshop and cultural hub in Lagos.
               </p>
               <p>
-                Before founding Book Buzz Foundation, she spent years in education, teaching in London and working in school leadership in Nigeria. That grounding in how young people learn and what they need to see of themselves in stories has shaped everything she has built since.
+                Her novel <span className="italic font-semibold text-neutral-950">The Secret Lives of Baba Segi's Wives</span> has been translated into fourteen languages and was nominated for the Orange Prize for Fiction in 2011. She is the author of three poetry collections and ten children's books that place Nigerian children at the centre of their own adventures. She is President of the IBBY Nigeria Section.
+              </p>
+              <p>
+                Aké Arts and Book Festival, which she founded in 2013, has grown into one of the most significant literary gatherings on the African continent, bringing together writers, artists, poets, and filmmakers from across Africa and the world. In 2023, Aké became the inaugural winner of the Aficionado Award, a joint initiative of the Frankfurt Book Fair and the Salone Internazionale del Libro di Torino, recognising outstanding and original publishing initiatives.
+              </p>
+              <p>
+                As a documentary filmmaker, Shoneyin produced 'Flowers for Warriors', which follows three parents of children living with disabilities through their discoveries, struggles, and the stigma they face. She is completing 'Egbe: In Search of Belonging', a documentary about the Yoruba egbé tradition, which was inspired by a scene at her father's 90th birthday that captured her imagination.
+              </p>
+              <p>
+                Since 2017, Shoneyin has been active in the children's book space. Her goal is to stimulate the production of high quality, culturally rooted picture books for Nigerian children.
               </p>
             </motion.div>
 
@@ -136,7 +145,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                className="relative aspect-[4/5] bg-neutral-100 rounded-[8px] overflow-hidden shadow-md border border-neutral-200/50 transform-gpu"
+                className="relative aspect-[4/5] bg-white rounded-[8px] overflow-hidden shadow-none border border-neutral-200/80 transform-gpu group"
               >
                 <img
                   src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
@@ -152,7 +161,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-                className="relative aspect-[4/5] bg-neutral-100 rounded-[8px] overflow-hidden shadow-md border border-neutral-200/50 transform-gpu"
+                className="relative aspect-[4/5] bg-white rounded-[8px] overflow-hidden shadow-none border border-neutral-200/80 transform-gpu group"
               >
                 <img
                   src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4516.jpg"

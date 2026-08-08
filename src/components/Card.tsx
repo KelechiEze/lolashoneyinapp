@@ -42,12 +42,12 @@ export default function Card({ project, index, total, onViewProject }: CardProps
       </div>
 
       {/* Central Editorial Content Panel */}
-      <div className="relative z-30 px-4 sm:px-8 md:px-12 max-w-4xl text-center flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8 transform-gpu">
-        <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] text-white tracking-wide font-light leading-tight sm:leading-none select-text drop-shadow-md">
+      <div className="relative z-30 px-4 sm:px-8 md:px-12 max-w-5xl text-center flex flex-col items-center space-y-4 sm:space-y-6 transform-gpu">
+        <h2 className="font-sans font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight uppercase leading-[1.05] select-text drop-shadow-2xl">
           {project.title}
         </h2>
 
-        <p className="font-sans text-[11px] sm:text-xs md:text-sm font-medium tracking-[0.18em] leading-relaxed text-white/90 max-w-2xl select-text line-clamp-3 sm:line-clamp-none">
+        <p className="font-sans text-xs sm:text-sm font-semibold tracking-[0.15em] leading-relaxed text-white/90 max-w-2xl select-text line-clamp-3 sm:line-clamp-none">
           {project.description}
         </p>
 

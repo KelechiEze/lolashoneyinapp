@@ -64,7 +64,7 @@ export default function AgencySection() {
                 The Secret Lives of Baba Segi's Wives
               </p>
               <p className="border-b border-neutral-200/50 pb-2">
-                Aké Arts and Book Festival — fourteen years.
+                Aké Arts and Book Festival. Fourteen years.
               </p>
               <p className="text-rose-600">
                 FT Woman of 2023.
@@ -85,7 +85,7 @@ export default function AgencySection() {
               "A big thank you to you and your entire team for creating such a festive atmosphere in this year's Aké Festival. We enjoyed the flowers and their colours but we know it was because they grew from a plant with deep roots not always visible, but there all the same, all the time."
             </p>
             <p className="font-sans font-bold text-xs md:text-sm tracking-wider text-neutral-900 uppercase pl-6">
-              — Ngũgĩ wa Thiong'o
+              Ngũgĩ wa Thiong'o
             </p>
           </motion.div>
 

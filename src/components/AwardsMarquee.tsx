@@ -2,14 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const awards = [
-  { name: "FT Woman of the Year", year: "2023", logo: "FT" },
-  { name: "Aké Arts & Book Festival Curator", year: "14 Yrs", logo: "AKÉ" },
-  { name: "Caine Prize Shortlist", year: "Honor", logo: "CP" },
-  { name: "Lagos Intl Festival of Illustrations", year: "2024", logo: "LIFI" },
-  { name: "Ouida Books Independent Publishing", year: "Founder", logo: "OUIDA" },
-  { name: "Royal Society of Literature Fellow", year: "Honor", logo: "RSL" },
-  { name: "BBC National Short Story Award", year: "Finalist", logo: "BBC" },
-  { name: "Abuja Festival of Lit & Ideas", year: "Curator", logo: "AFIL" },
+  { name: "The Secret Lives of Baba Segi's Wives", year: "Novel", logo: "SLBSW" },
+  { name: "Aké Arts and Book Festival. Fourteen years.", year: "14 Yrs", logo: "AKÉ" },
+  { name: "FT Woman of 2023.", year: "2023", logo: "FT" },
+  { name: "The Secret Lives of Baba Segi's Wives", year: "Novel", logo: "SLBSW" },
+  { name: "Aké Arts and Book Festival. Fourteen years.", year: "14 Yrs", logo: "AKÉ" },
+  { name: "FT Woman of 2023.", year: "2023", logo: "FT" },
 ];
 
 const Pacman = () => (
@@ -61,7 +59,7 @@ export const AwardsMarquee: React.FC = () => {
                     {award.logo}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white/40 text-[8px] sm:text-[9px] md:text-[10px] uppercase font-black tracking-[0.2em] font-mono">Recognitions — {award.year}</span>
+                    <span className="text-white/40 text-[8px] sm:text-[9px] md:text-[10px] uppercase font-black tracking-[0.2em] font-mono">Recognitions: {award.year}</span>
                     <span className="text-white/80 group-hover:text-white text-xs sm:text-xs md:text-sm font-bold uppercase tracking-widest transition-colors duration-300">
                       {award.name}
                     </span>

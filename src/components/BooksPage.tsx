@@ -12,6 +12,17 @@ interface TranslationItem {
   url: string;
 }
 
+interface GenericModalBook {
+  id: string;
+  title: string;
+  author: string;
+  image: string;
+  tag?: string;
+  year?: string;
+  description: string;
+  publisher?: string;
+}
+
 const TRANSLATIONS: TranslationItem[] = [
   { lang: "French", title: "Les vies secrètes des épouses de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38.jpeg" },
   { lang: "English (Edition)", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
@@ -30,14 +41,23 @@ const TRANSLATIONS: TranslationItem[] = [
 export default function BooksPage() {
   const location = useLocation();
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [activeModalBook, setActiveModalBook] = useState<ChildrenBookItem | null>(null);
+  const [activeModalBook, setActiveModalBook] = useState<GenericModalBook | null>(null);
 
   useEffect(() => {
     if (location.state && (location.state as { selectedBookId?: string }).selectedBookId) {
       const bookId = (location.state as { selectedBookId?: string }).selectedBookId;
       const found = CHILDREN_BOOKS_DATA.find((b) => b.id === bookId);
       if (found) {
-        setActiveModalBook(found);
+        setActiveModalBook({
+          id: found.id,
+          title: found.title,
+          author: "Lola Shoneyin",
+          image: found.image,
+          tag: found.tag,
+          year: found.year,
+          description: found.description,
+          publisher: "Book Buzz Foundation / Ouida Books"
+        });
       }
       setTimeout(() => {
         const elem = document.getElementById("childrens-books-section");
@@ -67,11 +87,11 @@ export default function BooksPage() {
           </p>
         </div>
 
-        {/* THE NOVEL CORE MODULE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start border-t border-neutral-200 pt-16">
+        {/* THE NOVEL CORE MODULE - WITH STICKY LEFT COLUMN */}
+        <div id="prose" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start border-t border-neutral-200 pt-16 scroll-mt-28">
           
-          {/* Left info column */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Left info column - Sticky on desktop */}
+          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28 lg:self-start">
             <div className="space-y-3">
               <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">THE NOVEL</span>
               <h2 className="font-sans font-black text-4xl md:text-5xl tracking-tight uppercase leading-none text-neutral-950">
@@ -79,62 +99,69 @@ export default function BooksPage() {
               </h2>
             </div>
             
-            <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">
-              Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women — their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
+            <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text font-medium">
+              Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women: their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
             </p>
 
-            {/* Awards list */}
-            <div className="space-y-4 border-t border-b border-neutral-150 py-6">
-              <h4 className="font-sans font-bold text-xs uppercase tracking-widest text-neutral-500">Accolades & Nominations</h4>
-              <div className="grid grid-cols-1 gap-3">
+            {/* Accolades list - Perfectly vertically aligned icon and heading */}
+            <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <div className="flex items-center space-x-3 text-neutral-950">
+                <Award size={22} className="text-rose-600 shrink-0" />
+                <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider leading-none">
+                  Accolades & Nominations
+                </h4>
+              </div>
+              <div className="space-y-3 font-sans text-sm text-neutral-700 pt-1">
                 <div className="flex items-start space-x-3">
-                  <Award size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <span className="text-xs text-neutral-700 font-medium leading-normal">
-                    Nominated for the <strong className="text-neutral-950">Orange Prize for Fiction</strong> (2011)
-                  </span>
+                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
+                  <p className="leading-relaxed">
+                    Nominated for the <strong className="text-neutral-950 font-bold">Orange Prize for Fiction</strong> (2011)
+                  </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Award size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <span className="text-xs text-neutral-700 font-medium leading-normal">
-                    Winner of the <strong className="text-neutral-950">PEN Oakland Josephine Miles Literary Award</strong>
-                  </span>
+                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
+                  <p className="leading-relaxed">
+                    Winner of the <strong className="text-neutral-950 font-bold">PEN Oakland Josephine Miles Literary Award</strong>
+                  </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Award size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <span className="text-xs text-neutral-700 font-medium leading-normal">
-                    Winner of the <strong className="text-neutral-950">Ken Saro-Wiwa Prose Prize</strong>
-                  </span>
+                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
+                  <p className="leading-relaxed">
+                    Winner of the <strong className="text-neutral-950 font-bold">Ken Saro-Wiwa Prose Prize</strong>
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Adaptation section */}
-            <div className="space-y-5 bg-neutral-50 p-8 rounded-[16px] border border-neutral-200">
-              <h4 className="font-sans font-black text-xs uppercase tracking-wider text-neutral-900">Stage, Audio & Screen Adaptations</h4>
+            {/* Adaptation section - Header icon removed, specific Film icons for adaptations */}
+            <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
+                Stage, Audio & Screen Adaptations
+              </h4>
               
-              <div className="space-y-4 font-sans text-xs text-neutral-700">
+              <div className="space-y-3.5 font-sans text-sm text-neutral-700 pt-1">
                 <div className="flex items-start space-x-3">
-                  <Play size={14} className="text-rose-600 mt-0.5 shrink-0" />
+                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
                   <p className="leading-relaxed">
-                    <strong className="text-neutral-950">Arcola Theatre, London:</strong> A full ensemble stage adaptation directed by Femi Elufowoju Jr played to sold-out audiences.
+                    <strong className="text-neutral-950 font-bold">Arcola Theatre, London:</strong> A full ensemble stage adaptation directed by Femi Elufowoju Jr played to sold-out audiences.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Play size={14} className="text-rose-600 mt-0.5 shrink-0" />
+                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
                   <p className="leading-relaxed">
-                    <strong className="text-neutral-950">One-Woman Show:</strong> Adapted & performed globally in both English and Spanish by Maimouna Jallow.
+                    <strong className="text-neutral-950 font-bold">One-Woman Show:</strong> Adapted & performed globally in both English and Spanish by Maimouna Jallow.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Radio size={14} className="text-rose-600 mt-0.5 shrink-0" />
+                  <Radio size={18} className="text-rose-600 mt-0.5 shrink-0" />
                   <p className="leading-relaxed">
-                    <strong className="text-neutral-950">BBC Radio Play:</strong> Adapted as a highly acclaimed radio play.
+                    <strong className="text-neutral-950 font-bold">BBC Radio Play:</strong> Adapted as a highly acclaimed radio play.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Film size={14} className="text-rose-600 mt-0.5 shrink-0" />
+                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
                   <p className="leading-relaxed">
-                    <strong className="text-neutral-950">EbonyLife Film Adaptation:</strong> Scheduled for release on <strong className="text-rose-600 font-bold">4 December 2026</strong>.
+                    <strong className="text-neutral-950 font-bold">EbonyLife Film Adaptation:</strong> Scheduled for release on <strong className="text-rose-600 font-bold">4 December 2026</strong>.
                   </p>
                 </div>
               </div>
@@ -168,10 +195,20 @@ export default function BooksPage() {
                     }}
                     onMouseEnter={() => setHoveredIdx(idx)}
                     onMouseLeave={() => setHoveredIdx(null)}
+                    onClick={() => setActiveModalBook({
+                      id: `translation-${item.lang}`,
+                      title: item.title,
+                      author: "Lola Shoneyin",
+                      image: item.url,
+                      tag: `${item.lang} Edition`,
+                      year: "2010+",
+                      description: `The international ${item.lang} translation edition of Lola Shoneyin's bestselling novel 'The Secret Lives of Baba Segi's Wives'.`,
+                      publisher: "HarperCollins / Serpent's Tail / Ouida Books"
+                    })}
                     className="relative group cursor-pointer flex flex-col space-y-3"
                   >
                     {/* Clean Flat Book Cover */}
-                    <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1">
+                    <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
                       {/* Vivid Image without container frames */}
                       <img
                         src={item.url}
@@ -192,7 +229,7 @@ export default function BooksPage() {
                         </span>
                       </div>
 
-                      <h4 className="font-serif font-bold text-base text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                      <h4 className="font-serif font-extrabold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
                         {item.title}
                       </h4>
 
@@ -216,25 +253,25 @@ export default function BooksPage() {
         </div>
 
         {/* POETRY SECTION */}
-        <div className="border-t border-neutral-200 pt-8">
+        <div id="poetry" className="border-t border-neutral-200 pt-8 scroll-mt-28">
           <PoetrySection theme="light" />
         </div>
 
         {/* CHILDREN'S BOOKS SECTION */}
         <motion.div 
-          id="childrens-books-section"
+          id="children"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu"
+          className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu scroll-mt-28"
         >
           <div className="space-y-2">
             <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
               Children's Literature
             </h2>
             <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl leading-relaxed">
-              Whimsical, instructive stories placing African children at the center of their own adventures — reinforcing agency, cultural appreciation, and creative pride. Click any book to inspect details.
+              Whimsical, instructive stories placing African children at the center of their own adventures, reinforcing agency, cultural appreciation, and creative pride. Click any book to inspect details.
             </p>
           </div>
 
@@ -246,7 +283,16 @@ export default function BooksPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.4, delay: idx * 0.05, ease: "easeOut" }}
-                onClick={() => setActiveModalBook(b)}
+                onClick={() => setActiveModalBook({
+                  id: b.id,
+                  title: b.title,
+                  author: "Lola Shoneyin",
+                  image: b.image,
+                  tag: b.tag,
+                  year: b.year,
+                  description: b.description,
+                  publisher: "Book Buzz Foundation / Ouida Books"
+                })}
                 className="relative group cursor-pointer flex flex-col space-y-3"
               >
                 {/* Square Children's Book Cover Picture */}
@@ -275,7 +321,7 @@ export default function BooksPage() {
                     By Lola Shoneyin
                   </p>
 
-                  <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-neutral-600 line-clamp-2 leading-relaxed font-sans">
                     {b.description}
                   </p>
                 </div>
@@ -285,7 +331,7 @@ export default function BooksPage() {
           </div>
         </motion.div>
 
-        {/* BOOK MODAL */}
+        {/* BOOK MODAL - CENTERED PERFECTLY WITH FULL COVER DISPLAY */}
         <AnimatePresence>
           {activeModalBook && (
             <motion.div
@@ -293,45 +339,48 @@ export default function BooksPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveModalBook(null)}
-              className="fixed inset-0 z-50 bg-neutral-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+              className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                initial={{ scale: 0.92, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                exit={{ scale: 0.92, opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-neutral-900 border border-white/15 rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden flex flex-col md:flex-row gap-6 items-center"
+                className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center"
               >
                 <button
                   onClick={() => setActiveModalBook(null)}
-                  className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/40 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
+                  className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
                   aria-label="Close modal"
                 >
-                  <X size={18} />
+                  <X size={20} />
                 </button>
 
-                <div className="w-full md:w-1/2 aspect-[3/4.2] relative shrink-0 rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-neutral-950">
+                {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
+                <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
                   <img
                     src={activeModalBook.image}
                     alt={activeModalBook.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain max-h-[48vh] rounded"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
 
+                {/* BOOK DETAILS */}
                 <div className="w-full md:w-1/2 space-y-4 text-left">
-                  <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-[10px] uppercase font-bold tracking-wider">
-                    <Sparkles size={12} />
-                    <span>{activeModalBook.tag} • {activeModalBook.year}</span>
-                  </div>
+                  {activeModalBook.tag && (
+                    <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
+                      <Sparkles size={12} />
+                      <span>{activeModalBook.tag} {activeModalBook.year ? `• ${activeModalBook.year}` : ""}</span>
+                    </div>
+                  )}
 
                   <div>
-                    <h3 className="font-sans font-black text-2xl sm:text-3xl text-white uppercase tracking-tight leading-tight">
+                    <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
                       {activeModalBook.title}
                     </h3>
-                    <p className="text-xs font-mono text-rose-400 font-bold uppercase tracking-widest pt-1">
-                      Author: Lola Shoneyin
+                    <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
+                      By {activeModalBook.author}
                     </p>
                   </div>
 
@@ -339,10 +388,12 @@ export default function BooksPage() {
                     {activeModalBook.description}
                   </p>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-neutral-400 font-mono">
-                    <span>Publisher: Book Buzz Foundation</span>
-                    <span className="text-amber-400 font-bold">Children's Series</span>
-                  </div>
+                  {activeModalBook.publisher && (
+                    <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
+                      <span>Publisher: </span>
+                      <span className="text-neutral-200 font-bold">{activeModalBook.publisher}</span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </motion.div>
