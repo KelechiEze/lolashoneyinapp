@@ -82,7 +82,7 @@ function HomePage() {
         {/* Horizontal Scroll Section (Children's Books) */}
         <HorizontalScrollSection />
 
-        {/* Poetry Anthologies Section */}
+        {/* Poetry Section */}
         <PoetrySection />
 
         {/* Cultural Ecosystem Bento Grid Sections */}

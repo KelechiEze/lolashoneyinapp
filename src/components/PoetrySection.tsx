@@ -19,15 +19,15 @@ export const POETRY_COLLECTIONS: PoetryItem[] = [
     year: "1997",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
     desc: "A ground-breaking debut exploration of personal autonomy, motherhood, and Nigerian womanhood.",
-    tag: "DEBUT COLLECTION"
+    tag: "POETRY"
   },
   {
     id: "riverbird",
     title: "Song of a Riverbird",
     year: "2002",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg",
-    desc: "A poignant verse anthology capturing memories of Nigeria, riverine life, and deep emotional longing.",
-    tag: "LYRICAL VERSE"
+    desc: "A poignant verse work capturing memories of Nigeria, riverine life, and deep emotional longing.",
+    tag: "POETRY"
   },
   {
     id: "flight",
@@ -35,7 +35,7 @@ export const POETRY_COLLECTIONS: PoetryItem[] = [
     year: "2010",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
     desc: "A masterful, highly lyrical reflection on liberty, personal boundaries, and creative flight.",
-    tag: "FEATURED ANTHOLOGY"
+    tag: "POETRY"
   }
 ];
 
@@ -58,11 +58,11 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
             <div className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full ${isDark ? "bg-rose-950/80 border border-rose-800/50" : "bg-rose-50 border border-rose-200"}`}>
               <Sparkles size={13} className="text-rose-600 animate-pulse" />
               <span className={`font-mono text-[10px] uppercase tracking-widest font-bold ${isDark ? "text-rose-300" : "text-rose-700"}`}>
-                VERSE & POETRY ANTHOLOGIES
+                POETRY
               </span>
             </div>
             <h2 className={`font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight ${isDark ? "text-white" : "text-neutral-950"}`}>
-              Poetry Anthologies
+              Poetry
             </h2>
             <p className={`font-sans text-xs md:text-sm max-w-xl leading-relaxed ${isDark ? "text-neutral-400" : "text-neutral-600"}`}>
               Resonant, deeply lyrical verse exploring themes of female autonomy, heritage, intimacy, and the rhythms of contemporary African life.
@@ -196,7 +196,7 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
 
                   <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
                     <span>Genre: </span>
-                    <span className="text-neutral-200 font-bold">Poetry Collection</span>
+                    <span className="text-neutral-200 font-bold">Poetry</span>
                   </div>
                 </div>
               </motion.div>

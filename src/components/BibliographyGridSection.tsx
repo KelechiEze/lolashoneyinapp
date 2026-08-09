@@ -13,6 +13,7 @@ export interface BibliographyItem {
   image: string;
   tag?: string;
   author: string;
+  url?: string;
 }
 
 export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
@@ -23,7 +24,7 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     year: "2010",
     author: "Lola Shoneyin",
     publisherOrOutlet: "Serpent's Tail / HarperCollins / Ouida Books",
-    summary: "Award-winning debut novel exploring polygamy, female friendship, power dynamics, and secrets in contemporary Ibadan. Translated into 13 languages.",
+    summary: "The Secret Lives of Baba Segi's Wives is Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
     tag: "Orange Prize Nominee",
   },
@@ -31,12 +32,12 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     id: "poetry-egg",
     type: "Poetry",
     title: "So All the Time I Was Sitting on an Egg",
-    year: "1998",
+    year: "1997",
     author: "Lola Shoneyin",
-    publisherOrOutlet: "Poetry Anthology",
+    publisherOrOutlet: "Poetry",
     summary: "Lola Shoneyin's debut collection of poems offering lyrical reflections on womanhood, sexuality, memory, and personal sovereignty.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
-    tag: "Debut Poetry",
+    tag: "Poetry",
   },
   {
     id: "poetry-riverbird",
@@ -47,7 +48,7 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     publisherOrOutlet: "Ovalode Publications",
     summary: "Her second collection of verse capturing African landscapes, political observation, intimacy, and social critique.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg",
-    tag: "Poetry Collection",
+    tag: "Poetry",
   },
   {
     id: "poetry-flight",
@@ -58,62 +59,164 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     publisherOrOutlet: "Cassava Republic Press",
     summary: "A celebrated third collection of mature poetry dealing with freedom, flight, domestic tension, and emotional courage.",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
-    tag: "Poetry Collection",
+    tag: "Poetry",
   },
   {
-    id: "northern-lights",
-    type: "Series",
-    title: "Northern Lights Series",
-    year: "2020",
-    author: "Lola Shoneyin",
-    publisherOrOutlet: "Book Buzz Foundation",
-    summary: "A pioneering literary series crafted to inspire young readers across Northern Nigeria, fostering literacy and cultural pride.",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
-    tag: "Literary Series",
-  },
-  {
-    id: "children-series",
-    type: "Children's Book",
-    title: "Children's Literature Series",
-    year: "2014–Present",
-    author: "Lola Shoneyin",
-    publisherOrOutlet: "Book Buzz Foundation / IBBY",
-    summary: "Whimsical, instructive books placing African children at the center of their own adventures, reinforcing agency and creative pride.",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg",
-    tag: "Young Readers",
-  },
-  {
-    id: "essay-polygamy",
+    id: "essay-picturebook",
     type: "Essay",
-    title: "Polygamy, Power and the Female Body",
+    title: "Building a Nigerian Picturebook Ecosystem",
+    year: "2026",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Publishing Perspectives",
+    summary: "An essay on the gap between African and European children's publishing, and the training pipeline she built to close it: Bookstorm, the Nigerian Picture Book Project, LIFI, and the Centre for Illustrations, Nigeria.",
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800",
+    tag: "Essay",
+    url: "https://publishingperspectives.com/2026/06/building-a-nigerian-picturebook-ecosystem/"
+  },
+  {
+    id: "essay-redtape",
+    type: "Essay",
+    title: "Red Tape, Black Culture",
+    year: "2024",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Decolonial Hacker",
+    summary: "A commissioned essay tracing \"red tape\" from Henry VIII to Nigeria's cultural bureaucracy, indicting the officials who reduce culture to spectacle then smother real creativity with paperwork. Edited by Adania Shibli.",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800",
+    tag: "Commissioned Essay",
+    url: "https://decolonialhacker.org/article/red-tape-black-culture"
+  },
+  {
+    id: "essay-nostalgia",
+    type: "Essay",
+    title: "Nostalgia is an Extreme Sport",
     year: "2021",
     author: "Lola Shoneyin",
-    publisherOrOutlet: "Financial Times & Cultural Journals",
-    summary: "A provocative essay examining how traditional marriage structures impact female economic independence in West Africa.",
-    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800",
-    tag: "Cultural Essay",
+    publisherOrOutlet: "In Of This Our Country (The Borough Press / HarperCollins)",
+    summary: "Her contribution to an anthology of 24 Nigerian writers on home, identity, and culture, edited by Nancy Adimora and Ore Agbaje-Williams, alongside Adichie, Habila, and Obioma.",
+    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800",
+    tag: "Anthology Essay"
   },
   {
-    id: "article-publishing",
+    id: "article-golliwog",
     type: "Article",
-    title: "Sovereignty in African Independent Publishing",
-    year: "2023",
+    title: "What is wrong with calling someone a golliwog?",
+    year: "2009",
     author: "Lola Shoneyin",
-    publisherOrOutlet: "Frankfurt Book Fair Journal",
-    summary: "An authoritative commentary on why African storytellers need local, durable publishing ecosystems rather than total reliance on Western presses.",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800",
-    tag: "Publishing & Policy",
+    publisherOrOutlet: "The Times, London",
+    summary: "Written during the Carol Thatcher and Jo-Wilfried Tsonga \"golliwog\" row, on preparing her son for the racism she feared he would face at his new school.",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
+    tag: "Opinion Article",
+    url: "https://www.thetimes.com/travel/destinations/uk-travel/scotland-travel/edinburgh/what-is-wrong-with-calling-someone-a-golliwog-h6g8nxqdnrn"
   },
   {
-    id: "essay-education",
-    type: "Essay",
-    title: "Why Young Readers Need Mirrors, Not Windows",
+    id: "child-mayowa",
+    type: "Children's Book",
+    title: "Mayowa and the Masquerades",
+    year: "2010",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "An adventurous tale following young Mayowa as he uncovers the vibrant folklore of festival masquerades.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-baji",
+    type: "Children's Book",
+    title: "Do As You Are Told, Baji",
     year: "2022",
     author: "Lola Shoneyin",
-    publisherOrOutlet: "Literary Hub",
-    summary: "Exploring early childhood literacy and why seeing brown faces in children's books builds self-worth and intellectual confidence.",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
-    tag: "Education & Literacy",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "A funny and engaging lesson on responsibility, listening, and growing up.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-iyaji",
+    type: "Children's Book",
+    title: "Iyaji the House Girl",
+    year: "2021",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "An inspiring story of perseverance, education, dignity, and unyielding hope.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/iyaji.png",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-durbar",
+    type: "Children's Book",
+    title: "A Durbar Festival for Hassan and Hussaina",
+    year: "2023",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "A festive cultural adventure through the grand traditions and colors of Northern Nigeria.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-jamila",
+    type: "Children's Book",
+    title: "Jamila's Clever Plan",
+    year: "2022",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "A tale of ingenuity and teamwork where young Jamila solves a community challenge.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-anyibo",
+    type: "Children's Book",
+    title: "Anyibo and the Mother Hen",
+    year: "2023",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "A heartwarming story celebrating curiosity, compassion, and the wonders of nature.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-pwada",
+    type: "Children's Book",
+    title: "Pwada Can Do Anything",
+    year: "2024",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "Empowering young girls to break boundaries, believe in themselves, and reach high.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/pwada.png",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-setto",
+    type: "Children's Book",
+    title: "Setto Saves the Trees",
+    year: "2025",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "An eco-friendly journey teaching children the value of trees and environmental stewardship.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-tunde",
+    type: "Children's Book",
+    title: "Tunde Onakoya, The Chess Champion",
+    year: "2025",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "An inspiring biography of chess master Tunde Onakoya, showing children the power of intellect and vision.",
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800",
+    tag: "Children's Book"
+  },
+  {
+    id: "child-dunoma",
+    type: "Children's Book",
+    title: "Dunoma the Brave",
+    year: "2025",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Book Buzz Foundation",
+    summary: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
+    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
+    tag: "Children's Book"
   }
 ];
 
@@ -378,6 +481,20 @@ export default function BibliographyGridSection() {
                   <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
                     <span>Publisher / Outlet: </span>
                     <span className="text-neutral-200 font-bold">{activeModalItem.publisherOrOutlet}</span>
+                  </div>
+                )}
+
+                {activeModalItem.url && (
+                  <div className="pt-2">
+                    <a
+                      href={activeModalItem.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs font-bold px-4 py-2 rounded-md transition-colors"
+                    >
+                      <span>Read Essay / Article</span>
+                      <ArrowRight size={14} />
+                    </a>
                   </div>
                 )}
               </div>

@@ -571,7 +571,7 @@ export default function OuidaBooksPage() {
           <div className="pt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
               "Literary Prose",
-              "Poetry Anthologies",
+              "Poetry",
               "Children's Imprint",
               "Translational Rights",
               "Author Mentorship",

@@ -100,71 +100,41 @@ export default function BooksPage() {
             </div>
             
             <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text font-medium">
-              Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women: their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
+              The Secret Lives of Baba Segi's Wives is Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
             </p>
 
-            {/* Accolades list - Perfectly vertically aligned icon and heading */}
+            {/* Accolades list */}
             <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
               <div className="flex items-center space-x-3 text-neutral-950">
                 <Award size={22} className="text-rose-600 shrink-0" />
                 <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider leading-none">
-                  Accolades & Nominations
+                  Accolades, Awards & Stage Rights
                 </h4>
               </div>
-              <div className="space-y-3 font-sans text-sm text-neutral-700 pt-1">
-                <div className="flex items-start space-x-3">
-                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                  <p className="leading-relaxed">
-                    Nominated for the <strong className="text-neutral-950 font-bold">Orange Prize for Fiction</strong> (2011)
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                  <p className="leading-relaxed">
-                    Winner of the <strong className="text-neutral-950 font-bold">PEN Oakland Josephine Miles Literary Award</strong>
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                  <p className="leading-relaxed">
-                    Winner of the <strong className="text-neutral-950 font-bold">Ken Saro-Wiwa Prose Prize</strong>
-                  </p>
-                </div>
-              </div>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                The novel was nominated for the Orange Prize for Fiction in 2011 and won the PEN Oakland Josephine Miles Literary Award and the Ken Saro-Wiwa Prose Prize. Stage rights are held by Lola Shoneyin.
+              </p>
             </div>
 
-            {/* Adaptation section - Header icon removed, specific Film icons for adaptations */}
+            {/* Adaptation section */}
             <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
               <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
                 Stage, Audio & Screen Adaptations
               </h4>
-              
-              <div className="space-y-3.5 font-sans text-sm text-neutral-700 pt-1">
-                <div className="flex items-start space-x-3">
-                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <p className="leading-relaxed">
-                    <strong className="text-neutral-950 font-bold">Arcola Theatre, London:</strong> A full ensemble stage adaptation directed by Femi Elufowoju Jr played to sold-out audiences.
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <p className="leading-relaxed">
-                    <strong className="text-neutral-950 font-bold">One-Woman Show:</strong> Adapted & performed globally in both English and Spanish by Maimouna Jallow.
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Radio size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <p className="leading-relaxed">
-                    <strong className="text-neutral-950 font-bold">BBC Radio Play:</strong> Adapted as a highly acclaimed radio play.
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Film size={18} className="text-rose-600 mt-0.5 shrink-0" />
-                  <p className="leading-relaxed">
-                    <strong className="text-neutral-950 font-bold">EbonyLife Film Adaptation:</strong> Scheduled for release on <strong className="text-rose-600 font-bold">4 December 2026</strong>.
-                  </p>
-                </div>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                The novel has had two stage adaptations. A full ensemble production directed by Femi Elufowoju Jr played to sold-out audiences at the Arcola Theatre in London. A one-woman show adapted and performed by Maimouna Jallow has been performed in both English and Spanish. The novel was also adapted as a BBC radio play. An EbonyLife film adaptation is set for release on 4 December 2026.
+              </p>
+            </div>
+
+            {/* Fun Fact Block */}
+            <div className="space-y-3 bg-rose-50/80 p-6 sm:p-7 rounded-[16px] border border-rose-200">
+              <div className="flex items-center space-x-2 text-rose-800 font-mono text-xs uppercase font-bold tracking-wider">
+                <Sparkles size={16} className="text-rose-600" />
+                <span>Fun Fact</span>
               </div>
+              <p className="text-neutral-800 font-serif italic text-xs sm:text-sm leading-relaxed">
+                "In 2016, I got this message from Eva Erny, “Half a year ago I received your book from my husband as a present. It has made such a deep impression on me, that I actually dreamt about the characters. Thereafter I started painting them.” She had never been to Nigeria before, so all the paintings were from online research about the places and the people."
+              </p>
             </div>
 
           </div>
@@ -266,13 +236,14 @@ export default function BooksPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu scroll-mt-28"
         >
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
               Children's Literature
             </h2>
-            <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl leading-relaxed">
-              Whimsical, instructive stories placing African children at the center of their own adventures, reinforcing agency, cultural appreciation, and creative pride. Click any book to inspect details.
-            </p>
+            <blockquote className="border-l-4 border-rose-600 pl-4 py-1 italic font-serif text-sm md:text-base text-neutral-700 max-w-3xl leading-relaxed">
+              “My children’s books place underserved Nigerian children at the centre of their own adventures. I give my characters agency, humour and imagination. It is crucial that these books exist because Nigerian children deserve to see themselves in the pages of picturebooks.”
+              <span className="block font-sans font-bold not-italic text-xs text-rose-600 mt-1 uppercase tracking-wider">— Lola Shoneyin</span>
+            </blockquote>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-4">

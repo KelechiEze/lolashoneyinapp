@@ -21,7 +21,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       hasDropdown: true,
       subLinks: [
         { path: "/books#prose", label: "Prose", desc: "The Secret Lives of Baba Segi's Wives & adaptations" },
-        { path: "/books#poetry", label: "Poetry Collections", desc: "Sitting on an Egg, Song of a Riverbird, For the Love of Flight" },
+        { path: "/books#poetry", label: "Poetry", desc: "Sitting on an Egg, Song of a Riverbird, For the Love of Flight" },
         { path: "/books#children", label: "Children's Books", desc: "Ten picture books placing African children at the center" },
         { path: "/writing#essays", label: "Essays & Articles", desc: "Building a Nigerian Picturebook Ecosystem, Red Tape & Nostalgia" },
       ]

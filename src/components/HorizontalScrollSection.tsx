@@ -14,24 +14,16 @@ export interface ChildrenBookItem {
 
 export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
   {
-    id: "anyibo",
-    title: "Anyibo and the Mother Hen",
-    year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png",
-    description: "A heartwarming story celebrating curiosity, compassion, and the wonders of nature.",
-    tag: "YOUNG READERS"
-  },
-  {
-    id: "hassan-hussaina",
-    title: "A Durbar for Hassan and Hussaina",
-    year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
-    description: "A festive cultural adventure through the grand traditions and colors of Northern Nigeria.",
-    tag: "CULTURAL TALE"
+    id: "mayowa",
+    title: "Mayowa and the Masquerades",
+    year: "2010",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg",
+    description: "An adventurous tale following young Mayowa as he uncovers the vibrant folklore of festival masquerades.",
+    tag: "FOLKLORE & ADVENTURE"
   },
   {
     id: "baji",
-    title: "Do As You're Told, Baji",
+    title: "Do As You Are Told, Baji",
     year: "2022",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg",
     description: "A funny and engaging lesson on responsibility, listening, and growing up.",
@@ -46,12 +38,28 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     tag: "RESILIENCE"
   },
   {
+    id: "hassan-hussaina",
+    title: "A Durbar Festival for Hassan and Hussaina",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
+    description: "A festive cultural adventure through the grand traditions and colors of Northern Nigeria.",
+    tag: "CULTURAL TALE"
+  },
+  {
     id: "jamila",
     title: "Jamila's Clever Plan",
     year: "2022",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png",
     description: "A tale of ingenuity and teamwork where young Jamila solves a community challenge.",
     tag: "PROBLEM SOLVING"
+  },
+  {
+    id: "anyibo",
+    title: "Anyibo and the Mother Hen",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png",
+    description: "A heartwarming story celebrating curiosity, compassion, and the wonders of nature.",
+    tag: "YOUNG READERS"
   },
   {
     id: "pwada",
@@ -70,12 +78,20 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     tag: "ENVIRONMENT"
   },
   {
-    id: "mayowa",
-    title: "Mayowa and the Masquerades",
-    year: "2010",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg",
-    description: "An adventurous tale following young Mayowa as he uncovers the vibrant folklore of festival masquerades.",
-    tag: "FOLKLORE & ADVENTURE"
+    id: "tunde",
+    title: "Tunde Onakoya, The Chess Champion",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800",
+    description: "An inspiring biography of chess master Tunde Onakoya, showing children the power of intellect and vision.",
+    tag: "BIOGRAPHY"
+  },
+  {
+    id: "dunoma",
+    title: "Dunoma the Brave",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
+    description: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
+    tag: "HEROIC TALE"
   }
 ];
 
