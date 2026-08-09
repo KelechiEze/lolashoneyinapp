@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Trophy, Medal, Sparkles, Award, ArrowUpRight } from "lucide-react";
+import { Award, ArrowUpRight } from "lucide-react";
 
 interface AwardItem {
   id: string;
@@ -9,7 +9,6 @@ interface AwardItem {
   subtitle: string;
   imageUrl: string;
   organization: string;
-  icon: React.ReactNode;
 }
 
 const AWARDS_LIST: AwardItem[] = [
@@ -20,7 +19,6 @@ const AWARDS_LIST: AwardItem[] = [
     organization: "African Literature Association",
     subtitle: "Conferred for groundbreaking impact across African literature, festival curation, & publishing infrastructure.",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_35_24-pm.png",
-    icon: <Trophy className="text-amber-500" size={18} />,
   },
   {
     id: "award-2",
@@ -29,16 +27,14 @@ const AWARDS_LIST: AwardItem[] = [
     organization: "Financial Times",
     subtitle: "Recognized alongside global visionary leaders in culture, arts, literature, and social transformation.",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png",
-    icon: <Medal className="text-rose-500" size={18} />,
   },
   {
     id: "award-3",
-    title: "Aficionado Award",
+    title: "Aficionado Award (Frankfurter Buchmesse and Salone Internazionale del Libro, Turin)",
     year: "2023",
     organization: "Frankfurter Buchmesse & Salone del Libro Turin",
     subtitle: "Inaugural winner celebrating outstanding and original publishing initiatives worldwide.",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_22_31-pm.png",
-    icon: <Sparkles className="text-emerald-500" size={18} />,
   },
   {
     id: "award-4",
@@ -47,7 +43,6 @@ const AWARDS_LIST: AwardItem[] = [
     organization: "Royal Society of Literature",
     subtitle: "Elected to one of literature's highest lifelong honors in recognition of enduring creative excellence.",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/seghi1.jpeg",
-    icon: <Award className="text-teal-500" size={18} />,
   },
 ];
 
@@ -104,7 +99,7 @@ export default function AwardsAndPrizesSection() {
                 {/* Bottom Overlay Title on Image */}
                 <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white">
                   <div className="flex items-center gap-2 bg-neutral-950/80 backdrop-blur-md px-3 py-1.5 border border-white/15 rounded-none">
-                    {award.icon}
+                    <Award className="text-rose-500" size={18} />
                     <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-neutral-200">
                       {award.organization}
                     </span>
