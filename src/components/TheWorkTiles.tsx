@@ -80,7 +80,13 @@ export default function TheWorkTiles() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8"
+        >
           <div className="space-y-3 max-w-2xl">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-rose-600 font-bold block">
               PORTFOLIO ARCHITECTURE
@@ -92,19 +98,20 @@ export default function TheWorkTiles() {
           <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed font-medium">
             Explore the interconnected creative ecosystem spanning storytelling, publishing sovereignty, festival convenings, and documentary archives.
           </p>
-        </div>
+        </motion.div>
 
         {/* Tiles Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {WORK_TILES.map((tile, idx) => (
             <motion.div
               key={tile.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 35, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.25 } }}
               onClick={() => handleTileClick(tile.path)}
-              className={`group relative min-h-[320px] sm:min-h-[360px] rounded-2xl overflow-hidden border border-white/10 hover:border-rose-500/50 transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between p-6 sm:p-8 ${
+              className={`group relative min-h-[320px] sm:min-h-[360px] rounded-2xl overflow-hidden border border-white/10 hover:border-rose-500/50 transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between p-6 sm:p-8 transform-gpu ${
                 tile.id === "writing" ? "sm:col-span-2 lg:col-span-2 min-h-[360px]" : ""
               }`}
             >
@@ -112,7 +119,7 @@ export default function TheWorkTiles() {
               <img
                 src={tile.bgImage}
                 alt={tile.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 select-none"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 select-none"
                 referrerPolicy="no-referrer"
               />
 

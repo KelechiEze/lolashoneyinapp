@@ -10,7 +10,7 @@ export default function PhilosophySection() {
       description: "Rooted in local history, oral lore, and African narratives. Our literature is designed to go deep into our traditions while addressing universal human struggles."
     },
     {
-      icon: <Sparkles className="w-8 h-8 text-amber-500" strokeWidth={1.5} />,
+      icon: <Sparkles className="w-8 h-8 text-amber-500 animate-pulse" strokeWidth={1.5} />,
       title: "Centering Young Heroes",
       description: "Young readers need to see themselves in stories. Ten children's books place Nigerian children at the absolute center of their own brilliant, brave adventures."
     },
@@ -35,22 +35,23 @@ export default function PhilosophySection() {
         
         {/* HEADER AREA */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start transform-gpu"
         >
           <div className="lg:col-span-8 space-y-4">
-            <span className="text-xs uppercase font-mono tracking-[0.25em] text-neutral-400 font-semibold block">
-              OUR GUIDING PHILOSOPHY
-            </span>
-            <h2 className="font-sans font-black text-4xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight text-neutral-900">
+            <div className="inline-flex items-center gap-2 text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+              <span className="w-2 h-2 rounded-full bg-rose-600 animate-ping" />
+              <span>OUR GUIDING PHILOSOPHY</span>
+            </div>
+            <h2 className="font-sans font-black text-4xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight text-neutral-900 uppercase">
               Upholding cultural documentation, representation, and artistic independence
             </h2>
           </div>
           <div className="lg:col-span-4 lg:pt-10">
-            <p className="font-sans text-neutral-500 font-medium text-sm md:text-base leading-relaxed select-text">
+            <p className="font-sans text-neutral-600 font-medium text-sm md:text-base leading-relaxed select-text border-l-2 border-rose-500 pl-4 italic">
               "We must carry forward our stories, keeping the roots alive. Real change comes from creating platforms that support African voices and artists."
             </p>
           </div>
@@ -61,19 +62,20 @@ export default function PhilosophySection() {
           
           {/* Left Studio Image */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-4 h-full min-h-[400px] lg:min-h-0 flex transform-gpu"
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-4 h-full min-h-[400px] lg:min-h-0 flex transform-gpu group relative"
           >
-            <div className="relative w-full h-full rounded-[8px] overflow-hidden bg-white shadow-none border border-neutral-200/80">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-900 shadow-xl border border-neutral-200">
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_58_01-pm.png"
                 alt="Lola Shoneyin Guiding Philosophy"
-                className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover select-none group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
           </motion.div>
 
@@ -82,27 +84,28 @@ export default function PhilosophySection() {
             {cards.map((card, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="bg-white rounded-[8px] p-8 md:p-10 flex flex-col justify-between space-y-16 shadow-none border border-neutral-200/80 hover:shadow-none transition-all duration-300 cursor-pointer transform-gpu"
+                initial={{ opacity: 0, y: 35, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-neutral-50 hover:bg-white rounded-2xl p-8 md:p-10 flex flex-col justify-between space-y-12 border border-neutral-200 hover:border-neutral-900 hover:shadow-xl transition-all duration-300 cursor-pointer transform-gpu group"
               >
                 {/* Top Icon */}
                 <motion.div 
-                  whileHover={{ rotate: 15, scale: 1.1 }}
-                  className="w-12 h-12 flex items-center justify-start"
+                  whileHover={{ rotate: 12, scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-sm group-hover:border-neutral-900 transition-colors"
                 >
                   {card.icon}
                 </motion.div>
 
                 {/* Bottom Content Area */}
                 <div className="space-y-3">
-                  <h3 className="font-sans font-bold text-lg md:text-xl text-neutral-900 tracking-tight">
+                  <h3 className="font-sans font-bold text-lg md:text-xl text-neutral-900 tracking-tight uppercase group-hover:text-rose-600 transition-colors">
                     {card.title}
                   </h3>
-                  <p className="font-sans text-neutral-500 font-medium text-xs md:text-sm leading-relaxed select-text">
+                  <p className="font-sans text-neutral-600 font-medium text-xs md:text-sm leading-relaxed select-text">
                     {card.description}
                   </p>
                 </div>
