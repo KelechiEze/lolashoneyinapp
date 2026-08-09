@@ -89,7 +89,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     id: "dunoma",
     title: "Dunoma the Brave",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.17.37.jpeg",
     description: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
     tag: "HEROIC TALE"
   }

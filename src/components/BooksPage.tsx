@@ -10,6 +10,7 @@ interface TranslationItem {
   lang: string;
   title: string;
   url: string;
+  isComingSoon?: boolean;
 }
 
 interface GenericModalBook {
@@ -24,19 +25,40 @@ interface GenericModalBook {
 }
 
 const TRANSLATIONS: TranslationItem[] = [
-  { lang: "French", title: "Les vies secrètes des épouses de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38.jpeg" },
-  { lang: "English (Edition)", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
-  { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
+  // First three intact: English, French, German
+  { lang: "English", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-05-at-19.16.18-1.jpeg" },
+  { lang: "French", title: "Les vies secrètes des épouses de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
   { lang: "German", title: "Die geheimen Leben der Frauen des Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
-  { lang: "Yoruba", title: "Ìgbésí Ayé Àṣírí Àwọn Iyawo Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_11_34-pm.png" },
-  { lang: "Arabic", title: "الحيوات السرية لزوجات بابا سيجي", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_14_17-pm.png" },
-  { lang: "Italian", title: "Le vite segrete delle mogli di Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
-  { lang: "Portuguese", title: "As Vidas Secretas das Mulheres de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38.jpeg" },
-  { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
-  { lang: "Polish", title: "Sekretne życia żon Baby Segiego", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
-  { lang: "Swedish", title: "Baba Segis hustrus hemliga liv", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
-  { lang: "Swahili", title: "Maisha ya Siri ya Wake wa Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_14_17-pm.png" }
+  { lang: "Lithuanian", title: "Slaptas Baba Segio žmonų gyvenimas", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-05-at-19.15.38.jpeg" },
+  { lang: "Turkish", title: "Baba Segi'nin Karılarının Gizli Yaşamları", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_11_34-pm.png" },
+  
+  // Italian - Cover Coming Soon
+  { lang: "Italian", title: "Le vite segrete delle mogli di Baba Segi", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true },
+  
+  // Hebrew - Cover Coming Soon
+  { lang: "Hebrew", title: "החיים הסודיים של נשות באבא סגי", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true },
+  
+  // Dutch - Cover Coming Soon
+  { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
+  
+  // Norwegian - Cover Coming Soon
+  { lang: "Norwegian", title: "Baba Segis koners hemmelige liv", url: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800", isComingSoon: true },
+  
+  // Arabic - Cover Coming Soon
+  { lang: "Arabic", title: "الحيوات السرية لزوجات بابا سيجي", url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800", isComingSoon: true },
+  
+  // Spanish - Cover Coming Soon
+  { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
+  
+  // Slovak - Cover Coming Soon
+  { lang: "Slovak", title: "Tajný život manželiek Babu Segiho", url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", isComingSoon: true },
+  
+  // Czech - Cover Coming Soon
+  { lang: "Czech", title: "Tajný život manželek Baby Segiho", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true }
 ];
+
+// Dummy image for replacement
+const DUMMY_IMAGE = "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800";
 
 export default function BooksPage() {
   const location = useLocation();
@@ -68,7 +90,23 @@ export default function BooksPage() {
     }
   }, [location.state]);
 
-  const visibleCovers = TRANSLATIONS;
+  // Keep first three (English, French, German) intact, replace Dutch and Spanish with dummy
+  const adjustedCovers = TRANSLATIONS.map((item, index) => {
+    // Keep first three (English, French, German) intact
+    if (index < 3) {
+      return { ...item };
+    }
+    
+    // Replace Dutch and Spanish with dummy image (but keep isComingSoon flag)
+    if (item.lang === "Dutch" || item.lang === "Spanish") {
+      return { ...item, url: DUMMY_IMAGE };
+    }
+    
+    // All others keep their original URLs
+    return { ...item };
+  });
+
+  const visibleCovers = adjustedCovers;
 
   return (
     <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white">
@@ -183,9 +221,16 @@ export default function BooksPage() {
                       <img
                         src={item.url}
                         alt={`${item.lang} Translation`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${item.isComingSoon ? "opacity-60 grayscale" : ""}`}
                         referrerPolicy="no-referrer"
                       />
+                      {item.isComingSoon && (
+                        <div className="absolute inset-0 bg-neutral-950/60 flex flex-col items-center justify-center p-3 text-center">
+                          <span className="font-mono text-[10px] font-bold text-white uppercase tracking-wider bg-rose-600 px-2.5 py-1 rounded-sm shadow-md">
+                            Cover Coming Soon
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
@@ -197,6 +242,11 @@ export default function BooksPage() {
                         <span className="font-mono text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
                           TRANSLATION
                         </span>
+                        {item.isComingSoon && (
+                          <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-wider italic">
+                            (Cover not available yet)
+                          </span>
+                        )}
                       </div>
 
                       <h4 className="font-serif font-extrabold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
@@ -241,7 +291,7 @@ export default function BooksPage() {
               Children's Literature
             </h2>
             <blockquote className="border-l-4 border-rose-600 pl-4 py-1 italic font-serif text-sm md:text-base text-neutral-700 max-w-3xl leading-relaxed">
-              “My children’s books place underserved Nigerian children at the centre of their own adventures. I give my characters agency, humour and imagination. It is crucial that these books exist because Nigerian children deserve to see themselves in the pages of picturebooks.”
+              “My children's books place underserved Nigerian children at the centre of their own adventures. I give my characters agency, humour and imagination. It is crucial that these books exist because Nigerian children deserve to see themselves in the pages of picturebooks.”
               <span className="block font-sans font-bold not-italic text-xs text-rose-600 mt-1 uppercase tracking-wider">— Lola Shoneyin</span>
             </blockquote>
           </div>

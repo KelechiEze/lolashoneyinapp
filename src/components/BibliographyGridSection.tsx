@@ -215,7 +215,7 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     author: "Lola Shoneyin",
     publisherOrOutlet: "Book Buzz Foundation",
     summary: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.17.37.jpeg",
     tag: "Children's Book"
   }
 ];
