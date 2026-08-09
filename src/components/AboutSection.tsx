@@ -18,11 +18,11 @@ export default function AboutSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-4 max-w-4xl transform-gpu"
         >
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-neutral-400 font-semibold block">
-            ABOUT THE AUTHOR & FOUNDER
+          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
+            BIOGRAPHY
           </span>
           <h2 className="font-sans font-black text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-neutral-900">
-            Lola Shoneyin: Poet, Novelist, Publisher, and Institution Builder
+            Biography
           </h2>
         </motion.div>
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, Newspaper, ArrowUpRight, HelpCircle, Sparkles, Plus, Minus, Mic, ExternalLink, BookOpen, Layers, Zap, Hexagon, CircleDot, Compass } from "lucide-react";
 import { DisintegratingImage } from "./DisintegratingImage";
+import { AwardsMarquee } from "./AwardsMarquee";
 
 export interface AwardItem {
   year: string;
@@ -175,6 +176,11 @@ export default function PressPage() {
           <p className="text-neutral-700 font-serif italic text-lg sm:text-xl max-w-3xl leading-relaxed">
             For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of <span className="not-italic font-semibold">The Secret Lives of Baba Segi's Wives</span> to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
           </p>
+        </div>
+
+        {/* ACCLAIM & RECOGNITIONS MARQUEE */}
+        <div className="-mx-6 md:-mx-12">
+          <AwardsMarquee />
         </div>
 
         {/* SELECTED INTERVIEWS SECTION */}

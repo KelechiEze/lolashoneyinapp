@@ -16,6 +16,9 @@ import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import PoetrySection from "./components/PoetrySection";
 import { BentoSection } from "./components/BentoSection";
 import { BentoSectionTwo } from "./components/BentoSectionTwo";
+import { AwardsMarquee } from "./components/AwardsMarquee";
+import TheWorkTiles from "./components/TheWorkTiles";
+import AwardsAndPrizesSection from "./components/AwardsAndPrizesSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import CalendarModal from "./components/CalendarModal";
 
@@ -51,16 +54,19 @@ function HomePage() {
 
       {/* 2. Covering Content Layer that slides up over the fixed Hero */}
       <div className="relative z-10 bg-white shadow-[0_-25px_60px_rgba(0,0,0,0.15)]">
-        {/* About the Author */}
+        {/* The Work (tiles) */}
+        <TheWorkTiles />
+
+        {/* Biography */}
         <AboutSection />
+
+        {/* Awards and Prizes */}
+        <AwardsAndPrizesSection />
 
         {/* Spaces at Ouida Section */}
         <SpacesSection />
 
-        {/* Agency Section */}
-        {/* <AgencySection /> */}
-
-        {/* The Work: Core CardStack showcasing key achievements (3 cards) */}
+        {/* Sticky Projects CardStack */}
         <CardStack
           projects={PROJECTS.slice(0, 3)}
           onViewProject={(project) => {
@@ -88,9 +94,6 @@ function HomePage() {
 
         {/* Philosophy Section */}
         <PhilosophySection />
-
-        {/* Reviews & Acclaim (Commented out) */}
-        {/* <TestimonialsSection /> */}
       </div>
     </motion.div>
   );
