@@ -26,7 +26,7 @@ export default function WritingHeroSection() {
               <img
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png"
                 alt="Lola Shoneyin Portrait"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"
               />
               {/* GRADIENT OVERLAY FOR TEXT READABILITY */}

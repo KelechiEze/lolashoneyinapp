@@ -77,7 +77,7 @@ export default function ContactPage() {
           <img
             src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png"
             alt="Hero Background"
-            className="w-full h-full object-cover object-center opacity-90 scale-105"
+            className="w-full h-full object-cover object-top opacity-40 select-none"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/60 backdrop-blur-[0.5px]" />

@@ -66,7 +66,7 @@ export default function HomeHero() {
     },
     animate: {
       x: 0,
-      scale: 1.15,
+      scale: 1.02,
       transition: {
         x: { type: "tween", ease: [0.25, 1, 0.5, 1], duration: 1.8 },
         scale: { type: "tween", ease: "linear", duration: 7 },
@@ -84,7 +84,7 @@ export default function HomeHero() {
     <div className="relative w-full h-screen overflow-hidden flex items-end justify-start bg-neutral-950">
       
       {/* FULL-HEIGHT HERO IMAGE CAROUSEL */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-neutral-950">
         <AnimatePresence initial={false}>
           <motion.img
             key={index}
@@ -94,13 +94,13 @@ export default function HomeHero() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="absolute inset-0 w-full h-full object-cover select-none"
+            className="absolute inset-0 w-full h-full object-cover object-top opacity-50 select-none"
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
-        {/* Sleek, deep vignette and bottom gradient shadow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/25 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-black/15 z-10 pointer-events-none" />
+        {/* Soft dark overlays to gently fade out strong background photos */}
+        <div className="absolute inset-0 bg-neutral-950/35 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-neutral-950/20 z-10 pointer-events-none" />
       </div>
 
       {/* VERTICAL ANIMATED SOCIAL MEDIA STRIP ALIGNED WITH TOP-RIGHT MENU BUTTON */}
