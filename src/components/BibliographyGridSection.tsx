@@ -18,17 +18,6 @@ export interface BibliographyItem {
 
 export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
   {
-    id: "baba-segi",
-    type: "Novel",
-    title: "The Secret Lives of Baba Segi's Wives",
-    year: "2010",
-    author: "Lola Shoneyin",
-    publisherOrOutlet: "Serpent's Tail / HarperCollins / Ouida Books",
-    summary: "The Secret Lives of Baba Segi's Wives is Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
-    tag: "Orange Prize Nominee",
-  },
-  {
     id: "poetry-egg",
     type: "Poetry",
     title: "So All the Time I Was Sitting on an Egg",
