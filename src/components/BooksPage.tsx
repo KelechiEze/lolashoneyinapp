@@ -31,21 +31,13 @@ const TRANSLATIONS: TranslationItem[] = [
   { lang: "German", title: "Die geheimen Leben der Frauen des Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
   { lang: "Lithuanian", title: "Slaptas Baba Segio žmonų gyvenimas", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-05-at-19.15.38.jpeg" },
   { lang: "Turkish", title: "Baba Segi'nin Karılarının Gizli Yaşamları", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_11_34-pm.png" },
-  
-  // Italian - Cover Coming Soon
-  { lang: "Italian", title: "Le vite segrete delle mogli di Baba Segi", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true },
-  
-  // Hebrew - Cover Coming Soon
-  { lang: "Hebrew", title: "החיים הסודיים של נשות באבא סגי", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true },
+  { lang: "Arabic", title: "الحيوات السرية لزوجات بابا سيجي", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-01.00.29.jpeg"},
+  { lang: "Hebrew", title: "החיים הסודיים של נשות באבא סגי", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-00.59.44.jpeg"},
+  { lang: "Italian", title: "Le vite segrete delle mogli di Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-01.04.24.jpeg"},
+  { lang: "Norwegian", title: "Baba Segis koners hemmelige liv", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-01.03.46.jpeg" },
   
   // Dutch - Cover Coming Soon
   { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
-  
-  // Norwegian - Cover Coming Soon
-  { lang: "Norwegian", title: "Baba Segis koners hemmelige liv", url: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800", isComingSoon: true },
-  
-  // Arabic - Cover Coming Soon
-  { lang: "Arabic", title: "الحيوات السرية لزوجات بابا سيجي", url: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800", isComingSoon: true },
   
   // Spanish - Cover Coming Soon
   { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
