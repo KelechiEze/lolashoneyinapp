@@ -35,22 +35,11 @@ const TRANSLATIONS: TranslationItem[] = [
   { lang: "Hebrew", title: "החיים הסודיים של נשות באבא סגי", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-00.59.44.jpeg"},
   { lang: "Italian", title: "Le vite segrete delle mogli di Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-01.04.24.jpeg"},
   { lang: "Norwegian", title: "Baba Segis koners hemmelige liv", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-01.03.46.jpeg" },
-  
-  // Dutch - Cover Coming Soon
-  { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
-  
-  // Spanish - Cover Coming Soon
-  { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png", isComingSoon: true },
-  
-  // Slovak - Cover Coming Soon
-  { lang: "Slovak", title: "Tajný život manželiek Babu Segiho", url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", isComingSoon: true },
-  
-  // Czech - Cover Coming Soon
-  { lang: "Czech", title: "Tajný život manželek Baby Segiho", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800", isComingSoon: true }
+  { lang: "Slovak", title: "Tajný život manželiek Babu Segiho", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.03.56.jpeg" },
+  { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.01.57-1.jpeg"},
+  { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.06.41-1.jpeg" },
+  { lang: "Czech", title: "Tajný život manželek Baby Segiho", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800" }
 ];
-
-// Dummy image for replacement
-const DUMMY_IMAGE = "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800";
 
 export default function BooksPage() {
   const location = useLocation();
@@ -82,23 +71,7 @@ export default function BooksPage() {
     }
   }, [location.state]);
 
-  // Keep first three (English, French, German) intact, replace Dutch and Spanish with dummy
-  const adjustedCovers = TRANSLATIONS.map((item, index) => {
-    // Keep first three (English, French, German) intact
-    if (index < 3) {
-      return { ...item };
-    }
-    
-    // Replace Dutch and Spanish with dummy image (but keep isComingSoon flag)
-    if (item.lang === "Dutch" || item.lang === "Spanish") {
-      return { ...item, url: DUMMY_IMAGE };
-    }
-    
-    // All others keep their original URLs
-    return { ...item };
-  });
-
-  const visibleCovers = adjustedCovers;
+  const visibleCovers = TRANSLATIONS;
 
   return (
     <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white">
@@ -344,7 +317,7 @@ export default function BooksPage() {
           </div>
         </motion.div>
 
-        {/* BOOK MODAL - CENTERED PERFECTLY WITH FULL COVER DISPLAY */}
+        {/* BOOK MODAL - WHITE BACKGROUND WITH FULL COVER DISPLAY */}
         <AnimatePresence>
           {activeModalBook && (
             <motion.div
@@ -352,59 +325,59 @@ export default function BooksPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveModalBook(null)}
-              className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
             >
               <motion.div
                 initial={{ scale: 0.92, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.92, opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center"
+                className="bg-white rounded-2xl max-w-4xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-stretch"
               >
                 <button
                   onClick={() => setActiveModalBook(null)}
-                  className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
+                  className="absolute top-4 right-4 p-2 text-neutral-600 hover:text-neutral-900 bg-white/80 hover:bg-white rounded-full transition-colors z-30 cursor-pointer shadow-md"
                   aria-label="Close modal"
                 >
                   <X size={20} />
                 </button>
 
-                {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
-                <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
+                {/* FULL COVER IMAGE - TAKES FULL HEIGHT OF LEFT SIDE */}
+                <div className="w-full md:w-2/5 min-h-[320px] md:min-h-[420px] relative shrink-0 rounded-lg overflow-hidden bg-neutral-100 flex items-center justify-center">
                   <img
                     src={activeModalBook.image}
                     alt={activeModalBook.title}
-                    className="w-full h-full object-contain max-h-[48vh] rounded"
+                    className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
-                {/* BOOK DETAILS */}
-                <div className="w-full md:w-1/2 space-y-4 text-left">
+                {/* BOOK DETAILS - WHITE BACKGROUND */}
+                <div className="w-full md:w-3/5 space-y-4 text-left flex flex-col justify-center">
                   {activeModalBook.tag && (
-                    <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
+                    <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full text-rose-700 font-mono text-xs uppercase font-bold tracking-wider">
                       <Sparkles size={12} />
                       <span>{activeModalBook.tag} {activeModalBook.year ? `• ${activeModalBook.year}` : ""}</span>
                     </div>
                   )}
 
                   <div>
-                    <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                    <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-neutral-900 tracking-tight leading-snug">
                       {activeModalBook.title}
                     </h3>
-                    <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
+                    <p className="text-sm font-sans font-semibold text-rose-600 pt-1">
                       By {activeModalBook.author}
                     </p>
                   </div>
 
-                  <p className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed">
+                  <p className="text-neutral-700 font-sans text-sm sm:text-base leading-relaxed">
                     {activeModalBook.description}
                   </p>
 
                   {activeModalBook.publisher && (
-                    <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
+                    <div className="pt-3 border-t border-neutral-200 text-xs text-neutral-500 font-mono">
                       <span>Publisher: </span>
-                      <span className="text-neutral-200 font-bold">{activeModalBook.publisher}</span>
+                      <span className="text-neutral-800 font-bold">{activeModalBook.publisher}</span>
                     </div>
                   )}
                 </div>
