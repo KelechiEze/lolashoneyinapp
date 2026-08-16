@@ -82,12 +82,12 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
               onClick={() => setActiveModalItem(p)}
               className="relative group cursor-pointer flex flex-col space-y-4"
             >
-              {/* CLEAN BOOK COVER IMAGE */}
-              <div className="relative w-full aspect-[3/4.2] rounded-[6px] overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-500 ease-out group-hover:-translate-y-2 bg-neutral-100">
+              {/* STANDALONE BOOK COVER IMAGE (NO CONTAINER BOX) */}
+              <div className="relative w-full aspect-[3/4.5] flex items-center justify-center group-hover:-translate-y-2 transition-all duration-500 ease-out">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-700 drop-shadow-md rounded-md"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -139,7 +139,7 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
           ))}
         </div>
 
-        {/* FULL COVER MODAL FOR POETRY */}
+        {/* FULL COVER MODAL FOR POETRY - WHITE BACKGROUND */}
         <AnimatePresence>
           {activeModalItem && (
             <motion.div
@@ -147,56 +147,56 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveModalItem(null)}
-              className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
             >
               <motion.div
                 initial={{ scale: 0.92, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.92, opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center text-left"
+                className="bg-white rounded-2xl max-w-4xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-stretch text-left"
               >
                 <button
                   onClick={() => setActiveModalItem(null)}
-                  className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
+                  className="absolute top-4 right-4 p-2 text-neutral-600 hover:text-neutral-900 bg-white/80 hover:bg-white rounded-full transition-colors z-30 cursor-pointer shadow-md"
                   aria-label="Close modal"
                 >
                   <X size={20} />
                 </button>
 
                 {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
-                <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
+                <div className="w-full md:w-2/5 min-h-[300px] md:min-h-[400px] relative shrink-0 rounded-lg overflow-hidden bg-neutral-100 flex items-center justify-center p-3">
                   <img
                     src={activeModalItem.image}
                     alt={activeModalItem.title}
-                    className="w-full h-full object-contain max-h-[48vh] rounded"
+                    className="w-full h-full object-contain max-h-[50vh] drop-shadow-md"
                     referrerPolicy="no-referrer"
                   />
                 </div>
 
-                {/* BOOK DETAILS */}
-                <div className="w-full md:w-1/2 space-y-4">
-                  <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
+                {/* BOOK DETAILS - WHITE BACKGROUND */}
+                <div className="w-full md:w-3/5 space-y-4 flex flex-col justify-center">
+                  <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full text-rose-700 font-mono text-xs uppercase font-bold tracking-wider self-start">
                     <Sparkles size={12} />
                     <span>{activeModalItem.tag} • {activeModalItem.year}</span>
                   </div>
 
                   <div>
-                    <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                    <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-neutral-900 tracking-tight leading-snug">
                       {activeModalItem.title}
                     </h3>
-                    <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
+                    <p className="text-sm font-sans font-semibold text-rose-600 pt-1">
                       By Lola Shoneyin
                     </p>
                   </div>
 
-                  <p className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed">
+                  <p className="text-neutral-700 font-sans text-sm sm:text-base leading-relaxed">
                     {activeModalItem.desc}
                   </p>
 
-                  <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
-                    <span>Genre: </span>
-                    <span className="text-neutral-200 font-bold">Poetry</span>
+                  <div className="pt-3 border-t border-neutral-200 text-xs text-neutral-500 font-mono flex items-center justify-between">
+                    <span>Genre: <strong className="text-neutral-800 font-bold">Poetry Collection</strong></span>
+                    <span>Year: <strong className="text-neutral-800 font-bold">{activeModalItem.year}</strong></span>
                   </div>
                 </div>
               </motion.div>
