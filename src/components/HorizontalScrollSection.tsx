@@ -81,7 +81,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     id: "tunde",
     title: "Tunde Onakoya, The Chess Champion",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot-2026-08-16-at-19.24.05.png",
     description: "An inspiring biography of chess master Tunde Onakoya, showing children the power of intellect and vision.",
     tag: "BIOGRAPHY"
   },

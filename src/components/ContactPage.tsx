@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Send, Check, Mail, MapPin, Newspaper, ArrowUpRight, Award, Download, FileText, Calendar, Sparkles, Plus, Minus } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Mail, MapPin, Newspaper, ArrowUpRight, Download, FileText, Calendar, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CONTACT_FAQS = [
@@ -34,219 +35,110 @@ const CONTACT_FAQS = [
 ];
 
 export default function ContactPage() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [inquiryType, setInquiryType] = useState("General");
-  const [message, setMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const location = useLocation();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        setTimeout(() => {
+          elem.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if ((!firstName && !lastName) || !email) return;
-
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 3500);
-    }, 1200);
-  };
-
   return (
-    <div className="bg-white text-neutral-900 min-h-screen pt-20 pb-24 selection:bg-neutral-900 selection:text-white">
+    <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 selection:bg-rose-600 selection:text-white font-sans overflow-x-hidden">
       
-      {/* HERO CONTACT FORM SECTION WITH HERO BACKGROUND IMAGE */}
-      <div className="relative w-full min-h-[92vh] flex items-center justify-start px-6 sm:px-12 lg:px-24 py-16 bg-neutral-950 overflow-hidden">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png"
-            alt="Hero Background"
-            className="w-full h-full object-cover object-top opacity-40 select-none"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/60 backdrop-blur-[0.5px]" />
-        </div>
+      {/* 1. INTRO / HERO SECTION */}
+      <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
+        <div className="text-left space-y-4 max-w-3xl">
+          <span className="font-mono text-xs text-rose-600 uppercase tracking-[0.25em] font-bold block">
+            CONTACT & FAQ
+          </span>
 
-        {/* Floating Contact Form Container */}
-        <div id="form" className="relative z-10 w-full max-w-xl bg-white p-8 sm:p-12 md:p-14 shadow-2xl rounded-none text-neutral-900 my-auto scroll-mt-28">
-          
-          <div className="space-y-2 mb-6">
-            <span className="font-mono text-[10px] text-rose-600 font-extrabold uppercase tracking-widest block">
-              DIRECT INQUIRIES & BOOKINGS
-            </span>
-            <h1 className="font-sans font-medium text-4xl sm:text-5xl tracking-tight text-neutral-950 leading-tight">
-              Get in touch
-            </h1>
-            <p className="font-sans text-xs text-neutral-600">
-              Official email for all inquiries: <a href="mailto:info@lolashoneyin.com" className="font-mono font-bold text-rose-600 underline">info@lolashoneyin.com</a>
-            </p>
+          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
+            Contact
+          </h1>
+
+          <div>
+            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full mt-2">
+              <Mail size={14} className="text-rose-600" />
+              <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
+                ROUTING & INQUIRIES
+              </span>
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            
-            {/* FIRST NAME / LAST NAME */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                  FIRST NAME
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="First name"
-                  className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all"
-                />
-              </div>
+          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-4">
+            All enquiries, contact, work inquiries, bookings, and partnerships go to <a href="mailto:info@lolashoneyin.com" className="font-mono font-bold text-rose-600 underline hover:text-rose-700">info@lolashoneyin.com</a>.
+          </p>
 
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                  LAST NAME
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="Last Name"
-                  className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all"
-                />
-              </div>
-            </div>
-
-            {/* EMAIL / PHONE NUMBER */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                  EMAIL
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your Email Address"
-                  className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                  PHONE NUMBER
-                </label>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Your Phone Number"
-                  className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all"
-                />
-              </div>
-            </div>
-
-            {/* INQUIRY CATEGORY */}
-            <div className="space-y-1.5">
-              <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                INQUIRY CATEGORY
-              </label>
-              <select
-                value={inquiryType}
-                onChange={(e) => setInquiryType(e.target.value)}
-                className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all cursor-pointer"
-              >
-                <option value="General">Contact Us: General Inquiry</option>
-                <option value="Speaking">Work Inquiries & Keynote Bookings</option>
-                <option value="Press">Press & Media Requests</option>
-                <option value="Publishing">Ouida Books Editorial & Licensing</option>
-                <option value="Festivals">Aké / LIFI / AFLI Festival Partnerships</option>
-              </select>
-            </div>
-
-            {/* YOUR MESSAGE (OPTIONAL) */}
-            <div className="space-y-1.5">
-              <label className="block text-[11px] font-mono tracking-wider font-semibold text-neutral-500 uppercase">
-                YOUR MESSAGE
-              </label>
-              <textarea
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Enter your inquiry details..."
-                className="w-full bg-neutral-100/90 border-0 rounded-none px-4 py-3.5 text-xs sm:text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-neutral-100 focus:ring-1 focus:ring-black transition-all resize-none"
-              />
-            </div>
-
-            {/* SUBMIT BUTTON */}
-            <button
-              type="submit"
-              disabled={isSubmitting || isSuccess}
-              className={`w-full font-mono text-xs font-bold uppercase tracking-widest py-4 rounded-none transition-colors cursor-pointer text-center ${
-                isSuccess 
-                  ? "bg-emerald-700 text-white" 
-                  : "bg-black hover:bg-neutral-800 text-white"
-              }`}
+          <div className="pt-4 flex flex-wrap items-center justify-start gap-4">
+            <a
+              href="mailto:info@lolashoneyin.com"
+              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
             >
-              {isSubmitting ? "Submitting..." : isSuccess ? "Thank You: Message Sent!" : "Submit"}
+              <span>Email info@lolashoneyin.com</span>
+              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            <button
+              onClick={() => {
+                const faqEl = document.getElementById("faq");
+                if (faqEl) faqEl.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-sm transition-all cursor-pointer"
+            >
+              <span>View FAQ</span>
             </button>
-
-          </form>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* LOWER SECTION: CONTACT DETAILS & OFFICIAL ADDRESSES */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 space-y-20">
-        
-        {/* DIRECT CONNECTION CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start border-t border-neutral-200 pt-16">
+      {/* 2. CONTACT ROUTING & OFFICIAL CHANNELS */}
+      <div className="max-w-7xl mx-auto px-6 space-y-20">
+        <div id="routing" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start border-t border-neutral-200/80 pt-16 scroll-mt-28">
           <div className="space-y-6">
             <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold block">
-              OFFICIAL DESKS
+              CONTACT ROUTING
             </span>
-            <h2 className="font-sans font-black text-3xl uppercase tracking-tight text-neutral-950">
-              Contact Channels
+            <h2 className="font-sans font-black text-3xl sm:text-4xl uppercase tracking-tight text-neutral-950">
+              Contact routing
             </h2>
-            <p className="text-neutral-700 font-sans text-sm leading-relaxed">
-              All official correspondence for Lola Shoneyin, speaking bookings, press requests, and organizational partnerships are processed directly via <strong className="text-neutral-950">info@lolashoneyin.com</strong>.
-            </p>
+            <div className="p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm space-y-3">
+              <p className="text-neutral-900 font-sans text-base sm:text-lg font-medium leading-relaxed">
+                All enquiries, contact, work inquiries, bookings, and partnerships, go to <a href="mailto:info@lolashoneyin.com" className="font-mono font-bold text-rose-600 underline hover:text-rose-700">info@lolashoneyin.com</a>.
+              </p>
+            </div>
 
             <div className="space-y-4 pt-2">
-              <div className="bg-neutral-50 p-6 rounded-2xl border border-neutral-200 space-y-2">
+              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm space-y-2">
                 <div className="flex items-center space-x-3 text-rose-600 font-mono text-xs font-extrabold uppercase">
                   <Mail size={16} />
-                  <span>Contact Us (General)</span>
+                  <span>General Enquiries & Contact</span>
                 </div>
                 <a href="mailto:info@lolashoneyin.com" className="font-mono text-sm font-bold text-neutral-900 hover:text-rose-600 block">
                   info@lolashoneyin.com
                 </a>
-                <p className="text-xs text-neutral-500 font-sans">For readers, general inquiries, and foundation messages.</p>
+                <p className="text-xs text-neutral-500 font-sans">For readers, general inquiries, and message routing.</p>
               </div>
 
-              <div className="bg-neutral-50 p-6 rounded-2xl border border-neutral-200 space-y-2">
+              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm space-y-2">
                 <div className="flex items-center space-x-3 text-rose-600 font-mono text-xs font-extrabold uppercase">
                   <Calendar size={16} />
-                  <span>Work Inquiries & Bookings</span>
+                  <span>Work Inquiries, Bookings & Partnerships</span>
                 </div>
                 <a href="mailto:info@lolashoneyin.com" className="font-mono text-sm font-bold text-neutral-900 hover:text-rose-600 block">
                   info@lolashoneyin.com
                 </a>
-                <p className="text-xs text-neutral-500 font-sans">For keynote speeches, panel moderations, festival appearances & consultations.</p>
+                <p className="text-xs text-neutral-500 font-sans">For keynote speeches, panel moderation, festival appearances, and partnerships.</p>
               </div>
 
               <div className="flex items-start space-x-3 text-neutral-800 pt-2">
@@ -270,7 +162,7 @@ export default function ContactPage() {
             <div className="pt-2">
               <a
                 href="mailto:info@lolashoneyin.com?subject=Press%20Kit%20Request"
-                className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full transition-all cursor-pointer"
+                className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full transition-all cursor-pointer shadow-md"
               >
                 <Download size={14} />
                 <span>Request Press Kit</span>
@@ -279,17 +171,17 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* FREQUENTLY ASKED QUESTIONS (FAQ) SECTION */}
-        <div id="faq" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
+        {/* 3. FREQUENTLY ASKED QUESTIONS (FAQ) SECTION */}
+        <div id="faq" className="border-t border-neutral-200/80 pt-16 space-y-8 scroll-mt-28">
           <div className="space-y-2">
             <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold block">
-              FREQUENTLY ASKED QUESTIONS
+              QUESTIONS & CLARIFICATIONS
             </span>
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-              General & Press FAQ
+            <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
+              FAQ
             </h2>
             <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-xl leading-relaxed">
-              Find quick answers regarding manuscript submissions, speaking requests, visiting OuidaLagos, partnerships, and upcoming projects.
+              Answers regarding manuscript submissions, speaking invitations, visiting OuidaLagos, mentorship, partnerships, and current literary projects.
             </p>
           </div>
 
@@ -304,8 +196,8 @@ export default function ContactPage() {
                   transition={{ layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
                   className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? "bg-[#F7F6EF] border-neutral-300 shadow-sm"
-                      : "bg-[#F8F7F2] hover:bg-[#F4F3ED] border-neutral-200/80"
+                      ? "bg-white border-rose-200 shadow-sm"
+                      : "bg-white hover:bg-rose-50/20 border-neutral-200/80"
                   }`}
                 >
                   <button
@@ -314,20 +206,20 @@ export default function ContactPage() {
                   >
                     <motion.div
                       animate={{
-                        backgroundColor: isOpen ? "#D7FC70" : "#E2E0D8",
+                        backgroundColor: isOpen ? "#e11d48" : "#f1f0ea",
                         rotate: isOpen ? 180 : 0
                       }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform"
                     >
                       {isOpen ? (
-                        <Minus size={18} className="text-neutral-950 stroke-[2.5]" />
+                        <Minus size={18} className="text-white stroke-[2.5]" />
                       ) : (
                         <Plus size={18} className="text-neutral-700 stroke-[2.2]" />
                       )}
                     </motion.div>
 
-                    <span className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight leading-snug">
+                    <span className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight leading-snug group-hover:text-rose-600 transition-colors">
                       {faq.q}
                     </span>
                   </button>

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Filter, ArrowRight, Mail, Search, X, Sparkles, BookOpen } from "lucide-react";
+import { Filter, ArrowRight, Mail, Search, X, Sparkles, BookOpen, Layers } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+export type FilterCategory = "Novel" | "Poetry" | "Children's Book" | "Essay" | "Article";
+
 export interface BibliographyItem {
   id: string;
-  type: "Novel" | "Poetry" | "Children's Book" | "Series" | "Essay" | "Article";
+  type: FilterCategory;
   title: string;
   year: string;
   publisherOrOutlet?: string;
@@ -17,6 +19,17 @@ export interface BibliographyItem {
 }
 
 export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
+  {
+    id: "baba-segi",
+    type: "Novel",
+    title: "The Secret Lives of Baba Segi's Wives",
+    year: "2010",
+    author: "Lola Shoneyin",
+    publisherOrOutlet: "Serpent's Tail / HarperCollins / Ouida Books",
+    summary: "The Secret Lives of Baba Segi's Wives is Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
+    tag: "Orange Prize Nominee",
+  },
   {
     id: "poetry-egg",
     type: "Poetry",
@@ -193,7 +206,7 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     author: "Lola Shoneyin",
     publisherOrOutlet: "Book Buzz Foundation",
     summary: "An inspiring biography of chess master Tunde Onakoya, showing children the power of intellect and vision.",
-    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot-2026-08-16-at-19.24.05.png",
     tag: "Children's Book"
   },
   {
@@ -211,33 +224,176 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
 
 export default function BibliographyGridSection() {
   const navigate = useNavigate();
-  const [selectedFilter, setSelectedFilter] = useState<string>("All");
+  // Filters without "All" and without "Series"
+  const filters: FilterCategory[] = ["Novel", "Poetry", "Children's Book", "Essay", "Article"];
+  const [selectedFilter, setSelectedFilter] = useState<FilterCategory>("Novel");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isBannerHovered, setIsBannerHovered] = useState<boolean>(false);
   const [activeModalItem, setActiveModalItem] = useState<BibliographyItem | null>(null);
 
-  const filters = ["All", "Novel", "Poetry", "Children's Book", "Series", "Essay", "Article"];
-
+  // Dynamic filter logic
   const filteredItems = BIBLIOGRAPHY_ITEMS.filter((item) => {
-    const matchesFilter = selectedFilter === "All" || item.type === selectedFilter;
+    const matchesFilter = item.type === selectedFilter;
     const matchesSearch = searchQuery === "" || 
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.summary.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 
+  const getCategoryCount = (cat: FilterCategory) => {
+    return BIBLIOGRAPHY_ITEMS.filter(item => item.type === cat).length;
+  };
+
   return (
-    <div id="bibliography-works-section" className="space-y-10 py-4 font-sans">
+    <div id="bibliography-works-section" className="space-y-10 py-2 font-sans scroll-mt-28">
       
-      {/* AUTHOR BANNER SECTION */}
+      {/* 1. DYNAMIC CONTROLS & FILTER BAR PLACED PROMINENTLY AT THE VERY TOP */}
+      <div className="bg-neutral-50 border border-neutral-200/90 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200 pb-5">
+          <div>
+            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full mb-2">
+              <Layers size={13} className="text-rose-600" />
+              <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-rose-700">
+                WORKS CATALOG & BIBLIOGRAPHY
+              </span>
+            </div>
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-neutral-950 tracking-tight">
+              Filter by Literary Category
+            </h2>
+          </div>
+
+          {/* Search Bar */}
+          <div className="relative w-full md:w-72">
+            <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={`Search in ${selectedFilter}...`}
+              className="w-full bg-white border border-neutral-300 rounded-full pl-10 pr-4 py-2.5 text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 shadow-sm font-sans"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 cursor-pointer"
+              >
+                <X size={13} />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Category Filter Pills (No "All", No "Series") */}
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+          <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-wider flex items-center gap-1.5 mr-1 shrink-0">
+            <Filter size={13} className="text-neutral-400" />
+            Category:
+          </span>
+          {filters.map((f) => {
+            const count = getCategoryCount(f);
+            const isSelected = selectedFilter === f;
+            return (
+              <button
+                key={f}
+                onClick={() => {
+                  setSelectedFilter(f);
+                }}
+                className={`px-4 py-2 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-xs ${
+                  isSelected
+                    ? "bg-neutral-950 text-white ring-2 ring-neutral-950 shadow-md"
+                    : "bg-white text-neutral-700 hover:bg-neutral-200/80 border border-neutral-300/80 hover:text-neutral-950"
+                }`}
+              >
+                <span>{f}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-sans font-extrabold ${
+                    isSelected ? "bg-rose-600 text-white" : "bg-neutral-100 text-neutral-600"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 2. DYNAMIC WORK GRID SHOWING SELECTED CATEGORY */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between px-1">
+          <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest">
+            Showing {filteredItems.length} {filteredItems.length === 1 ? "work" : "works"} in <span className="text-neutral-950 font-black">{selectedFilter}</span>
+          </span>
+        </div>
+
+        <motion.div 
+          key={selectedFilter}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 pt-2"
+        >
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setActiveModalItem(item)}
+              className="flex flex-col group cursor-pointer space-y-3 bg-white p-3.5 rounded-2xl border border-neutral-200/70 hover:border-neutral-950 hover:shadow-xl transition-all duration-300"
+            >
+              {/* BOOK COVER IMAGE */}
+              <div className="relative aspect-[3/4.2] w-full rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {item.tag && (
+                  <div className="absolute top-2.5 left-2.5 z-10">
+                    <span className="bg-neutral-950/90 backdrop-blur-md text-white font-mono text-[10px] font-bold uppercase px-2.5 py-1 rounded-sm shadow-sm">
+                      {item.tag}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* DETAILS STRICTLY BELOW COVER */}
+              <div className="space-y-1.5 text-left pt-0.5 px-1">
+                <div className="flex items-center space-x-2">
+                  <span className="font-mono text-[11px] font-bold text-rose-800 bg-rose-100 px-2 py-0.5 rounded-sm uppercase">
+                    {item.type} • {item.year}
+                  </span>
+                </div>
+
+                {/* TITLE */}
+                <h3 className="font-serif font-extrabold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                  {item.title}
+                </h3>
+
+                {/* AUTHOR */}
+                <p className="font-sans text-xs sm:text-sm font-semibold text-neutral-600">
+                  By {item.author}
+                </p>
+
+                {/* SUMMARY */}
+                <p className="font-sans text-xs text-neutral-500 leading-relaxed line-clamp-2">
+                  {item.summary}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* 3. AUTHOR SUMMARY BANNER WITH 3D STACKED BOOKS */}
       <div 
         onMouseEnter={() => setIsBannerHovered(true)}
         onMouseLeave={() => setIsBannerHovered(false)}
-        className="bg-[#EAE8E1] rounded-[12px] overflow-hidden p-6 sm:p-10 relative flex flex-col md:flex-row items-center justify-between gap-8 border border-neutral-200/80 shadow-sm transition-all duration-300"
+        className="bg-[#EAE8E1] rounded-3xl overflow-hidden p-6 sm:p-10 relative flex flex-col md:flex-row items-center justify-between gap-8 border border-neutral-200/80 shadow-sm transition-all duration-300 mt-12"
       >
         {/* Left Side: Person Photo */}
         <div className="flex items-center space-x-6 z-10 max-w-2xl">
-          <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-[6px] overflow-hidden bg-neutral-300 shrink-0 shadow-md border border-white">
+          <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-xl overflow-hidden bg-neutral-300 shrink-0 shadow-md border border-white">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-9-2026-08_20_20-pm.png"
               alt="Lola Shoneyin"
@@ -245,7 +401,7 @@ export default function BibliographyGridSection() {
               referrerPolicy="no-referrer"
             />
           </div>
-          {/* Center Content: About the Author */}
+          {/* Center Content */}
           <div className="space-y-2 text-center md:text-left">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-600 block">
               ACCLAIMED AUTHOR & PUBLISHER
@@ -259,7 +415,7 @@ export default function BibliographyGridSection() {
             <div className="pt-2">
               <button
                 onClick={() => navigate("/contact")}
-                className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-[4px] transition-all cursor-pointer shadow-sm hover:shadow-md flex items-center justify-center space-x-2 mx-auto md:mx-0"
+                className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md flex items-center justify-center space-x-2 mx-auto md:mx-0"
               >
                 <Mail size={14} />
                 <span>Contact Us</span>
@@ -278,7 +434,7 @@ export default function BibliographyGridSection() {
                 : { x: -32, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-28 h-44 rounded-[4px] shadow-sm overflow-hidden border border-white/90 bg-rose-950 z-10"
+            className="absolute w-28 h-44 rounded-lg shadow-sm overflow-hidden border border-white/90 bg-rose-950 z-10"
           >
             <img src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" className="w-full h-full object-cover" alt="Book 1" />
           </motion.div>
@@ -291,7 +447,7 @@ export default function BibliographyGridSection() {
                 : { x: 0, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-28 h-44 rounded-[4px] shadow-md overflow-hidden border border-white/90 bg-amber-900 z-20"
+            className="absolute w-28 h-44 rounded-lg shadow-md overflow-hidden border border-white/90 bg-amber-900 z-20"
           >
             <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800" className="w-full h-full object-cover" alt="Book 2" />
           </motion.div>
@@ -304,111 +460,11 @@ export default function BibliographyGridSection() {
                 : { x: 32, rotate: 0, scale: 1 }
             }
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute w-28 h-44 rounded-[4px] shadow-md overflow-hidden border border-white bg-emerald-950 z-30"
+            className="absolute w-28 h-44 rounded-lg shadow-md overflow-hidden border border-white bg-emerald-950 z-30"
           >
             <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800" className="w-full h-full object-cover" alt="Book 3" />
           </motion.div>
         </div>
-      </div>
-
-      {/* SECTION HEADER + FILTER BAR */}
-      <div className="space-y-6 pt-2">
-        
-        {/* TITLE ROW */}
-        <div className="flex items-center justify-between border-b border-neutral-200 pb-4">
-          <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#1B3627] tracking-tight">
-            Bibliography & Featured Works
-          </h2>
-        </div>
-
-        {/* CONTROLS BAR: SEARCH + CATEGORY FILTERS */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-            <Filter size={14} className="text-neutral-400 shrink-0 mr-1" />
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setSelectedFilter(f)}
-                className={`px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
-                  selectedFilter === f
-                    ? "bg-[#1B3627] text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-neutral-950"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative w-full md:w-64">
-            <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search works..."
-              className="w-full bg-neutral-100 border-0 rounded-full pl-10 pr-4 py-2 text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-900 font-sans"
-            />
-          </div>
-        </div>
-
-      </div>
-
-      {/* 4-COLUMN RESPONSIVE BOOK GRID - NO PRICES, NO RATINGS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 pt-2">
-        {filteredItems.map((item) => (
-          <div
-            key={item.id}
-            onClick={() => setActiveModalItem(item)}
-            className="flex flex-col group cursor-pointer space-y-3"
-          >
-            {/* BOOK COVER IMAGE */}
-            <div className="relative aspect-[3/4.2] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1.5 bg-neutral-100">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-              
-              {item.tag && (
-                <div className="absolute top-2.5 left-2.5 z-10">
-                  <span className="bg-neutral-950/90 backdrop-blur-md text-white font-mono text-[10px] font-bold uppercase px-2.5 py-1 rounded-sm shadow-sm">
-                    {item.tag}
-                  </span>
-                </div>
-              )}
-            </div>
-
-            {/* DETAILS STRICTLY BELOW COVER */}
-            <div className="space-y-1.5 text-left pt-0.5">
-              
-              <div className="flex items-center space-x-2">
-                <span className="font-mono text-[11px] font-bold text-rose-800 bg-rose-100 px-2 py-0.5 rounded-sm uppercase">
-                  {item.type} • {item.year}
-                </span>
-              </div>
-
-              {/* TITLE (CLEAR, LEGIBLE FONT) */}
-              <h3 className="font-serif font-extrabold text-base sm:text-lg md:text-xl text-[#1B3627] group-hover:text-rose-600 transition-colors leading-snug">
-                {item.title}
-              </h3>
-
-              {/* AUTHOR */}
-              <p className="font-sans text-xs sm:text-sm font-semibold text-neutral-600">
-                By {item.author}
-              </p>
-
-              {/* SUMMARY */}
-              <p className="font-sans text-xs text-neutral-500 leading-relaxed line-clamp-2">
-                {item.summary}
-              </p>
-
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* FULL COVER MODAL IN THE MIDDLE OF THE SCREEN */}
@@ -426,7 +482,7 @@ export default function BibliographyGridSection() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.92, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center"
+              className="bg-neutral-900 border border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center"
             >
               <button
                 onClick={() => setActiveModalItem(null)}
@@ -436,12 +492,12 @@ export default function BibliographyGridSection() {
                 <X size={20} />
               </button>
 
-              {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
-              <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
+              {/* FULL COVER IMAGE DISPLAY */}
+              <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-2xl overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
                 <img
                   src={activeModalItem.image}
                   alt={activeModalItem.title}
-                  className="w-full h-full object-contain max-h-[48vh] rounded"
+                  className="w-full h-full object-contain max-h-[48vh] rounded-xl"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -479,7 +535,7 @@ export default function BibliographyGridSection() {
                       href={activeModalItem.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs font-bold px-4 py-2 rounded-md transition-colors"
+                      className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs font-bold px-4 py-2 rounded-full transition-colors"
                     >
                       <span>Read Essay / Article</span>
                       <ArrowRight size={14} />
@@ -495,4 +551,3 @@ export default function BibliographyGridSection() {
     </div>
   );
 }
-

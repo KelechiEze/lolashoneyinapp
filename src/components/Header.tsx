@@ -81,9 +81,10 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Speaking",
       hasDropdown: true,
       subLinks: [
-        { path: "/speaking#engagements", label: "Engagements", desc: "FLAM Marrakech, Princeton, Bologna & global keynotes" },
-        { path: "/speaking#podcasts", label: "Podcasts & Interviews", desc: "Annotated & Art, Tech and Polygamy" },
-        { path: "/speaking#gallery", label: "Photo Gallery", desc: "Photos from 20+ global events" },
+        { path: "/speaking#intro", label: "Intro", desc: "Literary events & international keynotes since 1998" },
+        { path: "/speaking#engagements", label: "Engagements", desc: "FLAM Marrakech, Princeton, Berlin, Frankfurt & global stages" },
+        { path: "/speaking#podcasts", label: "Podcasts and Interviews", desc: "Annotated w/ Temi & Art, Tech and Polygamy" },
+        { path: "/speaking#gallery", label: "Photo gallery", desc: "Photos from at least 20 events" },
       ]
     },
     { 
@@ -101,8 +102,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Contact",
       hasDropdown: true,
       subLinks: [
-        { path: "/contact#form", label: "Inquiries & Bookings", desc: "info@lolashoneyin.com" },
-        { path: "/contact#faq", label: "FAQ", desc: "Submissions, events, venue & novel status" },
+        { path: "/contact#routing", label: "Contact routing", desc: "info@lolashoneyin.com" },
+        { path: "/contact#faq", label: "FAQ", desc: "Submissions, speaking, OuidaLagos & FAQ" },
       ]
     },
   ];

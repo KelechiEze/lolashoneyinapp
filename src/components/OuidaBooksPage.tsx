@@ -1,131 +1,85 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, BookOpen, Feather, Sparkles, Compass, Heart, Bookmark, Share2, X, CircleDot, Hexagon, Layers, Zap } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, BookOpen, Sparkles, Compass, Heart, CircleDot, Hexagon, Layers, Zap } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import { DisintegratingImage } from "./DisintegratingImage";
 
-export interface PublishedBook {
-  id: string;
-  title: string;
-  author: string;
-  category: string;
-  year: string;
-  image: string;
-  synopsis: string;
-}
-
-const CATALOG_BOOKS: PublishedBook[] = [
+const IMPRINTS_DATA = [
   {
-    id: "baba-segi",
-    title: "The Secret Lives of Baba Segi's Wives",
-    author: "Lola Shoneyin",
-    category: "Prose Fiction",
-    year: "2010",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
-    synopsis: "The definitive Nigerian edition of the award-winning bestseller capturing power dynamics, female agency, and familial secrets within a polygamous household."
+    name: "Ouida Books",
+    focus: "Literary Fiction",
+    desc: "Ouida Books is the flagship imprint that publishes high-quality literary fiction.",
+    badge: "FLAGSHIP",
+    code: "_001",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
+    icon: <BookOpen className="w-5 h-5 text-black" />
   },
   {
-    id: "sitting-on-an-egg",
-    title: "So All the Time I Was Sitting on an Egg",
-    author: "Lola Shoneyin",
-    category: "Poetry Collection",
-    year: "1997",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg",
-    synopsis: "A ground-breaking debut poetry collection exploring personal autonomy, motherhood, sexuality, and Nigerian womanhood."
+    name: "Ouida Poetry",
+    focus: "Verse & Poetry",
+    desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
+    badge: "POETRY",
+    code: "_002",
+    image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1000&auto=format&fit=crop",
+    icon: <Sparkles className="w-5 h-5 text-black" />
   },
   {
-    id: "song-of-a-riverbird",
-    title: "Song of a Riverbird",
-    author: "Lola Shoneyin",
-    category: "Poetry Collection",
-    year: "2002",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg",
-    synopsis: "A poignant verse anthology capturing memories of Nigeria, riverine life, political observation, and deep emotional longing."
+    name: "Cognix",
+    focus: "Non-Fiction & Record",
+    desc: "Cognix is where Ouida Books turns to the real: ideas, arguments, the record of things as they happened.",
+    badge: "NON-FICTION",
+    code: "_003",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
+    icon: <Compass className="w-5 h-5 text-black" />
   },
   {
-    id: "for-the-love-of-flight",
-    title: "For the Love of Flight",
-    author: "Lola Shoneyin",
-    category: "Poetry Collection",
-    year: "2010",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
-    synopsis: "A celebrated third collection of mature poetry dealing with freedom, flight, domestic tension, and emotional courage."
+    name: "Tanja",
+    focus: "Youngest Readers",
+    desc: "Tanja exists for the youngest readers by publishing picturebooks that are built to be read aloud and enjoyed by both children and adults.",
+    badge: "PICTUREBOOKS",
+    code: "_004",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop",
+    icon: <CircleDot className="w-5 h-5 text-black" />
   },
   {
-    id: "setto-saves-the-trees",
-    title: "Setto Saves the Trees",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2025",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg",
-    synopsis: "An eco-friendly journey teaching children the value of trees, environmental stewardship, and community action."
+    name: "Adole",
+    focus: "Young Adult",
+    desc: "Adole speaks to the years between childhood and adulthood, the ones that ask the hardest questions.",
+    badge: "YOUNG ADULT",
+    code: "_005",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
+    icon: <Zap className="w-5 h-5 text-black" />
   },
   {
-    id: "anyibo-mother-hen",
-    title: "Anyibo and the Mother Hen",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png",
-    synopsis: "A heartwarming story celebrating curiosity, compassion, and the wonders of nature for young readers."
+    name: "Book of Phoenix",
+    focus: "Speculative Fiction",
+    desc: "Book of Phoenix publishes speculative fiction that is not bound by the constraints of the world as it is.",
+    badge: "SPECULATIVE",
+    code: "_006",
+    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
+    icon: <Layers className="w-5 h-5 text-black" />
   },
   {
-    id: "hassan-hussaina",
-    title: "A Durbar for Hassan and Hussaina",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png",
-    synopsis: "A festive cultural adventure through the grand traditions, horsemanship, and vibrant colors of Northern Nigeria."
+    name: "Tevani",
+    focus: "Bespoke Imprint",
+    desc: "Tevani is Ouida Books' bespoke imprint, working directly with authors who want a hand-crafted path to publication, from manuscript to finished book.",
+    badge: "BESPOKE",
+    code: "_007",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    icon: <Hexagon className="w-5 h-5 text-black" />
   },
   {
-    id: "mayowa-masquerades",
-    title: "Mayowa and the Masquerades",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2010",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg",
-    synopsis: "An adventurous story following young Mayowa as he uncovers the vibrant folklore and rhythm of festival masquerades."
-  },
-  {
-    id: "iyaji-house-girl",
-    title: "Iyaji the House Girl",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2021",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/iyaji.png",
-    synopsis: "An inspiring story of perseverance, education, dignity, and unyielding hope in West African youth."
-  },
-  {
-    id: "jamila-clever-plan",
-    title: "Jamila's Clever Plan",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2022",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png",
-    synopsis: "A tale of ingenuity and teamwork where young Jamila solves a community challenge through creative thinking."
-  },
-  {
-    id: "pwada-can-do-anything",
-    title: "Pwada Can Do Anything",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2024",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/pwada.png",
-    synopsis: "Empowering young girls to break boundaries, believe in themselves, and reach high in every endeavor."
-  },
-  {
-    id: "do-as-youre-told-baji",
-    title: "Do As You're Told, Baji",
-    author: "Lola Shoneyin",
-    category: "Children's Literature",
-    year: "2022",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg",
-    synopsis: "A funny and engaging lesson on responsibility, listening, and growing up with a courageous spirit."
+    name: "Lufu",
+    focus: "Romance & Commercial",
+    desc: "Lufu publishes romance and commercial fiction.",
+    badge: "ROMANCE",
+    code: "_008",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
+    icon: <Heart className="w-5 h-5 text-black" />
   }
 ];
 
-// Continuous Marquee Book Covers with Actual Shared Images
+// Continuous Marquee Book Covers
 const MARQUEE_COVERS = [
   { title: "Baba Segi's Wives", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
   { title: "Sitting on an Egg", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg" },
@@ -142,128 +96,166 @@ const MARQUEE_COVERS = [
 ];
 
 export default function OuidaBooksPage() {
-  const navigate = useNavigate();
-  const [visibleCount, setVisibleCount] = useState<number>(4);
-  const [activeModalBook, setActiveModalBook] = useState<PublishedBook | null>(null);
+  const location = useLocation();
 
   // Duplicating marquee array for endless seamless scrolling
   const marqueeItems = [...MARQUEE_COVERS, ...MARQUEE_COVERS, ...MARQUEE_COVERS];
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 2, CATALOG_BOOKS.length));
-  };
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        setTimeout(() => {
+          elem.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   return (
-    <div className="bg-[#fbf9f5] text-neutral-900 min-h-screen pt-24 pb-20 overflow-x-hidden selection:bg-rose-600 selection:text-white">
+    <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 overflow-x-hidden selection:bg-rose-600 selection:text-white font-sans">
       
-      {/* 1. HERO SECTION WITH FLAT FLOATING IMAGES */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-6 pt-12 pb-20">
+      {/* 1. INTRO / HERO SUB PAGE */}
+      <section id="intro" className="relative min-h-[75vh] flex flex-col items-center justify-center text-center px-6 pt-12 pb-20 scroll-mt-28">
         
         {/* Floating Flat Card 1 - Top Left */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -8, 0], rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.3, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
           transition={{
             opacity: { duration: 0.6 },
-            scale: { type: "spring", stiffness: 220, damping: 20 },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+            scale: { duration: 0.8, type: "spring", bounce: 0.4 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="hidden md:block absolute top-8 left-6 lg:left-16 w-40 h-56 lg:w-52 lg:h-72 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
+          className="hidden md:block absolute top-12 left-10 lg:left-20 w-44 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform -rotate-6 pointer-events-none z-10 bg-white"
         >
-          <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
-            alt="The Secret Lives of Baba Segi's Wives"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+            <img
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
+              alt="The Secret Lives of Baba Segi's Wives"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="p-3 bg-white text-left">
+            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">FLAGSHIP NOVEL</span>
+            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Baba Segi's Wives</p>
+          </div>
         </motion.div>
 
         {/* Floating Flat Card 2 - Top Right */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, 8, 0], rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.3, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: [0, 8, 0] }}
           transition={{
-            opacity: { duration: 0.6, delay: 0.1 },
-            scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.1 },
-            y: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
+            opacity: { duration: 0.6, delay: 0.15 },
+            scale: { duration: 0.8, delay: 0.15, type: "spring", bounce: 0.4 },
+            y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
           }}
-          className="hidden md:block absolute top-6 right-6 lg:right-16 w-40 h-56 lg:w-52 lg:h-72 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
+          className="hidden md:block absolute top-16 right-10 lg:right-20 w-44 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform rotate-6 pointer-events-none z-10 bg-white"
         >
-          <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
-            alt="Setto Saves the Trees"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+            <img
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
+              alt="Setto Saves the Trees"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="p-3 bg-white text-left">
+            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">CHILDREN'S BOOK</span>
+            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Setto Saves Trees</p>
+          </div>
         </motion.div>
 
         {/* Floating Flat Card 3 - Bottom Left */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, 6, 0], rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.3, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: [0, 7, 0] }}
           transition={{
-            opacity: { duration: 0.6, delay: 0.2 },
-            scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.2 },
-            y: { duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            opacity: { duration: 0.6, delay: 0.3 },
+            scale: { duration: 0.8, delay: 0.3, type: "spring", bounce: 0.4 },
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
           }}
-          className="hidden lg:block absolute bottom-10 left-12 lg:left-32 w-36 h-48 lg:w-44 lg:h-60 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
+          className="hidden lg:block absolute bottom-12 left-16 w-40 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform rotate-3 pointer-events-none z-10 bg-white"
         >
-          <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
-            alt="So All the Time I Was Sitting on an Egg"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+            <img
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
+              alt="Sitting on an Egg"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="p-2.5 bg-white text-left">
+            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">POETRY</span>
+            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Sitting on an Egg</p>
+          </div>
         </motion.div>
 
         {/* Floating Flat Card 4 - Bottom Right */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, y: 50, rotate: 0 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -7, 0], rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.3, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -7, 0] }}
           transition={{
-            opacity: { duration: 0.6, delay: 0.3 },
-            scale: { type: "spring", stiffness: 220, damping: 20, delay: 0.3 },
-            y: { duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
+            opacity: { duration: 0.6, delay: 0.45 },
+            scale: { duration: 0.8, delay: 0.45, type: "spring", bounce: 0.4 },
+            y: { duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
           }}
-          className="hidden lg:block absolute bottom-12 right-12 lg:right-32 w-36 h-48 lg:w-44 lg:h-60 rounded-2xl overflow-hidden shadow-md z-10 pointer-events-none"
+          className="hidden lg:block absolute bottom-10 right-16 w-40 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform -rotate-3 pointer-events-none z-10 bg-white"
         >
-          <img
-            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
-            alt="A Durbar for Hassan and Hussaina"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+            <img
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
+              alt="Hassan & Hussaina"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="p-2.5 bg-white text-left">
+            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">ADVENTURE</span>
+            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Hassan & Hussaina</p>
+          </div>
         </motion.div>
 
-        {/* HERO CENTER TEXT BLOCK */}
-        <motion.div
-          id="about"
+        {/* Center Content Text Box */}
+        <motion.div 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mx-auto space-y-6 relative z-20 scroll-mt-28"
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto space-y-6 relative z-20"
         >
-          <span className="font-serif italic text-rose-800 text-lg sm:text-2xl font-medium block">
-            This is Ouida Books
-          </span>
+          <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-4 py-1.5 rounded-full">
+            <BookOpen size={14} className="text-rose-600" />
+            <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
+              PUBLISHING
+            </span>
+          </div>
 
-          <h1 className="font-serif italic font-extrabold text-5xl sm:text-7xl lg:text-8xl text-neutral-950 tracking-tight leading-[1.04]">
-            Bold & Unfiltered African Voices
+          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
+            Intro
           </h1>
 
-          <p className="font-sans text-neutral-600 text-sm sm:text-base md:text-lg max-w-md mx-auto leading-relaxed font-normal">
-            Publishing stories that challenge, inspire and endure across global literary landscapes.
-          </p>
+          {/* EXACT VERBATIM INTRO COPY */}
+          <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-normal">
+            <p>
+              Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
+            </p>
+            <p className="font-medium text-neutral-900">
+              Eight imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
+            </p>
+          </div>
 
           <div className="pt-4 flex items-center justify-center">
             <button
               onClick={() => {
-                const catalogEl = document.getElementById("catalog-section");
-                if (catalogEl) catalogEl.scrollIntoView({ behavior: "smooth" });
+                const imprintsEl = document.getElementById("imprints");
+                if (imprintsEl) imprintsEl.scrollIntoView({ behavior: "smooth" });
               }}
               className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer inline-flex items-center space-x-2 group"
             >
-              <span>Explore Our Catalog</span>
+              <span>Explore Imprints</span>
               <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
@@ -271,19 +263,18 @@ export default function OuidaBooksPage() {
 
       </section>
 
-      {/* 2. INFINITE MARQUEE SECTION ("Sneak peek of our catalogue") */}
-      <section className="py-16 space-y-8 overflow-hidden bg-[#f7f4ee]">
-        
+      {/* 2. INFINITE MARQUEE SNEAK PEEK */}
+      <section className="py-14 space-y-6 overflow-hidden bg-[#f7f4ee] border-y border-neutral-200/70">
         <div className="text-center space-y-2 px-6">
           <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-100 text-rose-600 mb-1">
             <BookOpen size={16} />
           </div>
-          <h2 className="font-serif italic text-2xl sm:text-4xl text-neutral-900 font-medium">
+          <h2 className="font-serif italic text-2xl sm:text-3xl text-neutral-900 font-medium">
             Sneak peek of our catalogue
           </h2>
         </div>
 
-        {/* ULTRA SMOOTH MARQUEE TRACK (NO CONTAINERS, NO BORDERS) */}
+        {/* ULTRA SMOOTH MARQUEE TRACK */}
         <div className="relative w-full overflow-hidden py-4">
           <div 
             className="flex items-center space-x-6 w-max animate-marquee-smooth hover:[animation-play-state:paused]"
@@ -309,166 +300,24 @@ export default function OuidaBooksPage() {
             ))}
           </div>
         </div>
-
       </section>
 
-      {/* 3. CATALOG GRID SECTION ("Publishing in action") */}
-      <section id="catalog-section" className="max-w-7xl mx-auto px-6 py-24 space-y-12">
-        
-        {/* SECTION HEADER */}
-        <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
-            OUIDA BOOKS CATALOGUE
-          </span>
-          <h2 className="font-serif italic font-extrabold text-4xl sm:text-6xl text-neutral-950 tracking-tight">
-            Publishing in action
-          </h2>
-          <p className="font-sans text-neutral-600 text-sm sm:text-base font-normal">
-            Crafting functional, stunning books with world-class African authors.
-          </p>
-        </div>
-
-        {/* 6-COLUMN GRID (6 per row on lg/xl screens) with exact book cover sizing matching the prose section */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-7 pt-4">
-          {CATALOG_BOOKS.map((book, idx) => (
-            <motion.div
-              key={book.id}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                delay: idx * 0.04
-              }}
-              onClick={() => setActiveModalBook(book)}
-              className="relative group cursor-pointer flex flex-col space-y-3"
-            >
-              {/* EXACT MATCH TO PROSE SECTION: aspect-[3/4.7] flat book cover */}
-              <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              {/* CONTENT UNDERNEATH THE BOOK COVER */}
-              <div className="space-y-1 text-left pt-1">
-                <div className="flex items-center space-x-1.5 flex-wrap">
-                  <span className="font-mono text-[9px] font-black tracking-wider text-rose-800 bg-rose-100 px-1.5 py-0.5 uppercase rounded-sm font-bold">
-                    {book.year}
-                  </span>
-                  <span className="font-mono text-[9px] font-bold text-neutral-400 uppercase tracking-wider truncate max-w-[110px]">
-                    {book.category}
-                  </span>
-                </div>
-
-                <h4 className="font-sans font-bold text-xs sm:text-sm text-neutral-950 tracking-tight leading-snug line-clamp-2 group-hover:text-rose-600 transition-colors">
-                  {book.title}
-                </h4>
-
-                <p className="font-sans text-[11px] font-semibold text-neutral-500">
-                  By {book.author}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-      </section>
-
-      {/* 3.5 DEDICATED IMPRINTS SECTION */}
-      <section id="imprints" className="max-w-6xl mx-auto px-6 py-16 border-t border-neutral-200 space-y-12 scroll-mt-28">
+      {/* 3. IMPRINTS SUB PAGE / SECTION (EXACT CONTENT) */}
+      <section id="imprints" className="max-w-7xl mx-auto px-6 py-20 border-t border-neutral-200 space-y-12 scroll-mt-28">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
-            OUR PUBLISHING IMPRINTS
+            OUIDA BOOKS
           </span>
-          <h2 className="font-serif italic font-extrabold text-4xl sm:text-5xl text-neutral-950 tracking-tight">
-            Eight Specialized Imprints
+          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+            Imprints
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
-            Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world. Eight imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
+            Eight imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-          {[
-            {
-              name: "Ouida Books",
-              focus: "Literary Fiction",
-              desc: "Ouida Books is the flagship imprint that publishes high-quality literary fiction.",
-              badge: "FLAGSHIP",
-              code: "_001",
-              image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
-              icon: <BookOpen className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Ouida Poetry",
-              focus: "Verse & Poetry",
-              desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
-              badge: "POETRY",
-              code: "_002",
-              image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1000&auto=format&fit=crop",
-              icon: <Sparkles className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Cognix",
-              focus: "Non-Fiction & Record",
-              desc: "Cognix is where Ouida Books turns to the real: ideas, arguments, the record of things as they happened.",
-              badge: "NON-FICTION",
-              code: "_003",
-              image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
-              icon: <Compass className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Tanja",
-              focus: "Youngest Readers",
-              desc: "Tanja exists for the youngest readers by publishing picturebooks built to be enjoyed together.",
-              badge: "PICTUREBOOKS",
-              code: "_004",
-              image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop",
-              icon: <CircleDot className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Adole",
-              focus: "Young Adult",
-              desc: "Adole speaks to the years between childhood and adulthood, asking the hardest questions.",
-              badge: "YOUNG ADULT",
-              code: "_005",
-              image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
-              icon: <Zap className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Book of Phoenix",
-              focus: "Speculative Fiction",
-              desc: "Book of Phoenix publishes speculative fiction not bound by the constraints of the world as it is.",
-              badge: "SPECULATIVE",
-              code: "_006",
-              image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
-              icon: <Layers className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Tevani",
-              focus: "Bespoke Publishing",
-              desc: "Tevani is a bespoke imprint, working directly with authors for a hand-crafted path to publication.",
-              badge: "BESPOKE",
-              code: "_007",
-              image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
-              icon: <Hexagon className="w-5 h-5 text-black" />
-            },
-            {
-              name: "Lufu",
-              focus: "Romance & Commercial",
-              desc: "Lufu publishes high-energy romance and commercial fiction for broad readership.",
-              badge: "ROMANCE",
-              code: "_008",
-              image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
-              icon: <Heart className="w-5 h-5 text-black" />
-            }
-          ].map((imp, idx) => (
+          {IMPRINTS_DATA.map((imp, idx) => (
             <motion.div
               key={imp.name}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -480,10 +329,10 @@ export default function OuidaBooksPage() {
                 damping: 22,
                 delay: idx * 0.08
               }}
-              className="group cursor-pointer flex flex-col"
+              className="group cursor-pointer flex flex-col space-y-3"
             >
               {/* Card Image Container - Taller portrait ratio with Disintegrating Particle / Hover */}
-              <div className="relative w-full aspect-[4/5] min-h-[380px] sm:min-h-[420px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
+              <div className="relative w-full aspect-[4/5] min-h-[360px] sm:min-h-[390px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
                 <DisintegratingImage
                   src={imp.image}
                   alt={imp.name}
@@ -515,135 +364,25 @@ export default function OuidaBooksPage() {
                   <p className="font-mono text-[11px] font-bold text-rose-300 uppercase tracking-wider">
                     {imp.focus}
                   </p>
-                  <p className="font-sans text-xs text-neutral-200 line-clamp-2 leading-relaxed opacity-90">
-                    {imp.desc}
-                  </p>
                 </div>
               </div>
 
-              {/* Bottom Meta Bar */}
-              <div className="flex items-center justify-between mt-3 px-2 text-xs sm:text-sm tracking-tight font-sans">
-                <span className="font-extrabold text-neutral-900 uppercase tracking-wider">
-                  {imp.name}
-                </span>
-                <span className="font-mono text-neutral-400 font-medium">
-                  {imp.code}
-                </span>
+              {/* Imprint Text Content Below Image - Full Description Visible */}
+              <div className="space-y-1.5 px-1 pt-1 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="font-sans font-bold text-base text-neutral-950 tracking-tight group-hover:text-rose-600 transition-colors">
+                    {imp.name}
+                  </span>
+                  <span className="font-mono text-[11px] font-bold text-neutral-400">
+                    {imp.code}
+                  </span>
+                </div>
+                <p className="font-sans text-xs sm:text-[13px] text-neutral-600 leading-relaxed font-normal">
+                  {imp.desc}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* 4. FLOATING CLOUD / TAGS ORBIT SECTION ("What we bring to the table") */}
-      <section className="relative py-28 px-6 overflow-hidden bg-[#f7f4ee]">
-        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rose-100 text-rose-600">
-            <Sparkles size={20} />
-          </div>
-
-          <h2 className="font-serif italic font-extrabold text-4xl sm:text-6xl text-neutral-950 tracking-tight">
-            What we bring to the table
-          </h2>
-
-          <p className="font-sans text-neutral-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed font-normal">
-            Digital and physical publishing experiences that empower African storytellers and connect stories with global readers from day one.
-          </p>
-
-          {/* FLOATING ORBIT PILLS SURROUNDING TITLE */}
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
-            {[
-              "Literary Prose",
-              "Poetry",
-              "Children's Imprint",
-              "Translational Rights",
-              "Author Mentorship",
-              "International Distribution",
-              "Cultural Preservation",
-              "Audiobook Production",
-              "Aké Festival Hub",
-            ].map((tag, idx) => (
-              <motion.span
-                key={tag}
-                animate={{ y: [0, idx % 2 === 0 ? -8 : 8, 0] }}
-                transition={{
-                  duration: 4 + (idx % 3),
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: idx * 0.2,
-                }}
-                className="bg-white/90 backdrop-blur-md text-neutral-800 border border-neutral-200/80 font-sans text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:border-rose-400 transition-all"
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. DARK FOOTER ABOUT SECTION ("Behind the press") */}
-      <section className="max-w-6xl mx-auto px-6 pt-16 pb-8">
-        <div className="bg-[#181a1d] text-white rounded-3xl p-8 sm:p-14 lg:p-20 relative overflow-hidden space-y-12 shadow-2xl">
-          
-          <div className="max-w-2xl space-y-6 relative z-10">
-            <div className="inline-flex items-center space-x-2 text-rose-400 font-mono text-xs uppercase font-bold tracking-widest">
-              <Feather size={16} />
-              <span>THE FOUNDER & PRESS</span>
-            </div>
-
-            <h2 className="font-serif italic font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-tight">
-              Behind the press
-            </h2>
-
-            <p className="font-serif italic text-neutral-300 text-lg sm:text-xl leading-relaxed">
-              "Finally, meet the author and publisher passionate about helping African voices succeed: a quick peek into our world."
-            </p>
-
-            <p className="font-sans text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
-              Founded in 2016 in Lagos by Lola Shoneyin, Ouida Books operates dedicated imprints for fiction, poetry, children's literature, and thrillers, bridging the gap between extraordinary African authors and global readership.
-            </p>
-
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  navigate("/contact");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-                className="bg-rose-600 hover:bg-rose-500 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-lg transition-all cursor-pointer"
-              >
-                Inquire with Editorial Team
-              </button>
-            </div>
-          </div>
-
-          {/* FLAT AUTHOR/STORE PHOTOS AT BOTTOM RIGHT */}
-          <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 border-t border-neutral-800">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg"
-                alt="Ouida House"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png"
-                alt="Lola Shoneyin"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg"
-                alt="Ouida Lagos Store"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -655,72 +394,6 @@ export default function OuidaBooksPage() {
         }
       `}</style>
 
-      {/* FULL COVER MODAL FOR OUIDA BOOKS CATALOG */}
-      <AnimatePresence>
-        {activeModalBook && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActiveModalBook(null)}
-            className="fixed inset-0 z-50 bg-neutral-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
-          >
-            <motion.div
-              initial={{ scale: 0.92, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.92, opacity: 0, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-neutral-900 border border-white/15 rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center text-left"
-            >
-              <button
-                onClick={() => setActiveModalBook(null)}
-                className="absolute top-4 right-4 p-2 text-neutral-400 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-30 cursor-pointer"
-                aria-label="Close modal"
-              >
-                <X size={20} />
-              </button>
-
-              {/* FULL COVER IMAGE DISPLAY - NO CROPPING */}
-              <div className="w-full md:w-1/2 min-h-[260px] max-h-[50vh] md:max-h-[60vh] relative shrink-0 rounded-lg overflow-hidden bg-neutral-950 border border-white/10 flex items-center justify-center p-2">
-                <img
-                  src={activeModalBook.image}
-                  alt={activeModalBook.title}
-                  className="w-full h-full object-contain max-h-[48vh] rounded"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              {/* BOOK DETAILS */}
-              <div className="w-full md:w-1/2 space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
-                  <Sparkles size={12} />
-                  <span>{activeModalBook.category} • {activeModalBook.year}</span>
-                </div>
-
-                <div>
-                  <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
-                    {activeModalBook.title}
-                  </h3>
-                  <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
-                    By {activeModalBook.author}
-                  </p>
-                </div>
-
-                <p className="text-neutral-300 font-sans text-xs sm:text-sm leading-relaxed">
-                  {activeModalBook.synopsis}
-                </p>
-
-                <div className="pt-3 border-t border-white/10 text-xs text-neutral-400 font-mono">
-                  <span>Publisher / Imprint: </span>
-                  <span className="text-neutral-200 font-bold">Ouida Books</span>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
     </div>
   );
 }
-

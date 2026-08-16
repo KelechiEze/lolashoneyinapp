@@ -38,6 +38,7 @@ const TRANSLATIONS: TranslationItem[] = [
   { lang: "Slovak", title: "Tajný život manželiek Babu Segiho", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.03.56.jpeg" },
   { lang: "Dutch", title: "De geheime levens van de vrouwen van Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.01.57-1.jpeg"},
   { lang: "Spanish", title: "Las vidas secretas de las esposas de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-10-at-02.06.41-1.jpeg" },
+  { lang: "Malayalam", title: "The Secret Lives of Baba Segi's Wives (Malayalam)", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-16-at-18.17.25.jpeg" },
   { lang: "Czech", title: "Tajný život manželek Baby Segiho", url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800" }
 ];
 
@@ -127,6 +128,29 @@ export default function BooksPage() {
               <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
                 The novel has had two stage adaptations. A full ensemble production directed by Femi Elufowoju Jr played to sold-out audiences at the Arcola Theatre in London. A one-woman show adapted and performed by Maimouna Jallow has been performed in both English and Spanish. The novel was also adapted as a BBC radio play. An EbonyLife film adaptation is set for release on 4 December 2026.
               </p>
+
+              {/* Stage Play Text Item */}
+              <div className="pt-3 border-t border-neutral-200/80 flex items-center gap-4 bg-white p-3.5 rounded-xl border border-neutral-200/90 shadow-sm">
+                <div className="w-16 sm:w-20 shrink-0 aspect-[3/4.5] rounded-md overflow-hidden shadow-sm border border-neutral-200 bg-neutral-100">
+                  <img
+                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot-2026-08-16-at-19.26.27.png"
+                    alt="The Secret Lives of Baba Segi's Wives Play Text"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="space-y-1 text-left">
+                  <span className="font-mono text-[9px] sm:text-[10px] font-black text-rose-600 uppercase tracking-wider block">
+                    STAGE PLAY TEXT
+                  </span>
+                  <h5 className="font-sans font-bold text-xs sm:text-sm text-neutral-900 leading-snug">
+                    The Secret Lives of Baba Segi's Wives
+                  </h5>
+                  <p className="font-sans text-[11px] sm:text-xs text-neutral-600 leading-tight">
+                    Adapted for the stage by Rotimi Babatunde from the novel by Lola Shoneyin. Published by Oberon Modern Plays.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Fun Fact Block */}
