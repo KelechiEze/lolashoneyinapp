@@ -364,6 +364,89 @@ export default function SpeakingPage() {
           </div>
         </div>
 
+        {/* INTERVIEWS SECTION */}
+        <div id="podcasts" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
+          <div className="space-y-2">
+            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">MEDIA & PODCASTS</span>
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              Interviews & Media Conversations
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {INTERVIEWS_DATA.map((item, idx) => (
+              <motion.a
+                key={item.id}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 180,
+                  damping: 22,
+                  delay: idx * 0.08
+                }}
+                className="group cursor-pointer flex flex-col"
+              >
+                {/* Card Image Container - Taller portrait ratio with Disintegrating Hover */}
+                <div className="relative w-full aspect-[4/5] min-h-[380px] sm:min-h-[420px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
+                  <DisintegratingImage
+                    src={item.image}
+                    alt={item.title}
+                    roundedClassName="rounded-[28px] sm:rounded-[32px]"
+                  />
+
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+                    <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                      {item.year}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-rose-600 shadow-md">
+                      <Radio size={14} />
+                    </div>
+                  </div>
+
+                  {/* Center Hover Overlay with Badge */}
+                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
+                      <Radio className="w-5 h-5 text-black" />
+                      <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
+                        Listen / Read
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bottom Text Overlay */}
+                  <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 space-y-1">
+                    <span className="font-mono text-[10px] font-extrabold text-rose-300 uppercase tracking-widest block">
+                      {item.outlet} • {item.format}
+                    </span>
+                    <h3 className="font-sans font-bold text-lg sm:text-xl text-white leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-xs text-neutral-200 line-clamp-2 leading-relaxed opacity-90 pt-1">
+                      {item.summary}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Meta Bar */}
+                <div className="flex items-center justify-between mt-3 px-2 text-xs sm:text-sm tracking-tight font-sans">
+                  <span className="font-extrabold text-neutral-900 uppercase tracking-wider truncate max-w-[200px]">
+                    {item.title}
+                  </span>
+                  <span className="font-mono text-neutral-400 font-medium">
+                    {item.code}
+                  </span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+
         {/* PHOTO GALLERY SECTION */}
         <div id="gallery" className="border-t border-neutral-200 pt-16 space-y-12 scroll-mt-28">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -488,89 +571,6 @@ export default function SpeakingPage() {
             <p className="font-mono text-[11px] text-neutral-400 font-medium">
               Showing {Math.min(visiblePhotos, PHOTO_GALLERY.length)} of {PHOTO_GALLERY.length} Archival Images
             </p>
-          </div>
-        </div>
-
-        {/* INTERVIEWS SECTION */}
-        <div id="podcasts" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
-          <div className="space-y-2">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">MEDIA & PODCASTS</span>
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-              Interviews & Media Conversations
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {INTERVIEWS_DATA.map((item, idx) => (
-              <motion.a
-                key={item.id}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  type: "spring",
-                  stiffness: 180,
-                  damping: 22,
-                  delay: idx * 0.08
-                }}
-                className="group cursor-pointer flex flex-col"
-              >
-                {/* Card Image Container - Taller portrait ratio with Disintegrating Hover */}
-                <div className="relative w-full aspect-[4/5] min-h-[380px] sm:min-h-[420px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
-                  <DisintegratingImage
-                    src={item.image}
-                    alt={item.title}
-                    roundedClassName="rounded-[28px] sm:rounded-[32px]"
-                  />
-
-                  {/* Top Floating Badge */}
-                  <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-                    <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
-                      {item.year}
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-rose-600 shadow-md">
-                      <Radio size={14} />
-                    </div>
-                  </div>
-
-                  {/* Center Hover Overlay with Badge */}
-                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
-                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
-                      <Radio className="w-5 h-5 text-black" />
-                      <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
-                        Listen / Read
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Bottom Text Overlay */}
-                  <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 space-y-1">
-                    <span className="font-mono text-[10px] font-extrabold text-rose-300 uppercase tracking-widest block">
-                      {item.outlet} • {item.format}
-                    </span>
-                    <h3 className="font-sans font-bold text-lg sm:text-xl text-white leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="font-sans text-xs text-neutral-200 line-clamp-2 leading-relaxed opacity-90 pt-1">
-                      {item.summary}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom Meta Bar */}
-                <div className="flex items-center justify-between mt-3 px-2 text-xs sm:text-sm tracking-tight font-sans">
-                  <span className="font-extrabold text-neutral-900 uppercase tracking-wider truncate max-w-[200px]">
-                    {item.title}
-                  </span>
-                  <span className="font-mono text-neutral-400 font-medium">
-                    {item.code}
-                  </span>
-                </div>
-              </motion.a>
-            ))}
           </div>
         </div>
 

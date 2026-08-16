@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Award, ArrowUpRight, Film, Radio, Play, X, Sparkles } from "lucide-react";
+import { Award, Sparkles, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import HorizontalScrollSection, { CHILDREN_BOOKS_DATA, ChildrenBookItem } from "./HorizontalScrollSection";
-import PoetrySection, { POETRY_COLLECTIONS } from "./PoetrySection";
-import BibliographyGridSection from "./BibliographyGridSection";
+import { CHILDREN_BOOKS_DATA } from "./HorizontalScrollSection";
+import PoetrySection from "./PoetrySection";
+import EssaysAndArticlesSection from "./EssaysAndArticlesSection";
 
 interface TranslationItem {
   lang: string;
@@ -63,7 +63,7 @@ export default function BooksPage() {
         });
       }
       setTimeout(() => {
-        const elem = document.getElementById("childrens-books-section");
+        const elem = document.getElementById("children");
         if (elem) {
           elem.scrollIntoView({ behavior: "smooth" });
         }
@@ -74,7 +74,7 @@ export default function BooksPage() {
   const visibleCovers = TRANSLATIONS;
 
   return (
-    <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white">
+    <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12 selection:bg-neutral-900 selection:text-white font-sans">
       <div className="max-w-7xl mx-auto space-y-28">
         
         {/* HEADER SECTION */}
@@ -83,14 +83,14 @@ export default function BooksPage() {
             BOOKS & FICTION BY LOLA SHONEYIN
           </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
-            Books
+            Books & Writing
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-2xl leading-relaxed">
-            Exploring polygamy, female power, identity, and African childhood through award-winning fiction, poetry, and children's literature.
+            Exploring polygamy, female power, identity, and African childhood through award-winning fiction, poetry, children's literature, and essays.
           </p>
         </div>
 
-        {/* THE NOVEL CORE MODULE - WITH STICKY LEFT COLUMN */}
+        {/* 1. PROSE SECTION (THE NOVEL CORE MODULE - WITH STICKY LEFT COLUMN) */}
         <div id="prose" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start border-t border-neutral-200 pt-16 scroll-mt-28">
           
           {/* Left info column - Sticky on desktop */}
@@ -142,7 +142,7 @@ export default function BooksPage() {
 
           </div>
 
-          {/* Right column: 12 translation covers styled as clean, flat book covers */}
+          {/* Right column: 13 translation covers styled as clean, flat book covers */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-2">
               <h3 className="font-sans font-black text-xs uppercase tracking-widest text-neutral-400">Translation Covers</h3>
@@ -182,7 +182,6 @@ export default function BooksPage() {
                   >
                     {/* Clean Flat Book Cover */}
                     <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
-                      {/* Vivid Image without container frames */}
                       <img
                         src={item.url}
                         alt={`${item.lang} Translation`}
@@ -198,7 +197,7 @@ export default function BooksPage() {
                       )}
                     </div>
 
-                    {/* CONTENT STRICTLY UNDERNEATH THE BOOK - TITLE REMOVED */}
+                    {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
                     <div className="space-y-1.5 text-left pt-1">
                       <div className="flex items-center space-x-2">
                         <span className="font-mono text-[10px] font-black tracking-wider text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-sm font-bold">
@@ -214,7 +213,6 @@ export default function BooksPage() {
                         )}
                       </div>
 
-                      {/* TITLE REMOVED - Only author name remains */}
                       <p className="font-sans text-xs font-semibold text-neutral-500">
                         By Lola Shoneyin
                       </p>
@@ -229,17 +227,12 @@ export default function BooksPage() {
 
         </div>
 
-        {/* BIBLIOGRAPHY & FEATURED WORKS SECTION */}
-        <div className="border-t border-neutral-200 pt-12">
-          <BibliographyGridSection />
-        </div>
-
-        {/* POETRY SECTION */}
+        {/* 2. POETRY SECTION */}
         <div id="poetry" className="border-t border-neutral-200 pt-8 scroll-mt-28">
           <PoetrySection theme="light" />
         </div>
 
-        {/* CHILDREN'S BOOKS SECTION */}
+        {/* 3. CHILDREN'S LITERATURE SECTION */}
         <motion.div 
           id="children"
           initial={{ opacity: 0, y: 30 }}
@@ -313,6 +306,9 @@ export default function BooksPage() {
             ))}
           </div>
         </motion.div>
+
+        {/* 4. ESSAYS AND ARTICLES SECTION */}
+        <EssaysAndArticlesSection />
 
         {/* BOOK MODAL - WHITE BACKGROUND WITH FULL COVER DISPLAY */}
         <AnimatePresence>

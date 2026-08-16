@@ -313,10 +313,13 @@ export default function OuidaBooksPage() {
       </section>
 
       {/* 3. CATALOG GRID SECTION ("Publishing in action") */}
-      <section id="catalog-section" className="max-w-6xl mx-auto px-6 py-24 space-y-16">
+      <section id="catalog-section" className="max-w-7xl mx-auto px-6 py-24 space-y-12">
         
         {/* SECTION HEADER */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
+            OUIDA BOOKS CATALOGUE
+          </span>
           <h2 className="font-serif italic font-extrabold text-4xl sm:text-6xl text-neutral-950 tracking-tight">
             Publishing in action
           </h2>
@@ -325,74 +328,54 @@ export default function OuidaBooksPage() {
           </p>
         </div>
 
-        {/* 2-COLUMN GRID (WITHOUT CARD CONTAINERS OR BORDERS) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {CATALOG_BOOKS.slice(0, visibleCount).map((book, idx) => (
+        {/* 6-COLUMN GRID (6 per row on lg/xl screens) with exact book cover sizing matching the prose section */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-7 pt-4">
+          {CATALOG_BOOKS.map((book, idx) => (
             <motion.div
               key={book.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: idx * 0.04
+              }}
               onClick={() => setActiveModalBook(book)}
-              className="flex flex-col space-y-5 group cursor-pointer"
+              className="relative group cursor-pointer flex flex-col space-y-3"
             >
-              {/* IMAGE CONTAINER WITHOUT CONTAINER BORDERS */}
-              <div className="aspect-[4/3] sm:aspect-[16/11] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 bg-neutral-200">
+              {/* EXACT MATCH TO PROSE SECTION: aspect-[3/4.7] flat book cover */}
+              <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
                 <img
                   src={book.image}
                   alt={book.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
               </div>
 
-              {/* DETAILS BELOW IMAGE */}
-              <div className="space-y-3 px-1">
-                <h3 className="font-sans font-bold text-2xl sm:text-3xl text-neutral-950 tracking-tight group-hover:text-rose-600 transition-colors">
-                  {book.title}
-                </h3>
-                <p className="font-mono text-xs font-bold text-rose-600 uppercase tracking-widest">
-                  BY {book.author}
-                </p>
-                <p className="font-sans text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal">
-                  {book.synopsis}
-                </p>
-
-                <div className="pt-2 flex items-center justify-between">
-                  <span className="inline-block bg-neutral-200/70 font-mono text-[11px] font-bold uppercase tracking-wider px-4 py-2 rounded-full text-neutral-800">
+              {/* CONTENT UNDERNEATH THE BOOK COVER */}
+              <div className="space-y-1 text-left pt-1">
+                <div className="flex items-center space-x-1.5 flex-wrap">
+                  <span className="font-mono text-[9px] font-black tracking-wider text-rose-800 bg-rose-100 px-1.5 py-0.5 uppercase rounded-sm font-bold">
+                    {book.year}
+                  </span>
+                  <span className="font-mono text-[9px] font-bold text-neutral-400 uppercase tracking-wider truncate max-w-[110px]">
                     {book.category}
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-neutral-950 text-white flex items-center justify-center group-hover:bg-rose-600 transition-colors shadow-md">
-                    <ArrowUpRight size={18} />
-                  </div>
                 </div>
+
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-neutral-950 tracking-tight leading-snug line-clamp-2 group-hover:text-rose-600 transition-colors">
+                  {book.title}
+                </h4>
+
+                <p className="font-sans text-[11px] font-semibold text-neutral-500">
+                  By {book.author}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* LOAD MORE / VIEW LESS BUTTON */}
-        <div className="flex justify-center pt-8">
-          {visibleCount < CATALOG_BOOKS.length ? (
-            <button
-              onClick={() => setVisibleCount(CATALOG_BOOKS.length)}
-              className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
-            >
-              Load More
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                setVisibleCount(4);
-                const catalogEl = document.getElementById("catalog-section");
-                if (catalogEl) catalogEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-rose-600 hover:bg-rose-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
-            >
-              View Less
-            </button>
-          )}
         </div>
 
       </section>
