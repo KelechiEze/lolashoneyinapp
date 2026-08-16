@@ -63,6 +63,14 @@ const AWARDS_LIST: AwardItem[] = [
     summary: "Awarded for outstanding multicultural literary accomplishment for The Secret Lives of Baba Segi's Wives.",
     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop",
     code: "_PEN"
+  },
+  {
+    year: "2011",
+    title: "Ken Saro-Wiwa Prose Prize",
+    organization: "Association of Nigerian Authors (ANA)",
+    summary: "Winner of the prestigious Ken Saro-Wiwa Prize for Prose for The Secret Lives of Baba Segi's Wives.",
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000&auto=format&fit=crop",
+    code: "_KSW"
   }
 ];
 
@@ -455,6 +463,30 @@ export default function PressPage() {
             <p className="font-sans text-xs sm:text-sm text-neutral-300 max-w-3xl leading-relaxed">
               Published in <span className="italic">Africa Bibliography, Research and Documentation</span> (Cambridge University Press). An academic review analyzing Ouida Books and Lola Shoneyin's pioneering contribution toward African publishing sovereignty and continent-wide distribution infrastructure.
             </p>
+          </div>
+
+          {/* Core Awards Bullet Box */}
+          <div className="bg-neutral-50 border-2 border-neutral-900 p-6 sm:p-8 rounded-2xl space-y-4 shadow-sm">
+            <div className="flex items-center space-x-3 text-neutral-950">
+              <Award size={24} className="text-rose-600 shrink-0" />
+              <h3 className="font-sans font-black text-lg sm:text-xl uppercase tracking-tight text-neutral-950">
+                Awards
+              </h3>
+            </div>
+            <ul className="space-y-3 text-neutral-900 font-sans text-sm sm:text-base font-semibold">
+              <li className="flex items-center space-x-3">
+                <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+                <span>Nominated, Orange Prize for Fiction, 2011</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+                <span>Winner, PEN Oakland Josephine Miles Literary Award</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+                <span>Winner, Ken Saro-Wiwa Prose Prize</span>
+              </li>
+            </ul>
           </div>
 
           {/* Awards Grid */}

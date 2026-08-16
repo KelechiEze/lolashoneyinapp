@@ -91,6 +91,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Press",
       hasDropdown: true,
       subLinks: [
+        { path: "/awards", label: "Awards & Honors", desc: "Orange Prize, PEN Oakland, Ken Saro-Wiwa & RSL Fellowship" },
         { path: "/press#interviews", label: "Interviews", desc: "Ten selected media & podcast conversations" },
         { path: "/press#features", label: "Features & Reviews", desc: "RSL Fellowship, FT 25, Cambridge Press & BellaNaija" },
       ]

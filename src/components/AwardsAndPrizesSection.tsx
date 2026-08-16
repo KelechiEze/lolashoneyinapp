@@ -66,62 +66,103 @@ export default function AwardsAndPrizesSection() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        {/* Core Literary Awards Box */}
+        <div className="bg-neutral-50 border-2 border-neutral-900 p-6 sm:p-8 rounded-2xl space-y-4 shadow-sm">
+          <div className="flex items-center space-x-3 text-neutral-950">
+            <Award size={24} className="text-rose-600 shrink-0" />
+            <h3 className="font-sans font-black text-lg sm:text-xl uppercase tracking-tight text-neutral-950">
+              Awards
+            </h3>
+          </div>
+          <ul className="space-y-3 text-neutral-900 font-sans text-sm sm:text-base font-semibold">
+            <li className="flex items-center space-x-3">
+              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+              <span>Nominated, Orange Prize for Fiction, 2011</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+              <span>Winner, PEN Oakland Josephine Miles Literary Award</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
+              <span>Winner, Ken Saro-Wiwa Prose Prize</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Gallery Grid Styled like International Stages and Residencies */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
           {AWARDS_LIST.map((award, idx) => (
             <motion.div
               key={award.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-neutral-50 border border-neutral-200 hover:border-neutral-900 transition-all duration-300 rounded-none overflow-hidden flex flex-col shadow-sm hover:shadow-xl"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                type: "spring",
+                stiffness: 180,
+                damping: 22,
+                delay: idx * 0.08
+              }}
+              className="group cursor-pointer flex flex-col"
             >
-              {/* Photo Frame - Sharp Edges */}
-              <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-neutral-900 rounded-none">
+              {/* Card Image Container */}
+              <div className="relative w-full aspect-[4/5] min-h-[380px] sm:min-h-[420px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
                 <img
                   src={award.imageUrl}
                   alt={award.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 rounded-none"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 select-none"
                   referrerPolicy="no-referrer"
                 />
-                
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
 
-                {/* Year Badge - Sharp */}
-                <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
-                  <span className="font-mono text-xs font-black uppercase tracking-wider text-white bg-rose-600 px-3 py-1.5 rounded-none shadow-md">
+                {/* Soft dark overlay */}
+                <div className="absolute inset-0 bg-neutral-950/20 pointer-events-none" />
+
+                {/* Top Floating Badges */}
+                <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+                  <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
                     {award.year}
                   </span>
-                </div>
-
-                {/* Bottom Overlay Title on Image */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white">
-                  <div className="flex items-center gap-2 bg-neutral-950/80 backdrop-blur-md px-3 py-1.5 border border-white/15 rounded-none">
-                    <Award className="text-rose-500" size={18} />
-                    <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-neutral-200">
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-rose-600 shadow-md">
+                    <Award size={12} />
+                    <span className="font-mono text-[10px] font-bold uppercase text-neutral-900 truncate max-w-[150px]">
                       {award.organization}
                     </span>
                   </div>
                 </div>
-              </div>
 
-              {/* Text Card Body - Sharp Edges */}
-              <div className="p-6 sm:p-8 space-y-3 bg-white border-t border-neutral-200 flex-1 flex flex-col justify-between rounded-none">
-                <div className="space-y-2">
-                  <h3 className="font-sans font-black text-2xl sm:text-3xl text-neutral-900 tracking-tight uppercase leading-snug group-hover:text-rose-600 transition-colors">
+                {/* Center Hover Overlay */}
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
+                    <ArrowUpRight className="w-5 h-5 text-rose-600" />
+                    <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
+                      View Distinction
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom Text Overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-6 sm:p-7 bg-gradient-to-t from-black/95 via-black/60 to-transparent z-20 space-y-1.5">
+                  <span className="font-mono text-[10px] font-extrabold text-rose-300 uppercase tracking-widest block">
+                    {award.organization}
+                  </span>
+                  <h3 className="font-sans font-black text-xl sm:text-2xl text-white uppercase tracking-tight leading-snug">
                     {award.title}
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-medium">
+                  <p className="font-sans text-xs sm:text-sm text-neutral-200 line-clamp-3 leading-relaxed opacity-90 pt-1">
                     {award.subtitle}
                   </p>
                 </div>
+              </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-neutral-100 text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 group-hover:text-rose-600 transition-colors">
-                  <span>Recognition Archive</span>
-                  <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
+              {/* Bottom Meta Bar */}
+              <div className="flex items-center justify-between mt-3 px-2 text-xs sm:text-sm tracking-tight font-sans">
+                <span className="font-extrabold text-neutral-900 uppercase tracking-wider truncate max-w-[260px]">
+                  {award.title}
+                </span>
+                <span className="font-mono text-neutral-400 font-medium">
+                  {award.year}
+                </span>
               </div>
             </motion.div>
           ))}

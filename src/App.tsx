@@ -35,6 +35,7 @@ import PressPage from "./components/PressPage";
 import SpeakingPage from "./components/SpeakingPage";
 import ContactPage from "./components/ContactPage";
 import BookBuzzPage from "./components/BookBuzzPage";
+import AwardsPage from "./components/AwardsPage";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -175,6 +176,7 @@ export default function App() {
             <Route path="/publishing" element={<OuidaBooksPage />} />
             <Route path="/film" element={<FilmPage />} />
             <Route path="/press" element={<PressPage />} />
+            <Route path="/awards" element={<AwardsPage />} />
             <Route path="/speaking" element={<SpeakingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/project/:id" element={<ProjectDetailPage />} />

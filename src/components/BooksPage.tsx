@@ -198,7 +198,7 @@ export default function BooksPage() {
                       )}
                     </div>
 
-                    {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
+                    {/* CONTENT STRICTLY UNDERNEATH THE BOOK - TITLE REMOVED */}
                     <div className="space-y-1.5 text-left pt-1">
                       <div className="flex items-center space-x-2">
                         <span className="font-mono text-[10px] font-black tracking-wider text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-sm font-bold">
@@ -214,10 +214,7 @@ export default function BooksPage() {
                         )}
                       </div>
 
-                      <h4 className="font-serif font-extrabold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                        {item.title}
-                      </h4>
-
+                      {/* TITLE REMOVED - Only author name remains */}
                       <p className="font-sans text-xs font-semibold text-neutral-500">
                         By Lola Shoneyin
                       </p>
