@@ -60,68 +60,12 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            {/* Statistics Row with Bounce & Jump */}
-            <div className="grid grid-cols-3 gap-6 pt-4 border-t border-neutral-200/60">
-              
-              {/* Stat 1 */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                className="space-y-1 transform-gpu"
-              >
-                <div className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight text-neutral-900 flex items-baseline">
-                  13
-                  <span className="text-xl md:text-2xl font-light text-neutral-400 ml-0.5 select-none relative -top-3 md:-top-4"></span>
-                </div>
-                <p className="text-xs text-neutral-500 font-sans font-semibold tracking-wide">
-                  Languages Translated
-                </p>
-              </motion.div>
-
-              {/* Stat 2 */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="space-y-1 transform-gpu"
-              >
-                <div className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight text-neutral-900 flex items-baseline">
-                  14
-                  <span className="text-xl md:text-2xl font-light text-neutral-400 ml-0.5 select-none relative -top-3 md:-top-4"></span>
-                </div>
-                <p className="text-xs text-neutral-500 font-sans font-semibold tracking-wide">
-                  Years of Aké Festival
-                </p>
-              </motion.div>
-
-              {/* Stat 3 */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                className="space-y-1 transform-gpu"
-              >
-                <div className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight text-neutral-900 flex items-baseline">
-                  10
-                  <span className="text-xl md:text-2xl font-light text-neutral-400 ml-0.5 select-none relative -top-3 md:-top-4">+</span>
-                </div>
-                <p className="text-xs text-neutral-500 font-sans font-semibold tracking-wide">
-                  Children's Books
-                </p>
-              </motion.div>
-
-            </div>
-
             {/* CTA Button */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="pt-2 transform-gpu"
             >
               <a href="#contact" className="inline-block">

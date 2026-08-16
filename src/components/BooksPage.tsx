@@ -263,7 +263,7 @@ export default function BooksPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="border-t border-neutral-200 pt-16 space-y-8 transform-gpu scroll-mt-28"
+          className="border-t border-neutral-200 pt-20 md:pt-28 space-y-8 transform-gpu scroll-mt-28"
         >
           <div className="space-y-4">
             <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
@@ -275,7 +275,7 @@ export default function BooksPage() {
             </blockquote>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-24 md:pt-36 lg:pt-44">
             {CHILDREN_BOOKS_DATA.map((b, idx) => (
               <motion.div 
                 key={b.id} 
@@ -293,14 +293,14 @@ export default function BooksPage() {
                   description: b.description,
                   publisher: "Book Buzz Foundation / Ouida Books"
                 })}
-                className="relative group cursor-pointer flex flex-col space-y-3"
+                className="relative group cursor-pointer flex flex-col space-y-4 pt-6"
               >
-                {/* Square Children's Book Cover Picture */}
-                <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-500 ease-out group-hover:-translate-y-2 z-10">
+                {/* Rectangular Book Cover with increased width aspect ratio */}
+                <div className="relative aspect-[43/47] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
                   <img
                     src={b.image}
                     alt={b.title}
-                    className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>

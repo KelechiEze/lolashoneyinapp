@@ -17,7 +17,6 @@ import PoetrySection from "./components/PoetrySection";
 import { BentoSection } from "./components/BentoSection";
 import { BentoSectionTwo } from "./components/BentoSectionTwo";
 import { AwardsMarquee } from "./components/AwardsMarquee";
-import TheWorkTiles from "./components/TheWorkTiles";
 import AwardsAndPrizesSection from "./components/AwardsAndPrizesSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import CalendarModal from "./components/CalendarModal";
@@ -55,9 +54,6 @@ function HomePage() {
 
       {/* 2. Covering Content Layer that slides up over the fixed Hero */}
       <div className="relative z-10 bg-white shadow-[0_-25px_60px_rgba(0,0,0,0.15)]">
-        {/* The Work (tiles) */}
-        <TheWorkTiles />
-
         {/* Biography */}
         <AboutSection />
 
@@ -179,6 +175,7 @@ export default function App() {
             <Route path="/awards" element={<AwardsPage />} />
             <Route path="/speaking" element={<SpeakingPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faq" element={<ContactPage />} />
             <Route path="/project/:id" element={<ProjectDetailPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
