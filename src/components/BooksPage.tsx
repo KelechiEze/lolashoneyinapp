@@ -25,8 +25,9 @@ interface GenericModalBook {
 }
 
 const TRANSLATIONS: TranslationItem[] = [
-  // First three intact: English, French, German
+  // First entries: English, Nigerian, French, German
   { lang: "English", title: "The Secret Lives of Baba Segi's Wives", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-05-at-19.16.18-1.jpeg" },
+  { lang: "Nigerian", title: "The Secret Lives of Baba Segi's Wives (Nigerian Edition)", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-17-at-17.19.00.jpeg" },
   { lang: "French", title: "Les vies secrètes des épouses de Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_02_32-pm.png" },
   { lang: "German", title: "Die geheimen Leben der Frauen des Baba Segi", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-05_08_04-pm.png" },
   { lang: "Lithuanian", title: "Slaptas Baba Segio žmonų gyvenimas", url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-05-at-19.15.38.jpeg" },
@@ -299,8 +300,8 @@ export default function BooksPage() {
                 })}
                 className="relative group cursor-pointer flex flex-col space-y-3"
               >
-                {/* Book Cover Image with prose books aspect ratio */}
-                <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
+                {/* Book Cover Image: Square for all children books except Tunde which is rectangular */}
+                <div className={`relative ${b.id === 'tunde' || b.title.toLowerCase().includes('tunde') ? 'aspect-[3/4.7]' : 'aspect-square'} w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100`}>
                   <img
                     src={b.image}
                     alt={b.title}

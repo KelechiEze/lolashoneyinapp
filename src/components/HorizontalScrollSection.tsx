@@ -198,8 +198,8 @@ export default function HorizontalScrollSection() {
                   onClick={() => handleBookClick(book.id)}
                   className="relative group cursor-pointer shrink-0 w-[190px] sm:w-[210px] md:w-[220px] flex flex-col space-y-3 transform-gpu"
                 >
-                  {/* Clean Book Cover Image */}
-                  <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100 z-10">
+                  {/* Clean Book Cover Image: Square for all children books except Tunde which is rectangular */}
+                  <div className={`relative ${book.id === 'tunde' || book.title.toLowerCase().includes('tunde') ? 'aspect-[3/4.7]' : 'aspect-square'} w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100 z-10`}>
                     <img
                       src={book.image}
                       alt={book.title}

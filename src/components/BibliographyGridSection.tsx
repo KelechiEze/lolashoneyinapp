@@ -340,7 +340,7 @@ export default function BibliographyGridSection() {
               className="flex flex-col group cursor-pointer space-y-3 bg-white p-3.5 rounded-2xl border border-neutral-200/70 hover:border-neutral-950 hover:shadow-xl transition-all duration-300"
             >
               {/* BOOK COVER IMAGE */}
-              <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
+              <div className={`relative ${item.type.toLowerCase().includes("children") && !item.id.includes("tunde") && !item.title.toLowerCase().includes("tunde") ? "aspect-square" : "aspect-[3/4.7]"} w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100`}>
                 <img
                   src={item.image}
                   alt={item.title}
