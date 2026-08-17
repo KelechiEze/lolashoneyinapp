@@ -87,7 +87,7 @@ export default function BooksPage() {
             Books & Writing
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-2xl leading-relaxed">
-            Exploring polygamy, female power, identity, and African childhood through award-winning fiction, poetry, children's literature, and essays.
+            Exploring polygamy, female power, identity, and African childhood through award-winning fiction, poetry, children's books, and essays.
           </p>
         </div>
 
@@ -98,70 +98,74 @@ export default function BooksPage() {
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28 lg:self-start">
             <div className="space-y-3">
               <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">THE NOVEL</span>
-              <h2 className="font-sans font-black text-4xl md:text-5xl tracking-tight uppercase leading-none text-neutral-950">
-                The Secret Lives of Baba Segi's Wives
+              <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">
+                THE SECRET LIVES OF BABA SEGI'S WIVES (2010)
               </h2>
             </div>
             
             <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text font-medium">
-              The Secret Lives of Baba Segi's Wives is Lola Shoneyin's debut novel, published in 2010. When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
+              When Baba Segi takes a fourth wife, the careful arrangements of his household begin to unravel. What follows is a story of women, their secrets, their survival, and the extraordinary lengths they will go to protect what little power they have.
             </p>
 
-            {/* Accolades list */}
-            <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
-              <div className="flex items-center space-x-3 text-neutral-950">
-                <Award size={22} className="text-rose-600 shrink-0" />
-                <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider leading-none">
-                  Accolades, Awards & Stage Rights
-                </h4>
-              </div>
-              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
-                The novel was nominated for the Orange Prize for Fiction in 2011 and won the PEN Oakland Josephine Miles Literary Award and the Ken Saro-Wiwa Prose Prize. Stage rights are held by Lola Shoneyin.
-              </p>
+            {/* AWARDS */}
+            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
+                AWARDS
+              </h4>
+              <ul className="space-y-1.5 text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                <li>Nominated, Orange Prize for Fiction, 2011</li>
+                <li>Winner, Pen Oakland Josephine Miles Literary Award, 2011</li>
+                <li>Winner, Ken Saro-Wiwa Prose Prize, 2011</li>
+              </ul>
             </div>
 
-            {/* Adaptation section */}
-            <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+            {/* AUDIO ADAPTATION */}
+            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
               <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
-                Stage, Audio & Screen Adaptations
+                AUDIO ADAPTATION
               </h4>
               <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
-                The novel has had two stage adaptations. A full ensemble production directed by Femi Elufowoju Jr played to sold-out audiences at the Arcola Theatre in London. A one-woman show adapted and performed by Maimouna Jallow has been performed in both English and Spanish. The novel was also adapted as a BBC radio play. An EbonyLife film adaptation is set for release on 4 December 2026.
+                In November 2019, BBC Radio 3 aired the radio adaptation of The Secret Lives of Baba Segi’s Wives.
               </p>
-
-              {/* Stage Play Text Item */}
-              <div className="pt-3 border-t border-neutral-200/80 flex items-center gap-4 bg-white p-3.5 rounded-xl border border-neutral-200/90 shadow-sm">
-                <div className="w-16 sm:w-20 shrink-0 aspect-[3/4.5] rounded-md overflow-hidden shadow-sm border border-neutral-200 bg-neutral-100">
-                  <img
-                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot-2026-08-16-at-19.26.27.png"
-                    alt="The Secret Lives of Baba Segi's Wives Play Text"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="space-y-1 text-left">
-                  <span className="font-mono text-[9px] sm:text-[10px] font-black text-rose-600 uppercase tracking-wider block">
-                    STAGE PLAY TEXT
-                  </span>
-                  <h5 className="font-sans font-bold text-xs sm:text-sm text-neutral-900 leading-snug">
-                    The Secret Lives of Baba Segi's Wives
-                  </h5>
-                  <p className="font-sans text-[11px] sm:text-xs text-neutral-600 leading-tight">
-                    Adapted for the stage by Rotimi Babatunde from the novel by Lola Shoneyin. Published by Oberon Modern Plays.
-                  </p>
-                </div>
-              </div>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                Under the Musical Direction of Femi Elufowoju, jr., percussion is performed by Sola Akingbola (head percussionist in the British jazz funk band Jamiroquai), the flute by Patrice Naiambana, and the songs by Ayo-Dele Edwards and Kemi Durosinmi.
+              </p>
             </div>
 
-            {/* Fun Fact Block */}
-            <div className="space-y-3 bg-rose-50/80 p-6 sm:p-7 rounded-[16px] border border-rose-200">
-              <div className="flex items-center space-x-2 text-rose-800 font-mono text-xs uppercase font-bold tracking-wider">
-                <Sparkles size={16} className="text-rose-600" />
-                <span>Fun Fact</span>
-              </div>
-              <p className="text-neutral-800 font-serif italic text-xs sm:text-sm leading-relaxed">
-                "In 2016, I got this message from Eva Erny, “Half a year ago I received your book from my husband as a present. It has made such a deep impression on me, that I actually dreamt about the characters. Thereafter I started painting them.” She had never been to Nigeria before, so all the paintings were from online research about the places and the people."
+            {/* STAGE ADAPTATIONS */}
+            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
+                STAGE ADAPTATIONS
+              </h4>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                The novel has had two stage adaptations. A full ensemble production directed by Femi Elufowoju Jr performed to sold-out audiences at the Arcola Theatre in London in 2018 and 2026. The theatrical production received glowing reviews, including 5 stars in the Guardian: "The play's energy never dips and the effect is nothing short of spectacular." Elufowoju subsequently won the Best Director Award for an Off West-End Production at The Offies in 2019.
               </p>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                A one-woman show, adapted and performed by storyteller Maimouna Jallow, was first performed on 15 June 2017 to a full house at Nairobi’s Goethe Institute. She has since performed the show in English and Spanish in Scotland, Spain, United Arab Emirates and Nigeria.
+              </p>
+            </div>
+
+            {/* SCREEN ADAPTATION */}
+            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
+                SCREEN ADAPTATION
+              </h4>
+              <p className="text-neutral-700 font-sans text-xs sm:text-sm leading-relaxed">
+                An EbonyLife adaptation of The Secret Lives of Baba Segi’s Wives is set for worldwide release on 4 December 2026.
+              </p>
+            </div>
+
+            {/* GRAPHIC NOVEL (UNPUBLISHED) */}
+            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+              <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
+                GRAPHIC NOVEL (UNPUBLISHED)
+              </h4>
+              <blockquote className="text-neutral-800 font-serif italic text-xs sm:text-sm leading-relaxed">
+                “Half a year ago I received your book from my husband as a present. It has made such a deep impression on me, that I actually dreamt about the characters. Thereafter I started painting them.”
+              </blockquote>
+              <span className="block font-sans font-bold text-xs text-neutral-600">
+                - Eva Erny
+              </span>
             </div>
 
           </div>
@@ -256,7 +260,7 @@ export default function BooksPage() {
           <PoetrySection theme="light" />
         </div>
 
-        {/* 3. CHILDREN'S LITERATURE SECTION */}
+        {/* 3. CHILDREN'S BOOKS SECTION */}
         <motion.div 
           id="children"
           initial={{ opacity: 0, y: 30 }}
@@ -267,7 +271,7 @@ export default function BooksPage() {
         >
           <div className="space-y-4">
             <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
-              Children's Literature
+              Children's Books
             </h2>
             <blockquote className="border-l-4 border-rose-600 pl-4 py-1 italic font-serif text-sm md:text-base text-neutral-700 max-w-3xl leading-relaxed">
               “My children's books place underserved Nigerian children at the centre of their own adventures. I give my characters agency, humour and imagination. It is crucial that these books exist because Nigerian children deserve to see themselves in the pages of picturebooks.”
@@ -275,7 +279,7 @@ export default function BooksPage() {
             </blockquote>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-24 md:pt-36 lg:pt-44">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 pt-6">
             {CHILDREN_BOOKS_DATA.map((b, idx) => (
               <motion.div 
                 key={b.id} 
@@ -293,10 +297,10 @@ export default function BooksPage() {
                   description: b.description,
                   publisher: "Book Buzz Foundation / Ouida Books"
                 })}
-                className="relative group cursor-pointer flex flex-col space-y-4 pt-6"
+                className="relative group cursor-pointer flex flex-col space-y-3"
               >
-                {/* Rectangular Book Cover with increased width aspect ratio */}
-                <div className="relative aspect-[43/47] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
+                {/* Book Cover Image with prose books aspect ratio */}
+                <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
                   <img
                     src={b.image}
                     alt={b.title}

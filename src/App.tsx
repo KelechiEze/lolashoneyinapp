@@ -2,21 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp, ArrowUpRight, Calendar as CalendarIcon } from "lucide-react";
-import { PROJECTS } from "./data";
 import Header from "./components/Header";
-import CardStack from "./components/CardStack";
-import AgencySection from "./components/AgencySection";
-import AboutSection from "./components/AboutSection";
-import ServicesSection from "./components/ServicesSection";
-import PhilosophySection from "./components/PhilosophySection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import SpacesSection from "./components/SpacesSection";
 import HomeHero from "./components/HomeHero";
-import HorizontalScrollSection from "./components/HorizontalScrollSection";
-import PoetrySection from "./components/PoetrySection";
-import { BentoSection } from "./components/BentoSection";
-import { BentoSectionTwo } from "./components/BentoSectionTwo";
-import { AwardsMarquee } from "./components/AwardsMarquee";
+import CredentialsStrip from "./components/CredentialsStrip";
+import TheWorkTiles from "./components/TheWorkTiles";
+import AboutSection from "./components/AboutSection";
 import AwardsAndPrizesSection from "./components/AwardsAndPrizesSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import CalendarModal from "./components/CalendarModal";
@@ -59,38 +49,6 @@ function HomePage() {
 
         {/* Awards and Prizes */}
         <AwardsAndPrizesSection />
-
-        {/* Spaces at Ouida Section */}
-        <SpacesSection />
-
-        {/* Sticky Projects CardStack */}
-        <CardStack
-          projects={PROJECTS.slice(0, 3)}
-          onViewProject={(project) => {
-            navigate(`/project/${project.id}`);
-            window.scrollTo({ top: 0, behavior: "instant" });
-          }}
-          onViewMoreBooks={() => {
-            navigate("/books");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        />
-
-        {/* Horizontal Scroll Section (Children's Books) */}
-        <HorizontalScrollSection />
-
-        {/* Poetry Section */}
-        <PoetrySection />
-
-        {/* Cultural Ecosystem Bento Grid Sections */}
-        <BentoSection />
-        <BentoSectionTwo />
-
-        {/* Curation Pillars */}
-        <ServicesSection />
-
-        {/* Philosophy Section */}
-        <PhilosophySection />
       </div>
     </motion.div>
   );

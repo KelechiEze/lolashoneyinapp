@@ -130,7 +130,7 @@ export default function OuidaBooksPage() {
           }}
           className="hidden md:block absolute top-12 left-10 lg:left-20 w-44 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform -rotate-6 pointer-events-none z-10 bg-white"
         >
-          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
               alt="The Secret Lives of Baba Segi's Wives"
@@ -155,7 +155,7 @@ export default function OuidaBooksPage() {
           }}
           className="hidden md:block absolute top-16 right-10 lg:right-20 w-44 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform rotate-6 pointer-events-none z-10 bg-white"
         >
-          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
               alt="Setto Saves the Trees"
@@ -180,7 +180,7 @@ export default function OuidaBooksPage() {
           }}
           className="hidden lg:block absolute bottom-12 left-16 w-40 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform rotate-3 pointer-events-none z-10 bg-white"
         >
-          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
               alt="Sitting on an Egg"
@@ -205,7 +205,7 @@ export default function OuidaBooksPage() {
           }}
           className="hidden lg:block absolute bottom-10 right-16 w-40 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/80 transform -rotate-3 pointer-events-none z-10 bg-white"
         >
-          <div className="aspect-[3/4.2] w-full overflow-hidden bg-neutral-100">
+          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100">
             <img
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
               alt="Hassan & Hussaina"

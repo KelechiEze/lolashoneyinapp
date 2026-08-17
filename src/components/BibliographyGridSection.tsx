@@ -213,7 +213,7 @@ export const BIBLIOGRAPHY_ITEMS: BibliographyItem[] = [
     id: "child-dunoma",
     type: "Children's Book",
     title: "Dunoma the Brave",
-    year: "2025",
+    year: "2026",
     author: "Lola Shoneyin",
     publisherOrOutlet: "Book Buzz Foundation",
     summary: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
@@ -331,7 +331,7 @@ export default function BibliographyGridSection() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 pt-16 md:pt-24"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 pt-8"
         >
           {filteredItems.map((item) => (
             <div
@@ -340,7 +340,7 @@ export default function BibliographyGridSection() {
               className="flex flex-col group cursor-pointer space-y-3 bg-white p-3.5 rounded-2xl border border-neutral-200/70 hover:border-neutral-950 hover:shadow-xl transition-all duration-300"
             >
               {/* BOOK COVER IMAGE */}
-              <div className={`relative ${item.type.toLowerCase().includes("children") ? "aspect-[43/47]" : "aspect-[3/4.7]"} w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100`}>
+              <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100">
                 <img
                   src={item.image}
                   alt={item.title}

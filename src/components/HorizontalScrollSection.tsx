@@ -88,7 +88,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
   {
     id: "dunoma",
     title: "Dunoma the Brave",
-    year: "2025",
+    year: "2026",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.17.37.jpeg",
     description: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
     tag: "HEROIC TALE"
@@ -160,7 +160,7 @@ export default function HorizontalScrollSection() {
           {/* Static Left Header Box */}
           <div className="lg:w-1/3 shrink-0 space-y-5">
             <h2 className="font-sans font-black text-3xl md:text-5xl text-neutral-950 tracking-tight uppercase leading-none">
-              Children's Literature
+              Children's Books
             </h2>
 
             <p className="text-neutral-600 font-sans text-xs md:text-sm leading-relaxed max-w-md">
@@ -196,10 +196,10 @@ export default function HorizontalScrollSection() {
                 <div
                   key={book.id}
                   onClick={() => handleBookClick(book.id)}
-                  className="relative group cursor-pointer shrink-0 w-[240px] sm:w-[280px] md:w-[300px] flex flex-col space-y-3 transform-gpu"
+                  className="relative group cursor-pointer shrink-0 w-[190px] sm:w-[210px] md:w-[220px] flex flex-col space-y-3 transform-gpu"
                 >
                   {/* Clean Book Cover Image */}
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 z-10">
+                  <div className="relative aspect-[3/4.7] w-full rounded-md overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300 ease-out group-hover:-translate-y-1 bg-neutral-100 z-10">
                     <img
                       src={book.image}
                       alt={book.title}

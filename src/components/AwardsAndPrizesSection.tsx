@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, ArrowUpRight } from "lucide-react";
 
 interface AwardItem {
   id: string;
@@ -54,9 +53,6 @@ export default function AwardsAndPrizesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8">
           <div className="space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-rose-600 font-bold block">
-              HONORS & ACCOLADES
-            </span>
             <h2 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-neutral-900">
               Awards and Prizes
             </h2>
@@ -64,30 +60,6 @@ export default function AwardsAndPrizesSection() {
           <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed font-medium">
             International recognitions spanning literary achievement, cultural diplomacy, and transformative institution building.
           </p>
-        </div>
-
-        {/* Core Literary Awards Box */}
-        <div className="bg-neutral-50 border-2 border-neutral-900 p-6 sm:p-8 rounded-2xl space-y-4 shadow-sm">
-          <div className="flex items-center space-x-3 text-neutral-950">
-            <Award size={24} className="text-rose-600 shrink-0" />
-            <h3 className="font-sans font-black text-lg sm:text-xl uppercase tracking-tight text-neutral-950">
-              Awards
-            </h3>
-          </div>
-          <ul className="space-y-3 text-neutral-900 font-sans text-sm sm:text-base font-semibold">
-            <li className="flex items-center space-x-3">
-              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
-              <span>Nominated, Orange Prize for Fiction, 2011</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
-              <span>Winner, PEN Oakland Josephine Miles Literary Award</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0" />
-              <span>Winner, Ken Saro-Wiwa Prose Prize</span>
-            </li>
-          </ul>
         </div>
 
         {/* Gallery Grid Styled like International Stages and Residencies */}
@@ -123,20 +95,9 @@ export default function AwardsAndPrizesSection() {
                   <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
                     {award.year}
                   </span>
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-rose-600 shadow-md">
-                    <Award size={12} />
-                    <span className="font-mono text-[10px] font-bold uppercase text-neutral-900 truncate max-w-[150px]">
+                  <div className="flex items-center px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-md">
+                    <span className="font-mono text-[10px] font-bold uppercase text-neutral-900 truncate max-w-[160px]">
                       {award.organization}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Center Hover Overlay */}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
-                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
-                    <ArrowUpRight className="w-5 h-5 text-rose-600" />
-                    <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
-                      View Distinction
                     </span>
                   </div>
                 </div>

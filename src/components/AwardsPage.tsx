@@ -62,12 +62,6 @@ export default function AwardsPage() {
         
         {/* PAGE HEADER */}
         <div className="space-y-4 max-w-4xl">
-          <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-            <Trophy size={14} className="text-rose-600" />
-            <span className="font-mono text-xs uppercase tracking-widest text-rose-700 font-bold">
-              HONORS & RECOGNITIONS
-            </span>
-          </div>
           <h1 className="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Awards
           </h1>
@@ -198,16 +192,6 @@ export default function AwardsPage() {
                       <Globe2 size={12} />
                       <span className="font-mono text-[10px] font-bold uppercase text-neutral-900 truncate max-w-[140px]">
                         {item.location}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Center Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
-                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
-                      <Sparkles className="w-5 h-5 text-rose-600" />
-                      <span className="text-sm font-extrabold tracking-tight font-sans uppercase">
-                        View Distinction
                       </span>
                     </div>
                   </div>
