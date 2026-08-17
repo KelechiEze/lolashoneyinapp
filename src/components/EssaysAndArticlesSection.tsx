@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export interface EssayItem {
   id: string;
@@ -56,16 +56,18 @@ export default function EssaysAndArticlesSection() {
     <div id="essays" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28 font-sans">
       
       {/* SECTION HEADER */}
-      <div className="space-y-2">
-        <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">
-          ESSAYS & ARTICLES
-        </span>
-        <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-          Selected Essays & Articles
-        </h2>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8">
+        <div className="space-y-3">
+          <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
+            Essays & Articles
+          </h2>
+          <p className="font-sans text-xs md:text-sm text-neutral-600 max-w-xl leading-relaxed">
+            Critical essays, cultural analyses, and personal reflections on contemporary African literature, bureaucracy, and creative freedom.
+          </p>
+        </div>
       </div>
 
-      {/* CLEAN EDITORIAL LIST */}
+      {/* Clean Editorial List */}
       <div className="divide-y divide-neutral-200 border-y border-neutral-200">
         {ESSAYS_AND_ARTICLES.map((item, idx) => (
           <motion.a
@@ -77,29 +79,30 @@ export default function EssaysAndArticlesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.06 }}
-            className="group block py-7 sm:py-8 transition-colors duration-200 hover:bg-neutral-50/70 -mx-4 px-4 sm:-mx-6 sm:px-6 rounded-xl"
+            className="group block py-6 sm:py-7 transition-colors duration-200 hover:bg-neutral-50/70 -mx-4 px-4 sm:-mx-6 sm:px-6 rounded-xl"
           >
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 sm:gap-6">
-              <div className="space-y-2 max-w-3xl">
+              <div className="space-y-1.5 max-w-3xl">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200/80 px-2.5 py-0.5 rounded-md uppercase">
+                  <span className="font-mono text-[11px] font-bold text-rose-600 bg-rose-50 border border-rose-200/80 px-2 py-0.5 rounded uppercase">
                     {item.year}
                   </span>
-                  <span className="font-mono text-xs text-neutral-500 font-medium">
+                  <span className="font-mono text-[11px] text-neutral-500 font-medium">
                     {item.outlet}
                   </span>
                 </div>
-                <h3 className="font-serif font-extrabold text-xl sm:text-2xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                {/* Title */}
+                <h3 className="font-serif font-bold text-[15px] sm:text-base md:text-[17px] text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
                   {item.title}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                <p className="font-sans text-xs sm:text-[13px] text-neutral-600 leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>
 
-              <div className="shrink-0 pt-2 md:pt-0 flex items-center text-xs font-mono font-bold text-neutral-400 group-hover:text-rose-600 transition-colors gap-1.5">
+              <div className="shrink-0 pt-1 md:pt-0 flex items-center text-xs font-mono font-bold text-neutral-400 group-hover:text-rose-600 transition-colors gap-1.5">
                 <span className="hidden sm:inline uppercase">Read</span>
-                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </div>
           </motion.a>

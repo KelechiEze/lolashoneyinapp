@@ -36,6 +36,22 @@ export const POETRY_COLLECTIONS: PoetryItem[] = [
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
     desc: "A masterful, highly lyrical reflection on liberty, personal boundaries, and creative flight.",
     tag: "POETRY"
+  },
+  {
+    id: "poetry-democracy",
+    title: "Eleven Writers and Leaders on Democracy",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-17-at-18.30.34.jpeg",
+    desc: "A vital anthology featuring eleven distinguished writers and leaders on democratic ideals, freedom, and governance.",
+    tag: "POETRY"
+  },
+  {
+    id: "poetry-of-this-our-country",
+    title: "Of This Our Country",
+    year: "2021",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-17-at-18.27.11.jpeg",
+    desc: "An acclaimed anthology of acclaimed Nigerian writers reflecting on home, identity, memory, and culture.",
+    tag: "POETRY"
   }
 ];
 
@@ -86,7 +102,7 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
                 />
               </div>
 
-              {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
+              {/* CONTENT STRICTLY UNDERNEATH THE BOOK: JUST YEAR, TITLE & AUTHOR */}
               <div className="space-y-1.5 text-left pt-1">
                 
                 {/* Year & Tag Badge */}
@@ -114,19 +130,6 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
                 <p className={`font-sans text-xs font-semibold ${isDark ? "text-rose-400" : "text-neutral-500"}`}>
                   By Lola Shoneyin
                 </p>
-
-                {/* Description */}
-                <p className={`font-sans text-xs sm:text-sm leading-relaxed line-clamp-2 ${
-                  isDark ? "text-neutral-300" : "text-neutral-600"
-                }`}>
-                  {p.desc}
-                </p>
-
-                {/* CTA Link */}
-                <div className="pt-1 flex items-center text-xs font-mono text-rose-600 group-hover:text-rose-700 uppercase tracking-wider font-bold">
-                  <span>View Details</span>
-                  <ArrowUpRight size={13} className="ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
 
               </div>
             </motion.div>
