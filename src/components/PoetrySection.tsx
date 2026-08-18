@@ -36,22 +36,6 @@ export const POETRY_COLLECTIONS: PoetryItem[] = [
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg",
     desc: "A masterful, highly lyrical reflection on liberty, personal boundaries, and creative flight.",
     tag: "POETRY"
-  },
-  {
-    id: "poetry-democracy",
-    title: "Eleven Writers and Leaders on Democracy",
-    year: "2024",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-17-at-18.30.34.jpeg",
-    desc: "A vital anthology featuring eleven distinguished writers and leaders on democratic ideals, freedom, and governance.",
-    tag: "POETRY"
-  },
-  {
-    id: "poetry-of-this-our-country",
-    title: "Of This Our Country",
-    year: "2021",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-17-at-18.27.11.jpeg",
-    desc: "An acclaimed anthology of acclaimed Nigerian writers reflecting on home, identity, memory, and culture.",
-    tag: "POETRY"
   }
 ];
 
@@ -172,17 +156,12 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
                 </div>
 
                 {/* BOOK DETAILS - WHITE BACKGROUND */}
-                <div className="w-full md:w-3/5 space-y-4 flex flex-col justify-center">
-                  <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full text-rose-700 font-mono text-xs uppercase font-bold tracking-wider self-start">
-                    <Sparkles size={12} />
-                    <span>{activeModalItem.tag} • {activeModalItem.year}</span>
-                  </div>
-
+                <div className="w-full md:w-3/5 space-y-4 flex flex-col justify-center text-left">
                   <div>
                     <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-neutral-900 tracking-tight leading-snug">
                       {activeModalItem.title}
                     </h3>
-                    <p className="text-sm font-sans font-semibold text-rose-600 pt-1">
+                    <p className="text-sm font-sans font-medium text-neutral-600 pt-1">
                       By Lola Shoneyin
                     </p>
                   </div>

@@ -51,9 +51,6 @@ export default function FestivalsPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-4 max-w-4xl transform-gpu"
         >
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            CULTURAL SPHERES & CURATIONS
-          </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Literary Festivals
           </h1>

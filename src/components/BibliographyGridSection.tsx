@@ -273,12 +273,6 @@ export default function BibliographyGridSection() {
       <div className="bg-neutral-50 border border-neutral-200/90 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200 pb-5">
           <div>
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full mb-2">
-              <Layers size={13} className="text-rose-600" />
-              <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-rose-700">
-                WORKS CATALOG & BIBLIOGRAPHY
-              </span>
-            </div>
             <h2 className="font-serif font-black text-2xl sm:text-3xl text-neutral-950 tracking-tight">
               Filter by Literary Category
             </h2>
@@ -526,17 +520,12 @@ export default function BibliographyGridSection() {
 
               {/* BOOK DETAILS */}
               <div className="w-full md:w-1/2 space-y-4 text-left">
-                <div className="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-800/50 px-3 py-1 rounded-full text-rose-300 font-mono text-xs uppercase font-bold tracking-wider">
-                  <Sparkles size={12} />
-                  <span>{activeModalItem.type} • {activeModalItem.year}</span>
-                </div>
-
                 <div>
                   <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-white tracking-tight leading-snug">
                     {activeModalItem.title}
                   </h3>
-                  <p className="text-sm font-sans font-semibold text-rose-400 pt-1">
-                    By {activeModalItem.author}
+                  <p className="text-sm font-sans font-medium text-neutral-300 pt-1">
+                    By {activeModalItem.author} • {activeModalItem.year}
                   </p>
                 </div>
 

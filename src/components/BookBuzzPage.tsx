@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Sparkles, Users, Heart, ArrowUpRight, Globe, Layers } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function BookBuzzPage() {
@@ -36,65 +36,100 @@ export default function BookBuzzPage() {
           className="space-y-4 max-w-4xl scroll-mt-28"
           id="about"
         >
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            FOUNDATION & LITERARY INFRASTRUCTURE
-          </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Book Buzz Foundation
           </h1>
           <p className="text-neutral-700 font-serif italic text-xl md:text-2xl max-w-3xl leading-relaxed">
-            Building reading spaces, nurturing young creators, and bringing world literature to Nigerian soil.
+            Building a thriving reading, writing, and publishing culture across Nigeria and Africa.
           </p>
         </motion.div>
 
-        {/* INTRO MODULE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-neutral-200 pt-16">
-          <div className="lg:col-span-6 space-y-6">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">MISSION & VISION</span>
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-              Creating Reading Spaces & Nurturing Talent
+        {/* MISSION & VISION - PROMINENT PRIMARY MODULE */}
+        <section id="mission-vision" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
+          <div className="space-y-4">
+            <h2 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-neutral-950 leading-[1.08] max-w-5xl">
+              Expanding Access, Creating Spaces & Nurturing Creators
             </h2>
-            <p className="text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
-              For over a decade, the Book Buzz Foundation has created reading spaces by putting small, impactful libraries in schools and communities that had none. The Book Buzz Foundation also runs festivals that bring the world's writers to Nigerian soil, while training a new generation of children's book writers, illustrators, editors, and graphic designers. Its two flagship festivals, Aké Arts & Book Festival and the Kaduna Book & Arts Festival, carry that mission into cities across the country. Book Buzz Foundation is always looking for partnership opportunities to achieve its goals.
-            </p>
           </div>
 
-          <div className="lg:col-span-6 bg-neutral-50 border border-neutral-200/90 rounded-2xl p-8 space-y-6">
-            <div className="flex items-center space-x-3 text-rose-600">
-              <BookOpen size={24} />
-              <h3 className="font-sans font-bold text-sm uppercase tracking-wider">Foundation Highlights</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start pt-2">
+            <div className="lg:col-span-6 space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
+              <p>
+                Book Buzz Foundation is a cultural organisation committed to building a thriving reading, writing and publishing culture in Nigeria. For more than a decade, we have worked to expand access to books and ideas, create spaces where readers and writers can encounter one another, and strengthen the ecosystem that allows literature to flourish.
+              </p>
+              <p>
+                Our work begins with access: establishing libraries in schools and communities where books are scarce or absent. It extends to developing the people who make books possible—writers, illustrators, editors and designers—and creating platforms where Nigerian and international writers, thinkers and artists can meet audiences.
+              </p>
+              <p>
+                Through initiatives including the Aké Arts & Book Festival and the Kaduna Book & Arts Festival, Book Buzz Foundation has helped place literature at the centre of cultural conversation while connecting Nigerian audiences to ideas and voices from across Africa and the world.
+              </p>
+              <p className="font-medium text-neutral-900">
+                We believe that societies that read, imagine and tell their own stories are better equipped to shape their futures. We work with partners who share that belief and want to help build the institutions, opportunities and audiences that will sustain African literature for generations.
+              </p>
             </div>
-            <ul className="space-y-4 text-sm font-sans text-neutral-700">
-              <li className="flex items-start space-x-3">
-                <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                <span>Over 10 years of establishing impactful libraries in underserved schools.</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                <span>Organizer of Aké Arts & Book Festival and Kaduna Book & Arts Festival.</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="w-2 h-2 rounded-full bg-rose-600 mt-2 shrink-0" />
-                <span>Training pipeline for writers, illustrators, editors, and graphic designers.</span>
-              </li>
-            </ul>
+
+            {/* HIGHLIGHTS BLOCK - CLEAN, ORDERED & CONSISTENT */}
+            <div className="lg:col-span-6 bg-neutral-50 border border-neutral-200/90 rounded-2xl p-8 sm:p-10 space-y-6">
+              <h3 className="font-sans font-black text-base sm:text-lg uppercase tracking-wider text-neutral-950 border-b border-neutral-200 pb-4">
+                HIGHLIGHTS
+              </h3>
+              
+              <ul className="space-y-5 text-sm sm:text-base font-sans text-neutral-800">
+                <li className="flex items-start space-x-3.5">
+                  <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
+                  <span className="leading-relaxed">
+                    Established <strong>101 mini libraries</strong> in northern Nigeria in underserved schools.
+                  </span>
+                </li>
+                
+                <li className="flex items-start space-x-3.5">
+                  <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
+                  <span className="leading-relaxed">
+                    Organiser of <strong>Aké Arts & Book Festival</strong>, <strong>Kaduna Book & Arts Festival</strong>, <strong>Lagos International Festival of Illustration</strong>, and <strong>Abuja Festival of Literature and Ideas</strong>.
+                  </span>
+                </li>
+
+                <li className="flex items-start space-x-3.5">
+                  <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
+                  <span className="leading-relaxed">
+                    Training pipeline for writers, poets, agents, illustrators, editors, and graphic designers.
+                  </span>
+                </li>
+
+                <li className="flex items-start space-x-3.5">
+                  <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
+                  <span className="leading-relaxed">
+                    BBF is the National section of the <strong>International Board on Books for Young People (IBBY)</strong>.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
           <div className="space-y-3 max-w-3xl">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">CHILDREN'S PUBLISHING INITIATIVE</span>
-            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">Bookstorm</h2>
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              BookStorm
+            </h2>
           </div>
 
           <div className="bg-neutral-900 text-white p-8 md:p-12 rounded-2xl space-y-6 shadow-xl">
-            <p className="font-sans text-base md:text-lg text-neutral-200 leading-relaxed max-w-4xl">
-              Bookstorm began in 2023. It stepped onto the world stage in 2024 in Bologna, and it continues to grow in ambition. The Book Buzz Foundation aims to publish one hundred high-quality, culturally relevant children's picture books, while providing training for young Nigerian writers and illustrators whose work can compete globally.
-            </p>
-            <div className="pt-2 flex items-center space-x-3 text-rose-400 font-mono text-xs uppercase tracking-widest font-bold">
-              <Sparkles size={16} />
-              <span>Goal: 100 Culturally Relevant Children's Picture Books</span>
+            <div className="space-y-5 font-sans text-base md:text-lg text-neutral-200 leading-relaxed max-w-4xl select-text">
+              <p>
+                BookStorm is Book Buzz Foundation’s initiative to transform the children’s book ecosystem in Nigeria by investing in the people who create the books. Launched in 2023, it trains and supports Nigerian writers, illustrators and other publishing professionals to produce high-quality children’s books that are culturally relevant and genuinely engaging for young readers.
+              </p>
+              <p>
+                What makes BookStorm distinctive is that it is not simply a training programme. It is designed as a pipeline from talent development to publication: creators receive expert instruction, mentorship and editorial support, build professional networks, and are given pathways to turn their work into published books. Its partnerships have included organisations such as the Bologna Children’s Book Fair and Mimaster Illustrazione in Milan.
+              </p>
+              <p>
+                At its heart is a bigger ambition: to ensure that Nigerian children have access to beautiful, compelling books in which they can recognise their lives, cultures, imaginations and possibilities. BookStorm is therefore building both the creative talent and the publishing infrastructure required for a stronger Nigerian children’s literature sector. One stated ambition is to produce 100 children’s books reflecting the realities, cultures and dreams of Nigerian children.
+              </p>
+            </div>
+            
+            <div className="pt-3 border-t border-neutral-800 flex flex-wrap items-center gap-4 text-neutral-300 font-mono text-xs uppercase tracking-widest font-bold">
+              <span>Ambition: 100 Children's Books Reflecting Nigerian Realities & Dreams</span>
             </div>
           </div>
         </section>
@@ -102,67 +137,62 @@ export default function BookBuzzPage() {
         {/* NIGERIAN PICTURE BOOK PROJECT */}
         <section id="picturebook" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
           <div className="space-y-3 max-w-3xl">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">FLAGSHIP FELLOWSHIP</span>
-            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Nigerian Picture Book Project
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-8 space-y-6 text-neutral-700 font-sans text-base leading-relaxed">
-              <p className="font-serif italic text-xl text-neutral-900 font-medium">
-                What does it mean to be Nigerian, and how do you put that feeling into a picture book a child will remember for the rest of their life?
+            <div className="lg:col-span-8 space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
+              <p>
+                The Nigerian Picture Book Project (NPBP) is a Book Buzz Foundation initiative, supported by the European Union, designed to develop a new generation of Nigerian children’s book creators. It trains and mentors 40 young Nigerian writers and illustrators aged 21–30, giving them the creative and professional support to develop original picture books for children aged 5–8.
               </p>
               <p>
-                Launched on 17 October 2025 at Ouida Place in Opebi, in partnership with the European Union Delegation to Nigeria and ECOWAS, the project drew nearly 200 applications for 48 spots, 24 for writers and 24 for illustrators. All 48 were trained over twelve weeks. On 7 October 2026, twenty children's picture books, written, illustrated, and published entirely by Nigerians for Nigerian children, will be revealed.
+                The project takes participants through the full process of making a picture book: storytelling, character development and visual narrative, followed by collaboration between writers and illustrators, editorial development and preparation for publication. A central emphasis is on creating stories that are rooted in Nigerian communities, cultures and everyday realities while meeting high standards of writing, illustration and book production.
               </p>
               <p>
-                The brief to the writers was personal, not technical: go back to their own childhoods, find the parts of being Nigerian worth keeping, and put them on the page so the next generation can hold onto them too. As Shoneyin said at the launch of the project:
+                Its goal is concrete: to produce 20 professionally published picture books written and illustrated by Nigerians for Nigerian children. The finished books are intended to reach children through schools and libraries, as well as being showcased at festivals and book fairs.
               </p>
-              <blockquote className="border-l-2 border-rose-600 pl-6 font-serif italic text-xl text-neutral-900 font-bold">
-                "Every Nigerian child deserves to see themselves in a book."
-              </blockquote>
             </div>
 
             <div className="lg:col-span-4 bg-neutral-50 border border-neutral-200 p-8 rounded-2xl space-y-6">
-              <div className="font-mono text-xs text-rose-600 font-bold uppercase tracking-widest">
-                Project Stats & Dates
+              <div className="font-mono text-xs text-neutral-900 font-bold uppercase tracking-widest border-b border-neutral-200 pb-2">
+                PROJECT OVERVIEW
               </div>
               <div className="space-y-4 font-sans text-xs text-neutral-800">
                 <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Launch Date</span>
-                  <span>17 October 2025 at Ouida Place, Opebi</span>
+                  <span className="block font-bold text-neutral-950 uppercase">Partner & Support</span>
+                  <span>Supported by the European Union</span>
                 </div>
                 <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Partners</span>
-                  <span>European Union Delegation to Nigeria & ECOWAS</span>
+                  <span className="block font-bold text-neutral-950 uppercase">Cohort & Target</span>
+                  <span>40 Writers & Illustrators (Ages 21–30)</span>
                 </div>
                 <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Fellows Trained</span>
-                  <span>48 Fellows (24 Writers & 24 Illustrators)</span>
+                  <span className="block font-bold text-neutral-950 uppercase">Target Audience</span>
+                  <span>Children aged 5–8</span>
                 </div>
                 <div>
-                  <span className="block font-bold text-neutral-950 uppercase">Book Reveal</span>
-                  <span>7 October 2026: 20 Brand New Picture Books</span>
+                  <span className="block font-bold text-neutral-950 uppercase">Output & Distribution</span>
+                  <span>20 Picture Books • Schools, Libraries & Book Fairs</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PARTNERSHIPS SECTION */}
+        {/* GLOBAL PARTNERSHIPS SECTION */}
         <section id="partnerships" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
           <div className="space-y-3 max-w-3xl">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">GLOBAL INITIATIVES</span>
-            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">
-              Partnerships
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              GLOBAL PARTNERSHIPS
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {partnerships.map((p, idx) => (
               <div key={idx} className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl space-y-4 hover:border-neutral-300 transition-colors">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full inline-block">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-neutral-800 bg-neutral-200 px-3 py-1 rounded-full inline-block">
                   {p.tag}
                 </span>
                 <h3 className="font-sans font-black text-xl text-neutral-950 uppercase tracking-tight">

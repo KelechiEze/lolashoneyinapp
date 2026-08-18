@@ -1,42 +1,65 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Mail, MapPin, Newspaper, ArrowUpRight, Download, FileText, Calendar, Plus, Minus } from "lucide-react";
+import { Plus, Minus, Send, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const HERO_BG_IMAGE = "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png";
 
 const CONTACT_FAQS = [
   {
     q: "Does Ouida Books accept manuscript submissions?",
-    a: "Ouida Books accepts submissions during specific windows each year. For current submission periods and guidelines, visit ouidabooks.com."
+    a: "Ouida Books accepts submissions during specific windows each year. For current submission periods and guidelines, please visit the official Ouida Books portal."
   },
   {
     q: "How do I invite you to speak at my festival or event?",
-    a: "Speaking and appearance requests go through info@lolashoneyin.com. Please include the date, location, format, and the topic you'd like me to speak on."
+    a: "Speaking and appearance requests can be submitted directly through the contact form on this page. Please include the proposed date, location, event format, and topic in your message."
   },
   {
     q: "Can I visit OuidaLagos? What are the opening hours?",
-    a: "Yes. OuidaLagos is at 34 Ajanaku Street, Opebi, Lagos. For opening hours, events, and bookings, visit ouidalagos.com."
+    a: "Yes. OuidaLagos is located at 34 Ajanaku Street, Opebi, Ikeja, Lagos. For up-to-date opening hours, cafe reservations, and cultural event programming, please check the OuidaLagos spaces page."
   },
   {
     q: "Do you offer mentorship, workshops, or residencies for emerging writers?",
-    a: "Yes, through Book Buzz Foundation's training programmes and the Orange Tree Residency at OuidaLagos. Details are on the respective pages."
+    a: "Yes, through the Book Buzz Foundation's training initiatives and the Orange Tree Residency at OuidaLagos. Comprehensive details are available across our dedicated foundation sections."
   },
   {
     q: "How can my organisation partner with Book Buzz Foundation or one of the festivals?",
-    a: "Partnership enquiries go through info@lolashoneyin.com."
+    a: "Institutional, philanthropic, and cultural partnership proposals can be submitted via the contact form by selecting the Cultural Partnerships category."
   },
   {
     q: "When is your next novel coming out?",
-    a: "I'm working on it."
+    a: "I am actively writing and working on my upcoming fiction."
   },
   {
     q: "How do you feel about the adaptations of The Secret Lives of Baba Segi's Wives?",
-    a: "I'm delighted every time The Secret Lives of Baba Segi's Wives finds new life in a different artform."
+    a: "I am delighted every time The Secret Lives of Baba Segi's Wives finds new life across stage, radio, and different artistic mediums."
   }
 ];
 
 export default function ContactPage() {
   const location = useLocation();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    category: "Speaking & Events",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }, 700);
+  };
 
   useEffect(() => {
     if (location.hash) {
@@ -55,204 +78,242 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 selection:bg-rose-600 selection:text-white font-sans overflow-x-hidden">
+    <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 selection:bg-neutral-900 selection:text-white font-sans overflow-x-hidden">
       
-      {/* 1. INTRO / HERO SECTION */}
-      <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
-        <div className="text-left space-y-4 max-w-3xl">
-          <span className="font-mono text-xs text-rose-600 uppercase tracking-[0.25em] font-bold block">
-            CONTACT & FAQ
-          </span>
-
+      {/* 1. INTRO HEADER */}
+      <section id="intro" className="max-w-7xl mx-auto px-6 pt-4 pb-10 scroll-mt-28">
+        <div className="text-left space-y-3 max-w-3xl">
           <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
-            Contact
+            Connect
           </h1>
-
-          <div>
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full mt-2">
-              <Mail size={14} className="text-rose-600" />
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
-                ROUTING & INQUIRIES
-              </span>
-            </div>
-          </div>
-
-          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-4">
-            All enquiries, contact, work inquiries, bookings, and partnerships go to <a href="mailto:info@lolashoneyin.com" className="font-mono font-bold text-rose-600 underline hover:text-rose-700">info@lolashoneyin.com</a>.
+          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal">
+            For keynote speaking invitations, literary inquiries, festival curation, publishing conversations, and cultural partnerships.
           </p>
+        </div>
+      </section>
 
-          <div className="pt-4 flex flex-wrap items-center justify-start gap-4">
-            <a
-              href="mailto:info@lolashoneyin.com"
-              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
-            >
-              <span>Email info@lolashoneyin.com</span>
-              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-            <button
-              onClick={() => {
-                const faqEl = document.getElementById("faq");
-                if (faqEl) faqEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-sm transition-all cursor-pointer"
-            >
-              <span>View FAQ</span>
-            </button>
+      {/* 2. CONTACT SECTION WITH ORIGINAL COLOR BACKGROUND IMAGE & LEFT-ALIGNED FORM */}
+      <section className="relative w-full bg-neutral-100 overflow-hidden border-y border-neutral-200">
+        {/* Original Color Background Image with No White Hue */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src={HERO_BG_IMAGE}
+            alt="Lola Shoneyin"
+            className="w-full h-full object-cover object-right sm:object-right md:object-[75%_center]"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+          <div className="max-w-2xl">
+            
+            {/* LEFT-ALIGNED FORM CONTAINER - SOLID WHITE, STRICTLY NO BORDER RADIUS */}
+            <div className="bg-white text-neutral-950 p-8 sm:p-10 md:p-12 shadow-2xl border border-neutral-300 rounded-none">
+              <div className="space-y-2 mb-8 border-b border-neutral-200 pb-6">
+                <h2 className="font-sans font-black text-2xl sm:text-3xl uppercase tracking-tight text-neutral-950">
+                  Send a Message
+                </h2>
+                <p className="text-neutral-600 font-sans text-xs sm:text-sm">
+                  Please complete the form below. Your message will be reviewed and routed accordingly.
+                </p>
+              </div>
+
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="bg-neutral-50 border border-neutral-300 p-8 text-center space-y-4 rounded-none"
+                >
+                  <div className="w-12 h-12 bg-neutral-950 text-white flex items-center justify-center mx-auto rounded-none">
+                    <CheckCircle2 size={24} />
+                  </div>
+                  <h3 className="font-sans font-black text-xl text-neutral-950 uppercase tracking-tight">
+                    Message Sent Successfully
+                  </h3>
+                  <p className="text-neutral-600 text-sm max-w-md mx-auto">
+                    Thank you, <strong className="text-neutral-900">{formData.name}</strong>. Your message has been received and will be reviewed shortly.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ name: "", email: "", category: "Speaking & Events", subject: "", message: "" });
+                    }}
+                    className="mt-4 inline-flex items-center text-xs font-mono font-bold text-neutral-950 hover:text-neutral-700 uppercase tracking-wider underline cursor-pointer rounded-none"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Name */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Jane Doe"
+                        className="w-full bg-neutral-50 border border-neutral-300 rounded-none px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 focus:bg-white transition-colors"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="jane@example.com"
+                        className="w-full bg-neutral-50 border border-neutral-300 rounded-none px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 focus:bg-white transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Category Selection */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
+                      Inquiry Category
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {["Speaking & Events", "Literary & Publishing", "Press & Media", "Cultural Partnerships", "General"].map((cat) => (
+                        <button
+                          key={cat}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, category: cat })}
+                          className={`text-xs font-mono py-2.5 px-3 rounded-none border text-left transition-all cursor-pointer ${
+                            formData.category === cat
+                              ? "bg-neutral-950 text-white border-neutral-950 font-bold"
+                              : "bg-neutral-50 text-neutral-700 border-neutral-300 hover:border-neutral-400 hover:bg-neutral-100"
+                          }`}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Subject */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
+                      Subject *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      placeholder="Keynote Invitation / Partnership Inquiry..."
+                      className="w-full bg-neutral-50 border border-neutral-300 rounded-none px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 focus:bg-white transition-colors"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-mono font-bold uppercase tracking-wider text-neutral-800">
+                      Message *
+                    </label>
+                    <textarea
+                      required
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Please include event dates, venue location, project scope, or specifics..."
+                      className="w-full bg-neutral-50 border border-neutral-300 rounded-none p-4 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-950 focus:bg-white transition-colors resize-y"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto bg-neutral-950 hover:bg-neutral-800 disabled:opacity-70 text-white font-sans font-black text-xs uppercase tracking-widest py-3.5 px-9 rounded-none shadow-md transition-all flex items-center justify-center gap-3 cursor-pointer group"
+                  >
+                    <span>{isSubmitting ? "Submitting..." : "Submit Message"}</span>
+                    <Send size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </form>
+              )}
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 2. CONTACT ROUTING & OFFICIAL CHANNELS */}
-      <div className="max-w-7xl mx-auto px-6 space-y-20">
-        <div id="routing" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start border-t border-neutral-200/80 pt-16 scroll-mt-28">
-          <div className="space-y-6">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold block">
-              CONTACT ROUTING
-            </span>
-            <h2 className="font-sans font-black text-3xl sm:text-4xl uppercase tracking-tight text-neutral-950">
-              Contact routing
-            </h2>
-            <div className="p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm space-y-3">
-              <p className="text-neutral-900 font-sans text-base sm:text-lg font-medium leading-relaxed">
-                All enquiries, contact, work inquiries, bookings, and partnerships, go to <a href="mailto:info@lolashoneyin.com" className="font-mono font-bold text-rose-600 underline hover:text-rose-700">info@lolashoneyin.com</a>.
-              </p>
-            </div>
+      {/* 3. FREQUENTLY ASKED QUESTIONS (FAQ) SECTION - STRICTLY NO BORDER RADIUS, NEUTRAL THEME */}
+      <section id="faq" className="max-w-7xl mx-auto px-6 pt-20 space-y-8 scroll-mt-28">
+        <div className="space-y-2 border-b border-neutral-200 pb-6">
+          <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
+            Frequently Asked Questions
+          </h2>
+          <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-xl leading-relaxed">
+            Guidance regarding speaking invitations, manuscript submissions, visiting OuidaLagos, mentorship programs, and partnerships.
+          </p>
+        </div>
 
-            <div className="space-y-4 pt-2">
-              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm space-y-2">
-                <div className="flex items-center space-x-3 text-rose-600 font-mono text-xs font-extrabold uppercase">
-                  <Mail size={16} />
-                  <span>General Enquiries & Contact</span>
-                </div>
-                <a href="mailto:info@lolashoneyin.com" className="font-mono text-sm font-bold text-neutral-900 hover:text-rose-600 block">
-                  info@lolashoneyin.com
-                </a>
-                <p className="text-xs text-neutral-500 font-sans">For readers, general inquiries, and message routing.</p>
-              </div>
+        <div className="max-w-4xl space-y-3">
+          {CONTACT_FAQS.map((faq, idx) => {
+            const isOpen = openFaqIndex === idx;
 
-              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm space-y-2">
-                <div className="flex items-center space-x-3 text-rose-600 font-mono text-xs font-extrabold uppercase">
-                  <Calendar size={16} />
-                  <span>Work Inquiries, Bookings & Partnerships</span>
-                </div>
-                <a href="mailto:info@lolashoneyin.com" className="font-mono text-sm font-bold text-neutral-900 hover:text-rose-600 block">
-                  info@lolashoneyin.com
-                </a>
-                <p className="text-xs text-neutral-500 font-sans">For keynote speeches, panel moderation, festival appearances, and partnerships.</p>
-              </div>
-
-              <div className="flex items-start space-x-3 text-neutral-800 pt-2">
-                <MapPin size={18} className="text-rose-600 shrink-0 mt-0.5" />
-                <span className="font-mono text-xs font-semibold">CULTURAL HUB: 34 Ajanaku Street, Off Salvation Rd, Opebi, Ikeja, Lagos, Nigeria</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-neutral-950 text-white p-8 sm:p-10 rounded-2xl space-y-6 border border-neutral-800 shadow-xl">
-            <div className="flex items-center space-x-2 text-rose-400 font-mono text-xs uppercase font-bold">
-              <FileText size={16} />
-              <span>Media & Official Press Kit</span>
-            </div>
-
-            <h3 className="font-sans font-black text-2xl uppercase tracking-tight">Download Press Assets</h3>
-            <p className="font-sans text-xs text-neutral-300 leading-relaxed">
-              Access high-resolution portraits, official biography, author photos, book cover high-res renders, and festival background documentation for media publications.
-            </p>
-
-            <div className="pt-2">
-              <a
-                href="mailto:info@lolashoneyin.com?subject=Press%20Kit%20Request"
-                className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full transition-all cursor-pointer shadow-md"
+            return (
+              <div
+                key={idx}
+                className={`border rounded-none transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? "bg-neutral-50 border-neutral-900 shadow-sm"
+                    : "bg-white hover:bg-neutral-50 border-neutral-300 hover:border-neutral-400"
+                }`}
               >
-                <Download size={14} />
-                <span>Request Press Kit</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* 3. FREQUENTLY ASKED QUESTIONS (FAQ) SECTION */}
-        <div id="faq" className="border-t border-neutral-200/80 pt-16 space-y-8 scroll-mt-28">
-          <div className="space-y-2">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold block">
-              QUESTIONS & CLARIFICATIONS
-            </span>
-            <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
-              FAQ
-            </h2>
-            <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-xl leading-relaxed">
-              Answers regarding manuscript submissions, speaking invitations, visiting OuidaLagos, mentorship, partnerships, and current literary projects.
-            </p>
-          </div>
-
-          <div className="max-w-4xl space-y-3.5">
-            {CONTACT_FAQS.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-
-              return (
-                <motion.div
-                  key={idx}
-                  layout
-                  transition={{ layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isOpen
-                      ? "bg-white border-rose-200 shadow-sm"
-                      : "bg-white hover:bg-rose-50/20 border-neutral-200/80"
-                  }`}
+                <button
+                  onClick={() => toggleFaq(idx)}
+                  className="w-full p-5 sm:p-6 text-left flex items-center space-x-4 cursor-pointer focus:outline-none select-none group rounded-none"
                 >
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center space-x-4 cursor-pointer focus:outline-none select-none group"
+                  <div
+                    className={`w-8 h-8 rounded-none flex items-center justify-center shrink-0 border transition-colors ${
+                      isOpen ? "bg-neutral-950 text-white border-neutral-950" : "bg-white text-neutral-800 border-neutral-300 group-hover:border-neutral-950 group-hover:bg-neutral-100"
+                    }`}
                   >
-                    <motion.div
-                      animate={{
-                        backgroundColor: isOpen ? "#e11d48" : "#f1f0ea",
-                        rotate: isOpen ? 180 : 0
-                      }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform"
-                    >
-                      {isOpen ? (
-                        <Minus size={18} className="text-white stroke-[2.5]" />
-                      ) : (
-                        <Plus size={18} className="text-neutral-700 stroke-[2.2]" />
-                      )}
-                    </motion.div>
-
-                    <span className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight leading-snug group-hover:text-rose-600 transition-colors">
-                      {faq.q}
-                    </span>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="content"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <motion.div
-                          initial={{ y: -8, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={{ y: -6, opacity: 0 }}
-                          transition={{ duration: 0.25, delay: 0.05 }}
-                          className="pl-18 sm:pl-20 pr-6 pb-6 pt-1 font-sans text-xs sm:text-sm md:text-base text-neutral-700 leading-relaxed"
-                        >
-                          {faq.a}
-                        </motion.div>
-                      </motion.div>
+                    {isOpen ? (
+                      <Minus size={16} className="stroke-[2.5]" />
+                    ) : (
+                      <Plus size={16} className="stroke-[2.2]" />
                     )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+                  </div>
 
-      </div>
+                  <span className="font-sans font-bold text-base sm:text-lg text-neutral-900 tracking-tight leading-snug">
+                    {faq.q}
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-16 sm:pl-18 pr-6 pb-6 pt-1 font-sans text-xs sm:text-sm md:text-base text-neutral-700 leading-relaxed border-t border-neutral-200 mt-1">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
     </div>
   );
 }

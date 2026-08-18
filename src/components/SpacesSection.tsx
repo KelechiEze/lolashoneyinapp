@@ -78,10 +78,6 @@ export default function SpacesSection({ className = "py-20 px-6 md:px-12 bg-whit
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-200 pb-8"
         >
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-rose-600 font-mono text-xs uppercase font-bold tracking-[0.25em]">
-              <Sparkles size={14} className="animate-pulse" />
-              <span>CULTURAL SANCTUARIES</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-sans text-neutral-950 tracking-tight uppercase">
               Spaces at Ouida
             </h2>

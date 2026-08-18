@@ -206,13 +206,6 @@ export default function SpaceDetailPage() {
 
         {/* BLOG HEADER & METADATA */}
         <header className="space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-            <Sparkles size={14} className="text-rose-600" />
-            <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
-              VENUE & HAVEN • {space.title}
-            </span>
-          </div>
-
           <h1 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl text-neutral-950 uppercase tracking-tight leading-none">
             {space.title}
           </h1>

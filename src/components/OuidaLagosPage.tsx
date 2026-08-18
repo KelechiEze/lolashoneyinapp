@@ -79,10 +79,6 @@ export default function OuidaLagosPage() {
       {/* 1. HERO / HEADER SECTION */}
       <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <span className="font-mono text-xs text-rose-600 uppercase tracking-[0.25em] font-bold block">
-            OUIDALAGOS
-          </span>
-
           <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
             OuidaLagos
           </h1>
@@ -100,13 +96,6 @@ export default function OuidaLagosPage() {
           
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-              <BookOpen size={14} className="text-rose-600" />
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
-                SPACES
-              </span>
-            </div>
-
             <h2 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl text-neutral-950 tracking-tight uppercase">
               Spaces
             </h2>
@@ -119,17 +108,17 @@ export default function OuidaLagosPage() {
             {/* Sub-Pills representing the 3 elements of Spaces */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               <div className="bg-white border border-neutral-200/80 p-4 rounded-xl space-y-1 shadow-sm">
-                <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block">01 / BOOKSHOP</span>
+                <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">01 / BOOKSHOP</span>
                 <span className="font-sans font-bold text-sm text-neutral-900 block">Curated Books</span>
                 <span className="font-sans text-xs text-neutral-500 block">Fiction, poetry & children's books</span>
               </div>
               <div className="bg-white border border-neutral-200/80 p-4 rounded-xl space-y-1 shadow-sm">
-                <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block">02 / CAFÉ</span>
+                <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">02 / CAFÉ</span>
                 <span className="font-sans font-bold text-sm text-neutral-900 block">Street Food</span>
                 <span className="font-sans text-xs text-neutral-500 block">Dundun, dodo, ewa agoyin, zobo</span>
               </div>
               <div className="bg-white border border-neutral-200/80 p-4 rounded-xl space-y-1 shadow-sm">
-                <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block">03 / RESIDENCY</span>
+                <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">03 / RESIDENCY</span>
                 <span className="font-sans font-bold text-sm text-neutral-900 block">Orange Tree</span>
                 <span className="font-sans text-xs text-neutral-500 block">2-week writing residency</span>
               </div>
@@ -182,9 +171,6 @@ export default function OuidaLagosPage() {
         <div className="pt-6 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-neutral-200/80 pb-4">
             <div>
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
-                EXPLORE SPACES
-              </span>
               <h3 className="font-sans font-black text-2xl sm:text-3xl text-neutral-950 uppercase tracking-tight">
                 Our Spaces & Sanctuaries
               </h3>
@@ -219,10 +205,10 @@ export default function OuidaLagosPage() {
 
                 {/* Top-Left Title & Capacity */}
                 <div className="absolute top-6 left-6 md:top-8 md:left-8 z-10">
-                  <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-rose-400 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 mb-2 inline-block">
+                  <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/90 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 mb-2 inline-block">
                     {space.capacity}
                   </span>
-                  <h3 className="font-sans font-black text-xl sm:text-2xl md:text-3xl text-white tracking-widest uppercase drop-shadow-sm group-hover:text-rose-300 transition-colors">
+                  <h3 className="font-sans font-black text-xl sm:text-2xl md:text-3xl text-white tracking-widest uppercase drop-shadow-sm group-hover:text-neutral-200 transition-colors">
                     {space.title}
                   </h3>
                 </div>
@@ -232,7 +218,7 @@ export default function OuidaLagosPage() {
                   <span className="font-sans text-xs sm:text-sm font-bold uppercase tracking-wider text-white/90 group-hover:text-white transition-colors">
                     Explore Space
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-white/60 bg-black/30 group-hover:bg-rose-600 group-hover:border-rose-600 group-hover:text-white flex items-center justify-center text-white transition-all duration-300 transform-gpu group-hover:translate-x-1">
+                  <div className="w-8 h-8 rounded-full border border-white/60 bg-black/30 group-hover:bg-neutral-950 group-hover:border-neutral-950 group-hover:text-white flex items-center justify-center text-white transition-all duration-300 transform-gpu group-hover:translate-x-1">
                     <ChevronRight size={16} strokeWidth={2.5} />
                   </div>
                 </div>
@@ -247,13 +233,6 @@ export default function OuidaLagosPage() {
         <div className="bg-white border border-neutral-200/80 rounded-2xl p-8 sm:p-12 lg:p-14 shadow-sm space-y-10">
           
           <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-              <Users size={14} className="text-rose-600" />
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
-                COMMUNITY
-              </span>
-            </div>
-
             <h2 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl text-neutral-950 tracking-tight uppercase">
               Community
             </h2>
@@ -364,10 +343,6 @@ export default function OuidaLagosPage() {
         <div className="bg-[#181a1d] text-white rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl space-y-6">
           
           <div className="max-w-2xl space-y-4 relative z-10">
-            <span className="font-mono text-xs text-rose-400 uppercase tracking-[0.25em] font-bold block">
-              LINK-OUT
-            </span>
-
             <h2 className="font-sans font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
               Link-out
             </h2>

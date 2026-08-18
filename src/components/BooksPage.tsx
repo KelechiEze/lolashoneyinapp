@@ -81,9 +81,6 @@ export default function BooksPage() {
         
         {/* HEADER SECTION */}
         <div className="space-y-2 max-w-4xl">
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            BOOKS & FICTION BY LOLA SHONEYIN
-          </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Books & Writing
           </h1>
@@ -98,7 +95,6 @@ export default function BooksPage() {
           {/* Left info column - Sticky on desktop */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28 lg:self-start">
             <div className="space-y-3">
-              <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">THE NOVEL</span>
               <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">
                 THE SECRET LIVES OF BABA SEGI'S WIVES (2010)
               </h2>
@@ -157,7 +153,7 @@ export default function BooksPage() {
             </div>
 
             {/* GRAPHIC NOVEL (UNPUBLISHED) */}
-            <div className="space-y-3 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
+            <div className="space-y-4 bg-neutral-50 p-6 sm:p-7 rounded-[16px] border border-neutral-200">
               <h4 className="font-sans font-black text-xs sm:text-sm uppercase tracking-wider text-neutral-950">
                 GRAPHIC NOVEL (UNPUBLISHED)
               </h4>
@@ -167,6 +163,37 @@ export default function BooksPage() {
               <span className="block font-sans font-bold text-xs text-neutral-600">
                 - Eva Erny
               </span>
+
+              {/* Graphic Novel Concept Art */}
+              <div 
+                onClick={() => setActiveModalBook({
+                  id: "graphic-novel-art-eva-erny",
+                  title: "The Secret Lives of Baba Segi's Wives — Graphic Novel Concept (Unpublished)",
+                  author: "Eva Erny & Lola Shoneyin",
+                  image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.22.00.jpeg",
+                  tag: "Graphic Novel",
+                  year: "Unpublished",
+                  description: "“Half a year ago I received your book from my husband as a present. It has made such a deep impression on me, that I actually dreamt about the characters. Thereafter I started painting them.” — Eva Erny",
+                  publisher: "Concept Artwork by Eva Erny"
+                })}
+                className="pt-2"
+              >
+                <div className="rounded-xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group/art relative bg-neutral-100">
+                  <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden">
+                    <img
+                      src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.22.00.jpeg"
+                      alt="Graphic Novel illustration by Eva Erny"
+                      className="w-full h-full object-cover group-hover/art:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-neutral-950/0 group-hover/art:bg-neutral-950/20 transition-colors flex items-center justify-center">
+                      <span className="opacity-0 group-hover/art:opacity-100 bg-white/95 backdrop-blur-sm text-neutral-950 font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md transition-opacity">
+                        View Artwork
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -229,14 +256,14 @@ export default function BooksPage() {
                     {/* CONTENT STRICTLY UNDERNEATH THE BOOK */}
                     <div className="space-y-1.5 text-left pt-1">
                       <div className="flex items-center space-x-2">
-                        <span className="font-mono text-[10px] font-black tracking-wider text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-sm font-bold">
+                        <span className="font-mono text-[10px] font-bold tracking-wider text-neutral-900 bg-neutral-100 px-2 py-0.5 uppercase rounded-sm">
                           {item.lang}
                         </span>
                         <span className="font-mono text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
                           TRANSLATION
                         </span>
                         {item.isComingSoon && (
-                          <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-wider italic">
+                          <span className="font-mono text-[9px] font-bold text-neutral-500 uppercase tracking-wider italic">
                             (Cover not available yet)
                           </span>
                         )}
@@ -376,18 +403,11 @@ export default function BooksPage() {
 
                 {/* BOOK DETAILS - WHITE BACKGROUND */}
                 <div className="w-full md:w-3/5 space-y-4 text-left flex flex-col justify-center">
-                  {activeModalBook.tag && (
-                    <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full text-rose-700 font-mono text-xs uppercase font-bold tracking-wider">
-                      <Sparkles size={12} />
-                      <span>{activeModalBook.tag} {activeModalBook.year ? `• ${activeModalBook.year}` : ""}</span>
-                    </div>
-                  )}
-
                   <div>
                     <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-neutral-900 tracking-tight leading-snug">
                       {activeModalBook.title}
                     </h3>
-                    <p className="text-sm font-sans font-semibold text-rose-600 pt-1">
+                    <p className="text-sm font-sans font-medium text-neutral-600 pt-1">
                       By {activeModalBook.author}
                     </p>
                   </div>

@@ -79,12 +79,9 @@ export default function AwardsPage() {
         >
           <div className="flex items-center space-x-3 pb-6 border-b border-neutral-200">
             <div className="p-3 bg-neutral-950 text-white rounded-xl">
-              <Trophy size={28} className="text-rose-400" />
+              <Trophy size={28} className="text-amber-400" />
             </div>
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-rose-600 font-bold block">
-                LITERARY DISTINCTIONS
-              </span>
               <h2 className="font-sans font-black text-2xl sm:text-3xl uppercase tracking-tight text-neutral-950">
                 Awards
               </h2>
@@ -135,12 +132,6 @@ export default function AwardsPage() {
         <div id="fellowships" className="border-t border-neutral-200 pt-16 space-y-12 scroll-mt-28">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-                <Award size={14} className="text-rose-600" />
-                <span className="font-mono text-xs uppercase tracking-widest text-rose-700 font-bold">
-                  FELLOWSHIPS & GLOBAL CITATIONS
-                </span>
-              </div>
               <h2 className="font-sans font-black text-3xl md:text-5xl uppercase tracking-tight text-neutral-950">
                 Fellowships & Global Citations
               </h2>
@@ -272,7 +263,7 @@ export default function AwardsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 
                 <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider bg-rose-600 px-3 py-1 rounded-full">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider bg-neutral-900 px-3 py-1 rounded-full border border-white/20">
                     {selectedHonor.year}
                   </span>
                   <span className="font-mono text-xs text-neutral-300 uppercase">
@@ -283,7 +274,7 @@ export default function AwardsPage() {
 
               {/* Modal Body */}
               <div className="p-6 sm:p-8 space-y-4">
-                <span className="font-mono text-xs uppercase font-bold text-rose-600 tracking-widest block">
+                <span className="font-mono text-xs uppercase font-bold text-neutral-500 tracking-widest block">
                   {selectedHonor.organization}
                 </span>
                 <h3 className="font-sans font-black text-2xl sm:text-3xl uppercase tracking-tight text-neutral-950">
@@ -297,7 +288,7 @@ export default function AwardsPage() {
                   <span className="font-mono text-xs text-neutral-400">
                     Reference ID: {selectedHonor.code}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-rose-600 uppercase">
+                  <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-800 uppercase">
                     <CheckCircle2 size={16} />
                     <span>Official Citation</span>
                   </div>

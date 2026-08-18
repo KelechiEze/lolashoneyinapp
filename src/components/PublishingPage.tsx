@@ -26,9 +26,6 @@ export default function PublishingPage() {
         
         {/* PAGE HERO */}
         <div className="space-y-4 max-w-4xl">
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            LITERARY PRESERVATION & INDEPENDENT PUBLISHING
-          </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Publishing & Bookselling
           </h1>
@@ -42,7 +39,6 @@ export default function PublishingPage() {
           
           {/* Left Column - Ouida Books */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">INDEPENDENT PUBLISHING HOUSE</span>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">Ouida Books</h2>
             <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">
               Founded by Lola Shoneyin in 2016, Ouida Books has emerged as a premier publishing house in Nigeria. Committed to high-end publishing standards, Ouida Books selects, edits, and produces books that capture complex realities and beautiful storytelling. It champions authentic voices and pushes boundaries in fiction, memoir, non-fiction, and children's literature.
@@ -63,7 +59,6 @@ export default function PublishingPage() {
 
           {/* Right Column - OuidaLagos */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="font-mono text-xs text-rose-600 uppercase tracking-widest font-bold">PHYSICAL CULTURAL SANCTUARY</span>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">OuidaLagos</h2>
             <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">
               OuidaLagos is more than a bookshop; it is a vibrant cultural hub in the heart of Lagos. Home to a bookstore, a relaxing café, a cultural events stage, and an intimate writer-in-residence room, it serves as an indispensable sanctuary for authors, thinkers, students, and readers.

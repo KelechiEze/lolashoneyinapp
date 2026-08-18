@@ -395,25 +395,12 @@ export default function SpeakingPage() {
       {/* 1. INTRO / HERO SECTION */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
         <div className="text-left space-y-4 max-w-3xl">
-          <span className="font-mono text-xs text-rose-600 uppercase tracking-[0.25em] font-bold block">
-            SPEAKING
-          </span>
-
           <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
             Speaking
           </h1>
 
-          <div>
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full mt-2">
-              <Mic size={14} className="text-rose-600" />
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-rose-700 font-bold">
-                INTRO
-              </span>
-            </div>
-          </div>
-
           {/* EXACT VERBATIM INTRO COPY */}
-          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-4">
+          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-2">
             Shoneyin has been participating in literary events since 1998. Her first international engagements took her to the Zimbabwe International Book Fair in 1999, and then to the Iowa International Writers Workshop in the same year. She has not stopped since.
           </p>
 
@@ -444,9 +431,6 @@ export default function SpeakingPage() {
       {/* 2. ENGAGEMENTS SECTION */}
       <section id="engagements" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
-            SPEAKING
-          </span>
           <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
             Engagements
           </h2>
@@ -468,7 +452,7 @@ export default function SpeakingPage() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-1.5 flex-1">
-                  <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block">
+                  <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">
                     {item.code} • {item.role}
                   </span>
                   <h3 className="font-sans font-bold text-lg sm:text-xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
@@ -495,9 +479,6 @@ export default function SpeakingPage() {
       {/* 3. PODCASTS AND INTERVIEWS SECTION */}
       <section id="podcasts" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600">
-            SPEAKING
-          </span>
           <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
             Podcasts and Interviews
           </h2>
@@ -571,12 +552,6 @@ export default function SpeakingPage() {
       <section id="gallery" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200/80 pb-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full">
-              <ImageIcon size={14} className="text-rose-600" />
-              <span className="font-mono text-xs uppercase tracking-widest text-rose-700 font-bold">
-                SPEAKING
-              </span>
-            </div>
             <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
               Photo gallery
             </h2>

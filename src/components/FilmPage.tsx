@@ -41,9 +41,6 @@ export default function FilmPage() {
         
         {/* PAGE HERO */}
         <div className="space-y-4 max-w-4xl">
-          <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
-            CINEMATIC RECORDS & SOCIAL ACTS
-          </span>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Documentaries & Film
           </h1>

@@ -20,10 +20,10 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Writing",
       hasDropdown: true,
       subLinks: [
-        { path: "/books#prose", label: "Prose", desc: "The Secret Lives of Baba Segi's Wives & adaptations" },
-        { path: "/books#poetry", label: "Poetry", desc: "Sitting on an Egg, Song of a Riverbird, For the Love of Flight" },
-        { path: "/books#children", label: "Children's Books", desc: "Ten picture books placing African children at the center" },
-        { path: "/writing#essays", label: "Essays & Articles", desc: "Building a Nigerian Picturebook Ecosystem, Red Tape & Nostalgia" },
+        { path: "/books#prose", label: "Prose" },
+        { path: "/books#poetry", label: "Poetry" },
+        { path: "/books#children", label: "Children's Books" },
+        { path: "/writing#essays", label: "Essays & Articles" },
       ]
     },
     {
@@ -31,10 +31,10 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Book Buzz",
       hasDropdown: true,
       subLinks: [
-        { path: "/book-buzz#about", label: "Book Buzz Foundation", desc: "School libraries, reading spaces & festivals" },
-        { path: "/book-buzz#bookstorm", label: "Bookstorm", desc: "Publishing 100 children's picture books" },
-        { path: "/book-buzz#picturebook", label: "Nigerian Picture Book Project", desc: "EU/ECOWAS fellowship training 48 creators" },
-        { path: "/book-buzz#partnerships", label: "Partnerships", desc: "Read My World, Sharjah & Bristol Ideas" },
+        { path: "/book-buzz#about", label: "Book Buzz Foundation" },
+        { path: "/book-buzz#bookstorm", label: "Bookstorm" },
+        { path: "/book-buzz#picturebook", label: "Nigerian Picture Book Project" },
+        { path: "/book-buzz#partnerships", label: "Partnerships" },
       ]
     },
     { 
@@ -42,8 +42,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Publishing",
       hasDropdown: true,
       subLinks: [
-        { path: "/ouida-books#about", label: "Ouida Books", desc: "Flagship independent publishing house founded 2016" },
-        { path: "/ouida-books#imprints", label: "Eight Imprints", desc: "Ouida Books, Poetry, Cognix, Tanja, Adole, Phoenix, Tevani, Lufu" },
+        { path: "/ouida-books#about", label: "Ouida Books" },
+        { path: "/ouida-books#imprints", label: "Eight Imprints" },
       ]
     },
     { 
@@ -51,8 +51,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "OuidaLagos",
       hasDropdown: true,
       subLinks: [
-        { path: "/ouida-lagos#spaces", label: "Spaces & Café", desc: "Bookshop, street food café & Orange Tree Residency" },
-        { path: "/ouida-lagos#community", label: "Community", desc: "Ouida Open Mic, Ìsèdá & Silent Reading" },
+        { path: "/ouida-lagos#spaces", label: "Spaces & Café" },
+        { path: "/ouida-lagos#community", label: "Community" },
       ]
     },
     { 
@@ -60,10 +60,10 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Festivals",
       hasDropdown: true,
       subLinks: [
-        { path: "/festivals#ake", label: "Aké Arts and Book Festival", desc: "Africa's premier literary gathering" },
-        { path: "/festivals#lifi", label: "LIFI", desc: "Lagos International Festival of Illustrations" },
-        { path: "/festivals#kabafest", label: "KABAFEST", desc: "Kaduna Book & Arts Festival" },
-        { path: "/festivals#afli", label: "AFLI", desc: "Abuja Festival of Literature and Ideas" },
+        { path: "/festivals#ake", label: "Aké Arts and Book Festival" },
+        { path: "/festivals#lifi", label: "LIFI" },
+        { path: "/festivals#kabafest", label: "KABAFEST" },
+        { path: "/festivals#afli", label: "AFLI" },
       ]
     },
     { 
@@ -71,9 +71,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Films",
       hasDropdown: true,
       subLinks: [
-        { path: "/film#flowers", label: "Flowers for Warriors (2020)", desc: "Documentary on families living with disabilities" },
-        { path: "/film#fragile", label: "A Fragile State (2024)", desc: "Financial Times Democracy 2024 spoken-word film" },
-        { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)", desc: "Documentary on Yoruba egbé age-group tradition" },
+        { path: "/film#flowers", label: "Flowers for Warriors (2020)" },
+        { path: "/film#fragile", label: "A Fragile State (2024)" },
+        { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)" },
       ]
     },
     { 
@@ -81,10 +81,10 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Speaking",
       hasDropdown: true,
       subLinks: [
-        { path: "/speaking#intro", label: "Intro", desc: "Literary events & international keynotes since 1998" },
-        { path: "/speaking#engagements", label: "Engagements", desc: "FLAM Marrakech, Princeton, Berlin, Frankfurt & global stages" },
-        { path: "/speaking#podcasts", label: "Podcasts and Interviews", desc: "Annotated w/ Temi & Art, Tech and Polygamy" },
-        { path: "/speaking#gallery", label: "Photo gallery", desc: "Photos from at least 20 events" },
+        { path: "/speaking#intro", label: "Intro" },
+        { path: "/speaking#engagements", label: "Engagements" },
+        { path: "/speaking#podcasts", label: "Podcasts and Interviews" },
+        { path: "/speaking#gallery", label: "Photo gallery" },
       ]
     },
     { 
@@ -92,9 +92,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Press",
       hasDropdown: true,
       subLinks: [
-        { path: "/awards", label: "Awards & Honors", desc: "Orange Prize, PEN Oakland, Ken Saro-Wiwa & RSL Fellowship" },
-        { path: "/press#interviews", label: "Interviews", desc: "Ten selected media & podcast conversations" },
-        { path: "/press#features", label: "Features & Reviews", desc: "RSL Fellowship, FT 25, Cambridge Press & BellaNaija" },
+        { path: "/awards", label: "Awards & Honors" },
+        { path: "/press#interviews", label: "Interviews" },
+        { path: "/press#features", label: "Features & Reviews" },
       ]
     },
     { 
@@ -102,8 +102,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       label: "Contact",
       hasDropdown: true,
       subLinks: [
-        { path: "/contact#routing", label: "Contact routing", desc: "info@lolashoneyin.com" },
-        { path: "/contact#faq", label: "FAQ", desc: "Submissions, speaking, OuidaLagos & FAQ" },
+        { path: "/contact#routing", label: "Contact routing" },
+        { path: "/contact#faq", label: "FAQ" },
       ]
     },
   ];
@@ -224,9 +224,6 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                             <span className="text-xs font-extrabold uppercase tracking-wider text-neutral-950 group-hover/sub:text-neutral-800 transition-colors flex items-center justify-between gap-2 whitespace-normal">
                               <span>{sub.label}</span>
                               <ArrowUpRight size={13} className="text-neutral-500 group-hover/sub:text-neutral-950 group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5 transition-all shrink-0" />
-                            </span>
-                            <span className="text-[11px] text-neutral-600 font-medium font-sans mt-0.5 leading-relaxed whitespace-normal break-words block pr-2">
-                              {sub.desc}
                             </span>
                           </button>
                         ))}
@@ -351,7 +348,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
                           />
                         </motion.button>
 
-                        {/* Render sub-links as clean text with arrow icons (NO BUTTON CONTAINERS) */}
+                        {/* Render sub-links as clean text with arrow icons */}
                         {link.subLinks && (
                           <div className="pl-10 sm:pl-16 flex flex-col space-y-1.5 pt-1 pb-3">
                             {link.subLinks.map((sub) => (
