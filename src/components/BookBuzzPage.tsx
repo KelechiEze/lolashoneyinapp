@@ -35,23 +35,25 @@ export default function BookBuzzPage() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-5 max-w-4xl scroll-mt-28"
+          className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-6 md:gap-10 scroll-mt-28"
           id="about"
         >
-          <div className="flex items-center">
+          <div className="space-y-4 max-w-4xl">
+            <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
+              Book Buzz Foundation
+            </h1>
+            <p className="text-neutral-700 font-serif italic text-xl md:text-2xl max-w-3xl leading-relaxed">
+              Building a thriving reading, writing, and publishing culture across Nigeria and Africa.
+            </p>
+          </div>
+          <div className="shrink-0 flex items-center justify-start md:justify-end">
             <img 
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bbf-new-logo-small.png" 
               alt="Book Buzz Foundation Logo" 
-              className="h-16 sm:h-20 w-auto object-contain"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </div>
-          <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
-            Book Buzz Foundation
-          </h1>
-          <p className="text-neutral-700 font-serif italic text-xl md:text-2xl max-w-3xl leading-relaxed">
-            Building a thriving reading, writing, and publishing culture across Nigeria and Africa.
-          </p>
         </motion.div>
 
         {/* MISSION & VISION - PROMINENT PRIMARY MODULE */}
@@ -119,18 +121,18 @@ export default function BookBuzzPage() {
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="space-y-4 max-w-3xl">
-            <div>
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
-                alt="BookStorm Logo" 
-                className="h-14 sm:h-16 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               BookStorm
             </h2>
+            <div className="shrink-0 flex items-center justify-start sm:justify-end">
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
+                alt="BookStorm Logo" 
+                className="h-12 sm:h-14 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
 
           <div className="bg-neutral-100 border border-neutral-200/90 text-neutral-950 p-8 md:p-12 rounded-2xl space-y-6 shadow-sm">
@@ -156,18 +158,18 @@ export default function BookBuzzPage() {
 
         {/* NIGERIAN PICTURE BOOK PROJECT */}
         <section id="picturebook" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="space-y-4 max-w-3xl">
-            <div>
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
-                alt="Nigerian Picture Book Project Logo" 
-                className="h-14 sm:h-16 w-auto object-contain rounded-[2px]"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Nigerian Picture Book Project
             </h2>
+            <div className="shrink-0 flex items-center justify-start sm:justify-end">
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
+                alt="Nigerian Picture Book Project Logo" 
+                className="h-12 sm:h-14 w-auto object-contain rounded-[2px]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
