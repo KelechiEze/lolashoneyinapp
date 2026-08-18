@@ -153,17 +153,8 @@ export default function Footer({ onOpenCalendar }: FooterProps) {
 
         </div>
 
-        {/* GIANT SIGNATURE BRAND TYPOGRAPHY (Reduced by 15%) */}
-        <div className="pt-10 border-t border-white/10 flex flex-col items-start overflow-hidden">
-          <div className="w-full select-none overflow-hidden py-2">
-            <h2 className="font-sans font-black text-[9.95vw] leading-none tracking-tighter text-white/95 uppercase whitespace-nowrap drop-shadow-2xl">
-              LOLA SHONEYIN<span className="text-[2.3vw] text-rose-500 font-sans font-normal align-top ml-2">®</span>
-            </h2>
-          </div>
-        </div>
-
         {/* Bottom copyright row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10 text-xs text-neutral-400 font-mono">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10 text-xs text-neutral-400 font-mono">
           <div className="flex items-center space-x-6">
             <span>© {new Date().getFullYear()} Lola Shoneyin. All rights reserved.</span>
           </div>

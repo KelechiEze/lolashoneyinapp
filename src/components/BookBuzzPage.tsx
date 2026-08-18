@@ -129,7 +129,7 @@ export default function BookBuzzPage() {
               <img 
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
                 alt="BookStorm Logo" 
-                className="h-12 sm:h-14 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
+                className="h-16 sm:h-20 md:h-22 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -166,7 +166,7 @@ export default function BookBuzzPage() {
               <img 
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
                 alt="Nigerian Picture Book Project Logo" 
-                className="h-12 sm:h-14 w-auto object-contain rounded-[2px]"
+                className="h-16 sm:h-20 md:h-22 w-auto object-contain rounded-[2px]"
                 referrerPolicy="no-referrer"
               />
             </div>
