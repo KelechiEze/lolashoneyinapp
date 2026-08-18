@@ -8,13 +8,15 @@ export default function BookBuzzPage() {
       title: "Read My World, Amsterdam",
       desc: "Book Buzz Foundation's partnership with the Amsterdam literature festival, where Shoneyin served as guest curator, bringing African voices onto a European stage.",
       location: "Amsterdam, Netherlands",
-      tag: "International Curation"
+      tag: "International Curation",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-11.41.28-1.jpeg"
     },
     {
       title: "Sharjah Festival of African Literature",
       desc: "In 2025, Shoneyin cocurated the inaugural festival alongside the Sharjah Book Authority, sharing a stage in University City, Sharjah, with Nobel laureates Abdulrazak Gurnah and Wole Soyinka.",
       location: "Sharjah, UAE",
-      tag: "Co-Curation"
+      tag: "Co-Curation",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-11.49.38.jpeg"
     },
     {
       title: "Here + There, with Bristol Ideas",
@@ -33,9 +35,17 @@ export default function BookBuzzPage() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-4 max-w-4xl scroll-mt-28"
+          className="space-y-5 max-w-4xl scroll-mt-28"
           id="about"
         >
+          <div className="flex items-center">
+            <img 
+              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bbf-new-logo-small.png" 
+              alt="Book Buzz Foundation Logo" 
+              className="h-16 sm:h-20 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
             Book Buzz Foundation
           </h1>
@@ -109,14 +119,22 @@ export default function BookBuzzPage() {
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="space-y-3 max-w-3xl">
+          <div className="space-y-4 max-w-3xl">
+            <div>
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
+                alt="BookStorm Logo" 
+                className="h-14 sm:h-16 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               BookStorm
             </h2>
           </div>
 
-          <div className="bg-neutral-900 text-white p-8 md:p-12 rounded-2xl space-y-6 shadow-xl">
-            <div className="space-y-5 font-sans text-base md:text-lg text-neutral-200 leading-relaxed max-w-4xl select-text">
+          <div className="bg-neutral-100 border border-neutral-200/90 text-neutral-950 p-8 md:p-12 rounded-2xl space-y-6 shadow-sm">
+            <div className="space-y-5 font-sans text-base md:text-lg text-neutral-700 leading-relaxed max-w-4xl select-text">
               <p>
                 BookStorm is Book Buzz Foundation’s initiative to transform the children’s book ecosystem in Nigeria by investing in the people who create the books. Launched in 2023, it trains and supports Nigerian writers, illustrators and other publishing professionals to produce high-quality children’s books that are culturally relevant and genuinely engaging for young readers.
               </p>
@@ -128,15 +146,25 @@ export default function BookBuzzPage() {
               </p>
             </div>
             
-            <div className="pt-3 border-t border-neutral-800 flex flex-wrap items-center gap-4 text-neutral-300 font-mono text-xs uppercase tracking-widest font-bold">
-              <span>Ambition: 100 Children's Books Reflecting Nigerian Realities & Dreams</span>
+            <div className="pt-4 border-t border-neutral-200 flex flex-wrap items-center gap-4 text-neutral-900 font-mono text-xs uppercase tracking-widest font-bold">
+              <span className="bg-white px-3 py-1.5 rounded-md border border-neutral-200/80 shadow-xs">
+                Ambition: 100 Children's Books Reflecting Nigerian Realities & Dreams
+              </span>
             </div>
           </div>
         </section>
 
         {/* NIGERIAN PICTURE BOOK PROJECT */}
         <section id="picturebook" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="space-y-3 max-w-3xl">
+          <div className="space-y-4 max-w-3xl">
+            <div>
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
+                alt="Nigerian Picture Book Project Logo" 
+                className="h-14 sm:h-16 w-auto object-contain rounded-[2px]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Nigerian Picture Book Project
             </h2>
@@ -181,7 +209,7 @@ export default function BookBuzzPage() {
           </div>
         </section>
 
-        {/* GLOBAL PARTNERSHIPS SECTION */}
+        {/* GLOBAL PARTNERSHIPS SECTION - OPEN EDITORIAL LAYOUT (NO CONTAINERS) */}
         <section id="partnerships" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
           <div className="space-y-3 max-w-3xl">
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
@@ -189,21 +217,37 @@ export default function BookBuzzPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 items-start">
             {partnerships.map((p, idx) => (
-              <div key={idx} className="bg-neutral-50 border border-neutral-200 p-8 rounded-2xl space-y-4 hover:border-neutral-300 transition-colors">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-neutral-800 bg-neutral-200 px-3 py-1 rounded-full inline-block">
-                  {p.tag}
-                </span>
-                <h3 className="font-sans font-black text-xl text-neutral-950 uppercase tracking-tight">
-                  {p.title}
-                </h3>
-                <p className="font-sans text-xs text-neutral-600 leading-relaxed">
-                  {p.desc}
-                </p>
-                <div className="pt-2 font-mono text-[11px] text-neutral-500 flex items-center">
-                  <Globe size={12} className="mr-1 text-neutral-400" />
-                  <span>{p.location}</span>
+              <div key={idx} className="space-y-4">
+                {p.image && (
+                  <div className="w-full aspect-[4/3] overflow-hidden rounded-[2px] bg-neutral-100 border border-neutral-200/80">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-full object-cover object-center rounded-[2px] block"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
+                
+                <div className="space-y-2.5">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-neutral-700 bg-neutral-100 px-2.5 py-1 rounded-[2px] border border-neutral-200 inline-block">
+                    {p.tag}
+                  </span>
+                  
+                  <h3 className="font-sans font-black text-xl sm:text-2xl text-neutral-950 uppercase tracking-tight leading-snug">
+                    {p.title}
+                  </h3>
+                  
+                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                    {p.desc}
+                  </p>
+                  
+                  <div className="pt-2 font-mono text-xs text-neutral-500 flex items-center">
+                    <Globe size={13} className="mr-1.5 text-neutral-400 shrink-0" />
+                    <span>{p.location}</span>
+                  </div>
                 </div>
               </div>
             ))}
