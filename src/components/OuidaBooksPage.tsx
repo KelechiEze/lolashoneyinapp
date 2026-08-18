@@ -18,7 +18,7 @@ const IMPRINTS_DATA = [
     desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
     badge: "POETRY",
     code: "_002",
-    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-poetry.png"
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-logo.png"
   },
   {
     name: "Cognix",
