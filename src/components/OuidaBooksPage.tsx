@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen, Sparkles, Compass, Heart, CircleDot, Hexagon, Layers, Zap } from "lucide-react";
+import { ArrowUpRight, BookOpen, Zap } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
 const IMPRINTS_DATA = [
@@ -10,7 +10,7 @@ const IMPRINTS_DATA = [
     desc: "Ouida Books is the flagship imprint that publishes high-quality literary fiction.",
     badge: "FLAGSHIP",
     code: "_001",
-    icon: <BookOpen className="w-5 h-5 text-rose-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-logo.png"
   },
   {
     name: "Ouida Poetry",
@@ -18,7 +18,7 @@ const IMPRINTS_DATA = [
     desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
     badge: "POETRY",
     code: "_002",
-    icon: <Sparkles className="w-5 h-5 text-amber-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-poetry.png"
   },
   {
     name: "Cognix",
@@ -26,7 +26,7 @@ const IMPRINTS_DATA = [
     desc: "Cognix is where Ouida Books turns to the real: ideas, arguments, the record of things as they happened.",
     badge: "NON-FICTION",
     code: "_003",
-    icon: <Compass className="w-5 h-5 text-teal-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/cognix-logo.png"
   },
   {
     name: "Tanja",
@@ -34,7 +34,7 @@ const IMPRINTS_DATA = [
     desc: "Tanja exists for the youngest readers by publishing picturebooks built to be read aloud and enjoyed by both children and adults.",
     badge: "PICTUREBOOKS",
     code: "_004",
-    icon: <CircleDot className="w-5 h-5 text-blue-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/tanja-logo.png"
   },
   {
     name: "Adole",
@@ -50,7 +50,7 @@ const IMPRINTS_DATA = [
     desc: "Book of Phoenix publishes speculative fiction that is not bound by the constraints of the world as it is.",
     badge: "SPECULATIVE",
     code: "_006",
-    icon: <Layers className="w-5 h-5 text-orange-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/phoenix-logo.png"
   },
   {
     name: "Tevani",
@@ -58,7 +58,7 @@ const IMPRINTS_DATA = [
     desc: "Tevani works directly with authors who want a hand-crafted path to publication, from manuscript to finished book.",
     badge: "BESPOKE",
     code: "_007",
-    icon: <Hexagon className="w-5 h-5 text-emerald-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/tevani-1.png"
   },
   {
     name: "Lufu",
@@ -66,24 +66,17 @@ const IMPRINTS_DATA = [
     desc: "Lufu publishes vibrant romance and commercial fiction.",
     badge: "ROMANCE",
     code: "_008",
-    icon: <Heart className="w-5 h-5 text-pink-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/lufu-logo.png"
   }
 ];
 
-// Continuous Marquee Book Covers
+// Continuous Marquee Book Covers with new images
 const MARQUEE_COVERS = [
-  { title: "Baba Segi's Wives", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg" },
-  { title: "Sitting on an Egg", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg" },
-  { title: "Song of a Riverbird", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.18.54.jpeg" },
-  { title: "For the Love of Flight", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.20.13.jpeg" },
-  { title: "Setto Saves the Trees", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg" },
-  { title: "Anyibo & Mother Hen", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/anyibo.png" },
-  { title: "Hassan & Hussaina", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png" },
-  { title: "Mayowa & Masquerades", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.32.23.jpeg" },
-  { title: "Iyaji the House Girl", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/iyaji.png" },
-  { title: "Jamila's Clever Plan", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/jamila.png" },
-  { title: "Pwada Can Do Anything", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/pwada.png" },
-  { title: "Do As You're Told Baji", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/baji.jpg" }
+  { title: "Ouida Book 1", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book1.jpg" },
+  { title: "Ouida Book 2", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book2.png" },
+  { title: "Ouida Book 3", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book3.jpeg" },
+  { title: "Ouida Book 4", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book4.jpg" },
+  { title: "Ouida Book 5", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book5.jpg" }
 ];
 
 export default function OuidaBooksPage() {
@@ -108,9 +101,9 @@ export default function OuidaBooksPage() {
     <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 overflow-x-hidden selection:bg-rose-600 selection:text-white font-sans">
       
       {/* 1. HERO / OUIDA BOOKS INTRO */}
-      <section id="intro" className="relative min-h-[75vh] flex flex-col items-center justify-center text-center px-6 pt-12 pb-20 scroll-mt-28">
+      <section id="intro" className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-24 scroll-mt-28">
         
-        {/* Floating Book 1 - Top Left (No border-radius as requested) */}
+        {/* Floating Book 1 - Top Left (Pure Cover Only, No Text Box Underneath) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
@@ -119,23 +112,17 @@ export default function OuidaBooksPage() {
             scale: { duration: 0.8, type: "spring", bounce: 0.4 },
             y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="hidden md:block absolute top-12 left-10 lg:left-20 w-44 rounded-none overflow-hidden shadow-lg border border-neutral-200 pointer-events-none z-10 bg-white"
+          className="hidden md:block absolute top-6 left-8 lg:left-14 w-36 sm:w-40 lg:w-44 rounded-none overflow-hidden shadow-2xl border border-neutral-200/90 pointer-events-none z-10 bg-white aspect-[3/4.7]"
         >
-          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100 rounded-none">
-            <img
-              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg"
-              alt="The Secret Lives of Baba Segi's Wives"
-              className="w-full h-full object-cover rounded-none"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="p-3 bg-white text-left">
-            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">FLAGSHIP NOVEL</span>
-            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Baba Segi's Wives</p>
-          </div>
+          <img
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book1.jpg"
+            alt="Ouida Publication"
+            className="w-full h-full object-cover rounded-none block"
+            referrerPolicy="no-referrer"
+          />
         </motion.div>
 
-        {/* Floating Book 2 - Top Right (No border-radius as requested) */}
+        {/* Floating Book 2 - Top Right (Pure Cover Only, No Text Box Underneath) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: [0, 8, 0] }}
@@ -144,23 +131,17 @@ export default function OuidaBooksPage() {
             scale: { duration: 0.8, delay: 0.15, type: "spring", bounce: 0.4 },
             y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
           }}
-          className="hidden md:block absolute top-16 right-10 lg:right-20 w-44 rounded-none overflow-hidden shadow-lg border border-neutral-200 pointer-events-none z-10 bg-white"
+          className="hidden md:block absolute top-6 right-8 lg:right-14 w-36 sm:w-40 lg:w-44 rounded-none overflow-hidden shadow-2xl border border-neutral-200/90 pointer-events-none z-10 bg-white aspect-[3/4.7]"
         >
-          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100 rounded-none">
-            <img
-              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
-              alt="Setto Saves the Trees"
-              className="w-full h-full object-cover rounded-none"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="p-3 bg-white text-left">
-            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">CHILDREN'S BOOK</span>
-            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Setto Saves Trees</p>
-          </div>
+          <img
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book2.png"
+            alt="Ouida Publication"
+            className="w-full h-full object-cover rounded-none block"
+            referrerPolicy="no-referrer"
+          />
         </motion.div>
 
-        {/* Floating Book 3 - Bottom Left (No border-radius as requested) */}
+        {/* Floating Book 3 - Bottom Left (Pure Cover Only, Generous Vertical Space from Top) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: [0, 7, 0] }}
@@ -169,23 +150,17 @@ export default function OuidaBooksPage() {
             scale: { duration: 0.8, delay: 0.3, type: "spring", bounce: 0.4 },
             y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
           }}
-          className="hidden lg:block absolute bottom-12 left-16 w-40 rounded-none overflow-hidden shadow-lg border border-neutral-200 pointer-events-none z-10 bg-white"
+          className="hidden lg:block absolute bottom-6 left-10 lg:left-16 w-32 sm:w-36 lg:w-40 rounded-none overflow-hidden shadow-2xl border border-neutral-200/90 pointer-events-none z-10 bg-white aspect-[3/4.7]"
         >
-          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100 rounded-none">
-            <img
-              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-17.26.14.jpeg"
-              alt="Sitting on an Egg"
-              className="w-full h-full object-cover rounded-none"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="p-2.5 bg-white text-left">
-            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">POETRY</span>
-            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Sitting on an Egg</p>
-          </div>
+          <img
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book3.jpeg"
+            alt="Ouida Publication"
+            className="w-full h-full object-cover rounded-none block"
+            referrerPolicy="no-referrer"
+          />
         </motion.div>
 
-        {/* Floating Book 4 - Bottom Right (No border-radius as requested) */}
+        {/* Floating Book 4 - Bottom Right (Pure Cover Only, Generous Vertical Space from Top) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.3, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: [0, -7, 0] }}
@@ -194,23 +169,17 @@ export default function OuidaBooksPage() {
             scale: { duration: 0.8, delay: 0.45, type: "spring", bounce: 0.4 },
             y: { duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
           }}
-          className="hidden lg:block absolute bottom-10 right-16 w-40 rounded-none overflow-hidden shadow-lg border border-neutral-200 pointer-events-none z-10 bg-white"
+          className="hidden lg:block absolute bottom-6 right-10 lg:right-16 w-32 sm:w-36 lg:w-40 rounded-none overflow-hidden shadow-2xl border border-neutral-200/90 pointer-events-none z-10 bg-white aspect-[3/4.7]"
         >
-          <div className="aspect-[3/4.7] w-full overflow-hidden bg-neutral-100 rounded-none">
-            <img
-              src="https://kelechieze.wordpress.com/wp-content/uploads/2026/07/hassan-hussaina.png"
-              alt="Hassan & Hussaina"
-              className="w-full h-full object-cover rounded-none"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="p-2.5 bg-white text-left">
-            <span className="font-mono text-[9px] font-bold text-rose-600 uppercase tracking-widest block">ADVENTURE</span>
-            <p className="font-sans font-bold text-xs text-neutral-900 truncate">Hassan & Hussaina</p>
-          </div>
+          <img
+            src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book4.jpg"
+            alt="Ouida Publication"
+            className="w-full h-full object-cover rounded-none block"
+            referrerPolicy="no-referrer"
+          />
         </motion.div>
 
-        {/* Center Content Box: Heading changed from "Intro" to "OUIDA BOOKS" */}
+        {/* Center Content Box: Heading "OUIDA BOOKS" */}
         <motion.div 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -308,11 +277,22 @@ export default function OuidaBooksPage() {
               transition={{ duration: 0.35, delay: idx * 0.05 }}
               className="group bg-neutral-50/80 hover:bg-white p-6 rounded-xl border border-neutral-200/80 hover:border-neutral-900 transition-all duration-300 hover:shadow-lg flex flex-col justify-between space-y-4"
             >
-              {/* Top Header with Logo Mark / Icon & Code */}
-              <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                  {imp.icon}
-                </div>
+              {/* Top Header with Logo Image / Mark & Code */}
+              <div className="flex items-center justify-between min-h-[50px]">
+                {imp.logo ? (
+                  <div className="h-12 flex items-center justify-start max-w-[140px]">
+                    <img
+                      src={imp.logo}
+                      alt={`${imp.name} Logo`}
+                      className={`${imp.name === "Lufu" ? "max-h-7" : "max-h-11"} max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                    {imp.icon}
+                  </div>
+                )}
                 <span className="font-mono text-[10px] font-bold text-neutral-400">
                   {imp.code}
                 </span>
