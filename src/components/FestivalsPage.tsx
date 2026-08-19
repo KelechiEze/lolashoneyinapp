@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Calendar, Award, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Festival {
   id: string;
@@ -9,13 +9,15 @@ interface Festival {
   desc: string;
   quote?: string;
   quoteAuthor?: string;
-  img: string;
+  img?: string;
   images?: string[];
   accent: string;
 }
 
 function FestivalGallery({ festival }: { festival: Festival }) {
-  const images = festival.images && festival.images.length > 0 ? festival.images : [festival.img];
+  const images = festival.images && festival.images.length > 0 
+    ? festival.images 
+    : (festival.img ? [festival.img] : []);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const prevImage = () => {
@@ -25,6 +27,10 @@ function FestivalGallery({ festival }: { festival: Festival }) {
   const nextImage = () => {
     setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
+
+  if (images.length === 0) {
+    return null;
+  }
 
   if (images.length === 1) {
     return (
@@ -116,7 +122,12 @@ export default function FestivalsPage() {
       desc: "Aké is Africa's largest literary gathering, three days each year where writers, poets, artists, filmmakers, and thinkers converge to talk, read, and argue about the questions that matter on the continent. Founded by Shoneyin in 2013 in Abeokuta, the town where Nobel laureate Wole Soyinka was born, the festival moved to Lagos in 2017 and has since brought together over a thousand creatives from Africa and the diaspora. It has grown from a single-city gathering into what many now call the biggest convergence of African creatives in the world, and in 2023 it won the inaugural Aficionado Award, presented by the Frankfurt and Turin book fairs, for its contribution to improving the quality of international publishing.",
       quote: "A big thank you to you and your entire team for creating such a festive atmosphere in this year's Aké Festival. We enjoyed the flowers and their colours but we know it was because they grew from a plant with deep roots not always visible, but there all the same, all the time.",
       quoteAuthor: "Ngũgĩ wa Thiong'o",
-      img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200",
+      img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.50.54.jpeg",
+      images: [
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.50.54.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.26.36.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.28.40.jpeg"
+      ],
       accent: "text-amber-600"
     },
     {
@@ -137,7 +148,12 @@ export default function FestivalsPage() {
       title: "Kaduna Book & Arts Festival (KABAFEST)",
       subtitle: "A Stage for Northern Nigerian Voices",
       desc: "KABAFEST took northern Nigeria's literary scene and gave it a stage of its own. Founded in 2017 as an initiative of the Kaduna State Government, the festival set out to challenge the idea that the north was too conservative for books and ideas, hosting panels in Hausa and English and creating space for conversations on identity, politics, feminism, and religion that don't always get room elsewhere. It was the only state-funded literary festival in northern Nigeria, until state support was withdrawn and the festival was discontinued in 2025.",
-      img: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1200",
+      img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.06.jpeg",
+      images: [
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.06.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.07-1.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.07-2.jpeg"
+      ],
       accent: "text-emerald-600"
     },
     {
@@ -145,7 +161,6 @@ export default function FestivalsPage() {
       title: "Abuja Festival of Literature and Ideas (AFLI)",
       subtitle: "Stimulating Ideas in the Nation's Capital",
       desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition from 8-10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
-      img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200",
       accent: "text-teal-600"
     }
   ];
@@ -171,51 +186,60 @@ export default function FestivalsPage() {
 
         {/* FESTIVALS LIST */}
         <div className="space-y-20 border-t border-neutral-200 pt-16">
-          {festivals.map((f, idx) => (
-            <motion.div 
-              key={f.id} 
-              id={f.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.1 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center transform-gpu scroll-mt-32"
-            >
-              {/* Text Area */}
-              <div className={`lg:col-span-6 space-y-6 ${idx % 2 === 1 ? "lg:order-last" : ""}`}>
-                <div className="space-y-2">
-                  <span className={`font-mono text-xs uppercase tracking-widest font-black ${f.accent}`}>{f.subtitle}</span>
-                  <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">{f.title}</h2>
-                </div>
-
-                <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">{f.desc}</p>
-                
-                {f.quote && (
-                  <div className="bg-neutral-50 border-l-4 border-rose-600 p-6 rounded-r-xl space-y-2">
-                    <p className="text-neutral-800 font-serif italic text-sm md:text-base leading-relaxed select-text">
-                      "{f.quote}"
-                    </p>
-                    <p className="text-neutral-600 font-sans text-xs font-bold uppercase tracking-wider">
-                      — {f.quoteAuthor}
-                    </p>
-                  </div>
-                )}
-
-                <div className="flex items-center space-x-6 text-xs text-neutral-500 font-mono">
-                  <span className="flex items-center"><MapPin size={14} className="mr-1 text-neutral-400" /> NIGERIA</span>
-                  <span className="flex items-center"><Calendar size={14} className="mr-1 text-neutral-400" /> ANNUAL EVENT</span>
-                </div>
-              </div>
-
-              {/* Image / Gallery Area */}
+          {festivals.map((f, idx) => {
+            const hasImages = (f.images && f.images.length > 0) || Boolean(f.img);
+            return (
               <motion.div 
-                whileHover={{ scale: 1.01 }}
-                className="lg:col-span-6"
+                key={f.id} 
+                id={f.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.1 }}
+                className={
+                  hasImages 
+                    ? "grid grid-cols-1 lg:grid-cols-12 gap-12 items-center transform-gpu scroll-mt-32"
+                    : "max-w-3xl transform-gpu scroll-mt-32"
+                }
               >
-                <FestivalGallery festival={f} />
+                {/* Text Area */}
+                <div className={`space-y-6 ${hasImages ? `lg:col-span-6 ${idx % 2 === 1 ? "lg:order-last" : ""}` : ""}`}>
+                  <div className="space-y-2">
+                    <span className={`font-mono text-xs uppercase tracking-widest font-black ${f.accent}`}>{f.subtitle}</span>
+                    <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">{f.title}</h2>
+                  </div>
+
+                  <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">{f.desc}</p>
+                  
+                  {f.quote && (
+                    <div className="bg-neutral-50 border-l-4 border-rose-600 p-6 rounded-r-xl space-y-2">
+                      <p className="text-neutral-800 font-serif italic text-sm md:text-base leading-relaxed select-text">
+                        "{f.quote}"
+                      </p>
+                      <p className="text-neutral-600 font-sans text-xs font-bold uppercase tracking-wider">
+                        — {f.quoteAuthor}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="flex items-center space-x-6 text-xs text-neutral-500 font-mono">
+                    <span className="flex items-center"><MapPin size={14} className="mr-1 text-neutral-400" /> NIGERIA</span>
+                    <span className="flex items-center"><Calendar size={14} className="mr-1 text-neutral-400" /> ANNUAL EVENT</span>
+                  </div>
+                </div>
+
+                {/* Image / Gallery Area (Only rendered if images exist) */}
+                {hasImages && (
+                  <motion.div 
+                    whileHover={{ scale: 1.01 }}
+                    className="lg:col-span-6"
+                  >
+                    <FestivalGallery festival={f} />
+                  </motion.div>
+                )}
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
