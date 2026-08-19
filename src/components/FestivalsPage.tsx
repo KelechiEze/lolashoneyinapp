@@ -1,9 +1,114 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Sparkles, Calendar, Award, MapPin } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Sparkles, Calendar, Award, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+
+interface Festival {
+  id: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  quote?: string;
+  quoteAuthor?: string;
+  img: string;
+  images?: string[];
+  accent: string;
+}
+
+function FestivalGallery({ festival }: { festival: Festival }) {
+  const images = festival.images && festival.images.length > 0 ? festival.images : [festival.img];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const prevImage = () => {
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextImage = () => {
+    setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  if (images.length === 1) {
+    return (
+      <div className="relative aspect-[16/10] rounded-[12px] overflow-hidden border border-neutral-200 shadow-md bg-neutral-100">
+        <img
+          src={images[0]}
+          alt={festival.title}
+          className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-700"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/10 to-transparent pointer-events-none" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      {/* Main Image Frame with Navigation */}
+      <div className="relative aspect-[16/10] rounded-[12px] overflow-hidden border border-neutral-200 shadow-md bg-neutral-100 group">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={activeIndex}
+            src={images[activeIndex]}
+            alt={`${festival.title} - View ${activeIndex + 1}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="w-full h-full object-cover select-none"
+            referrerPolicy="no-referrer"
+          />
+        </AnimatePresence>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/15 via-transparent to-transparent pointer-events-none" />
+
+        {/* Carousel Prev/Next Buttons */}
+        <button
+          onClick={prevImage}
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-neutral-900 shadow-md flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
+          aria-label="Previous image"
+        >
+          <ChevronLeft size={18} />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-neutral-900 shadow-md flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
+          aria-label="Next image"
+        >
+          <ChevronRight size={18} />
+        </button>
+
+        {/* Indicator Badge */}
+        <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-mono px-2 py-0.5 rounded-sm">
+          {activeIndex + 1} / {images.length}
+        </div>
+      </div>
+
+      {/* Thumbnails Row */}
+      <div className="grid grid-cols-3 gap-3">
+        {images.map((imgSrc, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveIndex(idx)}
+            className={`relative aspect-[16/10] rounded-[8px] overflow-hidden border-2 transition-all cursor-pointer ${
+              activeIndex === idx
+                ? "border-rose-600 shadow-sm ring-2 ring-rose-600/20"
+                : "border-neutral-200/80 opacity-70 hover:opacity-100 hover:border-neutral-400"
+            }`}
+          >
+            <img
+              src={imgSrc}
+              alt={`${festival.title} thumbnail ${idx + 1}`}
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function FestivalsPage() {
-  const festivals = [
+  const festivals: Festival[] = [
     {
       id: "ake",
       title: "Aké Arts and Book Festival",
@@ -19,7 +124,12 @@ export default function FestivalsPage() {
       title: "Lagos International Festival of Illustrations (LIFI)",
       subtitle: "Bridging European and African Graphic Arts",
       desc: "LIFI began with a conversation Shoneyin had at the Bologna Children's Book Fair, when she asked a Slovenian illustrator whether she knew anyone willing to come to Lagos and teach. The answer became a festival: a three-day gathering that brings acclaimed illustrators from around the world to train and work alongside Nigerian illustrators, building the skills and the pipeline Nigerian children's publishing has long lacked. Its second edition runs 17-19 September 2026, with illustrators from Italy, Poland, and Switzerland working alongside 36 Nigerian participants.",
-      img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200",
+      img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51-1.jpeg",
+      images: [
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51-1.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51-2.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51.jpeg"
+      ],
       accent: "text-rose-600"
     },
     {
@@ -97,20 +207,12 @@ export default function FestivalsPage() {
                 </div>
               </div>
 
-              {/* Image Area */}
+              {/* Image / Gallery Area */}
               <motion.div 
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.01 }}
                 className="lg:col-span-6"
               >
-                <div className="relative aspect-[16/10] rounded-[12px] overflow-hidden border border-neutral-200 shadow-md bg-neutral-100">
-                  <img
-                    src={f.img}
-                    alt={f.title}
-                    className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/10 to-transparent pointer-events-none" />
-                </div>
+                <FestivalGallery festival={f} />
               </motion.div>
             </motion.div>
           ))}
