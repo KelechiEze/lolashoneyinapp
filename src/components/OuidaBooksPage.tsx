@@ -18,7 +18,7 @@ const IMPRINTS_DATA = [
     desc: "Ouida Poetry publishes a maximum of two books of poems in any given year.",
     badge: "POETRY",
     code: "_002",
-    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-logo.png"
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/ouida-poetry.png"
   },
   {
     name: "Cognix",
@@ -76,7 +76,8 @@ const MARQUEE_COVERS = [
   { title: "Ouida Book 2", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book2.png" },
   { title: "Ouida Book 3", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book3.jpeg" },
   { title: "Ouida Book 4", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book4.jpg" },
-  { title: "Ouida Book 5", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book5.jpg" }
+  { title: "Ouida Book 5", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book5.jpg" },
+  { title: "Ouida Book 6", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-13.39.23-1.jpeg" }
 ];
 
 export default function OuidaBooksPage() {

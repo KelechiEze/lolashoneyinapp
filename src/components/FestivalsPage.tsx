@@ -151,8 +151,8 @@ export default function FestivalsPage() {
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.06.jpeg",
       images: [
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.06.jpeg",
-        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.07-1.jpeg",
-        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.07-2.jpeg"
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.06.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.39.07-1.jpeg"
       ],
       accent: "text-emerald-600"
     },
