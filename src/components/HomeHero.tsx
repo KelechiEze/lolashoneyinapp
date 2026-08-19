@@ -94,13 +94,13 @@ export default function HomeHero() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="absolute inset-0 w-full h-full object-cover object-top opacity-50 select-none"
+            className="absolute inset-0 w-full h-full object-cover object-top opacity-90 select-none"
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
-        {/* Soft dark overlays to gently fade out strong background photos */}
-        <div className="absolute inset-0 bg-neutral-950/35 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-neutral-950/20 z-10 pointer-events-none" />
+        {/* Reduced dark overlays to keep background photos bright and vivid while maintaining text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/10 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/30 via-transparent to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* VERTICAL ANIMATED SOCIAL MEDIA STRIP ALIGNED WITH TOP-RIGHT MENU BUTTON */}
@@ -170,7 +170,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="font-sans text-xs md:text-sm font-semibold tracking-[0.3em] text-rose-400 uppercase"
+            className="font-sans text-xs md:text-sm font-semibold tracking-[0.3em] text-rose-400 uppercase drop-shadow-md"
           >
             Poet. Novelist. Institution Builder.
           </motion.p>
@@ -180,7 +180,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="font-sans font-black text-6xl md:text-8xl xl:text-[9rem] leading-none tracking-tight text-white select-text uppercase"
+            className="font-sans font-black text-6xl md:text-8xl xl:text-[9rem] leading-none tracking-tight text-white select-text uppercase drop-shadow-xl"
           >
             Lola Shoneyin
           </motion.h1>
