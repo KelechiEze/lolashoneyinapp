@@ -84,7 +84,7 @@ export default function BookBuzzPage() {
                 <li className="flex items-start space-x-3.5">
                   <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
                   <span className="leading-relaxed">
-                    Established <strong>101 mini libraries</strong> in northern Nigeria in underserved schools.
+                    Equipped <strong>101 underserved schools</strong> in Kaduna State, northern Nigeria with mini libraries for reading hour.
                   </span>
                 </li>
                 

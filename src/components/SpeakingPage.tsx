@@ -12,6 +12,7 @@ import {
   Globe, 
   X, 
   ChevronRight, 
+  ChevronLeft,
   Headphones, 
   ExternalLink,
   BookOpen
@@ -31,14 +32,14 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
   {
     id: "flam-2026",
     title: "Festival du Livre Africain (FLAM)",
-    location: "Marrakech",
+    location: "Marrakech, Morocco",
     year: "2026",
     role: "Keynote & Panelist",
     code: "_ENG01"
   },
   {
     id: "bridge-to-africa-2026",
-    title: "Bridge to Africa, University of Las Palmas de Gran Canaria",
+    title: "Bridge to Africa, University of Las Palmas",
     location: "Gran Canaria, Spain",
     year: "2026",
     role: "Featured Speaker",
@@ -54,27 +55,35 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
   },
   {
     id: "klf-2026",
-    title: "Kampala Literary Festival (KLF)",
-    location: "Kampala, Uganda",
+    title: "Kerala Literary Festival (KLF)",
+    location: "Kerala, India",
     year: "2026",
     role: "Featured Guest",
     code: "_ENG04"
   },
   {
-    id: "lifi-2025",
-    title: "Lagos International Festival of Illustrations (LIFI)",
-    location: "Lagos, Nigeria",
+    id: "princeton-canon-2025",
+    title: 'Princeton University, "The Canon: 65 Years Later"',
+    location: "Princeton, NJ, USA",
     year: "2025",
-    role: "Convener & Opening Speaker",
+    role: "Guest Lecturer & Panelist",
     code: "_ENG05"
   },
   {
-    id: "feria-las-palmas-2023",
-    title: "Feria del Libro de Las Palmas de Gran Canaria",
-    location: "Gran Canaria, Spain",
-    year: "2023",
-    role: "International Guest Author",
+    id: "bologna-2024",
+    title: "Bologna Children's Book Fair",
+    location: "Bologna, Italy",
+    year: "2024",
+    role: "International Showcase",
     code: "_ENG06"
+  },
+  {
+    id: "ibby-ottawa-2024",
+    title: "IBBY World Congress",
+    location: "Ottawa, Canada",
+    year: "2024",
+    role: "Featured Speaker",
+    code: "_ENG07"
   },
   {
     id: "ilb-berlin-2024",
@@ -82,46 +91,38 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     location: "Berlin, Germany",
     year: "2024",
     role: "Guest Author & Panelist",
-    code: "_ENG07"
-  },
-  {
-    id: "frankfurt-buchmesse",
-    title: "Frankfurt Buchmesse",
-    location: "Frankfurt, Germany",
-    year: "Annual",
-    role: "Aficionado Award & Panelist",
     code: "_ENG08"
   },
   {
-    id: "read-my-world-2023",
-    title: "Read My World Festival, Amsterdam",
-    location: "Amsterdam, Netherlands",
+    id: "frankfurt-buchmesse-2023",
+    title: "Frankfurt Buchmesse (Aficionado Award)",
+    location: "Frankfurt, Germany",
     year: "2023",
-    role: "Guest Curator",
+    role: "Award & Keynote",
     code: "_ENG09"
   },
   {
-    id: "princeton-canon-2025",
-    title: 'Princeton University, "The Canon: 65 Years Later", with Helon Habila and Nnedi Okorafor',
-    location: "Princeton, NJ, USA",
-    year: "2025",
-    role: "Guest Lecturer & Panelist",
+    id: "read-my-world-2023",
+    title: "Read My World Festival",
+    location: "Amsterdam, Netherlands",
+    year: "2023",
+    role: "Guest Curator",
     code: "_ENG10"
   },
   {
-    id: "st-thomas-1999",
-    title: "Distinguished Scholar, University of St. Thomas",
-    location: "Minnesota, USA",
-    year: "1999",
-    role: "Distinguished Scholar",
+    id: "feria-las-palmas-2023",
+    title: "Feria del Libro de Las Palmas",
+    location: "Gran Canaria, Spain",
+    year: "2023",
+    role: "Guest Author",
     code: "_ENG11"
   },
   {
-    id: "iowa-1999",
-    title: "International Writing Program, University of Iowa",
-    location: "Iowa City, USA",
+    id: "iowa-st-thomas-1999",
+    title: "International Writing Program & St. Thomas",
+    location: "Iowa & Minnesota, USA",
     year: "1999",
-    role: "Writer in Residence",
+    role: "Scholar & Fellow",
     code: "_ENG12"
   }
 ];
@@ -167,64 +168,155 @@ export interface GalleryPhoto {
   location: string;
   year: string;
   image: string;
+  images?: string[];
   caption: string;
 }
 
 export const SPEAKING_PHOTOS: GalleryPhoto[] = [
+  // 1. FLAM Marrakech
   {
     id: "photo-flam",
     title: "FLAM Marrakech",
     event: "Festival du Livre Africain",
     location: "Marrakech, Morocco",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.25.38.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.25.38.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.24.43.jpeg"
+    ],
     caption: "Keynote presentation at Festival du Livre Africain (FLAM), fostering pan-African creative and publishing bridges in Marrakech."
   },
+  // 2. Bridge to Africa
   {
     id: "photo-bridge-africa",
     title: "Bridge to Africa",
     event: "University of Las Palmas",
     location: "Gran Canaria, Spain",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.28.30.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.28.30.jpeg"
+    ],
     caption: "Addressing scholars and creative thinkers on Afro-European cultural exchange and independent publishing ecosystems."
   },
-  {
-    id: "photo-nairobi",
-    title: "Nairobi Litfest",
-    event: "East African Literary Gathering",
-    location: "Nairobi, Kenya",
-    year: "2026",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800",
-    caption: "Keynote address exploring regional festival networks, translation, and cross-border African book distribution."
-  },
-  {
-    id: "photo-kampala",
-    title: "Kampala Literary Festival",
-    event: "KLF 2026",
-    location: "Kampala, Uganda",
-    year: "2026",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800",
-    caption: "Featured panelist discussing post-colonial satire, women in contemporary letters, and independent literary presses."
-  },
-  {
-    id: "photo-lifi",
-    title: "Lagos International Festival of Illustrations",
-    event: "LIFI 2025",
-    location: "Lagos, Nigeria",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=800",
-    caption: "Opening speech celebrating African visual narrative artists, illustrators, and children's picturebook creators."
-  },
+  // 3. Feria del Libro de Las Palmas
   {
     id: "photo-feria-libro",
     title: "Feria del Libro de Las Palmas",
     event: "Feria del Libro",
     location: "Gran Canaria, Spain",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.29.29.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.29.29.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.29.59.jpeg"
+    ],
     caption: "Featured guest author session and reading from Spanish translations of The Secret Lives of Baba Segi's Wives."
   },
+  // 4. Nairobi Litfest 2026
+  {
+    id: "photo-nairobi",
+    title: "Nairobi Litfest",
+    event: "East African Literary Gathering",
+    location: "Nairobi, Kenya",
+    year: "2026",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.34.58.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.34.58.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.33.52.jpeg"
+    ],
+    caption: "Keynote address exploring regional festival networks, translation, and cross-border African book distribution."
+  },
+  // 5. Kerala Literary Festival 2026
+  {
+    id: "photo-kerala",
+    title: "Kerala Literary Festival",
+    event: "KLF 2026",
+    location: "Kerala, India",
+    year: "2026",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.12.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.12.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.43.jpeg"
+    ],
+    caption: "Featured panelist discussing post-colonial satire, women in contemporary letters, and independent literary presses."
+  },
+  // 6. IBBY Congress, Ottawa
+  {
+    id: "photo-ibby-ottawa",
+    title: "IBBY Congress, Ottawa",
+    event: "IBBY World Congress",
+    location: "Ottawa, Canada",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.41.24.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.41.24.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.43.05.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.55.58.jpeg"
+    ],
+    caption: "Engaging global children's literature advocates, translators, and creators at the IBBY Congress in Ottawa."
+  },
+  // 7. Bologna Children's Book Fair
+  {
+    id: "photo-bologna",
+    title: "Bologna Children's Book Fair",
+    event: "International Children's Publishing",
+    location: "Bologna, Italy",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.47.26.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.47.26.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.50.26.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.49.04.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.48.28.jpeg"
+    ],
+    caption: "Showcasing illustrated picturebooks and pioneering training collaborations for African illustrators and writers."
+  },
+  // 8. Frankfurt Buchmesse
+  {
+    id: "photo-frankfurt",
+    title: "Frankfurt Buchmesse",
+    event: "Frankfurt Book Fair",
+    location: "Frankfurt, Germany",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.52.35.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.52.35.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.51.44.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg"
+    ],
+    caption: "Accepting the Aficionado Award at the Frankfurt Buchmesse celebrating transformative cultural leadership."
+  },
+  // 9. Princeton University
+  {
+    id: "photo-princeton",
+    title: 'Princeton University: "The Canon"',
+    event: "The Canon: 65 Years Later",
+    location: "Princeton, NJ, USA",
+    year: "2025",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.58.25.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.58.25.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.58.25-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4516.jpg"
+    ],
+    caption: 'Collaborative keynote and critical panel "The Canon: 65 Years Later" alongside Helon Habila and Nnedi Okorafor at Princeton.'
+  },
+  // 10. University of St. Thomas
+  {
+    id: "photo-st-thomas",
+    title: "University of St. Thomas",
+    event: "Distinguished Scholar Residency",
+    location: "Minnesota, USA",
+    year: "1999",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
+    ],
+    caption: "Archival memory from distinguished scholar lectures and creative writing seminars in Minnesota."
+  },
+  // Other International Engagements
   {
     id: "photo-berlin",
     title: "International Literature Festival Berlin",
@@ -235,15 +327,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     caption: "International literary panel discussing female agency, contemporary satire, and Nigerian cultural institutions."
   },
   {
-    id: "photo-frankfurt",
-    title: "Frankfurt Buchmesse",
-    event: "Frankfurt Book Fair",
-    location: "Frankfurt, Germany",
-    year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg",
-    caption: "Accepting the Aficionado Award at the Frankfurt Buchmesse celebrating ten years of pioneering cultural festival leadership."
-  },
-  {
     id: "photo-read-my-world",
     title: "Read My World Festival",
     event: "Guest Curator Session",
@@ -251,24 +334,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     year: "2023",
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800",
     caption: "Serving as guest curator for Read My World Festival in Amsterdam, presenting West African authors and poets to European audiences."
-  },
-  {
-    id: "photo-princeton",
-    title: 'Princeton University: "The Canon"',
-    event: "The Canon: 65 Years Later",
-    location: "Princeton, NJ, USA",
-    year: "2025",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4516.jpg",
-    caption: 'Collaborative keynote and critical panel "The Canon: 65 Years Later" alongside Helon Habila and Nnedi Okorafor at Princeton.'
-  },
-  {
-    id: "photo-st-thomas",
-    title: "University of St. Thomas",
-    event: "Distinguished Scholar Residency",
-    location: "Minnesota, USA",
-    year: "1999",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg",
-    caption: "Archival memory from distinguished scholar lectures and creative writing seminars in Minnesota."
   },
   {
     id: "photo-iowa",
@@ -359,15 +424,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     year: "2021",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800",
     caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone dialogue."
-  },
-  {
-    id: "photo-bologna",
-    title: "Bologna Children's Book Fair",
-    event: "IBBY International Showcase",
-    location: "Bologna, Italy",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
-    caption: "Showcasing illustrated children's picturebooks representing African youth and inclusive storytelling."
   }
 ];
 
@@ -375,7 +431,40 @@ export default function SpeakingPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
+  const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(8);
+
+  const activePhotoImages = selectedPhoto 
+    ? (selectedPhoto.images && selectedPhoto.images.length > 0 ? selectedPhoto.images : [selectedPhoto.image])
+    : [];
+
+  const handleOpenPhoto = (photo: GalleryPhoto) => {
+    setSelectedPhoto(photo);
+    setActiveImgIndex(0);
+  };
+
+  const handleNextPhoto = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (activePhotoImages.length <= 1) return;
+    setActiveImgIndex((prev) => (prev + 1) % activePhotoImages.length);
+  };
+
+  const handlePrevPhoto = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (activePhotoImages.length <= 1) return;
+    setActiveImgIndex((prev) => (prev - 1 + activePhotoImages.length) % activePhotoImages.length);
+  };
+
+  useEffect(() => {
+    if (!selectedPhoto) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedPhoto(null);
+      if (e.key === "ArrowRight") handleNextPhoto();
+      if (e.key === "ArrowLeft") handlePrevPhoto();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedPhoto, activePhotoImages.length]);
 
   useEffect(() => {
     if (location.hash) {
@@ -439,37 +528,36 @@ export default function SpeakingPage() {
           </p>
         </div>
 
-        {/* Engagements Grid / List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {/* Engagements Grid / List - 4 IN A ROW */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {ENGAGEMENTS_LIST.map((item, idx) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.04 }}
-              className="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-neutral-300 transition-all flex flex-col justify-between space-y-4 group"
+              transition={{ duration: 0.4, delay: idx * 0.03 }}
+              className="bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-neutral-300 transition-all flex flex-col justify-between space-y-4 group min-h-[160px]"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="space-y-1.5 flex-1">
-                  <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">
-                    {item.code} • {item.role}
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest truncate">
+                    {item.code} {item.role ? `• ${item.role}` : ""}
                   </span>
-                  <h3 className="font-sans font-bold text-lg sm:text-xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                    {item.title}
-                  </h3>
+                  <span className="font-mono text-[11px] font-extrabold text-neutral-900 bg-neutral-100 border border-neutral-200/80 px-2.5 py-0.5 rounded-md shrink-0 whitespace-nowrap">
+                    {item.year}
+                  </span>
                 </div>
-                <span className="font-mono text-xs font-extrabold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full shrink-0">
-                  {item.year}
-                </span>
+                <h3 className="font-sans font-bold text-sm sm:text-base text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                  {item.title}
+                </h3>
               </div>
 
               <div className="flex items-center justify-between pt-3 border-t border-neutral-100 text-xs text-neutral-500 font-mono">
-                <div className="flex items-center space-x-1.5">
-                  <MapPin size={13} className="text-neutral-400" />
-                  <span className="font-sans text-neutral-600">{item.location}</span>
+                <div className="flex items-center space-x-1.5 min-w-0">
+                  <MapPin size={13} className="text-neutral-400 shrink-0" />
+                  <span className="font-sans text-neutral-600 text-xs truncate">{item.location}</span>
                 </div>
-                <span className="text-neutral-400 font-sans text-[11px] uppercase tracking-wider">Literary Stage</span>
               </div>
             </motion.div>
           ))}
@@ -575,7 +663,7 @@ export default function SpeakingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 8) * 0.05 }}
-                onClick={() => setSelectedPhoto(item)}
+                onClick={() => handleOpenPhoto(item)}
                 className="group cursor-pointer flex flex-col bg-white border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 {/* Photo Aspect Container */}
@@ -593,10 +681,20 @@ export default function SpeakingPage() {
                     </span>
                   </div>
 
+                  {/* Photo count indicator if multiple */}
+                  {item.images && item.images.length > 1 && (
+                    <div className="absolute top-3 right-3 z-20 pointer-events-none">
+                      <span className="font-mono text-[10px] font-bold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm flex items-center space-x-1">
+                        <ImageIcon size={10} className="mr-0.5" />
+                        <span>{item.images.length} photos</span>
+                      </span>
+                    </div>
+                  )}
+
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-20">
                     <span className="font-sans text-xs font-bold text-neutral-950 uppercase tracking-wider bg-white/95 px-4 py-2 rounded-full shadow-lg">
-                      View Photo
+                      View Photos
                     </span>
                   </div>
                 </div>
@@ -669,49 +767,100 @@ export default function SpeakingPage() {
             >
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg"
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg"
                 aria-label="Close photo view"
               >
                 <X size={18} />
               </button>
 
-              <div className="relative flex-1 bg-neutral-950 min-h-[300px] sm:min-h-[360px] md:min-h-[480px] w-full overflow-hidden flex items-center justify-center">
-                <img
-                  src={selectedPhoto.image}
-                  alt={selectedPhoto.title}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+              {/* IMAGE BY THE LEFT (WITH CAROUSEL CONTROLS FOR MULTI-IMAGE) */}
+              <div className="relative flex-1 bg-neutral-950 min-h-[320px] sm:min-h-[400px] md:min-h-[480px] w-full overflow-hidden flex flex-col items-center justify-center group/modalimg">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={activeImgIndex}
+                    src={activePhotoImages[activeImgIndex] || selectedPhoto.image}
+                    alt={`${selectedPhoto.title} - ${activeImgIndex + 1}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="w-full h-full object-cover select-none"
+                    referrerPolicy="no-referrer"
+                  />
+                </AnimatePresence>
+
+                {/* Multi-Image Controls */}
+                {activePhotoImages.length > 1 && (
+                  <>
+                    {/* Previous Button */}
+                    <button
+                      onClick={handlePrevPhoto}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg opacity-90 hover:opacity-100"
+                      aria-label="Previous photo"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+
+                    {/* Next Button */}
+                    <button
+                      onClick={handleNextPhoto}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-all cursor-pointer shadow-lg opacity-90 hover:opacity-100"
+                      aria-label="Next photo"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+
+                    {/* Image Counter Badge */}
+                    <div className="absolute top-4 left-4 z-20 pointer-events-none">
+                      <span className="font-mono text-xs font-bold text-white bg-black/65 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        {activeImgIndex + 1} / {activePhotoImages.length}
+                      </span>
+                    </div>
+
+                    {/* Thumbnails Navigation Strip */}
+                    <div className="absolute bottom-3 inset-x-0 z-20 flex items-center justify-center space-x-2 px-4 py-1.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                      {activePhotoImages.map((imgUrl, thumbIdx) => (
+                        <button
+                          key={thumbIdx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActiveImgIndex(thumbIdx);
+                          }}
+                          className={`relative w-12 h-9 rounded-md overflow-hidden border-2 transition-all cursor-pointer ${
+                            activeImgIndex === thumbIdx
+                              ? "border-rose-500 scale-105 shadow-md"
+                              : "border-white/50 opacity-60 hover:opacity-100"
+                          }`}
+                          aria-label={`View photo ${thumbIdx + 1}`}
+                        >
+                          <img
+                            src={imgUrl}
+                            alt=""
+                            className="w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
 
-              <div className="w-full md:w-80 lg:w-96 p-6 sm:p-8 bg-white text-neutral-900 flex flex-col justify-between space-y-6 overflow-y-auto">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-extrabold text-neutral-900 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-wider">
-                      {selectedPhoto.year}
-                    </span>
-                    <span className="font-mono text-xs text-rose-600 font-bold uppercase tracking-wider">
-                      {selectedPhoto.location}
-                    </span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight text-neutral-950 leading-snug">
-                      {selectedPhoto.title}
-                    </h3>
-                    <p className="font-mono text-xs text-neutral-500 font-bold">
-                      {selectedPhoto.event}
-                    </p>
-                  </div>
-
-                  <p className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed pt-3 border-t border-neutral-100">
-                    {selectedPhoto.caption}
-                  </p>
+              {/* CONTENT PANEL - DATE TOP RIGHT, TITLE, AND WRITING UNDER TITLE */}
+              <div className="w-full md:w-80 lg:w-96 p-6 sm:p-8 bg-white text-neutral-900 flex flex-col justify-start space-y-6 overflow-y-auto">
+                <div className="flex items-center justify-end pr-10 md:pr-10">
+                  <span className="font-mono text-xs font-bold text-neutral-800 bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                    {selectedPhoto.year}
+                  </span>
                 </div>
 
-                <div className="pt-4 border-t border-neutral-200 flex items-center justify-between text-xs font-mono text-neutral-500">
-                  <span>Speaking Gallery</span>
-                  <span className="text-neutral-950 font-bold">Lola Shoneyin</span>
+                <div className="space-y-3">
+                  <h3 className="font-sans font-black text-xl sm:text-2xl uppercase tracking-tight text-neutral-950 leading-snug">
+                    {selectedPhoto.title}
+                  </h3>
+                  <p className="font-sans text-sm sm:text-base text-neutral-700 leading-relaxed font-normal">
+                    {selectedPhoto.caption}
+                  </p>
                 </div>
               </div>
             </motion.div>
