@@ -63,12 +63,12 @@ export default function FilmPage() {
           </p>
         </div>
 
-        {/* DOCUMENTARY PROJECTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 border-t border-neutral-200">
+        {/* DOCUMENTARY PROJECTS GRID (Small 3-Column Layout) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 border-t border-neutral-200">
           {documentaries.map((doc) => (
-            <div key={doc.id} id={doc.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] overflow-hidden flex flex-col justify-between hover:border-neutral-300 transition-colors shadow-md scroll-mt-28">
+            <div key={doc.id} id={doc.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] overflow-hidden flex flex-col justify-between hover:border-neutral-300 transition-colors shadow-sm hover:shadow-md scroll-mt-28">
               {/* Cover Image */}
-              <div className="relative aspect-[16/9] w-full bg-neutral-100">
+              <div className="relative aspect-[16/10] w-full bg-neutral-100">
                 <img
                   src={doc.image}
                   alt={doc.title}
@@ -77,35 +77,35 @@ export default function FilmPage() {
                 />
                 <div className="absolute inset-0 bg-neutral-950/10" />
                 {!doc.isLive && (
-                  <div className="absolute top-4 right-4 bg-amber-500/90 text-neutral-950 font-mono text-[9px] font-black tracking-widest px-3 py-1 rounded-[4px] uppercase">
+                  <div className="absolute top-3 right-3 bg-amber-500/90 text-neutral-950 font-mono text-[9px] font-black tracking-widest px-2.5 py-0.5 rounded-[4px] uppercase">
                     In Post-Production
                   </div>
                 )}
                 {doc.isLive && (
-                  <div className="absolute top-4 right-4 bg-emerald-600 text-white font-mono text-[9px] font-black tracking-widest px-3 py-1 rounded-[4px] uppercase">
+                  <div className="absolute top-3 right-3 bg-emerald-600 text-white font-mono text-[9px] font-black tracking-widest px-2.5 py-0.5 rounded-[4px] uppercase">
                     Available Now
                   </div>
                 )}
               </div>
 
               {/* Text Body */}
-              <div className="p-8 space-y-6 flex-1 flex flex-col justify-between">
-                <div className="space-y-3">
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-2.5">
                   <div className="flex items-center space-x-2">
-                    <Film className="w-4 h-4 text-rose-600" />
-                    <span className="font-mono text-xs uppercase text-neutral-500 tracking-wider font-bold">{doc.role}</span>
+                    <Film className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                    <span className="font-mono text-[11px] uppercase text-neutral-500 tracking-wider font-bold truncate">{doc.role}</span>
                   </div>
-                  <h3 className="font-sans font-black text-xl md:text-2xl text-neutral-900 uppercase tracking-tight">{doc.title}</h3>
-                  <p className="font-sans text-xs md:text-sm text-neutral-600 leading-relaxed select-text">{doc.desc}</p>
+                  <h3 className="font-sans font-black text-lg md:text-xl text-neutral-900 uppercase tracking-tight leading-snug">{doc.title}</h3>
+                  <p className="font-sans text-xs sm:text-[13px] text-neutral-600 leading-relaxed select-text line-clamp-4 hover:line-clamp-none transition-all">{doc.desc}</p>
                 </div>
 
                 {doc.status && (
-                  <p className="text-xs font-mono text-amber-700 font-semibold mt-4">
+                  <p className="text-[11px] font-mono text-amber-700 font-semibold pt-1">
                     📢 {doc.status}
                   </p>
                 )}
 
-                <div className="pt-6">
+                <div className="pt-4 border-t border-neutral-200/60">
                   {doc.isLive ? (
                     <a
                       href={doc.link}
@@ -113,7 +113,7 @@ export default function FilmPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-2 text-rose-600 hover:text-rose-700 font-sans text-xs uppercase tracking-widest font-black group transition-colors"
                     >
-                      <Play size={14} className="fill-current group-hover:scale-110 transition-transform" />
+                      <Play size={13} className="fill-current group-hover:scale-110 transition-transform" />
                       <span>{doc.actionText}</span>
                     </a>
                   ) : (

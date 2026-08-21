@@ -38,12 +38,12 @@ export default function BookBuzzPage() {
           className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-6 md:gap-10 scroll-mt-28"
           id="about"
         >
-          <div className="space-y-4 max-w-4xl">
-            <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
+          <div className="space-y-3 flex-1 min-w-0">
+            <h1 className="font-sans font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase text-neutral-950 whitespace-nowrap">
               Book Buzz Foundation
             </h1>
-            <p className="text-neutral-700 font-serif italic text-xl md:text-2xl max-w-3xl leading-relaxed">
-              Building a thriving reading, writing, and publishing culture across Nigeria and Africa.
+            <p className="text-neutral-700 font-serif italic text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed">
+              Expanding Access, Creating Spaces & Nurturing Creative Talent
             </p>
           </div>
           <div className="shrink-0 flex items-center justify-start md:justify-end">
@@ -58,12 +58,6 @@ export default function BookBuzzPage() {
 
         {/* MISSION & VISION - PROMINENT PRIMARY MODULE */}
         <section id="mission-vision" className="border-t border-neutral-200 pt-16 space-y-10 scroll-mt-28">
-          <div className="space-y-4">
-            <h2 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-neutral-950 leading-[1.08] max-w-5xl">
-              Expanding Access, Creating Spaces & Nurturing Creators
-            </h2>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start pt-2">
             <div className="lg:col-span-6 space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
               <p>
@@ -104,7 +98,7 @@ export default function BookBuzzPage() {
                 <li className="flex items-start space-x-3.5">
                   <span className="w-2 h-2 rounded-full bg-neutral-900 mt-2.5 shrink-0" />
                   <span className="leading-relaxed">
-                    Training pipeline for writers, poets, agents, illustrators, editors, and graphic designers.
+                    Established <strong>Centre for Illustration, Nigeria</strong> to create pipeline for writers, illustrators and graphic designers of children’s books.
                   </span>
                 </li>
 
