@@ -31,11 +31,12 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ],
     editorialParagraphs: [
       "The Orange Tree Residency is an immersive two-week residency hosted at Ouida Lagos, created to offer writers an uninterrupted environment to craft their manuscripts and deeply connect with the African literary ecosystem.",
-      "Residents enjoy dedicated writing suites, access to all workspace and meeting facilities, complimentary café amenities, and rich engagement with Ouida Books editors, publishing professionals, and the Book Buzz Foundation.",
+      "Residents enjoy a writing desk and good size bed, a kitchen for self-catering, access to all workspace and meeting facilities, complimentary café amenities, and rich engagement with Ouida Books editors, publishing professionals, and the Book Buzz Foundation.",
       "Beyond secluded writing hours, the program provides writers with a 360-degree understanding of manuscript development, proofing, print production, marketing, and distribution across the continent."
     ],
     highlights: [
-      { title: "Quiet & Dedicated Writing Studio", desc: "A calm, climate-controlled sanctuary with high-speed internet and ergonomic desk setup." },
+      { title: "Writing Desk & Good Size Bed", desc: "A calm, comfortable private sanctuary equipped for both deep rest and focused manuscript creation." },
+      { title: "Kitchen for Self-Catering", desc: "Equipped kitchen facilities for self-catering meals throughout the residency." },
       { title: "Publishing Ecosystem Immersion", desc: "Direct interactions with Ouida Books editors and Book Buzz Foundation literary organizers." },
       { title: "Café & Bookshop Privileges", desc: "Daily street food, artisanal coffee, and full access to thousands of books across all imprints." },
       { title: "Mentorship & Community Readings", desc: "Opportunities to share work during Ouida community nights and receive critical feedback." }

@@ -20,10 +20,11 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
     title: "THE ORANGE TREE RESIDENCY",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
     tagline: "Dedicated writer residency and publishing ecosystem immersion.",
-    description: "A two-week residency offering writers dedicated space to write and a chance to experience the full book ecosystem so that they better understand how the Nigerian publishing industry works. Residents enjoy dedicated writing suites, access to all workspace facilities, complimentary café amenities, and direct engagement with Ouida Books editors.",
+    description: "A two-week residency offering writers dedicated space to write and a chance to experience the full book ecosystem so that they better understand how the Nigerian publishing industry works. Residents enjoy a writing desk and good size bed, kitchen for self-catering, access to all workspace facilities, and direct engagement with Ouida Books editors.",
     capacity: "Writers in Residence",
     amenities: [
-      "Dedicated Writing Suite",
+      "Writing desk and good size bed.",
+      "Kitchen for self-catering",
       "Publishing Ecosystem Immersion",
       "Mentorship & Editorial Access",
       "Quiet Creative Sanctuary",
