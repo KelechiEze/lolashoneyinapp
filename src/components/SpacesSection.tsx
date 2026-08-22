@@ -129,16 +129,6 @@ export default function SpacesSection({ className = "py-20 px-6 md:px-12 bg-whit
                   {space.title}
                 </h3>
               </div>
-
-              {/* Bottom-Left Learn More CTA */}
-              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 z-10 flex items-center space-x-2.5">
-                <span className="font-sans text-xs sm:text-sm font-bold uppercase tracking-wider text-white/90 group-hover:text-white transition-colors">
-                  Explore Space
-                </span>
-                <div className="w-8 h-8 rounded-full border border-white/60 bg-black/30 group-hover:bg-rose-600 group-hover:border-rose-600 group-hover:text-white flex items-center justify-center text-white transition-all duration-300 transform-gpu group-hover:translate-x-1">
-                  <ChevronRight size={16} strokeWidth={2.5} />
-                </div>
-              </div>
             </motion.div>
           ))}
         </div>
