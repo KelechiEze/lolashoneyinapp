@@ -292,11 +292,11 @@ export default function OuidaLagosPage() {
 
             {/* INTRODUCTORY PARAGRAPH */}
             <p className="text-neutral-700 font-sans text-base sm:text-lg leading-relaxed font-normal">
-              Ouida Community brings together artists, storytellers, food lovers, and culture enthusiasts through open-stage nights, literary dialogues, and hands-on workshops. Regular fixtures include Ouida Open Mic, Book Chats, Ìsèdá (supported by the US Embassy), Litty December, and Silent Reading at Ouida.
+              Ouida Community brings together artists, storytellers, food lovers, and culture enthusiasts through open-stage nights, literary dialogues, live acoustic sessions, and hands-on workshops. Regular fixtures include Ouida Open Mic, Book Chats, Music at Ouida, Ìsèdá (supported by the US Embassy), Litty December, and Silent Reading at Ouida.
             </p>
           </div>
 
-          {/* 5 Community & Event Cards */}
+          {/* 6 Community & Event Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
             
             {/* Card 1: Ouida Open Mic */}
@@ -351,7 +351,33 @@ export default function OuidaLagosPage() {
               </div>
             </div>
 
-            {/* Card 3: Ìsèdá / ISEDA */}
+            {/* Card 3: Music at Ouida */}
+            <div className="bg-[#fbf9f5] border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-all duration-300">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-900 relative">
+                <img
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-00.02.50.jpeg"
+                  alt="Music at Ouida"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="p-6 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-sans font-bold text-lg text-neutral-900 group-hover:text-rose-600 transition-colors">
+                    Music at Ouida
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed pt-1">
+                    Intimate live acoustic sets, jazz showcases, vocal performances, and instrumental melodies blending African soundscapes with soul in our courtyard and sunroom.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-neutral-200 text-[11px] font-mono font-bold text-neutral-500 uppercase tracking-wider flex items-center justify-between">
+                  <span>Live Acoustics</span>
+                  <span className="text-rose-600">Live Sound</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Ìsèdá / ISEDA */}
             <div className="bg-[#fbf9f5] border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-all duration-300">
               <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-900 relative">
                 <img
@@ -377,11 +403,11 @@ export default function OuidaLagosPage() {
               </div>
             </div>
 
-            {/* Card 4: Litty December */}
+            {/* Card 5: Litty December */}
             <div className="bg-[#fbf9f5] border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-all duration-300">
               <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-900 relative">
                 <img
-                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop"
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-00.00.55.jpeg"
                   alt="Litty December Festive Cultural Fiesta"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-90"
                   referrerPolicy="no-referrer"
@@ -403,7 +429,7 @@ export default function OuidaLagosPage() {
               </div>
             </div>
 
-            {/* Card 5: Silent Reading at Ouida */}
+            {/* Card 6: Silent Reading at Ouida */}
             <div className="bg-[#fbf9f5] border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-all duration-300">
               <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-900 relative">
                 <img
