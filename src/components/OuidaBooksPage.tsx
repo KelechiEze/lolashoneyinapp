@@ -74,10 +74,14 @@ const IMPRINTS_DATA = [
 const MARQUEE_COVERS = [
   { title: "Ouida Book 1", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book1.jpg" },
   { title: "Ouida Book 2", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book2.png" },
-  { title: "Ouida Book 3", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book3.jpeg" },
   { title: "Ouida Book 4", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book4.jpg" },
   { title: "Ouida Book 5", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/book5.jpg" },
-  { title: "Ouida Book 6", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-13.39.23-1.jpeg" }
+  { title: "Ouida Book 6", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-13.39.23-1.jpeg" },
+  { title: "Ouida Book 7", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.33.07.jpeg" },
+  { title: "Ouida Book 8", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.36.05.jpeg" },
+  { title: "Ouida Book 9", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.37.16.jpeg" },
+  { title: "Ouida Book 10", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.37.37.jpeg" },
+  { title: "Ouida Book 11", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.38.09.jpeg" }
 ];
 
 export default function OuidaBooksPage() {
