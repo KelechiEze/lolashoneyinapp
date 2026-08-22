@@ -17,8 +17,39 @@ interface ExtendedSpaceInfo extends SpaceCard {
 }
 
 const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
-  workspace: {
+  "orange-tree": {
     ...SPACES_LIST[0],
+    tagline: "A prestigious two-week residency offering writers dedicated creative space and immersion into the Nigerian publishing industry.",
+    readTime: "4 min read",
+    author: "Orange Tree Residency Committee",
+    date: "Updated August 2026",
+    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
+    galleryImages: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.56.57.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.48.26.jpeg"
+    ],
+    editorialParagraphs: [
+      "The Orange Tree Residency is an immersive two-week residency hosted at Ouida Lagos, created to offer writers an uninterrupted environment to craft their manuscripts and deeply connect with the African literary ecosystem.",
+      "Residents enjoy dedicated writing suites, access to all workspace and meeting facilities, complimentary café amenities, and rich engagement with Ouida Books editors, publishing professionals, and the Book Buzz Foundation.",
+      "Beyond secluded writing hours, the program provides writers with a 360-degree understanding of manuscript development, proofing, print production, marketing, and distribution across the continent."
+    ],
+    highlights: [
+      { title: "Quiet & Dedicated Writing Studio", desc: "A calm, climate-controlled sanctuary with high-speed internet and ergonomic desk setup." },
+      { title: "Publishing Ecosystem Immersion", desc: "Direct interactions with Ouida Books editors and Book Buzz Foundation literary organizers." },
+      { title: "Café & Bookshop Privileges", desc: "Daily street food, artisanal coffee, and full access to thousands of books across all imprints." },
+      { title: "Mentorship & Community Readings", desc: "Opportunities to share work during Ouida community nights and receive critical feedback." }
+    ],
+    idealFor: [
+      "Emerging & Established African Novelists",
+      "Poets & Playwrights finalizing manuscripts",
+      "Non-Fiction Authors & Biographers",
+      "Writers seeking industry insight and publishing mentorship",
+      "Visiting International Literary Fellows"
+    ]
+  },
+  workspace: {
+    ...SPACES_LIST[1],
     tagline: "An inspiring, distraction-free co-working sanctuary in Ikeja tailored for authors, remote teams, and creative minds.",
     readTime: "4 min read",
     author: "Ouida Lagos Editorial",
@@ -49,7 +80,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   sunroom: {
-    ...SPACES_LIST[1],
+    ...SPACES_LIST[2],
     tagline: "A luminous glass-roof atrium flooded with natural light, host to Lagos' most memorable literary and artistic gatherings.",
     readTime: "5 min read",
     author: "Ouida Lagos Events",
@@ -80,7 +111,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   "meeting-rooms": {
-    ...SPACES_LIST[2],
+    ...SPACES_LIST[3],
     tagline: "Climate-controlled, sound-insulated meeting suites designed for high-impact board meetings, editorial retreats, and workshops.",
     readTime: "3 min read",
     author: "Ouida Business Suite",
@@ -111,7 +142,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   bookshop: {
-    ...SPACES_LIST[3],
+    ...SPACES_LIST[4],
     tagline: "Lagos' premier independent bookstore celebrating contemporary African literature, poetry, and global storytelling.",
     readTime: "4 min read",
     author: "Ouida Literary Team",

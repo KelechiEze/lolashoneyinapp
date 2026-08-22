@@ -42,7 +42,7 @@ const IMPRINTS_DATA = [
     desc: "Adole speaks to the years between childhood and adulthood, the ones that ask the hardest questions.",
     badge: "YOUNG ADULT",
     code: "_005",
-    icon: <Zap className="w-5 h-5 text-purple-600" />
+    logo: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.27.24.jpeg"
   },
   {
     name: "Book of Phoenix",
@@ -197,7 +197,7 @@ export default function OuidaBooksPage() {
                     </div>
                   ) : (
                     <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                      {imp.icon}
+                      <BookOpen size={20} className="text-neutral-700" />
                     </div>
                   )}
                   <span className="font-mono text-[10px] font-bold text-neutral-400">

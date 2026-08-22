@@ -15,6 +15,15 @@ export interface SpaceCard {
 
 export const SPACES_LIST: SpaceCard[] = [
   {
+    id: "orange-tree",
+    title: "ORANGE TREE RESIDENCY",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
+    url: "/spaces/orange-tree",
+    description: "A two-week residency offering writers dedicated space to write and a chance to experience the full book ecosystem so that they better understand how the Nigerian publishing industry works.",
+    capacity: "Writers in Residence",
+    amenities: ["Dedicated Writing Suite", "Publishing Immersion", "Mentorship & Editorial Access", "Quiet Creative Haven", "Bookshop & Café Privileges"]
+  },
+  {
     id: "workspace",
     title: "WORKSPACE",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_11_01-am.png",

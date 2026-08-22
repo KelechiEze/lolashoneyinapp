@@ -54,20 +54,12 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     code: "_ENG03"
   },
   {
-    id: "klf-2026",
-    title: "Kerala Literary Festival (KLF)",
-    location: "Kerala, India",
-    year: "2026",
-    role: "Featured Guest",
-    code: "_ENG04"
-  },
-  {
     id: "princeton-canon-2025",
     title: 'Princeton University, "The Canon: 65 Years Later"',
     location: "Princeton, NJ, USA",
     year: "2025",
     role: "Guest Lecturer & Panelist",
-    code: "_ENG05"
+    code: "_ENG04"
   },
   {
     id: "bologna-2024",
@@ -75,7 +67,7 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     location: "Bologna, Italy",
     year: "2024",
     role: "International Showcase",
-    code: "_ENG06"
+    code: "_ENG05"
   },
   {
     id: "ibby-ottawa-2024",
@@ -228,19 +220,19 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Keynote address exploring regional festival networks, translation, and cross-border African book distribution."
   },
-  // 5. Kerala Literary Festival 2026
+  // 5. PEN World Voices Festival, New York
   {
-    id: "photo-kerala",
-    title: "Kerala Literary Festival",
-    event: "KLF 2026",
-    location: "Kerala, India",
-    year: "2026",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.12.jpeg",
+    id: "photo-pen-ny",
+    title: "PEN World Voices Festival",
+    event: "PEN America Forum",
+    location: "New York, USA",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
     images: [
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.12.jpeg",
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.36.43.jpeg"
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35.jpeg"
     ],
-    caption: "Featured panelist discussing post-colonial satire, women in contemporary letters, and independent literary presses."
+    caption: "Featured panelist and keynote discussions on global freedom of expression, feminist literature, and international creative advocacy at the PEN Festival in New York."
   },
   // 6. IBBY Congress, Ottawa
   {
@@ -331,7 +323,35 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Engaging discussions, keynote conversations, and literary sessions at the Norwegian Festival of Literature (Norsk Litteraturfestival)."
   },
-  // 12. University of St. Thomas
+  // 12. Open Book Festival
+  {
+    id: "photo-capetown",
+    title: "Open Book Festival",
+    event: "Open Book Festival 2012",
+    location: "Cape Town, South Africa",
+    year: "2012",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.18.36-1.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.18.36-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.18.36.jpeg"
+    ],
+    caption: "Panel discussions, author readings, and continental literary dialogues at the Open Book Festival in Cape Town."
+  },
+  // 13. Salon du Livre de Paris
+  {
+    id: "photo-paris",
+    title: "Salon du Livre de Paris",
+    event: "Salon du Livre",
+    location: "Paris, France",
+    year: "2021",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.20.39.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.20.39.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.20.40.jpeg"
+    ],
+    caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone cultural dialogue at Salon du Livre."
+  },
+  // 14. University of St. Thomas
   {
     id: "photo-st-thomas",
     title: "University of St. Thomas",
@@ -425,33 +445,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     year: "2022",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800",
     caption: "Academic lecture on literary archive preservation and grassroots festival impact in West Africa."
-  },
-  {
-    id: "photo-pen",
-    title: "PEN World Voices Festival",
-    event: "PEN America Forum",
-    location: "New York, USA",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800",
-    caption: "International panel addressing global freedom of expression, feminist writing, and creative advocacy."
-  },
-  {
-    id: "photo-capetown",
-    title: "Open Book Festival",
-    event: "Fugard Theatre Session",
-    location: "Cape Town, South Africa",
-    year: "2019",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
-    caption: "Pan-African dialogue on continental book distribution, author residencies, and publishing alliances."
-  },
-  {
-    id: "photo-paris",
-    title: "Salon du Livre de Paris",
-    event: "Livre Paris Pavilion",
-    location: "Paris, France",
-    year: "2021",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800",
-    caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone dialogue."
   }
 ];
 
@@ -664,12 +657,12 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* 4. PHOTO GALLERY SECTION (PHOTOS FROM AT LEAST 20 EVENTS) */}
+      {/* 4. EVENT GALLERY SECTION (PHOTOS FROM AT LEAST 20 EVENTS) */}
       <section id="gallery" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200/80 pb-6">
           <div className="space-y-3">
             <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-              Photo gallery
+              Event Gallery
             </h2>
             <p className="text-neutral-600 font-sans text-sm md:text-base leading-relaxed">
               Photos from at least 20 events worldwide — keynotes, literature festivals, panels, and residencies.
