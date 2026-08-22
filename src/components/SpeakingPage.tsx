@@ -303,7 +303,35 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: 'Collaborative keynote and critical panel "The Canon: 65 Years Later" alongside Helon Habila and Nnedi Okorafor at Princeton.'
   },
-  // 10. University of St. Thomas
+  // 10. Bergen LitFest, Norway
+  {
+    id: "photo-bergen-litfest",
+    title: "Bergen LitFest",
+    event: "Bergen International Festival of Literature",
+    location: "Bergen, Norway",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.10.14-1.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.10.14-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.10.14.jpeg"
+    ],
+    caption: "Featured readings, author panels, and international cultural exchange at the Bergen International Festival of Literature (Bergen LitFest) in Norway."
+  },
+  // 11. Norwegian Festival of Literature
+  {
+    id: "photo-norwegian-litfest",
+    title: "Norwegian Festival of Literature",
+    event: "Norsk Litteraturfestival",
+    location: "Lillehammer, Norway",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.17.37.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.17.37.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-11.20.25.jpeg"
+    ],
+    caption: "Engaging discussions, keynote conversations, and literary sessions at the Norwegian Festival of Literature (Norsk Litteraturfestival)."
+  },
+  // 12. University of St. Thomas
   {
     id: "photo-st-thomas",
     title: "University of St. Thomas",
