@@ -102,9 +102,9 @@ export default function OuidaBooksPage() {
     <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 overflow-x-hidden selection:bg-rose-600 selection:text-white font-sans">
       
       {/* 1. INFINITE MARQUEE SNEAK PEEK ON TOP */}
-      <section className="pt-8 pb-14 space-y-5 overflow-hidden bg-white border-b border-neutral-200/70">
-        <div className="text-center px-6">
-          <h2 className="font-serif italic text-2xl sm:text-3xl text-neutral-900 font-medium">
+      <section className="pt-4 pb-14 space-y-5 overflow-hidden bg-white border-b border-neutral-200/70">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <h2 className="font-serif italic text-xl sm:text-2xl text-neutral-800 font-medium">
             Sneak peek of our catalogue
           </h2>
         </div>
@@ -137,96 +137,98 @@ export default function OuidaBooksPage() {
         </div>
       </section>
 
-      {/* 2. OUIDA BOOKS INTRO & DESCRIPTION */}
-      <section id="intro" className="relative max-w-4xl mx-auto text-center px-6 pt-20 pb-20 scroll-mt-28">
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="space-y-6"
-        >
-          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
-            Ouida Books
-          </h1>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
+        {/* 2. OUIDA BOOKS INTRO & DESCRIPTION */}
+        <section id="intro" className="relative pt-16 scroll-mt-28">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 max-w-4xl"
+          >
+            <h1 className="font-sans font-black text-5xl md:text-7xl uppercase tracking-tight text-neutral-950">
+              Ouida Books
+            </h1>
 
-          {/* EXACT INTRO COPY */}
-          <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-normal">
-            <p>
-              Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
-            </p>
-            <p className="font-medium text-neutral-900">
-              Eight imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
+            {/* EXACT INTRO COPY */}
+            <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed select-text font-normal">
+              <p>
+                Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
+              </p>
+              <p className="font-medium text-neutral-900">
+                Imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
+              </p>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* 3. IMPRINTS */}
+        <section id="imprints" className="pt-16 pb-24 border-t border-neutral-200 space-y-10 scroll-mt-28">
+          <div className="space-y-3 max-w-3xl">
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              Imprints
+            </h2>
+            <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
+              Dedicated imprints carry our publishing vision forward, each catering to specific literary traditions, ages, and readers.
             </p>
           </div>
-        </motion.div>
-      </section>
 
-      {/* 3. IMPRINTS (WITH EXTRA VERTICAL SPACE ABOVE) */}
-      <section id="imprints" className="max-w-7xl mx-auto px-6 pt-16 pb-24 border-t border-neutral-200 space-y-12 scroll-mt-28">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-            Imprints
-          </h2>
-          <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
-            Eight dedicated imprints carry our publishing vision forward, each catering to specific literary traditions, ages, and readers.
-          </p>
-        </div>
+          {/* COMPACT LOGO-CENTRIC GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {IMPRINTS_DATA.map((imp, idx) => (
+              <motion.div
+                key={imp.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                className="group bg-neutral-50/80 hover:bg-white p-6 rounded-xl border border-neutral-200/80 hover:border-neutral-900 transition-all duration-300 hover:shadow-lg flex flex-col justify-between space-y-4"
+              >
+                {/* Top Header with Logo Image / Mark & Code */}
+                <div className="flex items-center justify-between min-h-[50px]">
+                  {imp.logo ? (
+                    <div className="h-12 flex items-center justify-start max-w-[140px]">
+                      <img
+                        src={imp.logo}
+                        alt={`${imp.name} Logo`}
+                        className={`${imp.name === "Lufu" ? "max-h-7" : "max-h-11"} max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                      {imp.icon}
+                    </div>
+                  )}
+                  <span className="font-mono text-[10px] font-bold text-neutral-400">
+                    {imp.code}
+                  </span>
+                </div>
 
-        {/* COMPACT LOGO-CENTRIC GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {IMPRINTS_DATA.map((imp, idx) => (
-            <motion.div
-              key={imp.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-20px" }}
-              transition={{ duration: 0.35, delay: idx * 0.05 }}
-              className="group bg-neutral-50/80 hover:bg-white p-6 rounded-xl border border-neutral-200/80 hover:border-neutral-900 transition-all duration-300 hover:shadow-lg flex flex-col justify-between space-y-4"
-            >
-              {/* Top Header with Logo Image / Mark & Code */}
-              <div className="flex items-center justify-between min-h-[50px]">
-                {imp.logo ? (
-                  <div className="h-12 flex items-center justify-start max-w-[140px]">
-                    <img
-                      src={imp.logo}
-                      alt={`${imp.name} Logo`}
-                      className={`${imp.name === "Lufu" ? "max-h-7" : "max-h-11"} max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                    {imp.icon}
-                  </div>
-                )}
-                <span className="font-mono text-[10px] font-bold text-neutral-400">
-                  {imp.code}
-                </span>
-              </div>
+                {/* Imprint Logo & Name */}
+                <div className="space-y-1">
+                  <span className="font-mono text-[10px] font-extrabold uppercase tracking-wider text-rose-600 block">
+                    {imp.badge}
+                  </span>
+                  <h3 className="font-sans font-black text-lg text-neutral-950 group-hover:text-rose-600 transition-colors">
+                    {imp.name}
+                  </h3>
+                  <p className="font-serif italic text-xs text-neutral-500 font-medium">
+                    {imp.focus}
+                  </p>
+                </div>
 
-              {/* Imprint Logo & Name */}
-              <div className="space-y-1">
-                <span className="font-mono text-[10px] font-extrabold uppercase tracking-wider text-rose-600 block">
-                  {imp.badge}
-                </span>
-                <h3 className="font-sans font-black text-lg text-neutral-950 group-hover:text-rose-600 transition-colors">
-                  {imp.name}
-                </h3>
-                <p className="font-serif italic text-xs text-neutral-500 font-medium">
-                  {imp.focus}
-                </p>
-              </div>
-
-              {/* Concise Description */}
-              <div className="pt-2 border-t border-neutral-200/60">
-                <p className="font-sans text-xs text-neutral-600 leading-relaxed font-normal">
-                  {imp.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+                {/* Concise Description */}
+                <div className="pt-2 border-t border-neutral-200/60">
+                  <p className="font-sans text-xs text-neutral-600 leading-relaxed font-normal">
+                    {imp.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* Embedded inline keyframes for 100% zero-lag marquee */}
       <style>{`

@@ -43,7 +43,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
       hasDropdown: true,
       subLinks: [
         { path: "/ouida-books#about", label: "Ouida Books" },
-        { path: "/ouida-books#imprints", label: "Eight Imprints" },
+        { path: "/ouida-books#imprints", label: "Imprints" },
       ]
     },
     { 

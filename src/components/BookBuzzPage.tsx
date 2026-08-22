@@ -22,7 +22,8 @@ export default function BookBuzzPage() {
       title: "Here + There, with Bristol Ideas",
       desc: "In 2021, four Nigerian poets, Wana Udobang, Alhanislam, Niyi Osundare, and Logan February, contributed poems to a climate initiative through Book Buzz Foundation's partnership with Bristol Ideas.",
       location: "Bristol, UK",
-      tag: "Climate Initiative"
+      tag: "Climate Initiative",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.45.07.jpeg"
     }
   ];
 
@@ -152,21 +153,13 @@ export default function BookBuzzPage() {
 
         {/* NIGERIAN PICTURE BOOK PROJECT */}
         <section id="picturebook" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Nigerian Picture Book Project
             </h2>
-            <div className="shrink-0 flex items-center justify-start sm:justify-end">
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
-                alt="Nigerian Picture Book Project Logo" 
-                className="h-16 sm:h-20 md:h-22 w-auto object-contain rounded-[2px]"
-                referrerPolicy="no-referrer"
-              />
-            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-8 space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
               <p>
                 The Nigerian Picture Book Project (NPBP) is a Book Buzz Foundation initiative, supported by the European Union, designed to develop a new generation of Nigerian children’s book creators. It trains and mentors 40 young Nigerian writers and illustrators aged 21–30, giving them the creative and professional support to develop original picture books for children aged 5–8.
@@ -179,28 +172,13 @@ export default function BookBuzzPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 bg-neutral-50 border border-neutral-200 p-8 rounded-2xl space-y-6">
-              <div className="font-mono text-xs text-neutral-900 font-bold uppercase tracking-widest border-b border-neutral-200 pb-2">
-                PROJECT OVERVIEW
-              </div>
-              <div className="space-y-4 font-sans text-xs text-neutral-800">
-                <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Partner & Support</span>
-                  <span>Supported by the European Union</span>
-                </div>
-                <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Cohort & Target</span>
-                  <span>40 Writers & Illustrators (Ages 21–30)</span>
-                </div>
-                <div className="border-b border-neutral-200 pb-3">
-                  <span className="block font-bold text-neutral-950 uppercase">Target Audience</span>
-                  <span>Children aged 5–8</span>
-                </div>
-                <div>
-                  <span className="block font-bold text-neutral-950 uppercase">Output & Distribution</span>
-                  <span>20 Picture Books • Schools, Libraries & Book Fairs</span>
-                </div>
-              </div>
+            <div className="lg:col-span-4 flex items-center justify-center p-6 sm:p-8 bg-neutral-50 border border-neutral-200/80 rounded-2xl">
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
+                alt="Nigerian Picture Book Project Logo" 
+                className="max-h-56 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </section>
