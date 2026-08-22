@@ -9,7 +9,7 @@ export default function FilmPage() {
       role: "Producer",
       desc: "Directed by Joshua Ogunjobi and produced by Shoneyin, Flowers for Warriors follows three Nigerian families raising children living with visible disabilities, in a society that stigmatises them. There is heartbreak in it, and fear, but also the quiet victory of parents who refuse to let the world's discomfort become their children's shame. The film screened at Studio Kino in Germany on 20 June 2022.",
       link: "https://www.youtube.com/watch?v=GRIKclGchfM",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-23.47.22.jpeg",
       actionText: "Watch on YouTube",
       isLive: true
     },
