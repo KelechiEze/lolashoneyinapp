@@ -15,6 +15,15 @@ export interface SpaceCard {
 
 export const SPACES_LIST: SpaceCard[] = [
   {
+    id: "cafe",
+    title: "CAFÉ",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    url: "/spaces/cafe",
+    description: "Our vibrant café serves Nigerian street food classics including dundun, crispy dodo, rich ewa agoyin with spicy pepe sauce, freshly brewed artisanal coffee, and signature chilled zobo.",
+    capacity: "Indoor & Courtyard Seating",
+    amenities: ["Fresh Nigerian Street Food (Dundun, Dodo, Ewa Agoyin)", "Signature Chilled Zobo", "Artisanal Coffee & Teas", "Courtyard & Indoor Ambience", "Bookshop & Cultural Hub Access"]
+  },
+  {
     id: "orange-tree",
     title: "ORANGE TREE RESIDENCY",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
@@ -28,9 +37,9 @@ export const SPACES_LIST: SpaceCard[] = [
     title: "WORKSPACE",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_11_01-am.png",
     url: "/spaces/workspace",
-    description: "Quiet, air-conditioned co-working areas equipped with high-speed Wi-Fi, comfortable ergonomic seating, power access at every desk, and an inspiring atmosphere tailored for authors, remote workers, researchers, and creative professionals.",
+    description: "Quiet co-working areas equipped with high-speed Wi-Fi, comfortable ergonomic seating, power access at every desk, and an inspiring atmosphere tailored for authors, remote workers, researchers, and creative professionals.",
     capacity: "Up to 30 desks",
-    amenities: ["High-Speed Wi-Fi", "Air Conditioning", "Power Access at Desk", "Café & Coffee Access", "Quiet Study Atmosphere"]
+    amenities: ["High-Speed Wi-Fi", "Quiet for deep focus", "Power Access at Desk", "Café & Coffee Access"]
   },
   {
     id: "sunroom",
@@ -48,7 +57,7 @@ export const SPACES_LIST: SpaceCard[] = [
     url: "/spaces/meeting-rooms",
     description: "Private, climate-controlled meeting and workshop rooms suited for board meetings, editorial team retreats, creative masterclasses, press briefings, and private strategy sessions.",
     capacity: "8 – 20 Guests",
-    amenities: ["HD Presentation Screen", "Whiteboard & Workshop Tools", "High-Speed Wi-Fi", "Conference Seating", "Coffee & Tea Service"]
+    amenities: ["HD Presentation Screen", "High-Speed Wi-Fi", "Conference Seating", "Coffee & Tea Service"]
   },
   {
     id: "bookshop",

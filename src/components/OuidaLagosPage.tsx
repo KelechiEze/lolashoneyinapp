@@ -16,6 +16,27 @@ export interface SpaceItem {
 
 export const ALL_SPACES_DATA: SpaceItem[] = [
   {
+    id: "cafe",
+    title: "CAFÉ",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    tagline: "Authentic Nigerian street food café and artisanal coffee lounge.",
+    description: "Our vibrant café serves delicious Nigerian street food classics including dundun, crispy dodo, rich ewa agoyin with spicy pepe sauce, freshly brewed artisanal coffee, and signature chilled zobo in an inviting cultural atmosphere.",
+    capacity: "Indoor & Courtyard Seating",
+    amenities: [
+      "Fresh Nigerian Street Food (Dundun, Dodo, Ewa Agoyin)",
+      "Signature Chilled Zobo & Refreshing Drinks",
+      "Artisanal Espresso & Specialty Teas",
+      "Courtyard & Indoor Literary Seating",
+      "Bookshop & Workspace Integration"
+    ],
+    idealFor: [
+      "Casual Dining & Lunch Breaks",
+      "Literary Discussions & Book Club Meetups",
+      "Coffee & Creative Solo Work",
+      "Community Gatherings & Relaxing"
+    ]
+  },
+  {
     id: "orange-tree",
     title: "THE ORANGE TREE RESIDENCY",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
@@ -42,14 +63,14 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
     title: "WORKSPACE",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_11_01-am.png",
     tagline: "Quiet, high-speed co-working haven tailored for authors and creative minds.",
-    description: "Quiet, air-conditioned co-working areas equipped with high-speed Wi-Fi, comfortable ergonomic seating, power access at every desk, and an inspiring atmosphere tailored for authors, remote workers, researchers, and creative professionals.",
+    description: "Quiet co-working areas equipped with high-speed Wi-Fi, comfortable ergonomic seating, power access at every desk, and an inspiring atmosphere tailored for authors, remote workers, researchers, and creative professionals.",
     capacity: "Up to 30 Desks",
     amenities: [
       "Fiber-Optic High-Speed Wi-Fi",
       "Guaranteed Uninterrupted Power",
-      "Air Conditioning at Every Station",
+      "Quiet for deep focus",
       "Direct Café & Coffee Access",
-      "Quiet Study & Deep Focus Zone"
+      "Ergonomic Seating & Desk Power"
     ],
     idealFor: [
       "Authors & Researchers",
@@ -87,11 +108,11 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
     description: "Private, climate-controlled meeting and workshop rooms suited for board meetings, editorial team retreats, creative masterclasses, press briefings, and private strategy sessions.",
     capacity: "8 – 20 Guests",
     amenities: [
-      "HD Smart Presentation Screens (HDMI/Wireless)",
-      "Soundproof Acoustic Insulation",
-      "Full Wall Whiteboards & Stationery",
+      "HD Smart Presentation Screens",
       "High-Speed Wi-Fi",
-      "Coffee, Tea & Refreshment Packages"
+      "Coffee, Tea & Refreshment Packages",
+      "Executive Conference Seating",
+      "Climate-Controlled Comfort"
     ],
     idealFor: [
       "Corporate & Board Meetings",
@@ -124,6 +145,31 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
 ];
 
 const GUEST_GALLERY_IMAGES = [
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    title: "Ouida Lagos Courtyard & Café Atmosphere",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.47.41.jpeg",
+    title: "Guests & Cultural Gatherings at Ouida",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.50.25.jpeg",
+    title: "Community & Literary Discussions",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40-1.jpeg",
+    title: "Conversations & Visitors at Ouida Lagos",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40.jpeg",
+    title: "Bookstore & Cultural Moments",
+    location: "Ouida Lagos"
+  },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54-1.jpeg",
     title: "Gatherings & Cultural Conversations",

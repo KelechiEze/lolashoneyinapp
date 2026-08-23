@@ -12,9 +12,9 @@ import {
   Globe, 
   Calendar,
   Layers,
-  FileText
+  FileText,
+  Play
 } from "lucide-react";
-import { DisintegratingImage } from "./DisintegratingImage";
 
 export interface PressItem {
   id: string;
@@ -24,7 +24,7 @@ export interface PressItem {
   summary: string;
   url: string;
   code: string;
-  image: string;
+  image?: string;
   tag: string;
 }
 
@@ -37,8 +37,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "A live-audience podcast interview on her relationship with the late Bola Ige, the 1996 grant that funded her first published poem, and boarding school in England.",
     url: "https://drdotun.substack.com/p/episode-41-art-tech-and-polygamy-79a",
     code: "_INT01",
-    tag: "Podcast & Live Dialogue",
-    image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1000&auto=format&fit=crop"
+    tag: "Podcast & Live Dialogue"
   },
   {
     id: "wiki-loves-women-2022",
@@ -48,8 +47,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "Betty Kankam-Boadu interviews her on founding Ouida Books and Aké, part of a series on tenacious African women.",
     url: "https://podcast.wikiloveswomen.org/podcast-item/lola-shoneyin/",
     code: "_INT02",
-    tag: "Audio Interview Series",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+    tag: "Audio Interview Series"
   },
   {
     id: "culture-diaries-2017",
@@ -59,8 +57,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "A filmed interview on directing Aké and KABAFEST, writing Baba Segi's Wives, and her love of Toni Morrison. Later republished by Northwestern University's Program of African Studies.",
     url: "https://www.youtube.com/watch?v=M_pvEP0fA14",
     code: "_INT03",
-    tag: "Filmed Interview",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop"
+    tag: "Filmed Interview"
   },
   {
     id: "johannesburg-review-2018",
@@ -70,8 +67,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "Shayera Dark interviews her on Aké's \"Fantastical Futures\" theme and the rise of African speculative fiction.",
     url: "https://johannesburgreviewofbooks.com/2018/11/05/we-need-to-have-lots-of-conversations-about-the-africa-we-want-an-interview-with-lola-shoneyin-founder-of-the-ake-festival/",
     code: "_INT04",
-    tag: "Literary Feature Q&A",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop"
+    tag: "Literary Feature Q&A"
   },
   {
     id: "africa-interviews-2015",
@@ -81,8 +77,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "On her chaotic childhood, choosing Arts over her father's wish that she study law, and the gift of empathy in her writing.",
     url: "https://www.africainterviews.com/lola-shoneyin/",
     code: "_INT05",
-    tag: "In-Depth Profile",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop"
+    tag: "In-Depth Profile"
   },
   {
     id: "premium-times-2013",
@@ -92,8 +87,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "On her early influences, her writing life, and holding an identity distinct from her marriage into the Soyinka family.",
     url: "https://www.premiumtimesng.com/entertainment/126696-interview-being-married-to-a-soyinka-is-great-but-i-have-my-own-identity-lola-shoneyin.html",
     code: "_INT06",
-    tag: "National Press Dialogue",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop"
+    tag: "National Press Dialogue"
   },
   {
     id: "saraba-magazine-2012",
@@ -103,8 +97,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "On writing limericks at boarding school, the Iowa writing program, and Cassava Republic taking on her debut novel.",
     url: "https://sarabamag.com/damilola-ajayi-catches-up-with-lola-shoneyin/",
     code: "_INT07",
-    tag: "Literary Journal",
-    image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1000&auto=format&fit=crop"
+    tag: "Literary Journal"
   },
   {
     id: "missojikutu-2012",
@@ -114,8 +107,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "A Q&A on Baba Segi's cantankerous second wife, seeing her work published in Hebrew, and the pull between interest and obligation.",
     url: "https://missojikutu.wordpress.com/2012/02/26/author-qa-series-lola-shoneyin/",
     code: "_INT08",
-    tag: "Author Q&A",
-    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000&auto=format&fit=crop"
+    tag: "Author Q&A"
   },
   {
     id: "imagenations-2011",
@@ -125,8 +117,7 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "The blog's first-ever interview, in which she sets out her views on polygamy and traces how her Edinburgh childhood shaped her writing.",
     url: "https://freduagyeman.blogspot.com/2011/01/conversation-with-lola-shoneyin-author.html",
     code: "_INT09",
-    tag: "Continental Literary Blog",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1000&auto=format&fit=crop"
+    tag: "Continental Literary Blog"
   },
   {
     id: "african-writing-2010",
@@ -136,8 +127,41 @@ export const INTERVIEWS_DATA: PressItem[] = [
     summary: "An early-career interview around the UK release of Baba Segi's Wives, on her poetry collections and forthcoming children's book.",
     url: "https://www.african-writing.com/nine/lolashoneyin.htm",
     code: "_INT10",
-    tag: "Archival Release Interview",
-    image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=1000&auto=format&fit=crop"
+    tag: "Archival Release Interview"
+  }
+];
+
+export interface PodcastItem {
+  id: string;
+  title: string;
+  source: string;
+  date: string;
+  summary: string;
+  tag: string;
+  link: string;
+  image: string;
+}
+
+export const PODCASTS_DATA: PodcastItem[] = [
+  {
+    id: "pulse-annotated",
+    title: "THE PULSE Presents ANNOTATED w/ Temi feat. Lola Shoneyin",
+    source: "ThePulseTNB",
+    date: "10 June 2026",
+    summary: "An expansive dialogue on literary activism, African book fairs, institutional longevity, and publishing voices that redefine world fiction.",
+    tag: "Featured Video & Podcast",
+    link: "https://www.youtube.com/live/w568d-phdag?si=fiAzQX7JshakrEVi",
+    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: "art-tech-polygamy",
+    title: "Art, Tech and Polygamy (Episode 41)",
+    source: "Dr Dotun's Substack",
+    date: "Live Recording",
+    summary: "A live podcast recording on modern storytelling intersectionality, polygamous domestic archives, technology's impact on African arts, and independent press dynamics.",
+    tag: "Live Recording & Audio",
+    link: "https://drdotun.substack.com/p/episode-41-art-tech-and-polygamy-79a",
+    image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
@@ -247,6 +271,13 @@ export default function PressPage() {
     }
   }, [location.hash]);
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="bg-white text-neutral-900 min-h-screen pt-28 pb-24 selection:bg-rose-600 selection:text-white font-sans overflow-x-hidden">
       
@@ -262,31 +293,34 @@ export default function PressPage() {
             For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of The Secret Lives of Baba Segi's Wives to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
           </p>
 
-          <div className="pt-4 flex flex-wrap items-center justify-start gap-4">
+          {/* Navigation Pills */}
+          <div className="pt-4 flex flex-wrap items-center justify-start gap-3">
             <button
-              onClick={() => {
-                const interviewsEl = document.getElementById("interviews");
-                if (interviewsEl) interviewsEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
+              onClick={() => scrollToSection("interviews")}
+              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
             >
-              <span>Explore Interviews</span>
-              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Interviews</span>
+              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
             <button
-              onClick={() => {
-                const featuresEl = document.getElementById("features");
-                if (featuresEl) featuresEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-sm transition-all cursor-pointer"
+              onClick={() => scrollToSection("podcasts")}
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2 group"
             >
-              <span>View Features</span>
+              <Mic size={14} className="text-rose-600" />
+              <span>Podcasts</span>
+            </button>
+            <button
+              onClick={() => scrollToSection("features")}
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2 group"
+            >
+              <Newspaper size={14} className="text-neutral-600" />
+              <span>Features & Reviews</span>
             </button>
           </div>
         </div>
       </section>
 
-      {/* 2. INTERVIEWS SECTION */}
+      {/* 2. INTERVIEWS SECTION (LIST FORMAT) */}
       <section id="interviews" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
@@ -297,81 +331,50 @@ export default function PressPage() {
           </p>
         </div>
 
-        {/* Interviews Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        {/* Interviews List */}
+        <div className="space-y-4 max-w-5xl mx-auto">
           {INTERVIEWS_DATA.map((item, idx) => (
             <motion.a
               key={item.id}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                type: "spring",
-                stiffness: 180,
-                damping: 22,
-                delay: idx * 0.06
-              }}
-              className="group cursor-pointer flex flex-col space-y-3"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              className="bg-white border border-neutral-200/80 hover:border-neutral-400/80 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group cursor-pointer"
             >
-              {/* Card Image Container */}
-              <div className="relative w-full aspect-[4/5] min-h-[360px] sm:min-h-[400px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-neutral-900 transition-all duration-500 hover:shadow-2xl">
-                <DisintegratingImage
-                  src={item.image}
-                  alt={item.title}
-                  roundedClassName="rounded-[28px] sm:rounded-[32px]"
-                />
-
-                {/* Top Badge Floating Pill */}
-                <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-                  <span className="font-mono text-[10px] font-extrabold text-black bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+              <div className="space-y-2 flex-1 min-w-0 pr-0 sm:pr-4 text-left">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-[10px] font-extrabold text-neutral-900 bg-neutral-100 border border-neutral-200/80 px-2.5 py-0.5 rounded-md shrink-0">
                     {item.year}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-neutral-950 shadow-md">
-                    <Mic size={14} />
-                  </div>
-                </div>
-
-                {/* Hover Overlay with Action Button */}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6 pointer-events-none z-30">
-                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/95 text-black shadow-2xl backdrop-blur-md">
-                    <Mic className="w-4 h-4 text-rose-600" />
-                    <span className="text-xs font-extrabold tracking-tight font-sans uppercase">
-                      Open Interview
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500" />
-                  </div>
-                </div>
-
-                {/* Overlay details at bottom of image */}
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 space-y-1.5">
-                  <span className="font-mono text-[10px] font-extrabold text-rose-300 uppercase tracking-widest block">
+                  <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-wider">
                     {item.outlet}
                   </span>
-                  <h3 className="font-sans font-bold text-lg sm:text-xl text-white leading-snug">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Text Description Below Image */}
-              <div className="space-y-1.5 px-1 pt-1 text-left">
-                <div className="flex items-center justify-between">
-                  <span className="font-sans font-bold text-sm sm:text-base text-neutral-950 tracking-tight group-hover:text-rose-600 transition-colors line-clamp-1">
-                    {item.title}
+                  <span className="text-neutral-300 hidden sm:inline">•</span>
+                  <span className="font-mono text-[10px] text-neutral-500 hidden sm:inline">
+                    {item.tag}
                   </span>
-                  <span className="font-mono text-[11px] font-bold text-neutral-400 shrink-0 ml-2">
+                  <span className="font-mono text-[10px] text-neutral-400 ml-auto hidden md:inline">
                     {item.code}
                   </span>
                 </div>
-                <p className="font-sans text-xs sm:text-[13px] text-neutral-600 leading-relaxed font-normal">
+                
+                <h3 className="font-sans font-bold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                  {item.title}
+                </h3>
+                
+                <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
                   {item.summary}
                 </p>
-                <div className="pt-2 flex items-center space-x-1.5 text-rose-600 font-mono text-[11px] font-bold uppercase tracking-wider group-hover:underline">
-                  <span>Read / Listen via {item.outlet}</span>
-                  <ExternalLink size={12} />
+              </div>
+
+              <div className="shrink-0 pt-2 sm:pt-0 self-end sm:self-center">
+                <div className="flex items-center space-x-1.5 px-4 py-2 rounded-full bg-neutral-100 group-hover:bg-neutral-950 text-neutral-900 group-hover:text-white transition-all text-xs font-mono font-bold uppercase tracking-wider">
+                  <span>Read / Listen</span>
+                  <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
             </motion.a>
@@ -379,11 +382,83 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* 3. FEATURES SECTION */}
+      {/* 3. PODCASTS SECTION */}
+      <section id="podcasts" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+            Podcasts
+          </h2>
+          <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
+            Featured podcast appearances, broadcast dialogues, and in-depth cultural discussions.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {PODCASTS_DATA.map((podcast, idx) => (
+            <motion.div
+              key={podcast.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group text-left"
+            >
+              {/* Image Banner */}
+              <div className="relative aspect-[16/9] w-full bg-neutral-900 overflow-hidden">
+                <img
+                  src={podcast.image}
+                  alt={podcast.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="font-mono text-[10px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
+                    {podcast.tag}
+                  </span>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono">
+                  <span className="text-rose-300 font-bold">{podcast.source}</span>
+                  <span className="text-neutral-300">{podcast.date}</span>
+                </div>
+              </div>
+
+              {/* Content Box */}
+              <div className="p-7 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="font-sans font-bold text-xl sm:text-2xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                    {podcast.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                    {podcast.summary}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
+                  <span className="font-mono text-xs text-neutral-400 font-medium">
+                    {podcast.date}
+                  </span>
+                  <a
+                    href={podcast.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 font-sans text-xs font-bold uppercase tracking-wider text-rose-600 hover:text-rose-700 transition-colors group/btn"
+                  >
+                    <span>Listen / Explore</span>
+                    <ArrowUpRight size={13} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. FEATURES SECTION */}
       <section id="features" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-            Features
+            Features & Reviews
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
             Scholarly reviews, major profiles, and broadcast coverage across international media.
@@ -450,3 +525,4 @@ export default function PressPage() {
     </div>
   );
 }
+

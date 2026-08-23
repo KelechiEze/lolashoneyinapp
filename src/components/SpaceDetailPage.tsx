@@ -17,8 +17,38 @@ interface ExtendedSpaceInfo extends SpaceCard {
 }
 
 const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
+  cafe: {
+    ...(SPACES_LIST.find(s => s.id === "cafe") || SPACES_LIST[0]),
+    tagline: "Authentic Nigerian street food favorites, artisanal coffees, and chilled zobo in an inviting cultural courtyard.",
+    readTime: "3 min read",
+    author: "Ouida Hospitality & Culinary",
+    date: "Updated August 2026",
+    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    galleryImages: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.03.08.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54.jpeg"
+    ],
+    editorialParagraphs: [
+      "At the heart of the Ouida Lagos experience is our street food café—a warm, welcoming gathering spot where culinary tradition meets literary conversation.",
+      "Our kitchen celebrates beloved Nigerian street food staples prepared fresh daily: golden fried dundun, sweet crispy dodo, rich and smoky ewa agoyin topped with our fiery signature pepe sauce, and fragrant herbal drinks including house-brewed chilled zobo.",
+      "Whether you are popping in for a morning espresso before heading upstairs to the workspace, grabbing lunch during a festival panel, or unwinding in the courtyard with a book in hand, the café offers generous hospitality and flavorful nourishment."
+    ],
+    highlights: [
+      { title: "Nigerian Street Food Classics", desc: "Fresh dundun, crispy dodo, rich ewa agoyin, and savory spicy sauces cooked to perfection." },
+      { title: "Signature Chilled Zobo", desc: "Traditional hibiscus infusion brewed with aromatic spices, served ice-cold." },
+      { title: "Artisanal Coffee & Teas", desc: "Fresh espresso, lattes, and fine loose-leaf teas for readers and creative workers." },
+      { title: "Courtyard & Indoor Seating", desc: "Relaxed, sun-dappled seating nestled next to the bookstore shelves." }
+    ],
+    idealFor: [
+      "Casual Dining & Lunch Breaks",
+      "Literary Discussions & Book Club Meetups",
+      "Coffee & Creative Solo Work",
+      "Community Gatherings & Refreshment"
+    ]
+  },
   "orange-tree": {
-    ...SPACES_LIST[0],
+    ...(SPACES_LIST.find(s => s.id === "orange-tree") || SPACES_LIST[1]),
     tagline: "A prestigious two-week residency offering writers dedicated creative space and immersion into the Nigerian publishing industry.",
     readTime: "4 min read",
     author: "Orange Tree Residency Committee",
@@ -50,7 +80,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   workspace: {
-    ...SPACES_LIST[1],
+    ...(SPACES_LIST.find(s => s.id === "workspace") || SPACES_LIST[2]),
     tagline: "An inspiring, distraction-free co-working sanctuary in Ikeja tailored for authors, remote teams, and creative minds.",
     readTime: "4 min read",
     author: "Ouida Lagos Editorial",
@@ -69,8 +99,8 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     highlights: [
       { title: "Fiber-Optic High-Speed Internet", desc: "Dedicated high-bandwidth connection designed for seamless video conferencing and heavy file transfers." },
       { title: "Guaranteed Uninterrupted Power", desc: "Dual backup generators ensure your workflow is never interrupted by power outages." },
-      { title: "Café & Refreshment Access", desc: "Enjoy direct access to fresh espresso, herbal teas, and fresh pastries from the in-house Ouida Café." },
-      { title: "Quiet & Focused Atmosphere", desc: "A respectful, noise-managed environment optimized for deep concentration and authorial work." }
+      { title: "Quiet for Deep Focus", desc: "A respectful, quiet environment optimized for deep concentration, research, and authorial work." },
+      { title: "Café & Refreshment Access", desc: "Enjoy direct access to fresh espresso, herbal teas, and fresh pastries from the in-house Ouida Café." }
     ],
     idealFor: [
       "Authors & Novelists writing manuscripts",
@@ -81,7 +111,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   sunroom: {
-    ...SPACES_LIST[2],
+    ...(SPACES_LIST.find(s => s.id === "sunroom") || SPACES_LIST[3]),
     tagline: "A luminous glass-roof atrium flooded with natural light, host to Lagos' most memorable literary and artistic gatherings.",
     readTime: "5 min read",
     author: "Ouida Lagos Events",
@@ -112,8 +142,8 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   "meeting-rooms": {
-    ...SPACES_LIST[3],
-    tagline: "Climate-controlled, sound-insulated meeting suites designed for high-impact board meetings, editorial retreats, and workshops.",
+    ...(SPACES_LIST.find(s => s.id === "meeting-rooms") || SPACES_LIST[4]),
+    tagline: "Climate-controlled meeting suites designed for high-impact board meetings, editorial retreats, and workshops.",
     readTime: "3 min read",
     author: "Ouida Business Suite",
     date: "Updated July 2026",
@@ -124,14 +154,14 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
     ],
     editorialParagraphs: [
-      "When privacy, acoustic isolation, and executive professionalism are required, the Meeting Rooms at Ouida Lagos deliver an outstanding experience. Tucked away on our dedicated workshop floor, these suites provide an oasis of focus away from outside noise.",
-      "Each meeting room is outfitted with high-definition presentation monitors, wireless screen mirroring, glass whiteboards, and ergonomic executive chairs. Our air conditioning units maintain optimal temperature control, ensuring long sessions remain comfortable.",
+      "When executive professionalism and comfort are required, the Meeting Rooms at Ouida Lagos deliver an outstanding experience. Tucked away on our dedicated workshop floor, these suites provide a focused environment.",
+      "Each meeting room is outfitted with high-definition presentation monitors, high-speed Wi-Fi, and comfortable executive seating. Our air conditioning units maintain optimal temperature control, ensuring long sessions remain comfortable.",
       "Ideal for publishing editorial retreats, board strategy sessions, creative workshops, or private interviews, our staff provides seamless catering, fresh coffee refills, and administrative support throughout your reservation."
     ],
     highlights: [
-      { title: "HD Smart Display Screens", desc: "Plug-and-play HDMI and wireless screen sharing for crisp pitch presentations and video calls." },
-      { title: "Soundproof Acoustic Comfort", desc: "Insulated walls and doors to ensure confidential discussions remain completely private." },
-      { title: "Workshop Whiteboards & Tools", desc: "Full wall whiteboards supplied with markers, post-its, and brainstorming stationery." },
+      { title: "HD Smart Presentation Screens", desc: "Crisp presentation displays for pitch presentations, strategy workshops, and video calls." },
+      { title: "High-Speed Connectivity", desc: "Reliable, high-bandwidth internet ensuring smooth virtual meetings." },
+      { title: "Executive Conference Comfort", desc: "Ergonomic seating and climate control for productive discussions." },
       { title: "Executive Catering Packages", desc: "Customized breakfast, lunch, and coffee breaks delivered directly to your meeting room." }
     ],
     idealFor: [
@@ -143,7 +173,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     ]
   },
   bookshop: {
-    ...SPACES_LIST[4],
+    ...(SPACES_LIST.find(s => s.id === "bookshop") || SPACES_LIST[5]),
     tagline: "Lagos' premier independent bookstore celebrating contemporary African literature, poetry, and global storytelling.",
     readTime: "4 min read",
     author: "Ouida Literary Team",

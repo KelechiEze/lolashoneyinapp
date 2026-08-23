@@ -62,6 +62,30 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     code: "_ENG04"
   },
   {
+    id: "kerala-litfest-2024",
+    title: "Kerala Literature Festival (KLF)",
+    location: "Kerala, India",
+    year: "2024",
+    role: "International Guest Speaker",
+    code: "_ENG06"
+  },
+  {
+    id: "beijing-cbf-2024",
+    title: "Beijing Children's Book Fair",
+    location: "Beijing, China",
+    year: "2024",
+    role: "Featured International Delegate",
+    code: "_ENG07"
+  },
+  {
+    id: "hay-peru-2023",
+    title: "Hay Festival Arequipa",
+    location: "Arequipa, Peru",
+    year: "2023",
+    role: "Guest Author & Keynote",
+    code: "_ENG08"
+  },
+  {
     id: "bologna-2024",
     title: "Bologna Children's Book Fair",
     location: "Bologna, Italy",
@@ -116,6 +140,120 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     year: "1999",
     role: "Scholar & Fellow",
     code: "_ENG12"
+  }
+];
+
+export interface InterviewItem {
+  id: string;
+  title: string;
+  outlet: string;
+  year: string;
+  summary: string;
+  url: string;
+  code: string;
+  tag: string;
+}
+
+export const INTERVIEWS_LIST: InterviewItem[] = [
+  {
+    id: "dr-dotun-2022",
+    title: "Art, Tech and Polygamy (Episode 41)",
+    outlet: "Dr Dotun's Substack",
+    year: "2022",
+    summary: "A live-audience podcast interview on her relationship with the late Bola Ige, the 1996 grant that funded her first published poem, and boarding school in England.",
+    url: "https://drdotun.substack.com/p/episode-41-art-tech-and-polygamy-79a",
+    code: "_INT01",
+    tag: "Podcast & Live Dialogue"
+  },
+  {
+    id: "wiki-loves-women-2022",
+    title: "Inspiring Open: A life blind to obstacles",
+    outlet: "Wiki Loves Women",
+    year: "2022",
+    summary: "Betty Kankam-Boadu interviews her on founding Ouida Books and Aké, part of a series on tenacious African women.",
+    url: "https://podcast.wikiloveswomen.org/podcast-item/lola-shoneyin/",
+    code: "_INT02",
+    tag: "Audio Interview Series"
+  },
+  {
+    id: "culture-diaries-2017",
+    title: "Culture Diaries Meets Nigerian Novelist Lola Shoneyin",
+    outlet: "Culture Diaries (Wana Udobang)",
+    year: "2017",
+    summary: "A filmed interview on directing Aké and KABAFEST, writing Baba Segi's Wives, and her love of Toni Morrison. Later republished by Northwestern University's Program of African Studies.",
+    url: "https://www.youtube.com/watch?v=M_pvEP0fA14",
+    code: "_INT03",
+    tag: "Filmed Interview"
+  },
+  {
+    id: "johannesburg-review-2018",
+    title: "'We need to have lots of conversations about the Africa we want'",
+    outlet: "Johannesburg Review of Books",
+    year: "2018",
+    summary: "Shayera Dark interviews her on Aké's \"Fantastical Futures\" theme and the rise of African speculative fiction.",
+    url: "https://johannesburgreviewofbooks.com/2018/11/05/we-need-to-have-lots-of-conversations-about-the-africa-we-want-an-interview-with-lola-shoneyin-founder-of-the-ake-festival/",
+    code: "_INT04",
+    tag: "Literary Feature Q&A"
+  },
+  {
+    id: "africa-interviews-2015",
+    title: "Africa Interviews: Lola Shoneyin",
+    outlet: "Africa Interviews (Sam Umukoro)",
+    year: "2015",
+    summary: "On her chaotic childhood, choosing Arts over her father's wish that she study law, and the gift of empathy in her writing.",
+    url: "https://www.africainterviews.com/lola-shoneyin/",
+    code: "_INT05",
+    tag: "In-Depth Profile"
+  },
+  {
+    id: "premium-times-2013",
+    title: "INTERVIEW: Being Married to a Soyinka is Great, But I Have My Own Identity",
+    outlet: "Premium Times",
+    year: "2013",
+    summary: "On her early influences, her writing life, and holding an identity distinct from her marriage into the Soyinka family.",
+    url: "https://www.premiumtimesng.com/entertainment/126696-interview-being-married-to-a-soyinka-is-great-but-i-have-my-own-identity-lola-shoneyin.html",
+    code: "_INT06",
+    tag: "National Press Dialogue"
+  },
+  {
+    id: "saraba-magazine-2012",
+    title: "Poetry and inspiration with Lola Shoneyin",
+    outlet: "Saraba Magazine (Damilola Ajayi)",
+    year: "2012",
+    summary: "On writing limericks at boarding school, the Iowa writing program, and Cassava Republic taking on her debut novel.",
+    url: "https://sarabamag.com/damilola-ajayi-catches-up-with-lola-shoneyin/",
+    code: "_INT07",
+    tag: "Literary Journal"
+  },
+  {
+    id: "missojikutu-2012",
+    title: "Author Q&A Series: Lola Shoneyin",
+    outlet: "MissOjikutu",
+    year: "2012",
+    summary: "A Q&A on Baba Segi's cantankerous second wife, seeing her work published in Hebrew, and the pull between interest and obligation.",
+    url: "https://missojikutu.wordpress.com/2012/02/26/author-qa-series-lola-shoneyin/",
+    code: "_INT08",
+    tag: "Author Q&A"
+  },
+  {
+    id: "imagenations-2011",
+    title: "Conversation with Lola Shoneyin",
+    outlet: "ImageNations (Nana Fredua-Agyeman)",
+    year: "2011",
+    summary: "The blog's first-ever interview, in which she sets out her views on polygamy and traces how her Edinburgh childhood shaped her writing.",
+    url: "https://freduagyeman.blogspot.com/2011/01/conversation-with-lola-shoneyin-author.html",
+    code: "_INT09",
+    tag: "Continental Literary Blog"
+  },
+  {
+    id: "african-writing-2010",
+    title: "An Interview with Lola Shoneyin",
+    outlet: "African Writing Online, Issue 9",
+    year: "2010",
+    summary: "An early-career interview around the UK release of Baba Segi's Wives, on her poetry collections and forthcoming children's book.",
+    url: "https://www.african-writing.com/nine/lolashoneyin.htm",
+    code: "_INT10",
+    tag: "Archival Release Interview"
   }
 ];
 
@@ -234,7 +372,20 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Featured panelist and keynote discussions on global freedom of expression, feminist literature, and international creative advocacy at the PEN Festival in New York."
   },
-  // 6. IBBY Congress, Ottawa
+  // 6. Kerala Literature Festival (KLF)
+  {
+    id: "photo-kerala-litfest",
+    title: "Kerala Literature Festival",
+    event: "Kerala Literature Festival (KLF)",
+    location: "Kerala, India",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-21.49.24.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-21.49.24.jpeg"
+    ],
+    caption: "Featured speaker sessions and international dialogues on African fiction, female narratives, and literary publishing at the Kerala Literature Festival in India."
+  },
+  // 7. IBBY Congress, Ottawa
   {
     id: "photo-ibby-ottawa",
     title: "IBBY Congress, Ottawa",
@@ -264,6 +415,33 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.48.28.jpeg"
     ],
     caption: "Showcasing illustrated picturebooks and pioneering training collaborations for African illustrators and writers."
+  },
+  // 8. Beijing Children's Book Fair
+  {
+    id: "photo-beijing-cbf",
+    title: "Beijing Children's Book Fair",
+    event: "China International Children's Book Publishing",
+    location: "Beijing, China",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.05.07.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.05.07.jpeg"
+    ],
+    caption: "International delegations, author showcases, and publishing rights dialogues exploring multicultural children's literature at the Beijing Children's Book Fair."
+  },
+  // 9. Hay Festival, Peru
+  {
+    id: "photo-hay-peru",
+    title: "Hay Festival, Peru",
+    event: "Hay Festival Arequipa",
+    location: "Arequipa, Peru",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.14.44-1.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.14.44-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.14.44.jpeg"
+    ],
+    caption: "Keynote author discussions, literary panels, and transatlantic dialogues celebrating fiction and independent publishing at Hay Festival in Peru."
   },
   // 8. Frankfurt Buchmesse
   {
@@ -514,23 +692,42 @@ export default function SpeakingPage() {
             Shoneyin has been participating in literary events since 1998. Her first international engagements took her to the Zimbabwe International Book Fair in 1999, and then to the Iowa International Writers Workshop in the same year. She has not stopped since.
           </p>
 
-          <div className="pt-4 flex flex-wrap items-center justify-start gap-4">
+          <div className="pt-4 flex flex-wrap items-center justify-start gap-3">
             <button
               onClick={() => {
                 const engagementsEl = document.getElementById("engagements");
                 if (engagementsEl) engagementsEl.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
+              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
             >
               <span>View Engagements</span>
-              <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+            <button
+              onClick={() => {
+                const galleryEl = document.getElementById("gallery");
+                if (galleryEl) galleryEl.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2"
+            >
+              <span>Event Gallery</span>
+            </button>
+            <button
+              onClick={() => {
+                navigate("/press#interviews");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2"
+            >
+              <Mic size={14} className="text-rose-600" />
+              <span>Interviews & Podcasts</span>
             </button>
             <button
               onClick={() => {
                 navigate("/contact");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-7 rounded-full shadow-sm transition-all cursor-pointer"
+              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer"
             >
               <span>Booking Inquiries</span>
             </button>
@@ -585,79 +782,7 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* 3. PODCASTS AND INTERVIEWS SECTION */}
-      <section id="podcasts" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-            Podcasts and Interviews
-          </h2>
-          <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
-            Featured podcast appearances, broadcast dialogues, and in-depth cultural discussions.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {PODCASTS_LIST.map((podcast, idx) => (
-            <motion.div
-              key={podcast.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group"
-            >
-              {/* Image Banner */}
-              <div className="relative aspect-[16/9] w-full bg-neutral-900 overflow-hidden">
-                <img
-                  src={podcast.image}
-                  alt={podcast.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className="font-mono text-[10px] font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
-                    {podcast.tag}
-                  </span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono">
-                  <span className="text-rose-300 font-bold">{podcast.source}</span>
-                  <span className="text-neutral-300">{podcast.date}</span>
-                </div>
-              </div>
-
-              {/* Content Box */}
-              <div className="p-7 space-y-4 flex-1 flex flex-col justify-between">
-                <div className="space-y-2">
-                  <h3 className="font-sans font-bold text-xl sm:text-2xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                    {podcast.title}
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-                    {podcast.summary}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
-                  <span className="font-mono text-xs text-neutral-400 font-medium">
-                    {podcast.date}
-                  </span>
-                  <a
-                    href={podcast.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 font-sans text-xs font-bold uppercase tracking-wider text-rose-600 hover:text-rose-700 transition-colors group/btn"
-                  >
-                    <span>Listen / Explore</span>
-                    <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. EVENT GALLERY SECTION (PHOTOS FROM AT LEAST 20 EVENTS) */}
+      {/* 3. EVENT GALLERY SECTION (PHOTOS FROM AT LEAST 20 EVENTS) */}
       <section id="gallery" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200/80 pb-6">
           <div className="space-y-3">
