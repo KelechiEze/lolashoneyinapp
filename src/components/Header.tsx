@@ -88,7 +88,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
     },
     { 
       path: "/press", 
-      label: "Press",
+      label: "Media",
       hasDropdown: true,
       subLinks: [
         { path: "/awards", label: "Awards & Honors" },
