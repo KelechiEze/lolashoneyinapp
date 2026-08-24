@@ -23,9 +23,9 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     readTime: "3 min read",
     author: "Ouida Hospitality & Culinary",
     date: "Updated August 2026",
-    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.00.17.jpeg",
     galleryImages: [
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.00.17.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.03.08.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54.jpeg"
     ],

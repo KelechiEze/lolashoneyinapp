@@ -17,7 +17,7 @@ export const SPACES_LIST: SpaceCard[] = [
   {
     id: "cafe",
     title: "CAFÉ",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.00.17.jpeg",
     url: "/spaces/cafe",
     description: "Our vibrant café serves Nigerian street food classics including dundun, crispy dodo, rich ewa agoyin with spicy pepe sauce, freshly brewed artisanal coffee, and signature chilled zobo.",
     capacity: "Indoor & Courtyard Seating",

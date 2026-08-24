@@ -19,10 +19,10 @@ export default function BookBuzzPage() {
       image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-18-at-11.49.38.jpeg"
     },
     {
-      title: "Here + There, with Bristol Ideas",
-      desc: "In 2021, four Nigerian poets, Wana Udobang, Alhanislam, Niyi Osundare, and Logan February, contributed poems to a climate initiative through Book Buzz Foundation's partnership with Bristol Ideas.",
-      location: "Bristol, UK",
-      tag: "Climate Initiative",
+      title: "Afrolution, Berlin",
+      desc: "Book Buzz Foundation's partnership with Afrolution in Berlin, fostering literary collaboration, critical discourse, and cross-cultural exchanges among African and Black diaspora authors.",
+      location: "Berlin, Germany",
+      tag: "International Partnership",
       image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.45.07.jpeg"
     }
   ];
@@ -116,22 +116,14 @@ export default function BookBuzzPage() {
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               BookStorm
             </h2>
-            <div className="shrink-0 flex items-center justify-start sm:justify-end">
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
-                alt="BookStorm Logo" 
-                className="h-16 sm:h-20 md:h-22 w-auto object-contain rounded-[2px] border border-neutral-200 shadow-xs"
-                referrerPolicy="no-referrer"
-              />
-            </div>
           </div>
 
-          <div className="bg-neutral-100 border border-neutral-200/90 text-neutral-950 p-8 md:p-12 rounded-2xl space-y-6 shadow-sm">
-            <div className="space-y-5 font-sans text-base md:text-lg text-neutral-700 leading-relaxed max-w-4xl select-text">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 space-y-5 font-sans text-base md:text-lg text-neutral-700 leading-relaxed select-text">
               <p>
                 BookStorm is Book Buzz Foundation’s initiative to transform the children’s book ecosystem in Nigeria by investing in the people who create the books. Launched in 2023, it trains and supports Nigerian writers, illustrators and other publishing professionals to produce high-quality children’s books that are culturally relevant and genuinely engaging for young readers.
               </p>
@@ -142,11 +134,14 @@ export default function BookBuzzPage() {
                 At its heart is a bigger ambition: to ensure that Nigerian children have access to beautiful, compelling books in which they can recognise their lives, cultures, imaginations and possibilities. BookStorm is therefore building both the creative talent and the publishing infrastructure required for a stronger Nigerian children’s literature sector. One stated ambition is to produce 100 children’s books reflecting the realities, cultures and dreams of Nigerian children.
               </p>
             </div>
-            
-            <div className="pt-4 border-t border-neutral-200 flex flex-wrap items-center gap-4 text-neutral-900 font-mono text-xs uppercase tracking-widest font-bold">
-              <span className="bg-white px-3 py-1.5 rounded-md border border-neutral-200/80 shadow-xs">
-                Ambition: 100 Children's Books Reflecting Nigerian Realities & Dreams
-              </span>
+
+            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 bg-neutral-50 border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm">
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-24-at-21.19.27.jpeg" 
+                alt="BookStorm Initiative" 
+                className="w-full max-h-96 object-contain rounded-xl"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
         </section>

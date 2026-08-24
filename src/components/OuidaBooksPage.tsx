@@ -81,7 +81,8 @@ const MARQUEE_COVERS = [
   { title: "Ouida Book 8", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.36.05.jpeg" },
   { title: "Ouida Book 9", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.37.16.jpeg" },
   { title: "Ouida Book 10", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.37.37.jpeg" },
-  { title: "Ouida Book 11", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.38.09.jpeg" }
+  { title: "Ouida Book 11", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.38.09.jpeg" },
+  { title: "Ouida Book 12", cover: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-24-at-21.28.48.jpeg" }
 ];
 
 export default function OuidaBooksPage() {
@@ -109,7 +110,16 @@ export default function OuidaBooksPage() {
       <section className="pt-4 pb-14 space-y-5 overflow-hidden bg-white border-b border-neutral-200/70">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <h2 className="font-serif italic text-xl sm:text-2xl text-neutral-800 font-medium">
-            Sneak peek of our catalogue
+            Some of our publication. visit{" "}
+            <a
+              href="https://ouidabooks.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose-600 hover:text-rose-700 underline font-semibold transition-colors"
+            >
+              ouidabooks.com
+            </a>{" "}
+            for more.
           </h2>
         </div>
 
@@ -142,38 +152,14 @@ export default function OuidaBooksPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
-        {/* 2. OUIDA BOOKS INTRO & DESCRIPTION */}
-        <section id="intro" className="relative pt-16 scroll-mt-28">
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6 max-w-4xl"
-          >
-            <h1 className="font-sans font-black text-5xl md:text-7xl uppercase tracking-tight text-neutral-950">
-              Ouida Books
-            </h1>
-
-            {/* EXACT INTRO COPY */}
-            <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed select-text font-normal">
-              <p>
-                Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
-              </p>
-              <p className="font-medium text-neutral-900">
-                Imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
-              </p>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* 3. IMPRINTS */}
-        <section id="imprints" className="pt-16 pb-24 border-t border-neutral-200 space-y-10 scroll-mt-28">
+        {/* 2. IMPRINTS (MOVED UP) */}
+        <section id="imprints" className="pt-16 scroll-mt-28 space-y-10">
           <div className="space-y-3 max-w-3xl">
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">
               Imprints
             </h2>
-            <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
-              Dedicated imprints carry our publishing vision forward, each catering to specific literary traditions, ages, and readers.
+            <p className="font-sans text-neutral-700 text-base md:text-lg leading-relaxed font-normal">
+              Our dedicated imprints carry our publishing vision forward, each catering to specific ages, and readers.
             </p>
           </div>
 
@@ -189,19 +175,19 @@ export default function OuidaBooksPage() {
                 className="group bg-neutral-50/80 hover:bg-white p-6 rounded-xl border border-neutral-200/80 hover:border-neutral-900 transition-all duration-300 hover:shadow-lg flex flex-col justify-between space-y-4"
               >
                 {/* Top Header with Logo Image / Mark & Code */}
-                <div className="flex items-center justify-between min-h-[50px]">
+                <div className="flex items-center justify-between min-h-[64px]">
                   {imp.logo ? (
-                    <div className="h-12 flex items-center justify-start max-w-[140px]">
+                    <div className="h-16 flex items-center justify-start max-w-[170px]">
                       <img
                         src={imp.logo}
                         alt={`${imp.name} Logo`}
-                        className={`${imp.name === "Lufu" ? "max-h-7" : "max-h-11"} max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
+                        className={`${imp.name === "Lufu" ? "max-h-9" : "max-h-14"} max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
                         referrerPolicy="no-referrer"
                       />
                     </div>
                   ) : (
-                    <div className="w-11 h-11 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                      <BookOpen size={20} className="text-neutral-700" />
+                    <div className="w-13 h-13 rounded-lg bg-white border border-neutral-200/80 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                      <BookOpen size={22} className="text-neutral-700" />
                     </div>
                   )}
                   <span className="font-mono text-[10px] font-bold text-neutral-400">
@@ -231,6 +217,31 @@ export default function OuidaBooksPage() {
               </motion.div>
             ))}
           </div>
+        </section>
+
+        {/* 3. OUIDA BOOKS INTRO & NARRATIVE */}
+        <section id="intro" className="relative pt-12 pb-24 border-t border-neutral-200 scroll-mt-28">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 max-w-4xl"
+          >
+            <h2 className="font-sans font-black text-4xl md:text-6xl uppercase tracking-tight text-neutral-950">
+              Ouida Books
+            </h2>
+
+            {/* EXACT INTRO COPY */}
+            <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed select-text font-normal">
+              <p>
+                Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
+              </p>
+              <p className="font-medium text-neutral-900">
+                Imprints carry that mission forward, each with its own shelf, its own reader, its own reason for being.
+              </p>
+            </div>
+          </motion.div>
         </section>
       </div>
 

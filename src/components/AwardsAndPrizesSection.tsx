@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 interface AwardItem {
   id: string;
@@ -58,45 +57,47 @@ export default function AwardsAndPrizesSection() {
           </p>
         </div>
 
-        {/* CLEAN EDITORIAL LIST LIKE ESSAYS & ARTICLES */}
-        <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+        {/* BULLETED EDITORIAL LIST */}
+        <ul className="space-y-6 list-none divide-y divide-neutral-200/80">
           {AWARDS_LIST.map((award, idx) => (
-            <motion.div
+            <motion.li
               key={award.id}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className="group block py-7 sm:py-8 transition-colors duration-200 hover:bg-neutral-50/70 -mx-4 px-4 sm:-mx-6 sm:px-6 rounded-xl"
+              transition={{ duration: 0.35, delay: idx * 0.05 }}
+              className={`flex items-start gap-4 sm:gap-5 ${idx > 0 ? "pt-6" : ""}`}
             >
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 sm:gap-6">
-                <div className="space-y-2 max-w-3xl">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200/80 px-2.5 py-0.5 rounded-md uppercase">
-                      {award.year}
-                    </span>
-                    <span className="font-mono text-xs text-neutral-500 font-medium">
-                      {award.organization}
-                    </span>
-                  </div>
-                  <h3 className="font-serif font-extrabold text-lg sm:text-xl text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                    {award.title}
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-                    {award.subtitle}
-                  </p>
-                </div>
-
-                <div className="shrink-0 pt-2 md:pt-0 flex items-center text-xs font-mono font-bold text-neutral-400 group-hover:text-rose-600 transition-colors gap-1.5">
-                  <span className="uppercase">Distinction</span>
-                  <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
+              {/* Refined Bullet Indicator */}
+              <div className="mt-2 shrink-0">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-rose-600 ring-4 ring-rose-100" />
               </div>
-            </motion.div>
+
+              {/* Award Content */}
+              <div className="space-y-1.5 flex-1">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="font-mono text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200/80 px-2.5 py-0.5 rounded-md uppercase">
+                    {award.year}
+                  </span>
+                  <span className="font-mono text-xs text-neutral-500 font-medium">
+                    {award.organization}
+                  </span>
+                </div>
+                
+                <h3 className="font-serif font-extrabold text-lg sm:text-xl text-neutral-950 leading-snug">
+                  {award.title}
+                </h3>
+                
+                <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal max-w-3xl">
+                  {award.subtitle}
+                </p>
+              </div>
+            </motion.li>
           ))}
-        </div>
+        </ul>
 
       </div>
     </section>
   );
 }
+

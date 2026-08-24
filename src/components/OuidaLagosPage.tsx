@@ -10,137 +10,58 @@ export interface SpaceItem {
   tagline: string;
   description: string;
   capacity: string;
-  amenities: string[];
-  idealFor: string[];
+  amenities?: string[];
+  idealFor?: string[];
 }
 
 export const ALL_SPACES_DATA: SpaceItem[] = [
   {
     id: "cafe",
     title: "CAFÉ",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.00.17.jpeg",
     tagline: "Authentic Nigerian street food café and artisanal coffee lounge.",
-    description: "Our vibrant café serves delicious Nigerian street food classics including dundun, crispy dodo, rich ewa agoyin with spicy pepe sauce, freshly brewed artisanal coffee, and signature chilled zobo in an inviting cultural atmosphere.",
-    capacity: "Indoor & Courtyard Seating",
-    amenities: [
-      "Fresh Nigerian Street Food (Dundun, Dodo, Ewa Agoyin)",
-      "Signature Chilled Zobo & Refreshing Drinks",
-      "Artisanal Espresso & Specialty Teas",
-      "Courtyard & Indoor Literary Seating",
-      "Bookshop & Workspace Integration"
-    ],
-    idealFor: [
-      "Casual Dining & Lunch Breaks",
-      "Literary Discussions & Book Club Meetups",
-      "Coffee & Creative Solo Work",
-      "Community Gatherings & Relaxing"
-    ]
+    description: "Fresh Nigerian street food favorites including dundun, crispy dodo, rich ewa agoyin with spicy pepe sauce, hot puffpuff, artisanal coffee, and signature chilled zobo in an inviting cultural courtyard.",
+    capacity: "Café & Courtyard",
   },
   {
     id: "orange-tree",
     title: "THE ORANGE TREE RESIDENCY",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.52.10.jpeg",
     tagline: "Dedicated writer residency and publishing ecosystem immersion.",
-    description: "A two-week residency offering writers dedicated space to write and a chance to experience the full book ecosystem so that they better understand how the Nigerian publishing industry works. Residents enjoy a writing desk and good size bed, kitchen for self-catering, access to all workspace facilities, and direct engagement with Ouida Books editors.",
-    capacity: "Writers in Residence",
-    amenities: [
-      "Writing desk and good size bed.",
-      "Kitchen for self-catering",
-      "Publishing Ecosystem Immersion",
-      "Mentorship & Editorial Access",
-      "Quiet Creative Sanctuary",
-      "Bookshop & Café Privileges"
-    ],
-    idealFor: [
-      "Emerging & Established African Novelists",
-      "Poets & Playwrights finalizing manuscripts",
-      "Non-Fiction Authors & Biographers",
-      "Visiting Literary Fellows"
-    ]
+    description: "A two-week residency offering writers dedicated workspace, self-catering accommodation, and full immersion into the Nigerian publishing industry.",
+    capacity: "Writer Residency",
   },
   {
     id: "workspace",
     title: "WORKSPACE",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_11_01-am.png",
-    tagline: "Quiet, high-speed co-working haven tailored for authors and creative minds.",
-    description: "Quiet co-working areas equipped with high-speed Wi-Fi, comfortable ergonomic seating, power access at every desk, and an inspiring atmosphere tailored for authors, remote workers, researchers, and creative professionals.",
-    capacity: "Up to 30 Desks",
-    amenities: [
-      "Fiber-Optic High-Speed Wi-Fi",
-      "Guaranteed Uninterrupted Power",
-      "Quiet for deep focus",
-      "Direct Café & Coffee Access",
-      "Ergonomic Seating & Desk Power"
-    ],
-    idealFor: [
-      "Authors & Researchers",
-      "Remote Workers & Creatives",
-      "Journalists & Translators",
-      "Editorial Teams"
-    ]
+    tagline: "Quiet co-working haven tailored for authors and creative minds.",
+    description: "A quiet co-working space equipped with high-speed fiber Wi-Fi, guaranteed power, and ergonomic seating for authors, researchers, and remote workers.",
+    capacity: "Quiet Co-working",
   },
   {
     id: "sunroom",
     title: "THE SUNROOM",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_10_08-am.png",
-    tagline: "Luminous glass-roof atrium for book launches, readings, and acoustic performances.",
-    description: "A stunning glass-roofed atrium flooded with natural sunlight. The Sunroom is an open-air inspired indoor sanctuary designed for book launches, intimate poetry readings, panel discussions, cocktail mixers, and acoustic performances.",
-    capacity: "50 – 80 Guests",
-    amenities: [
-      "Natural Skylight Glass Architecture",
-      "Built-in AV & Sound System",
-      "Wireless Lapel & Handheld Microphones",
-      "Flexible Seating Layouts (Theater/Lounge)",
-      "Integrated Bar & Event Catering Support"
-    ],
-    idealFor: [
-      "Book Launches & Author Readings",
-      "Panel Discussions & Fireside Chats",
-      "Acoustic Performances & Poetry Slams",
-      "Cultural Receptions & Mixers"
-    ]
+    tagline: "Luminous glass-roof atrium for book launches and performances.",
+    description: "A luminous, glass-roofed atrium flooded with natural sunlight, hosting book launches, intimate poetry readings, panel discussions, and acoustic sets.",
+    capacity: "Atrium & Events",
   },
   {
     id: "meeting-rooms",
     title: "MEETING ROOMS",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_09_25-am.png",
-    tagline: "Climate-controlled suites for executive meetings, retreats, and masterclasses.",
-    description: "Private, climate-controlled meeting and workshop rooms suited for board meetings, editorial team retreats, creative masterclasses, press briefings, and private strategy sessions.",
-    capacity: "8 – 20 Guests",
-    amenities: [
-      "HD Smart Presentation Screens",
-      "High-Speed Wi-Fi",
-      "Coffee, Tea & Refreshment Packages",
-      "Executive Conference Seating",
-      "Climate-Controlled Comfort"
-    ],
-    idealFor: [
-      "Corporate & Board Meetings",
-      "Editorial Retreats & Masterclasses",
-      "Press Briefings & Interviews",
-      "Creative Strategy Sessions"
-    ]
+    tagline: "Climate-controlled suites for executive meetings and masterclasses.",
+    description: "Private, climate-controlled meeting suites suited for board meetings, editorial team retreats, creative masterclasses, and private strategy sessions.",
+    capacity: "Private Suites",
   },
   {
     id: "bookshop",
     title: "BOOKSHOP",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_08_12-am.png",
-    tagline: "Flagship independent bookstore carrying thousands of African and international titles.",
-    description: "Our flagship independent bookstore carrying thousands of curated African literature titles, poetry collections, international bestsellers, graphic novels, and children's books. A welcoming sanctuary for bibliophiles, with dedicated staff recommendations and children's reading corner.",
-    capacity: "Open Access",
-    amenities: [
-      "Curated Contemporary & Classic African Literature",
-      "Dedicated Children's Reading & Learning Nook",
-      "Author Book Signings & First Editions",
-      "Personalized Bookseller Recommendations",
-      "Ouida Books & Book Buzz Publishing Imprints"
-    ],
-    idealFor: [
-      "Avid Readers & Book Collectors",
-      "Families & Young Readers",
-      "Book Clubs & Literary Discussions",
-      "Cultural Visitors to Lagos"
-    ]
+    tagline: "Flagship independent bookstore carrying thousands of titles.",
+    description: "Independent bookstore carrying thousands of curated African literature titles, poetry collections, children's books, and Ouida Books imprints.",
+    capacity: "Bookstore",
   }
 ];
 
@@ -161,16 +82,6 @@ const GUEST_GALLERY_IMAGES = [
     location: "Ouida Lagos"
   },
   {
-    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40-1.jpeg",
-    title: "Conversations & Visitors at Ouida Lagos",
-    location: "Ouida Lagos"
-  },
-  {
-    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40.jpeg",
-    title: "Bookstore & Cultural Moments",
-    location: "Ouida Lagos"
-  },
-  {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54-1.jpeg",
     title: "Gatherings & Cultural Conversations",
     location: "Ouida Lagos"
@@ -178,11 +89,6 @@ const GUEST_GALLERY_IMAGES = [
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54.jpeg",
     title: "Literary Evenings & Community Meetups",
-    location: "Ouida Lagos"
-  },
-  {
-    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.03.08.jpeg",
-    title: "Courtyard & Atmosphere at Ouida",
     location: "Ouida Lagos"
   },
   {
@@ -276,11 +182,20 @@ export default function OuidaLagosPage() {
               </p>
             </div>
 
-            {/* Right Media Grid with 3 photos and looping video */}
+            {/* Right Media Grid with photo 4, photo 5, bookstore and looping video */}
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                {/* Image 1: Bookstore Shelves */}
+                {/* 4th Photo from user: Conversations & Visitors */}
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-md bg-neutral-900">
+                  <img
+                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40-1.jpeg"
+                    alt="Conversations at Ouida Lagos"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                {/* Bookstore Shelves */}
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-neutral-900">
                   <img
                     src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.56.57.jpeg"
                     alt="Ouida Bookstore Shelves"
@@ -288,23 +203,14 @@ export default function OuidaLagosPage() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                {/* Image 2: Gathering space */}
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-neutral-900">
-                  <img
-                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.00.17.jpeg"
-                    alt="Ouida Gathering & Performance Space"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
               </div>
 
               <div className="space-y-4 pt-6">
-                {/* Image 3: Verandah */}
+                {/* 5th Photo from user: Bookstore & Cultural Moments */}
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-neutral-900">
                   <img
-                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-14.48.26.jpeg"
-                    alt="Ouida Outdoor Courtyard & Verandah"
+                    src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.52.40.jpeg"
+                    alt="Moments at Ouida Lagos"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -601,101 +507,51 @@ export default function OuidaLagosPage() {
           )}
         </AnimatePresence>
 
-        {/* 4. SPACES AND SANCTUARIES (FOURTH - COMPREHENSIVE INLINE PRESENTATION) */}
-        <section id="spaces" className="border-t border-neutral-200 pt-16 scroll-mt-28 space-y-12">
+        {/* 4. SPACES (COMPACT, REFINED BOXES) */}
+        <section id="spaces" className="border-t border-neutral-200 pt-16 scroll-mt-28 space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-200 pb-6">
             <div>
               <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-                Spaces and Sanctuaries
+                Spaces
               </h2>
             </div>
             <p className="font-sans text-xs sm:text-sm text-neutral-500 max-w-md">
-              Complete overview of all creative suites, residency facilities, co-working areas, and event venues across Ouida Lagos.
+              Creative rooms, residency facilities, workspace, and gathering venues across Ouida Lagos.
             </p>
           </div>
 
-          {/* Editorial Spaces List - Full Information on One Single Page */}
-          <div className="space-y-12">
+          {/* Compact 3-Column Grid with Smaller Boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ALL_SPACES_DATA.map((space, idx) => (
               <motion.div
                 key={space.id}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="bg-[#fbf9f5] border border-neutral-200/90 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                className="bg-[#fbf9f5] border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                  
-                  {/* Space Image & Capacity Pill */}
-                  <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto min-h-[260px] lg:min-h-[360px] bg-neutral-900 overflow-hidden">
-                    <img
-                      src={space.image}
-                      alt={space.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] sm:text-xs font-mono font-bold text-white uppercase tracking-wider">
-                      {space.capacity}
-                    </div>
+                <div className="aspect-[16/10] w-full bg-neutral-900 overflow-hidden relative">
+                  <img
+                    src={space.image}
+                    alt={space.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15 text-[10px] font-mono font-bold text-white uppercase tracking-wider">
+                    {space.capacity}
                   </div>
+                </div>
 
-                  {/* Space Detailed Information */}
-                  <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
-                    <div className="space-y-4">
-                      <div>
-                        <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block mb-1">
-                          0{idx + 1} / VENUE & ENVIRONMENT
-                        </span>
-                        <h3 className="font-sans font-black text-2xl sm:text-3xl text-neutral-950 uppercase tracking-tight">
-                          {space.title}
-                        </h3>
-                        <p className="text-neutral-500 font-sans text-xs sm:text-sm font-medium mt-1">
-                          {space.tagline}
-                        </p>
-                      </div>
-
-                      <p className="text-neutral-700 font-sans text-sm sm:text-base leading-relaxed">
-                        {space.description}
-                      </p>
-                    </div>
-
-                    {/* Amenities & Highlights */}
-                    <div className="space-y-3 pt-2 border-t border-neutral-200">
-                      <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">
-                        KEY AMENITIES & FEATURES
-                      </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {space.amenities.map((item, i) => (
-                          <div key={i} className="flex items-start space-x-2">
-                            <CheckCircle2 size={15} className="text-rose-600 mt-0.5 shrink-0" />
-                            <span className="text-xs sm:text-sm text-neutral-800 font-medium">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Ideal For Tags */}
-                    {space.idealFor && space.idealFor.length > 0 && (
-                      <div className="pt-2 border-t border-neutral-200">
-                        <span className="font-mono text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">
-                          IDEAL FOR
-                        </span>
-                        <div className="flex flex-wrap gap-2">
-                          {space.idealFor.map((role, rIdx) => (
-                            <span
-                              key={rIdx}
-                              className="text-[11px] font-sans font-medium px-2.5 py-1 bg-white border border-neutral-200/80 rounded-md text-neutral-700 shadow-2xs"
-                            >
-                              {role}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h3 className="font-sans font-black text-lg text-neutral-950 group-hover:text-rose-600 transition-colors uppercase tracking-tight">
+                      {space.title}
+                    </h3>
+                    <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed mt-1.5 font-normal">
+                      {space.description}
+                    </p>
                   </div>
-
                 </div>
               </motion.div>
             ))}
