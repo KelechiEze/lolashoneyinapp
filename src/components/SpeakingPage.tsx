@@ -691,47 +691,6 @@ export default function SpeakingPage() {
           <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-2">
             Shoneyin has been participating in literary events since 1998. Her first international engagements took her to the Zimbabwe International Book Fair in 1999, and then to the Iowa International Writers Workshop in the same year. She has not stopped since.
           </p>
-
-          <div className="pt-4 flex flex-wrap items-center justify-start gap-3">
-            <button
-              onClick={() => {
-                const engagementsEl = document.getElementById("engagements");
-                if (engagementsEl) engagementsEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
-            >
-              <span>View Engagements</span>
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
-            <button
-              onClick={() => {
-                const galleryEl = document.getElementById("gallery");
-                if (galleryEl) galleryEl.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2"
-            >
-              <span>Event Gallery</span>
-            </button>
-            <button
-              onClick={() => {
-                navigate("/press#interviews");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2"
-            >
-              <Mic size={14} className="text-rose-600" />
-              <span>Interviews & Podcasts</span>
-            </button>
-            <button
-              onClick={() => {
-                navigate("/contact");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer"
-            >
-              <span>Booking Inquiries</span>
-            </button>
-          </div>
         </div>
       </section>
 

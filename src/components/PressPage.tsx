@@ -285,38 +285,13 @@ export default function PressPage() {
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
         <div className="text-left space-y-4 max-w-3xl">
           <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
-            Press
+            Media
           </h1>
 
           {/* EXACT VERBATIM INTRO COPY */}
           <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-2">
             For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of The Secret Lives of Baba Segi's Wives to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
           </p>
-
-          {/* Navigation Pills */}
-          <div className="pt-4 flex flex-wrap items-center justify-start gap-3">
-            <button
-              onClick={() => scrollToSection("interviews")}
-              className="bg-neutral-950 hover:bg-neutral-800 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition-all cursor-pointer inline-flex items-center space-x-2 group"
-            >
-              <span>Interviews</span>
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
-            <button
-              onClick={() => scrollToSection("podcasts")}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2 group"
-            >
-              <Mic size={14} className="text-rose-600" />
-              <span>Podcasts</span>
-            </button>
-            <button
-              onClick={() => scrollToSection("features")}
-              className="bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-sm transition-all cursor-pointer inline-flex items-center space-x-2 group"
-            >
-              <Newspaper size={14} className="text-neutral-600" />
-              <span>Features & Reviews</span>
-            </button>
-          </div>
         </div>
       </section>
 
@@ -454,11 +429,12 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* 4. FEATURES SECTION */}
-      <section id="features" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
+      {/* 4. PRESS & FEATURES SECTION */}
+      <section id="press" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
+        <div id="features" className="scroll-mt-28" />
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-            Features & Reviews
+            Press & Reviews
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
             Scholarly reviews, major profiles, and broadcast coverage across international media.

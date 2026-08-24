@@ -14,98 +14,98 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
   const location = useLocation();
 
   const links = [
-    { path: "/", label: "Home" },
-    { 
-      path: "/writing", 
-      label: "Writing",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/books#prose", label: "Prose" },
-        { path: "/books#poetry", label: "Poetry" },
-        { path: "/books#children", label: "Children's Books" },
-        { path: "/writing#essays", label: "Essays & Articles" },
-      ]
-    },
-    {
-      path: "/book-buzz",
-      label: "Book Buzz",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/book-buzz#about", label: "Book Buzz Foundation" },
-        { path: "/book-buzz#bookstorm", label: "Bookstorm" },
-        { path: "/book-buzz#picturebook", label: "Nigerian Picture Book Project" },
-        { path: "/book-buzz#partnerships", label: "Partnerships" },
-      ]
-    },
-    { 
-      path: "/publishing", 
-      label: "Publishing",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/ouida-books#about", label: "Ouida Books" },
-      ]
-    },
-    { 
-      path: "/ouida-lagos", 
-      label: "OuidaLagos",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/ouida-lagos#spaces", label: "Spaces & Café" },
-        { path: "/ouida-lagos#community", label: "Community" },
-      ]
-    },
-    { 
-      path: "/festivals", 
-      label: "Festivals",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/festivals#ake", label: "Aké Arts and Book Festival" },
-        { path: "/festivals#lifi", label: "LIFI" },
-        { path: "/festivals#kabafest", label: "KABAFEST" },
-        { path: "/festivals#afli", label: "AFLI" },
-      ]
-    },
-    { 
-      path: "/film", 
-      label: "Films",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/film#flowers", label: "Flowers for Warriors (2020)" },
-        { path: "/film#fragile", label: "A Fragile State (2024)" },
-        { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)" },
-      ]
-    },
-    { 
-      path: "/speaking", 
-      label: "Speaking",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/speaking#intro", label: "Intro" },
-        { path: "/speaking#engagements", label: "Engagements" },
-        { path: "/speaking#podcasts", label: "Podcasts and Interviews" },
-        { path: "/speaking#gallery", label: "Photo gallery" },
-      ]
-    },
-    { 
-      path: "/press", 
-      label: "Media",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/awards", label: "Awards & Honors" },
-        { path: "/press#interviews", label: "Interviews" },
-        { path: "/press#features", label: "Features & Reviews" },
-      ]
-    },
-    { 
-      path: "/contact", 
-      label: "Contact",
-      hasDropdown: true,
-      subLinks: [
-        { path: "/contact#routing", label: "Contact routing" },
-        { path: "/contact#faq", label: "FAQ" },
-      ]
-    },
-  ];
+  { path: "/", label: "Home" },
+  { 
+    path: "/writing", 
+    label: "Writing",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/books#prose", label: "Prose" },
+      { path: "/books#poetry", label: "Poetry" },
+      { path: "/books#children", label: "Children's Books" },
+      { path: "/writing#essays", label: "Essays & Articles" },
+    ]
+  },
+  {
+    path: "/book-buzz",
+    label: "Book Buzz",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/book-buzz#about", label: "Book Buzz Foundation" },
+      { path: "/book-buzz#bookstorm", label: "Bookstorm" },
+      { path: "/book-buzz#picturebook", label: "Nigerian Picture Book Project" },
+      { path: "/book-buzz#partnerships", label: "Partnerships" },
+    ]
+  },
+  { 
+    path: "/publishing", 
+    label: "Publishing",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/ouida-books#about", label: "Ouida Books" },
+    ]
+  },
+  { 
+    path: "/ouida-lagos", 
+    label: "OuidaLagos",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/ouida-lagos#spaces", label: "Spaces & Café" },
+      { path: "/ouida-lagos#community", label: "Community" },
+    ]
+  },
+  { 
+    path: "/festivals", 
+    label: "Festivals",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/festivals#ake", label: "Aké Arts and Book Festival" },
+      { path: "/festivals#lifi", label: "LIFI" },
+      { path: "/festivals#kabafest", label: "KABAFEST" },
+      { path: "/festivals#afli", label: "AFLI" },
+    ]
+  },
+  { 
+    path: "/film", 
+    label: "Films",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/film#flowers", label: "Flowers for Warriors (2020)" },
+      { path: "/film#fragile", label: "A Fragile State (2024)" },
+      { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)" },
+    ]
+  },
+  { 
+    path: "/speaking", 
+    label: "Speaking",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/speaking#intro", label: "Intro" },
+      { path: "/speaking#engagements", label: "Engagements" },
+      { path: "/speaking#podcasts", label: "Podcasts and Interviews" },
+      { path: "/speaking#gallery", label: "Photo gallery" },
+    ]
+  },
+  { 
+    path: "/press", 
+    label: "Media",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/press#podcasts", label: "Podcasts" },
+      { path: "/press#interviews", label: "Interviews" },
+      { path: "/press#press", label: "Press" },
+    ]
+  },
+  { 
+    path: "/contact", 
+    label: "Contact",
+    hasDropdown: true,
+    subLinks: [
+      { path: "/contact#routing", label: "Contact routing" },
+      { path: "/contact#faq", label: "FAQ" },
+    ]
+  },
+];
 
   // Detect scroll to toggle dark overlay background
   useEffect(() => {

@@ -5,7 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const HERO_BG_IMAGE = "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png";
 
-const CONTACT_FAQS = [
+interface FaqItem {
+  q: string;
+  a: React.ReactNode;
+}
+
+const CONTACT_FAQS: FaqItem[] = [
   {
     q: "Does Ouida Books accept manuscript submissions?",
     a: "Ouida Books accepts submissions during specific windows each year. For current submission periods and guidelines, please visit the official Ouida Books portal."
@@ -15,12 +20,44 @@ const CONTACT_FAQS = [
     a: "Speaking and appearance requests can be submitted directly through the contact form on this page. Please include the proposed date, location, event format, and topic in your message."
   },
   {
-    q: "Can I visit OuidaLagos? What are the opening hours?",
-    a: "Yes. OuidaLagos is located at 34 Ajanaku Street, Opebi, Ikeja, Lagos. For up-to-date opening hours, cafe reservations, and cultural event programming, please check the OuidaLagos spaces page."
+    q: "Can I visit Ouida Lagos? What are the opening hours?",
+    a: (
+      <div className="space-y-2">
+        <p>Ouida Lagos is located at 34 Ajanaku Street, Opebi, Ikeja, Lagos. Opening hours are:</p>
+        <ul className="list-disc list-inside space-y-1 pl-1">
+          <li><strong>Monday to Friday:</strong> 09:00 – 18:00</li>
+          <li><strong>Saturday:</strong> 10:00 – 17:00</li>
+        </ul>
+        <p>
+          For cultural event programming, please visit{" "}
+          <a
+            href="https://ouidalagos.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-rose-600 hover:text-rose-700 underline font-semibold transition-colors"
+          >
+            OuidaLagos.com
+          </a>.
+        </p>
+      </div>
+    )
   },
   {
-    q: "Do you offer mentorship, workshops, or residencies for emerging writers?",
-    a: "Yes, through the Book Buzz Foundation's training initiatives and the Orange Tree Residency at OuidaLagos. Comprehensive details are available across our dedicated foundation sections."
+    q: "Do you offer mentorship?",
+    a: (
+      <span>
+        We offer training programmes throughout the year. Details can be found on{" "}
+        <a
+          href="https://bookbuzzfoundation.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-rose-600 hover:text-rose-700 underline font-semibold transition-colors"
+        >
+          BookBuzzFoundation.org
+        </a>{" "}
+        and on our socials.
+      </span>
+    )
   },
   {
     q: "How can my organisation partner with Book Buzz Foundation or one of the festivals?",
@@ -28,11 +65,11 @@ const CONTACT_FAQS = [
   },
   {
     q: "When is your next novel coming out?",
-    a: "I am actively writing and working on my upcoming fiction."
+    a: "Soon."
   },
   {
     q: "How do you feel about the adaptations of The Secret Lives of Baba Segi's Wives?",
-    a: "I am delighted every time The Secret Lives of Baba Segi's Wives finds new life across stage, radio, and different artistic mediums."
+    a: "I am thrilled that The Secret Lives of Baba Segi’s Wives will find new audiences."
   }
 ];
 

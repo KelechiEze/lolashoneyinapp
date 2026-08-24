@@ -79,6 +79,11 @@ export default function Footer({ onOpenCalendar }: FooterProps) {
                   Film & Adaptations
                 </button>
               </li>
+              <li>
+                <button onClick={() => handleNav("/media")} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Media & Podcasts
+                </button>
+              </li>
             </ul>
           </div>
 

@@ -131,6 +131,7 @@ export default function App() {
             <Route path="/publishing" element={<OuidaBooksPage />} />
             <Route path="/film" element={<FilmPage />} />
             <Route path="/press" element={<PressPage />} />
+            <Route path="/media" element={<PressPage />} />
             <Route path="/awards" element={<AwardsPage />} />
             <Route path="/speaking" element={<SpeakingPage />} />
             <Route path="/contact" element={<ContactPage />} />
