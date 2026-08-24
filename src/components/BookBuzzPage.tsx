@@ -116,10 +116,18 @@ export default function BookBuzzPage() {
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               BookStorm
             </h2>
+            <div className="shrink-0 flex items-center justify-start sm:justify-end">
+              <img 
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
+                alt="BookStorm Logo" 
+                className="h-14 sm:h-16 md:h-18 w-auto object-contain rounded-md border border-neutral-200/80 shadow-xs"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -135,11 +143,11 @@ export default function BookBuzzPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-center justify-center p-4 sm:p-6 bg-neutral-50 border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm">
+            <div className="lg:col-span-5 flex items-center justify-center">
               <img 
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-24-at-21.19.27.jpeg" 
                 alt="BookStorm Initiative" 
-                className="w-full max-h-96 object-contain rounded-xl"
+                className="w-full max-h-96 object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
