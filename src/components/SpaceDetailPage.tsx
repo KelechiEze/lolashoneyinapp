@@ -182,6 +182,7 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
     galleryImages: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.05.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
     ],
