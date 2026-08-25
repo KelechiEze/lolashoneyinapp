@@ -20,7 +20,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-4 max-w-4xl transform-gpu"
         >
-          <h2 className="font-sans font-black text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-neutral-900">
+          <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase text-neutral-900">
             Biography
           </h2>
         </motion.div>

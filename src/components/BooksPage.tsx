@@ -81,11 +81,11 @@ export default function BooksPage() {
         
         {/* HEADER SECTION */}
         <div className="space-y-2 max-w-4xl">
-          <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
+          <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Books & Writing
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-2xl leading-relaxed">
-            Exploring polygamy, female power, identity, and African childhood through award-winning fiction, poetry, children's books, and essays.
+            Exploring domestic life, female strength, identity, childhood and NIgerian life through award-winning fiction, poetry, children's books, and essays.
           </p>
         </div>
 
@@ -298,7 +298,7 @@ export default function BooksPage() {
           className="border-t border-neutral-200 pt-20 md:pt-28 space-y-8 transform-gpu scroll-mt-28"
         >
           <div className="space-y-4">
-            <h2 className="font-sans font-black text-4xl tracking-tight uppercase text-neutral-950">
+            <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase text-neutral-950">
               Children's Books
             </h2>
             <blockquote className="border-l-4 border-rose-600 pl-4 py-1 italic font-serif text-sm md:text-base text-neutral-700 max-w-3xl leading-relaxed">

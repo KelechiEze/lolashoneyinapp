@@ -55,7 +55,7 @@ export default function PoetrySection({ theme = "light" }: PoetrySectionProps) {
         {/* Header */}
         <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 border-b pb-8 ${isDark ? "border-white/10" : "border-neutral-200"}`}>
           <div className="space-y-3">
-            <h2 className={`font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight ${isDark ? "text-white" : "text-neutral-950"}`}>
+            <h2 className={`font-sans font-black text-3xl md:text-4xl uppercase tracking-tight ${isDark ? "text-white" : "text-neutral-950"}`}>
               Poetry
             </h2>
             <p className={`font-sans text-xs md:text-sm max-w-xl leading-relaxed ${isDark ? "text-neutral-400" : "text-neutral-600"}`}>

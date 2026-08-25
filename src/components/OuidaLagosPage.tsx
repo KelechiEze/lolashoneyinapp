@@ -160,7 +160,7 @@ export default function OuidaLagosPage() {
         {/* HERO / HEADER SECTION */}
         <section className="pt-16 scroll-mt-28">
           <div className="space-y-4 max-w-4xl">
-            <h1 className="font-sans font-black text-5xl md:text-7xl uppercase tracking-tight text-neutral-950">
+            <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               OuidaLagos
             </h1>
 

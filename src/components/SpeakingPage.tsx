@@ -708,7 +708,7 @@ export default function SpeakingPage() {
       {/* 1. INTRO / HERO SECTION */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
         <div className="text-left space-y-4 max-w-3xl">
-          <h1 className="font-sans font-black text-5xl md:text-7xl text-neutral-950 tracking-tight uppercase leading-tight">
+          <h1 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 tracking-tight uppercase leading-tight">
             Speaking
           </h1>
 

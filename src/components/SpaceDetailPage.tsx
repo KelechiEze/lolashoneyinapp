@@ -270,7 +270,7 @@ export default function SpaceDetailPage() {
 
         {/* BLOG HEADER & METADATA */}
         <header className="space-y-6">
-          <h1 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl text-neutral-950 uppercase tracking-tight leading-none">
+          <h1 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight leading-tight">
             {space.title}
           </h1>
 

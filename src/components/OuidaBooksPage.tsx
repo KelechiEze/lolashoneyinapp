@@ -110,7 +110,7 @@ export default function OuidaBooksPage() {
       <section className="pt-4 pb-14 space-y-5 overflow-hidden bg-white border-b border-neutral-200/70">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <h2 className="font-serif italic text-xl sm:text-2xl text-neutral-800 font-medium">
-            Some of our publication. visit{" "}
+            Visit{" "}
             <a
               href="https://ouidabooks.com"
               target="_blank"
@@ -119,7 +119,7 @@ export default function OuidaBooksPage() {
             >
               ouidabooks.com
             </a>{" "}
-            for more.
+            for full catalogue.
           </h2>
         </div>
 
@@ -161,7 +161,7 @@ export default function OuidaBooksPage() {
             transition={{ duration: 0.6 }}
             className="space-y-6 max-w-4xl"
           >
-            <h1 className="font-sans font-black text-5xl md:text-7xl uppercase tracking-tight text-neutral-950 leading-tight">
+            <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Ouida Books
             </h1>
 

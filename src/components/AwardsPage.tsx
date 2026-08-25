@@ -62,7 +62,7 @@ export default function AwardsPage() {
         
         {/* PAGE HEADER */}
         <div className="space-y-4 max-w-4xl">
-          <h1 className="font-sans font-black text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
+          <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Awards
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-2xl leading-relaxed">
@@ -132,7 +132,7 @@ export default function AwardsPage() {
         <div id="fellowships" className="border-t border-neutral-200 pt-16 space-y-12 scroll-mt-28">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-sans font-black text-3xl md:text-5xl uppercase tracking-tight text-neutral-950">
+              <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
                 Fellowships & Global Citations
               </h2>
               <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl leading-relaxed">

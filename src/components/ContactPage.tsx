@@ -120,7 +120,7 @@ export default function ContactPage() {
       {/* 1. INTRO HEADER */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-4 pb-10 scroll-mt-28">
         <div className="text-left space-y-3 max-w-3xl">
-          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
+          <h1 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 tracking-tight uppercase leading-tight">
             Connect
           </h1>
           <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal">
@@ -287,7 +287,7 @@ export default function ContactPage() {
       {/* 3. FREQUENTLY ASKED QUESTIONS (FAQ) SECTION - STRICTLY NO BORDER RADIUS, NEUTRAL THEME */}
       <section id="faq" className="max-w-7xl mx-auto px-6 pt-20 space-y-8 scroll-mt-28">
         <div className="space-y-2 border-b border-neutral-200 pb-6">
-          <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
+          <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Frequently Asked Questions
           </h2>
           <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-xl leading-relaxed">

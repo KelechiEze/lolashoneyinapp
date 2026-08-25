@@ -102,7 +102,7 @@ export default function EssaysAndArticlesSection() {
       {/* SECTION HEADER */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8">
         <div className="space-y-3">
-          <h2 className="font-sans font-black text-3xl sm:text-5xl uppercase tracking-tight text-neutral-950">
+          <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Essays & Articles
           </h2>
           <p className="font-sans text-xs md:text-sm text-neutral-600 max-w-xl leading-relaxed">

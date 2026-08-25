@@ -40,7 +40,7 @@ export default function BookBuzzPage() {
           id="about"
         >
           <div className="space-y-3 flex-1 min-w-0">
-            <h1 className="font-sans font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase text-neutral-950 whitespace-nowrap">
+            <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Book Buzz Foundation
             </h1>
             <p className="text-neutral-700 font-serif italic text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed">

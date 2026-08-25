@@ -180,7 +180,7 @@ export default function FestivalsPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-4 max-w-4xl transform-gpu"
         >
-          <h1 className="font-sans font-black text-5xl md:text-7xl leading-tight tracking-tight uppercase text-neutral-950">
+          <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Literary Festivals
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-3xl leading-relaxed">

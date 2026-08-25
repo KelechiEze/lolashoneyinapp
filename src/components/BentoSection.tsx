@@ -12,7 +12,7 @@ export const BentoSection: React.FC = () => {
           <span className="text-xs uppercase font-mono tracking-[0.25em] text-rose-600 font-bold block">
             CULTURAL ECOSYSTEM & FRAMEWORK
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-950 font-sans">
+          <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
             Literary Curation & Independent Publishing
           </h2>
           <p className="text-neutral-600 font-serif italic text-base md:text-lg max-w-2xl">
