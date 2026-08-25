@@ -610,7 +610,12 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     event: "University of Iowa",
     location: "Iowa City, USA",
     year: "1999",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.34.12.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.34.12.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.36.20.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.37.14.jpeg"
+    ],
     caption: "Landmark residency at the world-renowned Iowa International Writing Program in 1999."
   },
   {
