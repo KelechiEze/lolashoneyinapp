@@ -708,12 +708,12 @@ export default function SpeakingPage() {
       {/* 1. INTRO / HERO SECTION */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
         <div className="text-left space-y-4 max-w-3xl">
-          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
+          <h1 className="font-sans font-black text-5xl md:text-7xl text-neutral-950 tracking-tight uppercase leading-tight">
             Speaking
           </h1>
 
           {/* EXACT VERBATIM INTRO COPY */}
-          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-2">
+          <p className="text-neutral-700 font-sans text-base sm:text-lg leading-relaxed font-normal pt-2">
             Shoneyin has been participating in literary events since 1998. Her first international engagements took her to the Zimbabwe International Book Fair in 1999, and then to the Iowa International Writers Workshop in the same year. She has not stopped since.
           </p>
         </div>
@@ -723,11 +723,11 @@ export default function SpeakingPage() {
       <section id="gallery" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200/80 pb-6">
           <div className="space-y-3">
-            <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+            <h2 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight">
               Event Gallery
             </h2>
             <p className="text-neutral-600 font-sans text-sm md:text-base leading-relaxed">
-              Photos from at least 20 events worldwide — keynotes, literature festivals, panels, and residencies.
+              Photos from events worldwide — keynotes, literature festivals, panels, and residencies.
             </p>
           </div>
 

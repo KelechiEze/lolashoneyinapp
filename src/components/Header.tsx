@@ -13,7 +13,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const links = [
+const links = [
   { path: "/", label: "Home" },
   { 
     path: "/writing", 
@@ -42,7 +42,8 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
     label: "Publishing",
     hasDropdown: true,
     subLinks: [
-      { path: "/ouida-books#about", label: "Ouida Books" },
+      { path: "/publishing#intro", label: "Ouida Books" },
+      { path: "/publishing#imprints", label: "Imprints" },
     ]
   },
   { 
@@ -50,8 +51,9 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
     label: "OuidaLagos",
     hasDropdown: true,
     subLinks: [
-      { path: "/ouida-lagos#spaces", label: "Spaces & Café" },
-      { path: "/ouida-lagos#community", label: "Community" },
+      { path: "/ouida-lagos#community", label: "Community & Events" },
+      { path: "/ouida-lagos#visitors-gallery", label: "Ouida Visitors Gallery" },
+      { path: "/ouida-lagos#spaces", label: "Spaces" },
     ]
   },
   { 
@@ -67,13 +69,7 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
   },
   { 
     path: "/film", 
-    label: "Films",
-    hasDropdown: true,
-    subLinks: [
-      { path: "/film#flowers", label: "Flowers for Warriors (2020)" },
-      { path: "/film#fragile", label: "A Fragile State (2024)" },
-      { path: "/film#egbe", label: "Egbe: In Search of Belonging (2027)" },
-    ]
+    label: "Films"
   },
   { 
     path: "/speaking", 
@@ -81,27 +77,24 @@ export default function Header({ onOpenCalendar }: HeaderProps) {
     hasDropdown: true,
     subLinks: [
       { path: "/speaking#intro", label: "Intro" },
-      { path: "/speaking#engagements", label: "Engagements" },
-      { path: "/speaking#podcasts", label: "Podcasts and Interviews" },
-      { path: "/speaking#gallery", label: "Photo gallery" },
+      { path: "/speaking#gallery", label: "Event Gallery" },
     ]
   },
   { 
     path: "/press", 
-    label: "Media",
+    label: "Press",
     hasDropdown: true,
     subLinks: [
-      { path: "/press#podcasts", label: "Podcasts" },
+      { path: "/press#intro", label: "Press & Reviews" },
       { path: "/press#interviews", label: "Interviews" },
-      { path: "/press#press", label: "Press" },
+      { path: "/press#podcasts", label: "Podcasts" },
     ]
   },
   { 
     path: "/contact", 
     label: "Contact",
     hasDropdown: true,
-    subLinks: [
-      { path: "/contact#routing", label: "Contact routing" },
+    subLinks: [,
       { path: "/contact#faq", label: "FAQ" },
     ]
   },

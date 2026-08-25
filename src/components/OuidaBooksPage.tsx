@@ -161,12 +161,12 @@ export default function OuidaBooksPage() {
             transition={{ duration: 0.6 }}
             className="space-y-6 max-w-4xl"
           >
-            <h2 className="font-sans font-black text-4xl md:text-6xl uppercase tracking-tight text-neutral-950">
+            <h1 className="font-sans font-black text-5xl md:text-7xl uppercase tracking-tight text-neutral-950 leading-tight">
               Ouida Books
-            </h2>
+            </h1>
 
             {/* EXACT INTRO COPY */}
-            <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed select-text font-normal">
+            <div className="space-y-4 text-neutral-700 font-sans text-base sm:text-lg leading-relaxed select-text font-normal">
               <p>
                 Nigeria has never lacked talent. What has been missing is the infrastructure that allows local voices to flourish on their own terms. Too many Nigerian writers measure their success by whether the West published them first. Ouida Books was founded in 2016 to disrupt that trend, to prove that a Nigerian publishing house could take a Nigerian voice to the world.
               </p>
@@ -180,10 +180,10 @@ export default function OuidaBooksPage() {
         {/* 3. IMPRINTS */}
         <section id="imprints" className="pt-6 pb-24 border-t border-neutral-200 scroll-mt-28 space-y-10">
           <div className="space-y-3 max-w-3xl">
-            <h2 className="font-sans font-black text-4xl md:text-5xl uppercase tracking-tight text-neutral-950">
+            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Imprints
             </h2>
-            <p className="font-sans text-neutral-700 text-base md:text-lg leading-relaxed font-normal">
+            <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed font-normal">
               Our dedicated imprints carry our publishing vision forward, each catering to specific ages, and readers.
             </p>
           </div>

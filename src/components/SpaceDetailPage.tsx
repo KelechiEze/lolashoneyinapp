@@ -116,11 +116,12 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     readTime: "5 min read",
     author: "Ouida Lagos Events",
     date: "Updated July 2026",
-    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_10_08-am.png",
+    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.05.52.jpeg",
     galleryImages: [
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_10_08-am.png",
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop",
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4513.jpg"
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.05.52.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.06.03.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.09.30-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.09.30.jpeg"
     ],
     editorialParagraphs: [
       "Architecturally designed as the centerpiece of Ouida Lagos, The Sunroom is an open-air inspired indoor glass atrium. By day, natural light pours through the geometric roof panels, casting warm shadows across lush indoor greenery; by night, dimmable ambient lighting creates an ethereal atmosphere for intimate gatherings.",
@@ -178,9 +179,9 @@ const EXTENDED_SPACES_DATA: Record<string, ExtendedSpaceInfo> = {
     readTime: "4 min read",
     author: "Ouida Literary Team",
     date: "Updated July 2026",
-    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_08_12-am.png",
+    heroImage: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
     galleryImages: [
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_08_12-am.png",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/setto-front-cover.jpg"
     ],

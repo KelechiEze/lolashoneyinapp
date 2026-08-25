@@ -44,7 +44,7 @@ export const SPACES_LIST: SpaceCard[] = [
   {
     id: "sunroom",
     title: "THE SUNROOM",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_10_08-am.png",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.05.52.jpeg",
     url: "/spaces/sunroom",
     description: "A stunning glass-roofed atrium flooded with natural sunlight. The Sunroom is an open-air inspired indoor sanctuary designed for book launches, intimate poetry readings, panel discussions, cocktail mixers, and acoustic performances.",
     capacity: "50 – 80 Guests",
@@ -62,7 +62,7 @@ export const SPACES_LIST: SpaceCard[] = [
   {
     id: "bookshop",
     title: "BOOKSHOP",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_08_12-am.png",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
     url: "/spaces/bookshop",
     description: "Our flagship independent bookstore carrying thousands of curated African literature titles, poetry collections, international bestsellers, graphic novels, and children's books.",
     capacity: "Open Access",

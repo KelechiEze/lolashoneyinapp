@@ -42,7 +42,7 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
   {
     id: "sunroom",
     title: "THE SUNROOM",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_10_08-am.png",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.05.52.jpeg",
     tagline: "Luminous glass-roof atrium for book launches and performances.",
     description: "A luminous, glass-roofed atrium flooded with natural sunlight, hosting book launches, intimate poetry readings, panel discussions, and acoustic sets.",
     capacity: "Atrium & Events",
@@ -58,7 +58,7 @@ export const ALL_SPACES_DATA: SpaceItem[] = [
   {
     id: "bookshop",
     title: "BOOKSHOP",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-27-2026-09_08_12-am.png",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-18.03.06.jpeg",
     tagline: "Flagship independent bookstore carrying thousands of titles.",
     description: "Independent bookstore carrying thousands of curated African literature titles, poetry collections, children's books, and Ouida Books imprints.",
     capacity: "Bookstore",
@@ -73,32 +73,32 @@ const GUEST_GALLERY_IMAGES = [
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.47.41.jpeg",
-    title: "Guests & Cultural Gatherings at Ouida",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-23-at-22.50.25.jpeg",
-    title: "Community & Literary Discussions",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54-1.jpeg",
-    title: "Gatherings & Cultural Conversations",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.02.54.jpeg",
-    title: "Literary Evenings & Community Meetups",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.03.25.jpeg",
-    title: "Guests & Visitors at Ouida Lagos",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   },
   {
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.26.04.jpeg",
-    title: "Cultural Gatherings & Community at Ouida Lagos",
+    title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
   }
 ];
@@ -416,17 +416,18 @@ export default function OuidaLagosPage() {
           </div>
         </section>
 
-        {/* 3. GUEST GALLERY SECTION (THIRD) */}
-        <section id="guest-gallery" className="border-t border-neutral-200 pt-16 scroll-mt-28 space-y-10">
+        {/* 3. OUIDA VISITORS GALLERY SECTION */}
+        <section id="visitors-gallery" className="border-t border-neutral-200 pt-16 scroll-mt-28 space-y-10">
+          <span id="guest-gallery" className="scroll-mt-28" />
           <span id="gallery" className="scroll-mt-28" />
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-200 pb-6">
             <div>
               <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-                Guest Gallery
+                Ouida Visitors Gallery
               </h2>
             </div>
             <p className="font-sans text-xs sm:text-sm text-neutral-500 max-w-md">
-              Moments, guests, and community gatherings at Ouida Lagos.
+              Photos in front of the iconic Door at Ouida.
             </p>
           </div>
 

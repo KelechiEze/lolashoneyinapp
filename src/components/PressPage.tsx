@@ -284,12 +284,12 @@ export default function PressPage() {
       {/* 1. INTRO SECTION */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
         <div className="text-left space-y-4 max-w-3xl">
-          <h1 className="font-sans font-black text-5xl sm:text-7xl md:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.02]">
-            Media
+          <h1 className="font-sans font-black text-5xl md:text-7xl text-neutral-950 tracking-tight uppercase leading-tight">
+            Press
           </h1>
 
           {/* EXACT VERBATIM INTRO COPY */}
-          <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal pt-2">
+          <p className="text-neutral-700 font-sans text-base sm:text-lg leading-relaxed font-normal pt-2">
             For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of The Secret Lives of Baba Segi's Wives to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
           </p>
         </div>
@@ -297,8 +297,8 @@ export default function PressPage() {
 
       {/* 2. INTERVIEWS SECTION (LIST FORMAT) */}
       <section id="interviews" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+        <div className="text-left space-y-3 max-w-3xl">
+          <h2 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight">
             Interviews
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
@@ -307,7 +307,7 @@ export default function PressPage() {
         </div>
 
         {/* Interviews List */}
-        <div className="space-y-4 max-w-5xl mx-auto">
+        <div className="space-y-4 max-w-5xl">
           {INTERVIEWS_DATA.map((item, idx) => (
             <motion.a
               key={item.id}
@@ -359,8 +359,8 @@ export default function PressPage() {
 
       {/* 3. PODCASTS SECTION */}
       <section id="podcasts" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+        <div className="text-left space-y-3 max-w-3xl">
+          <h2 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight">
             Podcasts
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
@@ -368,7 +368,7 @@ export default function PressPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {PODCASTS_DATA.map((podcast, idx) => (
             <motion.div
               key={podcast.id}
@@ -432,8 +432,8 @@ export default function PressPage() {
       {/* 4. PRESS & FEATURES SECTION */}
       <section id="press" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div id="features" className="scroll-mt-28" />
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
+        <div className="text-left space-y-3 max-w-3xl">
+          <h2 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight">
             Press & Reviews
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">

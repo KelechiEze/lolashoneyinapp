@@ -19,7 +19,7 @@ export default function FilmPage() {
       role: "Writer & Performer",
       desc: "A spoken-word poem written and performed by Shoneyin, commissioned by the Financial Times as part of Democracy 2024, a four-part film series marking the year's global elections. Shoneyin appeared alongside Margaret Atwood, Elif Shafak, and Aditi Mittal, each performing a piece on the fragility of democratic freedom. Directed by Juliet Riddell.",
       link: "https://www.youtube.com/watch?v=qfjvorIJhUA",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-17.55.59.jpeg",
       actionText: "Watch on YouTube",
       isLive: true
     },

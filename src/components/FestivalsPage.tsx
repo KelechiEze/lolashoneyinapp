@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, MapPin, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 interface Festival {
   id: string;
@@ -12,6 +12,8 @@ interface Festival {
   img?: string;
   images?: string[];
   accent: string;
+  websiteUrl?: string;
+  websiteLabel?: string;
 }
 
 function FestivalGallery({ festival }: { festival: Festival }) {
@@ -128,7 +130,9 @@ export default function FestivalsPage() {
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.26.36.jpeg",
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-22.28.40.jpeg"
       ],
-      accent: "text-amber-600"
+      accent: "text-amber-600",
+      websiteUrl: "https://akefestival.org",
+      websiteLabel: "akefestival.org"
     },
     {
       id: "lifi",
@@ -222,9 +226,20 @@ export default function FestivalsPage() {
                     </div>
                   )}
 
-                  <div className="flex items-center space-x-6 text-xs text-neutral-500 font-mono">
+                  <div className="flex flex-wrap items-center gap-6 text-xs text-neutral-500 font-mono pt-2">
                     <span className="flex items-center"><MapPin size={14} className="mr-1 text-neutral-400" /> NIGERIA</span>
                     <span className="flex items-center"><Calendar size={14} className="mr-1 text-neutral-400" /> ANNUAL EVENT</span>
+                    {f.websiteUrl && (
+                      <a 
+                        href={f.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center space-x-1.5 text-rose-600 hover:text-rose-700 font-bold uppercase tracking-wider transition-colors ml-auto group/link"
+                      >
+                        <span>{f.websiteLabel || "Visit Website"}</span>
+                        <ArrowUpRight size={13} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
