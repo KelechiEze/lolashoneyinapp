@@ -134,12 +134,28 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     code: "_ENG11"
   },
   {
+    id: "pagya-2022",
+    title: "Pa Gya! A Literary Festival in Accra",
+    location: "Accra, Ghana",
+    year: "2022",
+    role: "Guest Author & Speaker",
+    code: "_ENG12"
+  },
+  {
+    id: "abantu-2018",
+    title: "Abantu Book Festival",
+    location: "Soweto, South Africa",
+    year: "2018",
+    role: "Featured Author & Panelist",
+    code: "_ENG13"
+  },
+  {
     id: "iowa-st-thomas-1999",
     title: "International Writing Program & St. Thomas",
     location: "Iowa & Minnesota, USA",
     year: "1999",
     role: "Scholar & Fellow",
-    code: "_ENG12"
+    code: "_ENG14"
   }
 ];
 
@@ -544,7 +560,34 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Panel discussions, author readings, and continental literary dialogues at the Open Book Festival in Cape Town."
   },
-  // 18. Salon du Livre de Paris
+  // 18. Abantu Book Festival
+  {
+    id: "photo-abantu",
+    title: "Abantu Book Festival",
+    event: "Abantu Book Festival",
+    location: "Soweto, South Africa",
+    year: "2018",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-00.05.17.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-00.05.17.jpeg"
+    ],
+    caption: "Engaging with readers, pan-African authors, and literary audiences at the celebrated Abantu Book Festival in Soweto, South Africa."
+  },
+  // 19. Pa Gya! Literary Festival
+  {
+    id: "photo-pagya",
+    title: "Pa Gya! Literary Festival",
+    event: "Pa Gya! A Literary Festival in Accra",
+    location: "Accra, Ghana",
+    year: "2022",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-00.10.37.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-00.10.37.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-00.11.30.jpeg"
+    ],
+    caption: "Author readings, panel discussions, and regional literary collaboration at Pa Gya! A Literary Festival in Accra, Ghana."
+  },
+  // 20. Salon du Livre de Paris
   {
     id: "photo-paris",
     title: "Salon du Livre de Paris",
@@ -558,7 +601,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone cultural dialogue at Salon du Livre."
   },
-  // 19. University of St. Thomas
+  // 21. University of St. Thomas
   {
     id: "photo-st-thomas",
     title: "University of St. Thomas",
@@ -571,7 +614,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Archival memory from distinguished scholar lectures and creative writing seminars in Minnesota."
   },
-  // 20. Turin International Book Fair
+  // 22. Turin International Book Fair
   {
     id: "photo-torino",
     title: "Turin International Book Fair",
