@@ -76,7 +76,6 @@ const links = [
     label: "Speaking",
     hasDropdown: true,
     subLinks: [
-      { path: "/speaking#intro", label: "Intro" },
       { path: "/speaking#gallery", label: "Event Gallery" },
     ]
   },
