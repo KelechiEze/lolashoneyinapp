@@ -624,7 +624,10 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     event: "ZIBF Archival Memory",
     location: "Harare, Zimbabwe",
     year: "1999",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.43.25.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-23.43.25.jpeg"
+    ],
     caption: "First international engagement at the Zimbabwe International Book Fair in 1999, launching a global speaking trajectory."
   },
   {
