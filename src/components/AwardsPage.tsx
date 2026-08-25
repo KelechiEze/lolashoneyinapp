@@ -48,7 +48,7 @@ export default function AwardsPage() {
     {
       year: "2017",
       title: "African Literary Person of the Year",
-      organization: "Brittle Paper & African Literary Press",
+      organization: "Brittle Paper",
       summary: "Conferred for groundbreaking impact across African literature, publishing infrastructure, and festival curation through Aké Festival, Book Buzz Foundation, and Ouida Books.",
       image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_35_24-pm.png",
       code: "_ALPOTY",

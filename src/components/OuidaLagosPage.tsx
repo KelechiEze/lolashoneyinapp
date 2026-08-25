@@ -95,6 +95,11 @@ const GUEST_GALLERY_IMAGES = [
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.03.25.jpeg",
     title: "Guests & Visitors at Ouida Lagos",
     location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.26.04.jpeg",
+    title: "Cultural Gatherings & Community at Ouida Lagos",
+    location: "Ouida Lagos"
   }
 ];
 

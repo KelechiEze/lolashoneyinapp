@@ -364,7 +364,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     title: "PEN World Voices Festival",
     event: "PEN America Forum",
     location: "New York, USA",
-    year: "2024",
+    year: "2026",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
@@ -378,7 +378,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     title: "Kerala Literature Festival",
     event: "Kerala Literature Festival (KLF)",
     location: "Kerala, India",
-    year: "2024",
+    year: "2026",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-21.49.24.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-21.49.24.jpeg"
@@ -391,7 +391,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     title: "IBBY Congress, Ottawa",
     event: "IBBY World Congress",
     location: "Ottawa, Canada",
-    year: "2024",
+    year: "2026",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.41.24.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.41.24.jpeg",
@@ -400,13 +400,13 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Engaging global children's literature advocates, translators, and creators at the IBBY Congress in Ottawa."
   },
-  // 7. Bologna Children's Book Fair
+  // 8. Bologna Children's Book Fair
   {
     id: "photo-bologna",
     title: "Bologna Children's Book Fair",
     event: "International Children's Publishing",
     location: "Bologna, Italy",
-    year: "2024",
+    year: "2026",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.47.26.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.47.26.jpeg",
@@ -416,20 +416,34 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Showcasing illustrated picturebooks and pioneering training collaborations for African illustrators and writers."
   },
-  // 8. Beijing Children's Book Fair
+  // 9. Mantova International Festival, Italy
+  {
+    id: "photo-mantova",
+    title: "Mantova International Festival",
+    event: "Festivaletteratura Mantova",
+    location: "Mantova, Italy",
+    year: "2024",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-14.58.56-1.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-14.58.56-1.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-14.58.56.jpeg"
+    ],
+    caption: "Featured dialogues, literary readings, and international author sessions at Festivaletteratura Mantova in Italy."
+  },
+  // 10. Beijing Children's Book Fair
   {
     id: "photo-beijing-cbf",
     title: "Beijing Children's Book Fair",
     event: "China International Children's Book Publishing",
     location: "Beijing, China",
-    year: "2024",
+    year: "2025",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.05.07.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.05.07.jpeg"
     ],
     caption: "International delegations, author showcases, and publishing rights dialogues exploring multicultural children's literature at the Beijing Children's Book Fair."
   },
-  // 9. Hay Festival, Peru
+  // 11. Hay Festival, Peru
   {
     id: "photo-hay-peru",
     title: "Hay Festival, Peru",
@@ -443,22 +457,37 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Keynote author discussions, literary panels, and transatlantic dialogues celebrating fiction and independent publishing at Hay Festival in Peru."
   },
-  // 8. Frankfurt Buchmesse
+  // 12. Frankfurt Buchmesse
   {
     id: "photo-frankfurt",
     title: "Frankfurt Buchmesse",
     event: "Frankfurt Book Fair",
     location: "Frankfurt, Germany",
     year: "2023",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.52.35.jpeg",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.35.17.jpeg",
     images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.35.17.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.52.35.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-21-at-17.51.44.jpeg",
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4517.jpg"
     ],
-    caption: "Accepting the Aficionado Award at the Frankfurt Buchmesse celebrating transformative cultural leadership."
+    caption: "Accepting the Aficionado Award and engaging in rights and publishing dialogues at the Frankfurt Buchmesse."
   },
-  // 9. Princeton University
+  // 13. CreativAfrica, Italy
+  {
+    id: "photo-creativafrica",
+    title: "CreativAfrica, Italy",
+    event: "CreativAfrica 2019",
+    location: "Turin & Milan, Italy",
+    year: "2019",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.10.16.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.10.16.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.32.18.jpeg"
+    ],
+    caption: "Special author sessions, discussions, and cultural showcases at CreativAfrica in Italy."
+  },
+  // 14. Princeton University
   {
     id: "photo-princeton",
     title: 'Princeton University: "The Canon"',
@@ -473,7 +502,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: 'Collaborative keynote and critical panel "The Canon: 65 Years Later" alongside Helon Habila and Nnedi Okorafor at Princeton.'
   },
-  // 10. Bergen LitFest, Norway
+  // 15. Bergen LitFest, Norway
   {
     id: "photo-bergen-litfest",
     title: "Bergen LitFest",
@@ -487,7 +516,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Featured readings, author panels, and international cultural exchange at the Bergen International Festival of Literature (Bergen LitFest) in Norway."
   },
-  // 11. Norwegian Festival of Literature
+  // 16. Norwegian Festival of Literature
   {
     id: "photo-norwegian-litfest",
     title: "Norwegian Festival of Literature",
@@ -501,7 +530,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Engaging discussions, keynote conversations, and literary sessions at the Norwegian Festival of Literature (Norsk Litteraturfestival)."
   },
-  // 12. Open Book Festival
+  // 17. Open Book Festival
   {
     id: "photo-capetown",
     title: "Open Book Festival",
@@ -515,7 +544,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Panel discussions, author readings, and continental literary dialogues at the Open Book Festival in Cape Town."
   },
-  // 13. Salon du Livre de Paris
+  // 18. Salon du Livre de Paris
   {
     id: "photo-paris",
     title: "Salon du Livre de Paris",
@@ -529,7 +558,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone cultural dialogue at Salon du Livre."
   },
-  // 14. University of St. Thomas
+  // 19. University of St. Thomas
   {
     id: "photo-st-thomas",
     title: "University of St. Thomas",
@@ -541,6 +570,20 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
     ],
     caption: "Archival memory from distinguished scholar lectures and creative writing seminars in Minnesota."
+  },
+  // 20. Turin International Book Fair
+  {
+    id: "photo-torino",
+    title: "Turin International Book Fair",
+    event: "Salone Internazionale del Libro di Torino",
+    location: "Turin, Italy",
+    year: "2023",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.11.57.jpeg",
+    images: [
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.11.57.jpeg",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.26.03.jpeg"
+    ],
+    caption: "Author sessions, Aficionado recognitions, and international book discussions at the Turin International Book Fair in Italy."
   },
   // Other International Engagements
   {
@@ -596,24 +639,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     year: "2022",
     image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800",
     caption: "Reading and discussion on women's experiences and independence in modern West African fiction."
-  },
-  {
-    id: "photo-gothenburg",
-    title: "Gothenburg Book Fair",
-    event: "Bokmässan Focus Africa",
-    location: "Gothenburg, Sweden",
-    year: "2021",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800",
-    caption: "Highlighting Nordic-African translation initiatives, cultural exchanges, and independent publishing."
-  },
-  {
-    id: "photo-torino",
-    title: "Salone del Libro di Torino",
-    event: "Turin International Book Fair",
-    location: "Turin, Italy",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=800",
-    caption: "Panel honoring European-African independent publisher networks and book translation grants."
   },
   {
     id: "photo-oxford",
@@ -694,54 +719,7 @@ export default function SpeakingPage() {
         </div>
       </section>
 
-      {/* 2. ENGAGEMENTS SECTION */}
-      <section id="engagements" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="font-sans font-black text-4xl sm:text-6xl text-neutral-950 uppercase tracking-tight">
-            Engagements
-          </h2>
-          <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
-            Keynotes, festival appearances, academic panels, and international cultural dialogues.
-          </p>
-        </div>
-
-        {/* Engagements Grid / List - 4 IN A ROW */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {ENGAGEMENTS_LIST.map((item, idx) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.03 }}
-              className="bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-neutral-300 transition-all flex flex-col justify-between space-y-4 group min-h-[160px]"
-            >
-              <div className="space-y-2.5">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[10px] font-bold text-neutral-500 uppercase tracking-widest truncate">
-                    {item.code} {item.role ? `• ${item.role}` : ""}
-                  </span>
-                  <span className="font-mono text-[11px] font-extrabold text-neutral-900 bg-neutral-100 border border-neutral-200/80 px-2.5 py-0.5 rounded-md shrink-0 whitespace-nowrap">
-                    {item.year}
-                  </span>
-                </div>
-                <h3 className="font-sans font-bold text-sm sm:text-base text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                  {item.title}
-                </h3>
-              </div>
-
-              <div className="flex items-center justify-between pt-3 border-t border-neutral-100 text-xs text-neutral-500 font-mono">
-                <div className="flex items-center space-x-1.5 min-w-0">
-                  <MapPin size={13} className="text-neutral-400 shrink-0" />
-                  <span className="font-sans text-neutral-600 text-xs truncate">{item.location}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. EVENT GALLERY SECTION (PHOTOS FROM AT LEAST 20 EVENTS) */}
+      {/* 2. EVENT GALLERY SECTION */}
       <section id="gallery" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200/80 pb-6">
           <div className="space-y-3">

@@ -14,7 +14,7 @@ const AWARDS_LIST: AwardItem[] = [
     id: "award-1",
     title: "African Literary Person of the Year",
     year: "2017",
-    organization: "African Literature Association",
+    organization: "Brittle Paper",
     subtitle: "Conferred for groundbreaking impact across African literature, festival curation, and publishing infrastructure.",
   },
   {
@@ -49,7 +49,7 @@ export default function AwardsAndPrizesSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-200 pb-8">
           <div className="space-y-2">
             <h2 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-neutral-950">
-              Awards and Prizes
+              Awards
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed font-medium">

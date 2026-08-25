@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export default function AboutSection() {
+  const navigate = useNavigate();
   return (
     <section 
       id="about" 
@@ -65,14 +67,18 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="pt-2 transform-gpu"
             >
-              <a href="#contact" className="inline-block">
-                <button className="group flex items-center justify-between bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold tracking-wider uppercase pl-6 pr-3.5 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg gap-4 cursor-pointer">
-                  <span>GET IN TOUCH</span>
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-black transition-transform duration-300 group-hover:rotate-45">
-                    <ArrowUpRight size={13} strokeWidth={2.5} />
-                  </span>
-                </button>
-              </a>
+              <button 
+                onClick={() => {
+                  navigate("/contact");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center justify-between bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold tracking-wider uppercase pl-6 pr-3.5 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg gap-4 cursor-pointer"
+              >
+                <span>GET IN TOUCH</span>
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white text-black transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight size={13} strokeWidth={2.5} />
+                </span>
+              </button>
             </motion.div>
 
           </div>
