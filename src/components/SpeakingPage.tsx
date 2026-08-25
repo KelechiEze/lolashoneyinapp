@@ -364,7 +364,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     title: "PEN World Voices Festival",
     event: "PEN America Forum",
     location: "New York, USA",
-    year: "2026",
+    year: "2015",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
     images: [
       "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-15.16.35-1.jpeg",
