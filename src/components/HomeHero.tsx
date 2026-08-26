@@ -104,9 +104,10 @@ export default function HomeHero() {
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
-        {/* Reduced dark overlays to keep background photos bright and vivid while maintaining text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/10 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/30 via-transparent to-transparent z-10 pointer-events-none" />
+        {/* Slightly dark overlay over hero background images to tone down brightness while maintaining crisp clarity */}
+        <div className="absolute inset-0 bg-black/35 z-[5] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* VERTICAL ANIMATED SOCIAL MEDIA STRIP ALIGNED WITH TOP-RIGHT MENU BUTTON */}

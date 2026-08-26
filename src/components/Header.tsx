@@ -40,11 +40,6 @@ const links = [
   { 
     path: "/publishing", 
     label: "Publishing",
-    hasDropdown: true,
-    subLinks: [
-      { path: "/publishing#intro", label: "Ouida Books" },
-      { path: "/publishing#imprints", label: "Imprints" },
-    ]
   },
   { 
     path: "/ouida-lagos", 

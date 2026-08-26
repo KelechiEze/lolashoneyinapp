@@ -131,14 +131,15 @@ export default function ContactPage() {
 
       {/* 2. CONTACT SECTION WITH ORIGINAL COLOR BACKGROUND IMAGE & LEFT-ALIGNED FORM */}
       <section className="relative w-full bg-neutral-100 overflow-hidden border-y border-neutral-200">
-        {/* Original Color Background Image with No White Hue */}
+        {/* Background Image with slightly dark overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src={HERO_BG_IMAGE}
             alt="Lola Shoneyin"
-            className="w-full h-full object-cover object-right sm:object-right md:object-[75%_center]"
+            className="w-full h-full object-cover object-[85%_center] sm:object-[90%_center] md:object-[92%_center] lg:object-[95%_center]"
             referrerPolicy="no-referrer"
           />
+          <div className="absolute inset-0 bg-neutral-950/45 pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
