@@ -292,6 +292,33 @@ export default function PressPage() {
           <p className="text-neutral-700 font-sans text-base sm:text-lg leading-relaxed font-normal pt-2">
             For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of The Secret Lives of Baba Segi's Wives to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
           </p>
+
+          {/* Quick Jump Bar */}
+          <div className="pt-4 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => scrollToSection("interviews")}
+              className="px-4 py-2 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center space-x-1.5"
+            >
+              <span>Interviews</span>
+              <ArrowUpRight size={12} />
+            </button>
+            <span className="text-neutral-300 font-bold">//</span>
+            <button
+              onClick={() => scrollToSection("podcasts")}
+              className="px-4 py-2 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center space-x-1.5"
+            >
+              <span>Podcasts</span>
+              <ArrowUpRight size={12} />
+            </button>
+            <span className="text-neutral-300 font-bold">//</span>
+            <button
+              onClick={() => scrollToSection("news")}
+              className="px-4 py-2 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center space-x-1.5"
+            >
+              <span>News</span>
+              <ArrowUpRight size={12} />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -429,12 +456,13 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* 4. PRESS & FEATURES SECTION */}
-      <section id="press" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
-        <div id="features" className="scroll-mt-28" />
+      {/* 4. NEWS SECTION */}
+      <section id="news" className="max-w-7xl mx-auto px-6 py-16 border-t border-neutral-200/80 scroll-mt-28 space-y-12">
+        <span id="press" className="scroll-mt-28" />
+        <span id="features" className="scroll-mt-28" />
         <div className="text-left space-y-3 max-w-3xl">
           <h2 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 uppercase tracking-tight">
-            Press & Reviews
+            News
           </h2>
           <p className="font-sans text-neutral-600 text-sm md:text-base leading-relaxed">
             Scholarly reviews, major profiles, and broadcast coverage across international media.

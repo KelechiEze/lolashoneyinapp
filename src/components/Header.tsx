@@ -80,15 +80,15 @@ const links = [
     ]
   },
   { 
-    path: "/press", 
-    label: "Press",
-    hasDropdown: true,
-    subLinks: [
-      { path: "/press#intro", label: "Press & Reviews" },
-      { path: "/press#interviews", label: "Interviews" },
-      { path: "/press#podcasts", label: "Podcasts" },
-    ]
-  },
+      path: "/press", 
+      label: "Press",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/press#interviews", label: "Interviews",},
+        { path: "/press#podcasts", label: "Podcasts",},
+        { path: "/press#news", label: "News",},
+      ]
+    },
   { 
     path: "/contact", 
     label: "Contact",
