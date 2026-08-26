@@ -116,7 +116,7 @@ export const PROJECTS: ProjectData[] = [
     role: "Producer & Director",
     location: "Yorubaland, Nigeria",
     gallery: [
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200",
+      "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-20.47.46.jpeg",
       "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200"
     ],
     credits: [

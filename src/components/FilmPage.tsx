@@ -29,7 +29,8 @@ export default function FilmPage() {
       role: "Producer & Director",
       desc: "A documentary on the egbe age-group social structure of Remoland, told through the voices of the people who live it, an archive of pre-colonial societal cohesion, held together by those who still cherish it. The film is in late production.",
       status: "In Late Production",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200",
+      image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-20.47.46.jpeg",
+      imagePosition: "object-top",
       actionText: "In Late Production",
       isLive: false
     }
@@ -53,10 +54,10 @@ export default function FilmPage() {
         <div className="bg-neutral-50 border border-neutral-200 p-8 md:p-12 rounded-[8px] space-y-6 max-w-5xl shadow-sm">
           <div className="flex items-center space-x-3 text-rose-600">
             <Camera size={22} />
-            <h3 className="font-sans font-bold text-xs uppercase tracking-widest">A Director's Note</h3>
+            <h3 className="font-sans font-bold text-xs uppercase tracking-widest">NOTES</h3>
           </div>
           <blockquote className="font-serif italic text-lg md:text-xl text-neutral-800 leading-relaxed select-text">
-            "We're lackadaisical about documentation our history and our heritage, and that needs to change. Make Egbé: My Search for Belonging became urgent after I witnessed a moving expression of togetherness and community at my father's 90th birthday."
+            "I came to documentary-making sideways. Visually, it's always been my preferred genre of film. Documentaries feel like archives and maybe that's the part I am attracted to. In this part of the world, we're often lackadaisical about documentation. That needs to change. With Flowers for Warriors, we explored the journeys of three parents of children living with disabilities. Egbe is from seeing the most moving expression of togetherness at my father's 90th birthday, which led to the question: what should we carry forward and what should be allowed to disappear."
           </blockquote>
           <p className="font-sans font-semibold text-xs tracking-wider text-neutral-500 uppercase">
             Lola Shoneyin
@@ -68,11 +69,11 @@ export default function FilmPage() {
           {documentaries.map((doc) => (
             <div key={doc.id} id={doc.id} className="bg-neutral-50 border border-neutral-200 rounded-[8px] overflow-hidden flex flex-col justify-between hover:border-neutral-300 transition-colors shadow-sm hover:shadow-md scroll-mt-28">
               {/* Cover Image */}
-              <div className="relative aspect-[16/10] w-full bg-neutral-100">
+              <div className="relative aspect-[16/10] w-full bg-neutral-100 overflow-hidden">
                 <img
                   src={doc.image}
                   alt={doc.title}
-                  className="w-full h-full object-cover select-none"
+                  className={`w-full h-full object-cover select-none ${doc.imagePosition || "object-center"}`}
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-neutral-950/10" />
