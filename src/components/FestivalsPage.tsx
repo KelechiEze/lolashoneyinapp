@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 interface Festival {
   id: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   desc: string;
   quote?: string;
   quoteAuthor?: string;
   img?: string;
   images?: string[];
   accent: string;
+  location?: string;
+  dateTag?: string;
   websiteUrl?: string;
   websiteLabel?: string;
 }
@@ -116,14 +119,29 @@ function FestivalGallery({ festival }: { festival: Festival }) {
 }
 
 export default function FestivalsPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace("#", "");
+      const el = document.getElementById(targetId);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   const festivals: Festival[] = [
     {
       id: "ake",
       title: "Aké Arts and Book Festival",
-      subtitle: "Africa's Largest Literary Gathering",
-      desc: "Aké is Africa's largest literary gathering, three days each year where writers, poets, artists, filmmakers, and thinkers converge to talk, read, and argue about the questions that matter on the continent. Founded by Shoneyin in 2013 in Abeokuta, the town where Nobel laureate Wole Soyinka was born, the festival moved to Lagos in 2017 and has since brought together over a thousand creatives from Africa and the diaspora. It has grown from a single-city gathering into what many now call the biggest convergence of African creatives in the world, and in 2023 it won the inaugural Aficionado Award, presented by the Frankfurt and Turin book fairs, for its contribution to improving the quality of international publishing.",
+      desc: "Aké brings together writers, poets, artists, filmmakers, and thinkers for three days each year to talk, read, and argue about the questions that matter on the continent. Founded by Shoneyin in 2013 in Abeokuta, the town where Nobel laureate Wole Soyinka was born, the festival moved to Lagos in 2017 and has since brought together over a thousand creatives from Africa and the diaspora. It has grown from a single-city gathering into what many now call the biggest convergence of African creatives in the world, and in 2023 it won the inaugural Aficionado Award, presented by the Frankfurt and Turin book fairs, for its contribution to improving the quality of international publishing.",
       quote: "A big thank you to you and your entire team for creating such a festive atmosphere in this year's Aké Festival. We enjoyed the flowers and their colours but we know it was because they grew from a plant with deep roots not always visible, but there all the same, all the time.",
       quoteAuthor: "Ngũgĩ wa Thiong'o",
+      location: "Lagos & Abeokuta, Nigeria",
+      dateTag: "Annual • November",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.50.54.jpeg",
       images: [
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.50.54.jpeg",
@@ -139,6 +157,8 @@ export default function FestivalsPage() {
       title: "Lagos International Festival of Illustrations (LIFI)",
       subtitle: "Bridging European and African Graphic Arts",
       desc: "LIFI began with a conversation Shoneyin had at the Bologna Children's Book Fair, when she asked a Slovenian illustrator whether she knew anyone willing to come to Lagos and teach. The answer became a festival: a three-day gathering that brings acclaimed illustrators from around the world to train and work alongside Nigerian illustrators, building the skills and the pipeline Nigerian children's publishing has long lacked. Its second edition runs 17-19 September 2026, with illustrators from Italy, Poland, and Switzerland working alongside 36 Nigerian participants.",
+      location: "Lagos, Nigeria",
+      dateTag: "17–19 September 2026",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51-1.jpeg",
       images: [
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-19-at-21.41.51-1.jpeg",
@@ -152,6 +172,8 @@ export default function FestivalsPage() {
       title: "Kaduna Book & Arts Festival (KABAFEST)",
       subtitle: "A Stage for Northern Nigerian Voices",
       desc: "KABAFEST took northern Nigeria's literary scene and gave it a stage of its own. Founded in 2017 as an initiative of the Kaduna State Government, the festival set out to challenge the idea that the north was too conservative for books and ideas, hosting panels in Hausa and English and creating space for conversations on identity, politics, feminism, and religion that don't always get room elsewhere. It was the only state-funded literary festival in northern Nigeria, until state support was withdrawn and the festival was discontinued in 2025.",
+      location: "Kaduna, Nigeria",
+      dateTag: "2017–2025 Archive",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.58.07.jpeg",
       images: [
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-22-at-22.58.07.jpeg",
@@ -165,13 +187,15 @@ export default function FestivalsPage() {
       title: "Abuja Festival of Literature and Ideas (AFLI)",
       subtitle: "Stimulating Ideas in the Nation's Capital",
       desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition on 9 & 10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
+      location: "Abuja, Nigeria",
+      dateTag: "9 & 10 October 2026",
       accent: "text-teal-600"
     }
   ];
 
   return (
     <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto space-y-24">
+      <div className="max-w-7xl mx-auto space-y-16">
         
         {/* PAGE HERO */}
         <motion.div 
@@ -181,7 +205,7 @@ export default function FestivalsPage() {
           className="space-y-4 max-w-4xl transform-gpu"
         >
           <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-            Literary Festivals
+            Festivals
           </h1>
           <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-3xl leading-relaxed">
             Gathering writers, poets, artists, filmmakers, and thinkers across cities to celebrate culture and intellectual exchange.
@@ -209,7 +233,9 @@ export default function FestivalsPage() {
                 {/* Text Area */}
                 <div className={`space-y-6 ${hasImages ? `lg:col-span-6 ${idx % 2 === 1 ? "lg:order-last" : ""}` : ""}`}>
                   <div className="space-y-2">
-                    <span className={`font-mono text-xs uppercase tracking-widest font-black ${f.accent}`}>{f.subtitle}</span>
+                    {f.subtitle && (
+                      <span className={`font-mono text-xs uppercase tracking-widest font-black ${f.accent}`}>{f.subtitle}</span>
+                    )}
                     <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">{f.title}</h2>
                   </div>
 
@@ -227,8 +253,8 @@ export default function FestivalsPage() {
                   )}
 
                   <div className="flex flex-wrap items-center gap-6 text-xs text-neutral-500 font-mono pt-2">
-                    <span className="flex items-center"><MapPin size={14} className="mr-1 text-neutral-400" /> NIGERIA</span>
-                    <span className="flex items-center"><Calendar size={14} className="mr-1 text-neutral-400" /> ANNUAL EVENT</span>
+                    <span className="flex items-center"><MapPin size={14} className="mr-1 text-neutral-400" /> {f.location || "NIGERIA"}</span>
+                    <span className="flex items-center"><Calendar size={14} className="mr-1 text-neutral-400" /> {f.dateTag || "ANNUAL EVENT"}</span>
                     {f.websiteUrl && (
                       <a 
                         href={f.websiteUrl}

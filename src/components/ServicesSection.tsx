@@ -25,7 +25,7 @@ const PILLARS_DATA: Pillar[] = [
   {
     id: "festivals",
     num: "02",
-    title: "Literary Festivals",
+    title: "Festivals",
     description: "Founder and director of Aké Arts and Book Festival (celebrating 14 years), the Abuja Festival of Literature and Ideas, and the Lagos International Festival of Illustrations (LIFI).",
     buttonText: "VIEW FESTIVALS",
     imageUrl: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-25-2026-02_35_24-pm.png",
