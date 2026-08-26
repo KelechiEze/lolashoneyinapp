@@ -164,7 +164,7 @@ export default function FestivalsPage() {
       id: "afli",
       title: "Abuja Festival of Literature and Ideas (AFLI)",
       subtitle: "Stimulating Ideas in the Nation's Capital",
-      desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition from 8-10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
+      desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition on 9 & 10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
       accent: "text-teal-600"
     }
   ];
