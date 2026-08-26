@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { Calendar, MapPin, ChevronLeft, ChevronRight, ArrowUpRight, Sparkles } from "lucide-react";
 
 interface Festival {
   id: string;
@@ -202,14 +202,23 @@ export default function FestivalsPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-4 max-w-4xl transform-gpu"
+          className="space-y-8 max-w-5xl transform-gpu"
         >
-          <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-            Festivals
-          </h1>
-          <p className="text-neutral-600 font-serif italic text-lg md:text-xl max-w-3xl leading-relaxed">
-            Gathering writers, poets, artists, filmmakers, and thinkers across cities to celebrate culture and intellectual exchange.
-          </p>
+          <div className="space-y-2">
+            <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+              Festivals
+            </h1>
+          </div>
+
+          {/* Statement Box */}
+          <div className="bg-neutral-50 border border-neutral-200 p-8 md:p-12 rounded-[8px] space-y-6 shadow-sm">
+            <blockquote className="font-serif italic text-lg md:text-xl text-neutral-800 leading-relaxed select-text">
+              "My goal is for everyone who attends our festivals to leave feeling enriched changed in some way."
+            </blockquote>
+            <p className="font-sans font-semibold text-xs tracking-wider text-neutral-500 uppercase">
+              Lola Shoneyin
+            </p>
+          </div>
         </motion.div>
 
         {/* FESTIVALS LIST */}
