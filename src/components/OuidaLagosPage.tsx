@@ -100,6 +100,11 @@ const GUEST_GALLERY_IMAGES = [
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-25-at-15.26.04.jpeg",
     title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-20.25.11.jpeg",
+    title: "In front of the iconic Door at Ouida",
+    location: "Ouida Lagos"
   }
 ];
 
@@ -339,7 +344,7 @@ export default function OuidaLagosPage() {
             <div className="bg-[#fbf9f5] border border-neutral-200/80 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-all duration-300">
               <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-900 relative">
                 <img
-                  src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1000&auto=format&fit=crop"
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-20.24.52-1.jpeg"
                   alt="Ìsèdá Creative Celebration"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-90"
                   referrerPolicy="no-referrer"
