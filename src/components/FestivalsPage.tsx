@@ -217,7 +217,7 @@ export default function FestivalsPage() {
           {/* Statement Box */}
           <div className="bg-neutral-50 border border-neutral-200 p-8 md:p-12 rounded-[8px] space-y-6 shadow-sm">
             <blockquote className="font-serif italic text-lg md:text-xl text-neutral-800 leading-relaxed select-text">
-              "My goal is for everyone who attends our festivals to leave feeling enriched changed in some way."
+              "My goal is for everyone who attends our festivals to leave enriched, changed in some way."
             </blockquote>
             <p className="font-sans font-semibold text-xs tracking-wider text-neutral-500 uppercase">
               Lola Shoneyin
