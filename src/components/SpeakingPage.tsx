@@ -150,9 +150,9 @@ export const ENGAGEMENTS_LIST: EngagementItem[] = [
     code: "_ENG13"
   },
   {
-    id: "iowa-st-thomas-1999",
-    title: "International Writing Program & St. Thomas",
-    location: "Iowa & Minnesota, USA",
+    id: "iowa-1999",
+    title: "International Writing Program",
+    location: "Iowa City, USA",
     year: "1999",
     role: "Scholar & Fellow",
     code: "_ENG14"
@@ -601,20 +601,7 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "Presenting French translations of Nigerian literary works and fostering Anglophone-Francophone cultural dialogue at Salon du Livre."
   },
-  // 21. University of St. Thomas
-  {
-    id: "photo-st-thomas",
-    title: "University of St. Thomas",
-    event: "Distinguished Scholar Residency",
-    location: "Minnesota, USA",
-    year: "1999",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg",
-    images: [
-      "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/img_4519.jpg"
-    ],
-    caption: "Archival memory from distinguished scholar lectures and creative writing seminars in Minnesota."
-  },
-  // 22. Turin International Book Fair
+  // 21. Turin International Book Fair
   {
     id: "photo-torino",
     title: "Turin International Book Fair",
@@ -681,15 +668,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     year: "2023",
     image: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=800",
     caption: "Gala stage dialogue on cultural sovereignty, female voices in African prose, and festival curation."
-  },
-  {
-    id: "photo-edinburgh",
-    title: "Edinburgh International Book Festival",
-    event: "EIBF Special Event",
-    location: "Edinburgh, Scotland",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800",
-    caption: "Reading and discussion on women's experiences and independence in modern West African fiction."
   },
   {
     id: "photo-oxford",

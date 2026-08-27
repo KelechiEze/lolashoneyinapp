@@ -442,56 +442,50 @@ export default function PressPage() {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {/* News List */}
+        <div className="space-y-4 max-w-5xl">
           {FEATURES_DATA.map((item, idx) => (
             <motion.a
               key={item.id}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-white border border-neutral-200/80 hover:border-neutral-300 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              className="bg-white border border-neutral-200/80 hover:border-neutral-400/80 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group cursor-pointer"
             >
-              {/* Feature Card Top with Portrait Image */}
-              <div className="relative aspect-[16/10] w-full bg-neutral-900 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute top-3 left-3">
-                  <span className="font-mono text-[9px] font-extrabold uppercase tracking-widest text-neutral-950 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm">
+              <div className="space-y-2 flex-1 min-w-0 pr-0 sm:pr-4 text-left">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-[10px] font-extrabold text-neutral-950 bg-neutral-100 border border-neutral-200/80 px-2.5 py-0.5 rounded-md shrink-0">
                     {item.year}
                   </span>
+                  <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-wider">
+                    {item.outlet}
+                  </span>
+                  <span className="text-neutral-300 hidden sm:inline">•</span>
+                  <span className="font-mono text-[10px] text-neutral-500 hidden sm:inline">
+                    {item.tag}
+                  </span>
+                  <span className="font-mono text-[10px] text-neutral-400 ml-auto hidden md:inline">
+                    {item.code}
+                  </span>
                 </div>
-                <div className="absolute bottom-3 left-3 right-3 text-white text-[11px] font-mono font-bold truncate">
-                  {item.outlet}
-                </div>
+                
+                <h3 className="font-sans font-bold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
+                  {item.title}
+                </h3>
+                
+                <p className="font-sans text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                  {item.summary}
+                </p>
               </div>
 
-              {/* Feature Content */}
-              <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between text-left">
-                <div className="space-y-2">
-                  <span className="font-mono text-[10px] font-bold text-rose-600 uppercase tracking-widest block">
-                    {item.code} • {item.tag}
-                  </span>
-                  <h3 className="font-sans font-bold text-base sm:text-lg text-neutral-950 group-hover:text-rose-600 transition-colors leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="font-sans text-xs text-neutral-600 leading-relaxed line-clamp-4 font-normal">
-                    {item.summary}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs font-mono text-rose-600 font-bold uppercase">
+              <div className="shrink-0 pt-2 sm:pt-0 self-end sm:self-center">
+                <div className="flex items-center space-x-1.5 px-4 py-2 rounded-full bg-neutral-100 group-hover:bg-neutral-950 text-neutral-900 group-hover:text-white transition-all text-xs font-mono font-bold uppercase tracking-wider">
                   <span>Read Article</span>
-                  <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
             </motion.a>

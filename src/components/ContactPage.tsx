@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Plus, Minus, Send, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HERO_BG_IMAGE = "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/chatgpt-image-jul-24-2026-03_41_03-pm.png";
+const HERO_BG_IMAGE = "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-27-2026-05_00_24-pm.png";
 
 interface FaqItem {
   q: string;
