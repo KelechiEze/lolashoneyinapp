@@ -283,16 +283,26 @@ export default function PressPage() {
       
       {/* 1. INTRO SECTION */}
       <section id="intro" className="max-w-7xl mx-auto px-6 pt-12 pb-16 scroll-mt-28">
-        <div className="text-left space-y-4 max-w-3xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-left space-y-6 max-w-4xl"
+        >
           <h1 className="font-sans font-black text-3xl md:text-4xl text-neutral-950 tracking-tight uppercase leading-tight">
             Press
           </h1>
 
-          {/* EXACT VERBATIM INTRO COPY */}
-          <p className="text-neutral-700 font-sans text-base sm:text-lg leading-relaxed font-normal pt-2">
-            For over two decades, Shoneyin's work has drawn the attention of journalists, scholars, and cultural commentators across three continents. The pieces gathered here span her writing, her publishing, and her festivals, from her earliest interviews around the release of The Secret Lives of Baba Segi's Wives to academic reviews of her work as a publisher, and from Nigerian outlets to the pages of The Times and the journals of Cambridge University Press.
-          </p>
-        </div>
+          {/* Statement / Quote Box */}
+          <div className="bg-neutral-50 border border-neutral-200 p-8 md:p-12 rounded-[8px] space-y-6 shadow-sm">
+            <blockquote className="font-serif italic text-lg md:text-xl text-neutral-800 leading-relaxed select-text">
+              "My work has attracted the attention of journalists, scholars, and cultural commentators. The pieces below here span my earliest interviews to academic reviews of my work as a publisher, bookseller and festival organiser."
+            </blockquote>
+            <p className="font-sans font-semibold text-xs tracking-wider text-neutral-500 uppercase">
+              Lola Shoneyin
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       {/* 2. INTERVIEWS SECTION (LIST FORMAT) */}

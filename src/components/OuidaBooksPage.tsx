@@ -159,7 +159,7 @@ export default function OuidaBooksPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 max-w-4xl"
+            className="space-y-6 max-w-2xl"
           >
             <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Ouida Books

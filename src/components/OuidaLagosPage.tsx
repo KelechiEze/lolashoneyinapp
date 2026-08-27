@@ -182,10 +182,6 @@ export default function OuidaLagosPage() {
             
             {/* Left Text Column with verbatim narrative and core features */}
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-                Ouida
-              </h2>
-
               {/* EXACT VERBATIM PARAGRAPH REQUESTED */}
               <p className="text-neutral-700 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal">
                 Ouida Lagos is a cultural hub built for people who read, create and listen. It houses a bookshop stocked with fiction, non-fiction, children's books, poetry, and titles from Ouida Books. We also have a café that serves street food such as dundun, dodo, ewa agoyin, pepe sauce, zobo. The Orange Tree Residency also lives at Ouida, along with Ouida Books and the Book Buzz Foundation offices. At the large workspace which doubles as our performance space, we run a host of monthly events and celebrations.

@@ -39,11 +39,11 @@ export default function BookBuzzPage() {
           className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-6 md:gap-10 scroll-mt-28"
           id="about"
         >
-          <div className="space-y-3 flex-1 min-w-0">
+          <div className="space-y-2 flex-1 min-w-0">
             <h1 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
               Book Buzz Foundation
             </h1>
-            <p className="text-neutral-700 font-serif italic text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed">
+            <p className="text-neutral-500 font-serif italic text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
               Expanding Access, Creating Spaces & Nurturing Creative Talent
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function BookBuzzPage() {
             <img 
               src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bbf-new-logo-small.png" 
               alt="Book Buzz Foundation Logo" 
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -116,40 +116,41 @@ export default function BookBuzzPage() {
 
         {/* BOOKSTORM SECTION */}
         <section id="bookstorm" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-              BookStorm
-            </h2>
-            <div className="shrink-0 flex items-center justify-start sm:justify-end">
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/bookstorm-logo.jpeg" 
-                alt="BookStorm Logo" 
-                className="h-14 sm:h-16 md:h-18 w-auto object-contain rounded-md border border-neutral-200/80 shadow-xs"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5 font-sans text-base md:text-lg text-neutral-700 leading-relaxed select-text">
-              <p>
-                BookStorm is Book Buzz Foundation’s initiative to transform the children’s book ecosystem in Nigeria by investing in the people who create the books. Launched in 2023, it trains and supports Nigerian writers, illustrators and other publishing professionals to produce high-quality children’s books that are culturally relevant and genuinely engaging for young readers.
-              </p>
-              <p>
-                What makes BookStorm distinctive is that it is not simply a training programme. It is designed as a pipeline from talent development to publication: creators receive expert instruction, mentorship and editorial support, build professional networks, and are given pathways to turn their work into published books. Its partnerships have included organisations such as the Bologna Children’s Book Fair and Mimaster Illustrazione in Milan.
-              </p>
-              <p>
-                At its heart is a bigger ambition: to ensure that Nigerian children have access to beautiful, compelling books in which they can recognise their lives, cultures, imaginations and possibilities. BookStorm is therefore building both the creative talent and the publishing infrastructure required for a stronger Nigerian children’s literature sector. One stated ambition is to produce 100 children’s books reflecting the realities, cultures and dreams of Nigerian children.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 space-y-6">
+              <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+                BookStorm
+              </h2>
+              <div className="space-y-5 font-sans text-base md:text-lg text-neutral-700 leading-relaxed select-text">
+                <p>
+                  BookStorm is Book Buzz Foundation’s initiative to transform the children’s book ecosystem in Nigeria by investing in the people who create the books. Launched in 2023, it trains and supports Nigerian writers, illustrators and other publishing professionals to produce high-quality children’s books that are culturally relevant and genuinely engaging for young readers.
+                </p>
+                <p>
+                  What makes BookStorm distinctive is that it is not simply a training programme. It is designed as a pipeline from talent development to publication: creators receive expert instruction, mentorship and editorial support, build professional networks, and are given pathways to turn their work into published books. Its partnerships have included organisations such as the Bologna Children’s Book Fair and Mimaster Illustrazione in Milan.
+                </p>
+                <p>
+                  At its heart is a bigger ambition: to ensure that Nigerian children have access to beautiful, compelling books in which they can recognise their lives, cultures, imaginations and possibilities. BookStorm is therefore building both the creative talent and the publishing infrastructure required for a stronger Nigerian children’s literature sector. One stated ambition is to produce 100 children’s books reflecting the realities, cultures and dreams of Nigerian children.
+                </p>
+              </div>
             </div>
 
-            <div className="lg:col-span-5 flex items-center justify-center">
-              <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-24-at-21.19.27.jpeg" 
-                alt="BookStorm Initiative" 
-                className="w-full max-h-96 object-contain"
-                referrerPolicy="no-referrer"
-              />
+            <div className="lg:col-span-5 flex flex-col items-center justify-center space-y-6 pt-2 lg:pt-0">
+              <div className="w-full flex items-center justify-center">
+                <img 
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot_2026-08-27_at_21.54.15-removebg-preview.png" 
+                  alt="BookStorm Logo" 
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="w-full flex items-center justify-center">
+                <img 
+                  src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/screenshot_2026-08-27_at_22.07.38-removebg-preview.png" 
+                  alt="BookStorm Initiative" 
+                  className="w-full max-w-sm max-h-[440px] object-contain mx-auto"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -175,7 +176,7 @@ export default function BookBuzzPage() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 flex items-center justify-center p-6 sm:p-8 bg-neutral-50 border border-neutral-200/80 rounded-2xl">
+            <div className="lg:col-span-4 flex items-center justify-center p-2">
               <img 
                 src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
                 alt="Nigerian Picture Book Project Logo" 

@@ -189,6 +189,10 @@ export default function FestivalsPage() {
       desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition on 9 & 10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
       location: "Abuja, Nigeria",
       dateTag: "9 & 10 October 2026",
+      img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
+      images: [
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg"
+      ],
       accent: "text-teal-600"
     }
   ];
