@@ -91,10 +91,10 @@ export const INTERVIEWS_DATA: PressItem[] = [
   },
   {
     id: "saraba-magazine-2012",
-    title: "Poetry and inspiration with Lola Shoneyin",
-    outlet: "Saraba Magazine (Damilola Ajayi)",
+    title: "Damilola Ajayi Catches Up with Lola Shoneyin",
+    outlet: "Saraba Magazine",
     year: "2012",
-    summary: "On writing limericks at boarding school, the Iowa writing program, and Cassava Republic taking on her debut novel.",
+    summary: "Damilola Ajayi catches up with Lola Shoneyin on poetry, boarding school limericks, the Iowa writing program, and publishing with Cassava Republic.",
     url: "https://sarabamag.com/damilola-ajayi-catches-up-with-lola-shoneyin/",
     code: "_INT07",
     tag: "Literary Journal"
