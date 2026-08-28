@@ -38,9 +38,14 @@ const links = [
     ]
   },
   { 
-    path: "/publishing", 
-    label: "Publishing",
-  },
+      path: "/publishing", 
+      label: "Publishing",
+      hasDropdown: true,
+      subLinks: [
+        { path: "/ouida-books", label: "Ouida Books", desc: "Flagship publishing house & seven distinctive imprints" },
+        { path: "/cultural-publications", label: "Cultural Publications", desc: "Aké Review & Olongo literary journals" },
+      ]
+    },
   { 
     path: "/ouida-lagos", 
     label: "OuidaLagos",

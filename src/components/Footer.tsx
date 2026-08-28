@@ -65,8 +65,18 @@ export default function Footer({ onOpenCalendar }: FooterProps) {
                 </button>
               </li>
               <li>
+                <button onClick={() => handleNav("/cultural-publications")} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Cultural Publications
+                </button>
+              </li>
+              <li>
                 <button onClick={() => handleNav("/festivals")} className="hover:text-white transition-colors cursor-pointer text-left">
-                  Aké Arts & Book Festival
+                  Festivals & Gatherings
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav("/cultural-events")} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Cultural Events (Infusion)
                 </button>
               </li>
               <li>

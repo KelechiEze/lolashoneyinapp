@@ -26,6 +26,8 @@ import SpeakingPage from "./components/SpeakingPage";
 import ContactPage from "./components/ContactPage";
 import BookBuzzPage from "./components/BookBuzzPage";
 import AwardsPage from "./components/AwardsPage";
+import CulturalPublicationsPage from "./components/CulturalPublicationsPage";
+import CulturalEventsPage from "./components/CulturalEventsPage";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -82,6 +84,15 @@ export default function App() {
     }
   }, [location.search]);
 
+  // Always scroll to top immediately on route pathname change when no hash is present
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }, [location.pathname]);
+
   // Scroll to target section whenever URL hash changes or page loads with a hash
   useEffect(() => {
     if (location.hash) {
@@ -90,8 +101,10 @@ export default function App() {
         const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
         }
-      }, 120);
+      }, 150);
       return () => clearTimeout(timer);
     }
   }, [location.pathname, location.hash]);
@@ -112,7 +125,16 @@ export default function App() {
 
       {/* Main Slash Route Page Renderer */}
       <main className="flex-1 w-full">
-        <AnimatePresence mode="wait">
+        <AnimatePresence 
+          mode="wait"
+          onExitComplete={() => {
+            if (!window.location.hash) {
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+              document.documentElement.scrollTop = 0;
+              document.body.scrollTop = 0;
+            }
+          }}
+        >
           <Routes location={location}>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
@@ -120,6 +142,7 @@ export default function App() {
             <Route path="/writing" element={<WritingPage />} />
             <Route path="/book-buzz" element={<BookBuzzPage />} />
             <Route path="/ouida-books" element={<OuidaBooksPage />} />
+            <Route path="/cultural-publications" element={<CulturalPublicationsPage />} />
             <Route path="/ouida-lagos" element={<OuidaLagosPage />} />
             <Route path="/spaces" element={<OuidaLagosPage />} />
             <Route path="/spaces/:spaceId" element={<SpaceDetailPage />} />
@@ -128,6 +151,7 @@ export default function App() {
             <Route path="/meeting-rooms" element={<SpaceDetailPage />} />
             <Route path="/bookshop" element={<SpaceDetailPage />} />
             <Route path="/festivals" element={<FestivalsPage />} />
+            <Route path="/cultural-events" element={<CulturalEventsPage />} />
             <Route path="/publishing" element={<OuidaBooksPage />} />
             <Route path="/film" element={<FilmPage />} />
             <Route path="/press" element={<PressPage />} />

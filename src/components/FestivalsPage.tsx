@@ -39,14 +39,13 @@ function FestivalGallery({ festival }: { festival: Festival }) {
 
   if (images.length === 1) {
     return (
-      <div className="relative aspect-[16/10] rounded-[12px] overflow-hidden border border-neutral-200 shadow-md bg-neutral-100">
+      <div className="flex items-center justify-center">
         <img
           src={images[0]}
           alt={festival.title}
-          className="w-full h-full object-cover select-none hover:scale-105 transition-transform duration-700"
+          className="w-full max-h-[460px] object-contain select-none transition-transform duration-500 hover:scale-[1.02]"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/10 to-transparent pointer-events-none" />
       </div>
     );
   }
@@ -184,16 +183,31 @@ export default function FestivalsPage() {
     },
     {
       id: "afli",
-      title: "Abuja Festival of Literature and Ideas (AFLI)",
-      subtitle: "Stimulating Ideas in the Nation's Capital",
-      desc: "AFLI is the newest festival under the Book Buzz Foundation, launching its inaugural edition on 9 & 10 October 2026 in Abuja, in partnership with the EU Delegation to Nigeria. Abuja, Shoneyin believed, was ripe for an intellectually stimulating platform where thinkers could learn about issues shaping the wider world from the experts who study them.",
+      title: "AFLI — Abuja Festival of Literature and Ideas",
+      subtitle: "Literature, Ideas & Cultural Diplomacy",
+      desc: "AFLI — Abuja Festival of Literature and Ideas is a new literary and ideas festival launching in October 2026 in the FCT, Nigeria's capital. Organised by the Book Buzz Foundation (which also produces the Ake Arts & Book Festival), AFLI is a platform for bold conversations about literature, ideas and the forces shaping contemporary Africa and the rest of the world.\n\nThe festival brings together writers, thinkers, policymakers, artists and engaged audiences for two days of panels, intimate conversations, readings, book chats and cultural exchange. AFLI's launch coincides with Abuja's recent designation as a UNESCO Creative City of Literature (October 2025), positioning the capital as a hub for literature, civic dialogue and cultural diplomacy.\n\nThe programme is built around six pillars: Literature, Ideas and Public Debate, Publishing and Creative Economy Development, Translation and Cultural Diplomacy, and Community Engagement. In partnership with the European Union, this festival extends the Book Buzz Foundation's tradition of producing world-class literary festivals across Nigeria.",
       location: "Abuja, Nigeria",
-      dateTag: "9 & 10 October 2026",
+      dateTag: "October 2026",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
       images: [
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg"
       ],
       accent: "text-teal-600"
+    },
+    {
+      id: "cultural-events",
+      title: "Infusion",
+      subtitle: "Abuja Creative Scene (2009–2011)",
+      desc: "In 2009, Shoneyin co-founded Infusion, a monthly gathering for music, art and culture that became a fixture of Abuja's creative scene, held on the last Thursday of every month for two and a half years. It offered the city's writers, musicians and visual artists a space to gather, perform and cross-pollinate — an early instance of the community-building instinct that would later shape Aké, LIFI, AFLI and KABAFEST.",
+      location: "Abuja, Nigeria",
+      dateTag: "2009–2011 • Monthly Gathering",
+      img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.08.34.jpeg",
+      images: [
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.08.34.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.11.24-1.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.11.24.jpeg"
+      ],
+      accent: "text-rose-600"
     }
   ];
 
@@ -252,7 +266,11 @@ export default function FestivalsPage() {
                     <h2 className="font-sans font-black text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-950">{f.title}</h2>
                   </div>
 
-                  <p className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text">{f.desc}</p>
+                  <div className="text-neutral-700 font-sans text-sm md:text-base leading-relaxed select-text space-y-4">
+                    {f.desc.split("\n\n").map((para, pIdx) => (
+                      <p key={pIdx}>{para}</p>
+                    ))}
+                  </div>
                   
                   {f.quote && (
                     <div className="bg-neutral-50 border-l-4 border-rose-600 p-6 rounded-r-xl space-y-2">
