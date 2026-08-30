@@ -10,7 +10,8 @@ const IMAGES = [
   "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-26-2026-12_34_20-pm.png",
   "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-26-2026-12_38_05-pm.png",
   "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-26-2026-12_37_35-pm.png",
-  "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-26-2026-12_35_07-pm.png"
+  "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-26-2026-12_35_07-pm.png",
+  "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/chatgpt-image-aug-30-2026-01_15_21-pm.png"
 ];
 
 const SOCIAL_LINKS = [
