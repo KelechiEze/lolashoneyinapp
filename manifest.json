@@ -1,0 +1,23 @@
+{
+  "name": "Lola Shoneyin",
+  "short_name": "Lola Shoneyin",
+  "description": "Lola Shoneyin is a Nigerian poet, novelist, publisher, bookseller, and institution builder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
