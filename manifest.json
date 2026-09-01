@@ -3,21 +3,29 @@
   "short_name": "Lola Shoneyin",
   "description": "Lola Shoneyin is a Nigerian storyteller, curator, and institution builder.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#0a0a0a",
   "icons": [
     {
       "src": "/logo.jpeg",
-      "sizes": "192x192",
+      "sizes": "1254x1254",
       "type": "image/jpeg",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/logo.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
     }
   ]
 }
