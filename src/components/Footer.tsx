@@ -33,7 +33,7 @@ export default function Footer({ onOpenCalendar }: FooterProps) {
             </div>
 
             <p className="text-neutral-300 font-sans text-sm sm:text-base leading-relaxed max-w-md font-normal">
-              Author, poet and cultural architect
+              Storyteller. Curator. Institution Builder.
             </p>
 
             {/* Connect With Me White Pill Button */}

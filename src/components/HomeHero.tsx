@@ -95,7 +95,7 @@ export default function HomeHero() {
           <motion.img
             key={index}
             src={IMAGES[index]}
-            alt="Lola Shoneyin: Poet, Novelist, Institution Builder"
+            alt="Lola Shoneyin: Storyteller, Curator, Institution Builder"
             variants={slideVariants}
             initial="initial"
             animate="animate"
@@ -179,7 +179,7 @@ export default function HomeHero() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="font-sans text-xs md:text-sm font-semibold tracking-[0.3em] text-rose-400 uppercase drop-shadow-md"
           >
-            Poet. Novelist. Institution Builder.
+            Storyteller. Curator. Institution Builder.
           </motion.p>
 
           {/* Large Name Display */}

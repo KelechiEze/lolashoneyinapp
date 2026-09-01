@@ -1,6 +1,6 @@
 {
-  "name": "Lola Shoneyin | Poet, Novelist & Cultural Builder",
-  "description": "Lola Shoneyin is a Nigerian poet, novelist, publisher, bookseller, and festival curator.",
+  "name": "Lola Shoneyin",
+  "description": "The official digital platform and archive for Lola Shoneyin—storyteller, curator, and institution builder.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
