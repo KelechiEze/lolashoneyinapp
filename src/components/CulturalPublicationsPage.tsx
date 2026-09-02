@@ -21,18 +21,12 @@ const AKE_REVIEW_COVERS = [
 
 // Olongo & Ibadan Arts Renaissance Archival Materials
 const OLONGO_ARCHIVE = [
+  { id: 12, title: "Olongo Archival Document 12", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.22.12.jpeg" },
   { id: 1, title: "Olongo Archival Document 1", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.31.jpeg" },
   { id: 2, title: "Olongo Archival Document 2", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.32-1.jpeg" },
   { id: 3, title: "Olongo Archival Document 3", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.32-2.jpeg" },
   { id: 4, title: "Olongo Archival Document 4", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.32-3.jpeg" },
-  { id: 5, title: "Olongo Archival Document 5", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.32-4.jpeg" },
-  { id: 6, title: "Olongo Archival Document 6", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.32.jpeg" },
-  { id: 7, title: "Olongo Archival Document 7", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.33-1.jpeg" },
-  { id: 8, title: "Olongo Archival Document 8", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.33.jpeg" },
   { id: 9, title: "Olongo Archival Document 9", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.34-1.jpeg" },
-  { id: 10, title: "Olongo Archival Document 10", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.34-2.jpeg" },
-  { id: 11, title: "Olongo Archival Document 11", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.21.34.jpeg" },
-  { id: 12, title: "Olongo Archival Document 12", img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-28-at-15.22.12.jpeg" },
 ];
 
 export default function CulturalPublicationsPage() {
