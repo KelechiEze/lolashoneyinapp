@@ -105,6 +105,11 @@ const GUEST_GALLERY_IMAGES = [
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-26-at-20.25.11.jpeg",
     title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-03-at-07.34.01.jpeg",
+    title: "In front of the iconic Door at Ouida",
+    location: "Ouida Lagos"
   }
 ];
 
