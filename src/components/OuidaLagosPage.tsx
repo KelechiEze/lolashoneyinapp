@@ -464,7 +464,7 @@ export default function OuidaLagosPage() {
                 {/* Video playing automatically on an infinite loop */}
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-md bg-neutral-950 relative">
                   <video
-                    src="https://res.cloudinary.com/nqlff1i2/video/upload/v1787407146/WhatsApp_Video_2026-08-22_at_14.49.19_qxzlah.mp4"
+                    src="https://yefzuflpjsamilvmlynh.supabase.co/storage/v1/object/public/pinterestvideos/WhatsApp%20Video%202026-08-22%20at%2014.49.19%20(1).mp4"
                     autoPlay
                     loop
                     muted
