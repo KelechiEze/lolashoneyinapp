@@ -110,6 +110,241 @@ const GUEST_GALLERY_IMAGES = [
     url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-03-at-07.34.01.jpeg",
     title: "In front of the iconic Door at Ouida",
     location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.10.jpeg",
+    title: "Ouida Lagos Photo 10",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-1.jpeg",
+    title: "Ouida Lagos Photo 11",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-2.jpeg",
+    title: "Ouida Lagos Photo 12",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-3.jpeg",
+    title: "Ouida Lagos Photo 13",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-4.jpeg",
+    title: "Ouida Lagos Photo 14",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-5.jpeg",
+    title: "Ouida Lagos Photo 15",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-6.jpeg",
+    title: "Ouida Lagos Photo 16",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-7.jpeg",
+    title: "Ouida Lagos Photo 17",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-8.jpeg",
+    title: "Ouida Lagos Photo 18",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-9.jpeg",
+    title: "Ouida Lagos Photo 19",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-10.jpeg",
+    title: "Ouida Lagos Photo 20",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-11.jpeg",
+    title: "Ouida Lagos Photo 21",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-12.jpeg",
+    title: "Ouida Lagos Photo 22",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-13.jpeg",
+    title: "Ouida Lagos Photo 23",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-14.jpeg",
+    title: "Ouida Lagos Photo 24",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11-15.jpeg",
+    title: "Ouida Lagos Photo 25",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.16.11.jpeg",
+    title: "Ouida Lagos Photo 26",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.03-1.jpeg",
+    title: "Ouida Lagos Photo 27",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.03-2.jpeg",
+    title: "Ouida Lagos Photo 28",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.03-3.jpeg",
+    title: "Ouida Lagos Photo 29",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.03.jpeg",
+    title: "Ouida Lagos Photo 30",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.04-1.jpeg",
+    title: "Ouida Lagos Photo 31",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.04-2.jpeg",
+    title: "Ouida Lagos Photo 32",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.04-3.jpeg",
+    title: "Ouida Lagos Photo 33",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.04.jpeg",
+    title: "Ouida Lagos Photo 34",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.05-1.jpeg",
+    title: "Ouida Lagos Photo 35",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.05-2.jpeg",
+    title: "Ouida Lagos Photo 36",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.05.jpeg",
+    title: "Ouida Lagos Photo 37",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.06-1.jpeg",
+    title: "Ouida Lagos Photo 38",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.06-2.jpeg",
+    title: "Ouida Lagos Photo 39",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.06-3.jpeg",
+    title: "Ouida Lagos Photo 40",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.06-4.jpeg",
+    title: "Ouida Lagos Photo 41",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07-1.jpeg",
+    title: "Ouida Lagos Photo 42",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07-2.jpeg",
+    title: "Ouida Lagos Photo 43",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07-3.jpeg",
+    title: "Ouida Lagos Photo 44",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07-4.jpeg",
+    title: "Ouida Lagos Photo 45",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07-5.jpeg",
+    title: "Ouida Lagos Photo 46",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.07.jpeg",
+    title: "Ouida Lagos Photo 47",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.08-1.jpeg",
+    title: "Ouida Lagos Photo 48",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.08-2.jpeg",
+    title: "Ouida Lagos Photo 49",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.08-3.jpeg",
+    title: "Ouida Lagos Photo 50",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.08-4.jpeg",
+    title: "Ouida Lagos Photo 51",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.26.08.jpeg",
+    title: "Ouida Lagos Photo 52",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-10-at-07.28.25.jpeg",
+    title: "Ouida Lagos Photo 53",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-11-at-08.36.28.jpeg",
+    title: "Ouida Lagos Photo 54",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-22-at-12.07.00-1.jpeg",
+    title: "Ouida Lagos Photo 55",
+    location: "Ouida Lagos"
+  },
+  {
+    url: "https://kelechieze.wordpress.com/wp-content/uploads/2026/09/whatsapp-image-2026-09-22-at-12.07.00.jpeg",
+    title: "Ouida Lagos Photo 56",
+    location: "Ouida Lagos"
   }
 ];
 
