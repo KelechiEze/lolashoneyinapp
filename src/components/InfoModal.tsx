@@ -244,7 +244,7 @@ export default function InfoModal({ mode, onClose }: InfoModalProps) {
               <div className="text-center space-y-3">
                 <h3 className="font-serif italic text-4xl text-white font-light">Let's craft the narrative.</h3>
                 <p className="font-sans text-zinc-400 text-sm font-light">
-                  Submit your details below. We typically review and respond with comprehensive moodboard proposals within 48 business hours.
+                  Submit your detail below. We typically review and respond with comprehensive moodboard proposals within 48 business hours.
                 </p>
               </div>
 
