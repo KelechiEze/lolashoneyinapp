@@ -190,7 +190,10 @@ export default function FestivalsPage() {
       dateTag: "October 2026",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
       images: [
-        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg"
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36-1.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36-2.jpeg",
+        "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36.jpeg"
       ],
       accent: "text-teal-600"
     },
