@@ -660,24 +660,6 @@ export const SPEAKING_PHOTOS: GalleryPhoto[] = [
     ],
     caption: "First international engagement at the Zimbabwe International Book Fair in 1999, launching a global speaking trajectory."
   },
-  {
-    id: "photo-hay",
-    title: "Hay Festival",
-    event: "Hay-on-Wye Literature Festival",
-    location: "Wales, UK",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=800",
-    caption: "Gala stage dialogue on cultural sovereignty, female voices in African prose, and festival curation."
-  },
-  {
-    id: "photo-oxford",
-    title: "Oxford University Symposium",
-    event: "St Antony's College",
-    location: "Oxford, UK",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800",
-    caption: "Academic lecture on literary archive preservation and grassroots festival impact in West Africa."
-  }
 ];
 
 export default function SpeakingPage() {

@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 export interface ChildrenBookItem {
   id: string;
   title: string;
-  year: string;
+  year?: string;
   image: string;
   description: string;
   tag: string;
+  author?: string;
+  publisher?: string;
 }
 
 export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
@@ -92,6 +94,186 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-06-at-21.17.37.jpeg",
     description: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
     tag: "HEROIC TALE"
+  },
+  {
+    id: "ariyo-spelling-tree",
+    title: "Ariyo and the Spelling Tree",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09-1.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "okon-cant-dance",
+    title: "Okon Can't Dance",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09-2.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "bakuras-big-mistake",
+    title: "Bakura's Big Mistake",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09-3.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "when-the-bulldozers-came",
+    title: "When the Bulldozers Came",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09-4.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "afeji-and-the-garden-eggs",
+    title: "Afeji and the Garden Eggs",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "wheels-of-sunshine",
+    title: "Wheels of Sunshine",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-1.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "talah-and-the-desert-dunes",
+    title: "Talah and the Desert Dunes",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-2.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "avero-saves-market-day",
+    title: "Avero Saves the Market Day",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-3.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "maesoma-and-the-big-belly",
+    title: "Maesoma and the Big Belly",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-4.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "what-about-the-boys",
+    title: "What About the Boys",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-5.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "oyin-and-the-special-marks",
+    title: "Oyin and the Special Marks",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "amaka-and-the-ants",
+    title: "Amaka and the Ants",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-1.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "rub-and-shine",
+    title: "Rub and Shine",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-2.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "muna-waits-for-water",
+    title: "Muna Waits for Water",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-3.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "tefelo-and-the-thief",
+    title: "Tefelo and the Thief",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-4.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "whatmo-and-the-magic-loom",
+    title: "Whatmo and the Magic Loom",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-5.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "emike-and-the-idu-mask",
+    title: "Emike and the Idu Mask",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "who-took-my-akara",
+    title: "Who Took My Akara?",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.12-1.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "no-more-wet-sheets",
+    title: "No More Wet Sheets",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.12-2.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
+  },
+  {
+    id: "dark-enough-to-dance",
+    title: "Dark Enough to Dance",
+    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.12.jpeg",
+    description: "A picture book from the Tanja imprint.",
+    tag: "PICTURE BOOK",
+    author: "",
+    publisher: "Tanja"
   }
 ];
 
@@ -151,7 +333,8 @@ export default function HorizontalScrollSection() {
     <section 
       ref={targetRef} 
       id="childrens-books-horizontal-section"
-      className="relative h-[400vh] bg-white text-neutral-900 w-full overflow-visible"
+      className="relative bg-white text-neutral-900 w-full overflow-visible"
+      style={{ height: `max(400vh, calc(100vh + ${maxScroll / 0.82}px))` }}
     >
       {/* Sticky viewport container */}
       <div className="sticky top-0 flex h-screen items-center overflow-hidden px-4 sm:px-8 md:px-12 py-6 bg-white">
@@ -211,9 +394,11 @@ export default function HorizontalScrollSection() {
                   {/* Information Block Strictly Underneath */}
                   <div className="space-y-1.5 text-left pt-1">
                     <div className="flex items-center space-x-2">
-                      <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
-                        {book.year}
-                      </span>
+                      {book.year && (
+                        <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
+                          {book.year}
+                        </span>
+                      )}
                       <span className="font-mono text-[10px] font-bold tracking-wider text-rose-700 bg-rose-50 border border-rose-200/80 px-2 py-0.5 rounded-md uppercase">
                         {book.tag}
                       </span>
@@ -223,9 +408,11 @@ export default function HorizontalScrollSection() {
                       {book.title}
                     </h3>
 
-                    <p className="font-sans text-xs font-semibold text-neutral-500">
-                      By Lola Shoneyin
-                    </p>
+                    {(book.author ?? "Lola Shoneyin") && (
+                      <p className="font-sans text-xs font-semibold text-neutral-500">
+                        By {book.author ?? "Lola Shoneyin"}
+                      </p>
+                    )}
 
                     <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
                       {book.description}
@@ -241,5 +428,4 @@ export default function HorizontalScrollSection() {
     </section>
   );
 }
-
 

@@ -16,7 +16,7 @@ interface TranslationItem {
 interface GenericModalBook {
   id: string;
   title: string;
-  author: string;
+  author?: string;
   image: string;
   tag?: string;
   year?: string;
@@ -56,12 +56,12 @@ export default function BooksPage() {
         setActiveModalBook({
           id: found.id,
           title: found.title,
-          author: "Lola Shoneyin",
+          author: found.author ?? "Lola Shoneyin",
           image: found.image,
           tag: found.tag,
           year: found.year,
           description: found.description,
-          publisher: "Book Buzz Foundation / Ouida Books"
+          publisher: found.publisher ?? "Book Buzz Foundation / Ouida Books"
         });
       }
       setTimeout(() => {
@@ -318,12 +318,12 @@ export default function BooksPage() {
                 onClick={() => setActiveModalBook({
                   id: b.id,
                   title: b.title,
-                  author: "Lola Shoneyin",
+                  author: b.author ?? "Lola Shoneyin",
                   image: b.image,
                   tag: b.tag,
                   year: b.year,
                   description: b.description,
-                  publisher: "Book Buzz Foundation / Ouida Books"
+                  publisher: b.publisher ?? "Book Buzz Foundation / Ouida Books"
                 })}
                 className="relative group cursor-pointer flex flex-col space-y-3"
               >
@@ -340,18 +340,22 @@ export default function BooksPage() {
                 {/* CONTENT STRICTLY UNDERNEATH */}
                 <div className="space-y-1.5 text-left pt-1">
                   <div className="flex items-center space-x-2">
-                    <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
-                      {b.year}
-                    </span>
+                    {b.year && (
+                      <span className="font-mono text-[10px] font-black tracking-widest text-rose-800 bg-rose-100 px-2 py-0.5 uppercase rounded-md font-bold">
+                        {b.year}
+                      </span>
+                    )}
                   </div>
 
                   <h4 className="font-serif font-extrabold text-base md:text-lg text-neutral-950 tracking-tight leading-snug group-hover:text-rose-600 transition-colors">
                     {b.title}
                   </h4>
 
-                  <p className="font-sans text-xs font-semibold text-neutral-500">
-                    By Lola Shoneyin
-                  </p>
+                  {(b.author ?? "Lola Shoneyin") && (
+                    <p className="font-sans text-xs font-semibold text-neutral-500">
+                      By {b.author ?? "Lola Shoneyin"}
+                    </p>
+                  )}
 
                   <p className="text-xs sm:text-sm text-neutral-600 line-clamp-2 leading-relaxed font-sans">
                     {b.description}
@@ -407,9 +411,11 @@ export default function BooksPage() {
                     <h3 className="font-serif font-extrabold text-2xl sm:text-3xl text-neutral-900 tracking-tight leading-snug">
                       {activeModalBook.title}
                     </h3>
-                    <p className="text-sm font-sans font-medium text-neutral-600 pt-1">
-                      By {activeModalBook.author}
-                    </p>
+                    {activeModalBook.author && (
+                      <p className="text-sm font-sans font-medium text-neutral-600 pt-1">
+                        By {activeModalBook.author}
+                      </p>
+                    )}
                   </div>
 
                   <p className="text-neutral-700 font-sans text-sm sm:text-base leading-relaxed">

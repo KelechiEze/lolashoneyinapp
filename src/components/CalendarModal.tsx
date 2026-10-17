@@ -94,54 +94,6 @@ export const UPCOMING_EVENTS: EventItem[] = [
     linkUrl: "/ouida-lagos",
     organizer: "Ouida Lagos Cultural Hub"
   },
-  {
-    id: "orange-residency",
-    title: "Orange Tree Residency Applications Window",
-    category: "Residency",
-    badgeColor: "bg-orange-500",
-    date: "2026-09-01",
-    month: "September 2026",
-    displayDate: "Sept 1–30, 2026",
-    time: "Submissions Open",
-    location: "Ouida Lagos Writer's Wing",
-    description: "Call for applications for mid-career African novelists and poets for a 4-week fully hosted writer's residency in Ikeja, Lagos.",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
-    linkText: "Inquire via Contact",
-    linkUrl: "/contact",
-    organizer: "Orange Tree Residency Committee"
-  },
-  {
-    id: "egbe-screening",
-    title: "Special Premiere Preview: Egbe: In Search of Belonging",
-    category: "Film Screening",
-    badgeColor: "bg-sky-500",
-    date: "2026-10-24",
-    month: "October 2026",
-    displayDate: "Oct 24, 2026",
-    time: "05:30 PM WAT",
-    location: "Ouida Lagos Screening Lounge",
-    description: "Director's preview screening and panel discussion with Lola Shoneyin on Yoruba peer-community association traditions.",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800",
-    linkText: "Film Archive",
-    linkUrl: "/film",
-    organizer: "Lola Shoneyin Productions"
-  },
-  {
-    id: "ouida-imprint-launch",
-    title: "Ouida Books Autumn Releases & Imprint Showcase",
-    category: "Book Launch",
-    badgeColor: "bg-indigo-500",
-    date: "2026-11-05",
-    month: "November 2026",
-    displayDate: "Nov 5, 2026",
-    time: "04:00 PM WAT",
-    location: "Ouida Bookstore, Lagos",
-    description: "Book unveiling for upcoming titles across Cognix, Teyani, Tanja, and Phoenix imprints with author signings.",
-    image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/07/whatsapp-image-2026-07-24-at-16.50.38-1.jpeg",
-    linkText: "Ouida Publishing",
-    linkUrl: "/ouida-books",
-    organizer: "Ouida Books Editorial Desk"
-  }
 ];
 
 interface CalendarModalProps {
