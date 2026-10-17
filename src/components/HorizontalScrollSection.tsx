@@ -132,8 +132,8 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     publisher: "Tanja"
   },
   {
-    id: "afeji-and-the-garden-eggs",
-    title: "Afeji and the Garden Eggs",
+    id: "adeji-and-the-garden-eggs",
+    title: "Adeji and the Garden Eggs",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.09.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
@@ -150,8 +150,8 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     publisher: "Tanja"
   },
   {
-    id: "talah-and-the-desert-dunes",
-    title: "Talah and the Desert Dunes",
+    id: "talatu-and-the-desert-dates",
+    title: "Talatu and the Desert Dates",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-2.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
@@ -168,8 +168,8 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     publisher: "Tanja"
   },
   {
-    id: "maesoma-and-the-big-belly",
-    title: "Maesoma and the Big Belly",
+    id: "mmesoma-and-the-big-gully",
+    title: "Mmesoma and the Big Gully",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.10-4.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
@@ -214,7 +214,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
   },
   {
     id: "muna-waits-for-water",
-    title: "Muna Waits for Water",
+    title: "Maimuna Waits for Water",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-3.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
@@ -223,7 +223,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
   },
   {
     id: "tefelo-and-the-thief",
-    title: "Tefelo and the Thief",
+    title: "ETefelo and the Goat Thief",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-4.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
@@ -232,7 +232,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
   },
   {
     id: "whatmo-and-the-magic-loom",
-    title: "Whatmo and the Magic Loom",
+    title: "Ewatomi and the Magic Loom",
     image: "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-11.46.11-5.jpeg",
     description: "A picture book from the Tanja imprint.",
     tag: "PICTURE BOOK",
