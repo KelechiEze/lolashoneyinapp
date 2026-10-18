@@ -95,6 +95,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     description: "A thrilling tale of bravery, leadership, and moral strength set in ancient kingdom landscapes.",
     tag: "HEROIC TALE"
   },
+  /* Temporarily hidden per request.
   {
     id: "ariyo-spelling-tree",
     title: "Ariyo and the Spelling Tree",
@@ -275,6 +276,7 @@ export const CHILDREN_BOOKS_DATA: ChildrenBookItem[] = [
     author: "",
     publisher: "Tanja"
   }
+  */
 ];
 
 export default function HorizontalScrollSection() {
@@ -428,4 +430,3 @@ export default function HorizontalScrollSection() {
     </section>
   );
 }
-

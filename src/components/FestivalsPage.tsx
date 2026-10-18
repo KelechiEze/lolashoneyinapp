@@ -20,9 +20,16 @@ interface Festival {
 }
 
 function FestivalGallery({ festival }: { festival: Festival }) {
-  const images = festival.images && festival.images.length > 0 
-    ? festival.images 
+  const galleryImages = festival.images && festival.images.length > 0
+    ? festival.images
     : (festival.img ? [festival.img] : []);
+  const hasSeparateMainImage = Boolean(
+    festival.img && festival.images?.length && festival.images[0] !== festival.img
+  );
+  const images = hasSeparateMainImage && festival.img
+    ? [festival.img, ...galleryImages]
+    : galleryImages;
+  const thumbnailImages = hasSeparateMainImage ? galleryImages : images;
   const [activeIndex, setActiveIndex] = useState(0);
 
   const prevImage = () => {
@@ -94,24 +101,27 @@ function FestivalGallery({ festival }: { festival: Festival }) {
 
       {/* Thumbnails Row */}
       <div className="grid grid-cols-3 gap-3">
-        {images.map((imgSrc, idx) => (
-          <button
-            key={idx}
-            onClick={() => setActiveIndex(idx)}
-            className={`relative aspect-[16/10] rounded-[8px] overflow-hidden border-2 transition-all cursor-pointer ${
-              activeIndex === idx
-                ? "border-rose-600 shadow-sm ring-2 ring-rose-600/20"
-                : "border-neutral-200/80 opacity-70 hover:opacity-100 hover:border-neutral-400"
-            }`}
-          >
-            <img
-              src={imgSrc}
-              alt={`${festival.title} thumbnail ${idx + 1}`}
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-          </button>
-        ))}
+        {thumbnailImages.map((imgSrc, idx) => {
+          const imageIndex = hasSeparateMainImage ? idx + 1 : idx;
+          return (
+            <button
+              key={idx}
+              onClick={() => setActiveIndex(imageIndex)}
+              className={`relative aspect-[16/10] rounded-[8px] overflow-hidden border-2 transition-all cursor-pointer ${
+                activeIndex === imageIndex
+                  ? "border-rose-600 shadow-sm ring-2 ring-rose-600/20"
+                  : "border-neutral-200/80 opacity-70 hover:opacity-100 hover:border-neutral-400"
+              }`}
+            >
+              <img
+                src={imgSrc}
+                alt={`${festival.title} thumbnail ${idx + 1}`}
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -190,7 +200,6 @@ export default function FestivalsPage() {
       dateTag: "October 2026",
       img: "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
       images: [
-        "https://kelechieze.wordpress.com/wp-content/uploads/2026/08/whatsapp-image-2026-08-27-at-20.46.45-1.jpeg",
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36-1.jpeg",
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36-2.jpeg",
         "https://kelechieze.wordpress.com/wp-content/uploads/2026/10/whatsapp-image-2026-10-17-at-15.34.36.jpeg"

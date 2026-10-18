@@ -156,31 +156,32 @@ export default function BookBuzzPage() {
         </section>
 
         {/* NIGERIAN PICTURE BOOK PROJECT */}
-        <section id="picturebook" className="border-t border-neutral-200 pt-16 space-y-8 scroll-mt-28">
-          <div>
-            <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
-              Nigerian Picture Book Project
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-8 space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
-              <p>
-                The Nigerian Picture Book Project (NPBP) is a Book Buzz Foundation initiative, supported by the European Union, designed to develop a new generation of Nigerian children’s book creators. It trains and mentors 40 young Nigerian writers and illustrators aged 21–30, giving them the creative and professional support to develop original picture books for children aged 5–8.
-              </p>
-              <p>
-                The project takes participants through the full process of making a picture book: storytelling, character development and visual narrative, followed by collaboration between writers and illustrators, editorial development and preparation for publication. A central emphasis is on creating stories that are rooted in Nigerian communities, cultures and everyday realities while meeting high standards of writing, illustration and book production.
-              </p>
-              <p>
-                Its goal is concrete: to produce 20 professionally published picture books written and illustrated by Nigerians for Nigerian children. The finished books are intended to reach children through schools and libraries, as well as being showcased at festivals and book fairs.
-              </p>
+        <section id="picturebook" className="border-t border-neutral-200 pt-16 scroll-mt-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            {/* LEFT: heading + text */}
+            <div className="lg:col-span-6 space-y-6">
+              <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-neutral-950">
+                Nigerian Picture Book Project
+              </h2>
+              <div className="space-y-6 text-neutral-700 font-sans text-base md:text-lg leading-relaxed select-text">
+                <p>
+                  The Nigerian Picture Book Project (NPBP) is a Book Buzz Foundation initiative, supported by the European Union, designed to develop a new generation of Nigerian children’s book creators. It trains and mentors 40 young Nigerian writers and illustrators aged 21–30, giving them the creative and professional support to develop original picture books for children aged 5–8.
+                </p>
+                <p>
+                  The project takes participants through the full process of making a picture book: storytelling, character development and visual narrative, followed by collaboration between writers and illustrators, editorial development and preparation for publication. A central emphasis is on creating stories that are rooted in Nigerian communities, cultures and everyday realities while meeting high standards of writing, illustration and book production.
+                </p>
+                <p>
+                  Its goal is concrete: to produce 20 professionally published picture books written and illustrated by Nigerians for Nigerian children. The finished books are intended to reach children through schools and libraries, as well as being showcased at festivals and book fairs.
+                </p>
+              </div>
             </div>
 
-            <div className="lg:col-span-4 flex items-center justify-center p-2">
+            {/* RIGHT: image — aligned to top */}
+            <div className="lg:col-span-6 flex items-start justify-center">
               <img 
-                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/08/npbp-logo-design.png" 
-                alt="Nigerian Picture Book Project Logo" 
-                className="max-h-56 w-auto object-contain"
+                src="https://kelechieze.wordpress.com/wp-content/uploads/2026/10/npbp-book-covers_low-res.jpg"
+                alt="Books from the Nigerian Picture Book Project"
+                className="w-full max-w-2xl max-h-[620px] object-contain mx-auto"
                 referrerPolicy="no-referrer"
               />
             </div>

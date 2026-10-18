@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MapPin, ArrowUpRight, BookOpen, X, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
+import { MapPin, X, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -805,48 +805,6 @@ export default function OuidaLagosPage() {
           </div>
         </section>
 
-        {/* 5. LINK-OUT SECTION (FIFTH) */}
-        <section id="link-out" className="max-w-7xl mx-auto px-0 py-6 scroll-mt-28">
-          <div className="bg-[#181a1d] text-white rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl space-y-6">
-            
-            <div className="max-w-2xl space-y-4 relative z-10">
-              <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight text-white">
-                Link-out
-              </h2>
-
-              {/* EXACT VERBATIM PARAGRAPH */}
-              <p className="text-neutral-200 font-sans text-base sm:text-lg md:text-xl leading-relaxed font-normal">
-                For rates, bookings, and the full offering, visit{" "}
-                <a
-                  href="https://ouidalagos.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-rose-400 hover:text-rose-300 underline font-semibold transition-colors"
-                >
-                  ouidalagos.com
-                </a>.
-              </p>
-
-              <div className="pt-4">
-                <a
-                  href="https://ouidalagos.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-500 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-lg transition-all cursor-pointer group"
-                >
-                  <span>Visit ouidalagos.com</span>
-                  <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            {/* Decorative Background Accent */}
-            <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-12 translate-y-12">
-              <BookOpen size={300} />
-            </div>
-
-          </div>
-        </section>
       </div>
 
     </div>
